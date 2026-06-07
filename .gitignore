@@ -1,0 +1,58 @@
+# Flutter
+app/.dart_tool/
+app/.flutter-plugins
+app/.flutter-plugins-dependencies
+app/.packages
+app/.pub-cache/
+app/.pub/
+app/build/
+app/.idea/
+app/*.iml
+app/.gradle/
+
+# Android
+app/android/.gradle/
+app/android/captures/
+app/android/gradlew
+app/android/gradlew.bat
+app/android/local.properties
+app/android/key.properties
+app/android/**/GeneratedPluginRegistrant.java
+app/android/.cxx/
+
+# iOS
+app/ios/Pods/
+app/ios/.symlinks/
+app/ios/Flutter/Flutter.framework
+app/ios/Flutter/Flutter.podspec
+app/ios/Flutter/App.framework
+app/ios/Flutter/flutter_assets/
+app/ios/Flutter/flutter_export_environment.sh
+
+# Build outputs
+**/build/
+**/*.lock
+
+# Temp / OS
+.DS_Store
+Thumbs.db
+*.log
+
+# Editor
+.vscode/
+*.swp
+
+# Claude Code session settings
+.claude/
+
+# Flutter create boilerplate (앱 root README 는 의미 없음, 루트 README 사용)
+app/README.md
+
+# 검수 코퍼스 캐시 (build_corpus.py 로 재생성 — DATA_Raw 에서)
+scripts/_corpus_wordforms.txt
+scripts/_corpus_freq.tsv
+scripts/_verify_report.md
+
+scripts/_phrase_report.md
+scripts/_realusage_report.md
+db/gemini_check/
