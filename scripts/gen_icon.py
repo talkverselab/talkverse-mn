@@ -1,56 +1,65 @@
-"""Generate the mn_app launcher icons (МН brand tile).
+# -*- coding: utf-8 -*-
+"""앱 런처 아이콘 생성기 — branding/icons/A-mongolian.svg 디자인을 PIL로 렌더링.
 
-Mirrors the in-app BrandMark: sky tile (#B7EBFF) + black outline + black "МН".
-Outputs:
-  app/assets/icon/icon_full.png  legacy full-bleed icon
-  app/assets/icon/icon_fg.png    adaptive foreground (centered in 66% safe zone)
-Run:  cd scripts && python gen_icon.py   (then `flutter pub run flutter_launcher_icons`)
+Talkverse 브랜드 체계(언어 대표 글자 + t, 차콜 말풍선)를 따른 몽골 아이콘.
+산출물:
+  app/assets/icon/icon_full.png  (1024) 풀 디자인: 골드 프레임 + 차콜 말풍선 + Mt
+  app/assets/icon/icon_fg.png    (1024) 어댑티브 전경: 풀 디자인을 세이프존으로 축소
+Run:  python scripts/gen_icon.py   (이후 `dart run flutter_launcher_icons`)
 """
+from pathlib import Path
 from PIL import Image, ImageDraw, ImageFont
-import os
 
-S = 1024
-SKY = (183, 235, 255, 255)      # AppColors.sky  #B7EBFF
-INK = (26, 26, 26, 255)         # AppColors.outline #1A1A1A
-FONT = "C:/Windows/Fonts/seguibl.ttf"  # Segoe UI Black (Cyrillic-capable)
-HERE = os.path.dirname(os.path.abspath(__file__))
-OUT = os.path.join(HERE, "..", "app", "assets", "icon")
+ROOT = Path(__file__).resolve().parent.parent
+OUT = ROOT / "app" / "assets" / "icon"
+
+CANVAS = 1024
+BG = "#FFE3A3"                  # 몽골 소욤보 골드 악센트
+CHARCOAL = (35, 35, 35, 255)   # #232323 말풍선
+CREAM = "#FCFCF8"              # 글자
+FONT = "C:/Windows/Fonts/ariblk.ttf"  # Arial Black
+TEXT = "Mt"                    # 키릴 М(Монгол) + t(talkverse)
+FSIZE = 380
+SPACING = -12                  # SVG letter-spacing
+SAFE = 0.66                    # 어댑티브 세이프존 비율
 
 
-def rounded(draw, box, radius, fill, outline=None, width=0):
-    draw.rounded_rectangle(box, radius=radius, fill=fill, outline=outline, width=width)
-
-
-def draw_mn(img, tile_box, radius, outline_w, font_frac):
-    """Draw a sky tile with black outline and centered black МН onto img."""
+def render_full():
+    img = Image.new("RGBA", (CANVAS, CANVAS), (0, 0, 0, 0))
     d = ImageDraw.Draw(img)
-    x0, y0, x1, y1 = tile_box
-    tw = x1 - x0
-    rounded(d, tile_box, radius, SKY, INK, outline_w)
-    fs = int(tw * font_frac)
-    font = ImageFont.truetype(FONT, fs)
-    text = "МН"
-    # tracking: nudge letters tighter, centered
-    bbox = d.textbbox((0, 0), text, font=font)
-    tx = (x0 + x1) / 2 - (bbox[0] + bbox[2]) / 2
-    ty = (y0 + y1) / 2 - (bbox[1] + bbox[3]) / 2
-    d.text((tx, ty), text, font=font, fill=INK)
+    # 배경 둥근 사각형 (rx 224)
+    d.rounded_rectangle([0, 0, CANVAS - 1, CANVAS - 1], radius=224, fill=BG)
+    # 말풍선 본체 (rect x96 y88 w832 h720 rx180) + 꼬리
+    d.rounded_rectangle([96, 88, 96 + 832, 88 + 720], radius=180, fill=CHARCOAL)
+    d.polygon([(298, 770), (240, 908), (440, 784)], fill=CHARCOAL)
+
+    # 글자: 별도 레이어에 자간 적용 후 잉크 기준 중앙(512,436) 정렬
+    tl = Image.new("RGBA", (CANVAS, CANVAS), (0, 0, 0, 0))
+    td = ImageDraw.Draw(tl)
+    font = ImageFont.truetype(FONT, FSIZE)
+    widths = [font.getlength(c) for c in TEXT]
+    total = sum(widths) + SPACING * (len(TEXT) - 1)
+    cursor = (CANVAS - total) / 2
+    for c, w in zip(TEXT, widths):
+        td.text((cursor, 512), c, font=font, fill=CREAM, anchor="lm")
+        cursor += w + SPACING
+    b = tl.getbbox()
+    img.alpha_composite(tl, (int(round(512 - (b[0] + b[2]) / 2)),
+                             int(round(436 - (b[1] + b[3]) / 2))))
+    return img
 
 
-# --- icon_full: full-bleed sky tile with margin ---
-full = Image.new("RGBA", (S, S), (0, 0, 0, 0))
-m = int(S * 0.055)
-draw_mn(full, (m, m, S - m, S - m), radius=int(S * 0.30), outline_w=int(S * 0.018),
-        font_frac=0.40)
-full.save(os.path.join(OUT, "icon_full.png"))
+def main():
+    OUT.mkdir(parents=True, exist_ok=True)
+    full = render_full()
+    full.save(OUT / "icon_full.png")
 
-# --- icon_fg: adaptive foreground, tile centered within 66% safe zone ---
-fg = Image.new("RGBA", (S, S), (0, 0, 0, 0))
-# safe zone ~ center 66%; keep tile ~ 0.64*S so outline survives the mask
-ts = int(S * 0.64)
-off = (S - ts) // 2
-draw_mn(fg, (off, off, off + ts, off + ts), radius=int(ts * 0.30),
-        outline_w=int(ts * 0.022), font_frac=0.40)
-fg.save(os.path.join(OUT, "icon_fg.png"))
+    sz = int(CANVAS * SAFE)
+    fg = Image.new("RGBA", (CANVAS, CANVAS), (0, 0, 0, 0))
+    fg.alpha_composite(full.resize((sz, sz), Image.LANCZOS), ((CANVAS - sz) // 2,) * 2)
+    fg.save(OUT / "icon_fg.png")
+    print("wrote icon_full.png + icon_fg.png to", OUT)
 
-print("wrote icon_full.png + icon_fg.png to", os.path.normpath(OUT))
+
+if __name__ == "__main__":
+    main()
