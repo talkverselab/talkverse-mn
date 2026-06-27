@@ -73,14 +73,57 @@ def clean(t: str) -> str:
     return t.replace("__", "").replace("́", "").strip()
 
 
+DATA = ROOT / "app" / "lib" / "data"
+CLIFF = ROOT / "app" / "assets" / "data" / "cliff"
+# Tok('어간', infl: '어미', ...) → surface = 어간+어미
+_TOK = re.compile(r"Tok\(\s*'([^']*)'(?:[^)]*?infl:\s*'([^']*)')?")
+
+
+def _turn_texts(path, splitter):
+    """dart 파일에서 ChatTurn(/Sentence([ 단위로 Tok surface 들을 join → 발화 문자열.
+    세그먼트(다음 splitter 전까지) 안의 Tok 은 모두 그 발화의 토큰이다."""
+    out = []
+    if not path.exists():
+        return out
+    for seg in path.read_text(encoding="utf-8").split(splitter)[1:]:
+        words = [s + i for s, i in _TOK.findall(seg)]
+        if words:
+            out.append(" ".join(words))
+    return out
+
+
 def collect_texts():
     seen, items = set(), []
+
+    def add(c):
+        c = clean(c)
+        if c and c not in seen:
+            seen.add(c)
+            items.append(c)
+
+    # 1) travel 문장
     for f in sorted(glob.glob(str(TRAVEL / "*.json"))):
         for e in json.loads(Path(f).read_text(encoding="utf-8")):
-            c = clean(e.get("mn", ""))
-            if c and c not in seen:
-                seen.add(c)
-                items.append(c)
+            add(e.get("mn", ""))
+    # 2) 대화 턴 (l2_dialogues) · 커리큘럼 문장
+    for t in _turn_texts(DATA / "l2_dialogues.dart", "ChatTurn("):
+        add(t)
+    for t in _turn_texts(DATA / "curriculum_sentences.dart", "Sentence(["):
+        add(t)
+    # 3) 단어: content_words(mn) · cliff lemma · 알파벳 글자
+    cw = DATA / "content_words.dart"
+    if cw.exists():
+        for m in re.findall(r"ContentWord\(\s*'([^']+)'", cw.read_text(encoding="utf-8")):
+            add(m)
+    for f in sorted(glob.glob(str(CLIFF / "*.tsv"))):
+        for line in Path(f).read_text(encoding="utf-8").splitlines()[1:]:
+            cols = line.split("\t")
+            if len(cols) > 1:
+                add(cols[1])
+    alpha = DATA / "cyrillic_alphabet_data.dart"
+    if alpha.exists():
+        for low in re.findall(r"lower:\s*'([^']+)'", alpha.read_text(encoding="utf-8")):
+            add(low)
     return items
 
 

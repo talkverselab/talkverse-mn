@@ -10,7 +10,8 @@ URL="${SUPABASE_URL:?SUPABASE_URL 필요}"
 BUCKET="tts"
 HOST="$(echo "$URL" | sed -E 's#https?://([^/]+).*#\1#')"
 # 공용 DNS 로 호스트 IP 해석 (kornet NXDOMAIN 우회). 실패 시 시스템 DNS 사용.
-IP="$(nslookup "$HOST" 8.8.8.8 2>/dev/null | awk '/^Address: /{a=$2} END{print a}')"
+# 출력의 모든 IPv4 중 DNS 서버(8.8.8.8) 제외한 마지막 = 응답 주소.
+IP="$(nslookup "$HOST" 8.8.8.8 2>/dev/null | grep -oE '([0-9]{1,3}\.){3}[0-9]{1,3}' | grep -v '^8\.8\.8\.8$' | tail -1)"
 RESOLVE=(); [ -n "${IP:-}" ] && RESOLVE=(--resolve "$HOST:443:$IP")
 echo "host=$HOST ip=${IP:-system-dns} bucket=$BUCKET"
 
