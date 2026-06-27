@@ -65,21 +65,23 @@ class TtsService {
   Future<void> speak(String text) async {
     final clean = _clean(text);
     if (clean.isEmpty) return;
-    final my = ++_seq;
 
-    await stop();
+    await stop(); // 이전 재생/지연 취소 (_seq 증가)
+    final my = ++_seq; // 그 다음 내 시퀀스 토큰을 잡는다
     await Future.delayed(_delay);
     if (my != _seq) return; // 그새 다른 문장이 들어옴 → 취소
 
-    // 1) 사전 합성 번들 오디오 우선 (오프라인·무지연)
-    final asset = (await _bundled())[clean];
-    if (asset != null) {
+    // 1) 사전 합성 음성 (Supabase Storage) — 다운로드 후 로컬 캐시 재생
+    final url = (await _bundled())[clean];
+    if (url != null) {
       try {
+        final path = await _remoteFile(url);
+        if (my != _seq) return;
         await _player.stop();
-        await _player.play(AssetSource(asset));
+        await _player.play(DeviceFileSource(path));
         return;
       } catch (_) {
-        // 실패 → 다음 경로
+        // 실패(오프라인/DNS) → 런타임 Azure 폴백
       }
     }
 
@@ -110,7 +112,7 @@ class TtsService {
     } catch (_) {}
   }
 
-  // --- 사전 합성 번들 manifest (clean text -> audio/xxx.mp3) ---
+  // --- 사전 합성 manifest (clean text -> Supabase 공개 mp3 URL) ---
   Future<Map<String, String>> _bundled() async {
     final m = _manifest;
     if (m != null) return m;
@@ -121,6 +123,38 @@ class TtsService {
       return _manifest = map;
     } catch (_) {
       return _manifest = <String, String>{};
+    }
+  }
+
+  // 원격 mp3 다운로드 + 로컬 캐시 (재방문 시 즉시 재생)
+  Future<String> _remoteFile(String url) async {
+    final cached = _fileCache[url];
+    if (cached != null && File(cached).existsSync()) return cached;
+
+    final dir = await getTemporaryDirectory();
+    final fname = '${dir.path}/sb_${url.hashCode}.mp3';
+    final f = File(fname);
+    if (await f.exists() && await f.length() > 1000) {
+      _fileCache[url] = fname;
+      return fname;
+    }
+
+    final client = HttpClient();
+    try {
+      final req = await client.getUrl(Uri.parse(url));
+      final resp = await req.close();
+      if (resp.statusCode != 200) {
+        throw HttpException('audio ${resp.statusCode}');
+      }
+      final builder = BytesBuilder(copy: false);
+      await for (final chunk in resp) {
+        builder.add(chunk);
+      }
+      await f.writeAsBytes(builder.takeBytes(), flush: true);
+      _fileCache[url] = fname;
+      return fname;
+    } finally {
+      client.close();
     }
   }
 

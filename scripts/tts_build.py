@@ -29,6 +29,24 @@ OUT = ROOT / "app" / "assets" / "audio"
 ENV = Path("C:/Users/Johnjeon/OneDrive/Archive/PROJECT/talkverse-learning/.env")
 VOICE = "mn-MN-YesuiNeural"  # 여성 (성별 없음 → 기본)
 REGION_DEFAULT = "koreacentral"
+BUCKET = "tts"  # Supabase Storage 공개 버킷
+
+
+def _env(name):
+    v = os.environ.get(name)
+    if not v and ENV.exists():
+        for line in ENV.read_text(encoding="utf-8").splitlines():
+            line = line.strip()
+            if line.startswith(f"{name}="):
+                v = line.split("=", 1)[1].strip()
+                break
+    return v
+
+
+def public_base():
+    """manifest 의 mp3 공개 URL prefix. SUPABASE_URL 없으면 로컬 에셋 경로로 폴백."""
+    url = (_env("SUPABASE_URL") or "").rstrip("/")
+    return f"{url}/storage/v1/object/public/{BUCKET}" if url else "audio"
 
 
 def load_key():
@@ -96,14 +114,14 @@ def main():
     texts = collect_texts()
     if args.limit:
         texts = texts[: args.limit]
-    print(f"문장 {len(texts)}개 | voice={VOICE} | region={region} | out={OUT}")
+    base = public_base()
+    print(f"문장 {len(texts)}개 | voice={VOICE} | region={region} | manifest base={base}")
 
     manifest, done, skip, fail = {}, 0, 0, 0
     for i, text in enumerate(texts, 1):
         fid = hashlib.md5(text.encode("utf-8")).hexdigest()[:12]
-        rel = f"audio/{fid}.mp3"
         fpath = OUT / f"{fid}.mp3"
-        manifest[text] = rel
+        manifest[text] = f"{base}/{fid}.mp3"  # 공개 URL (SUPABASE_URL 있으면)
         if args.resume and fpath.exists() and fpath.stat().st_size > 1000:
             skip += 1
             continue
