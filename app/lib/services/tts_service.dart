@@ -5,14 +5,13 @@ import 'dart:typed_data';
 import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart' show rootBundle;
-import 'package:flutter_tts/flutter_tts.dart';
 import 'package:path_provider/path_provider.dart';
 
-/// 몽골어 음성 — Azure Neural(mn-MN) 우선, 1초 지연 후 재생.
+/// 몽골어 음성 — 1초 지연 후 재생.
 ///
-/// Azure 키가 있으면(`--dart-define=AZURE_SPEECH_KEY=...`) Azure REST로 합성해
-/// mn-MN-YesuiNeural 목소리로 재생하고, 결과는 캐시한다.
-/// 키가 없거나 합성 실패 시 기기 내장 flutter_tts(mn-MN)로 폴백한다.
+/// ① 앱에 동봉된 사전 합성 mp3(`assets/audio/`, manifest 매핑)를 오프라인 재생.
+/// ② 번들에 없는 텍스트만 Azure REST(mn-MN, `--dart-define=AZURE_SPEECH_KEY`)로
+///    런타임 합성(온라인). 실패 시 무음 — 기기 내장 TTS 는 몽골어 보이스가 없어 쓰지 않는다.
 class TtsService {
   TtsService._();
   static final TtsService instance = TtsService._();
@@ -27,31 +26,12 @@ class TtsService {
   /// 탭 후 재생까지의 지연(요청: 1초).
   static const _delay = Duration(seconds: 1);
 
-  final FlutterTts _tts = FlutterTts();
   final AudioPlayer _player = AudioPlayer();
   final Map<String, String> _fileCache = {}; // text -> 로컬 mp3 경로
   Map<String, String>? _manifest; // clean text -> 번들 에셋 경로(audio/xxx.mp3)
-  bool _ttsInited = false;
-  bool available = true;
   int _seq = 0; // 빠른 연속 탭 시 직전 요청 취소용
 
   bool get _azureOn => _azureKey.isNotEmpty && !kIsWeb;
-
-  Future<void> _initTts() async {
-    if (_ttsInited) return;
-    _ttsInited = true;
-    try {
-      final langs = (await _tts.getLanguages) as List?;
-      available = langs == null ||
-          langs.any((l) => l.toString().toLowerCase().startsWith('mn'));
-      await _tts.setLanguage('mn-MN');
-      await _tts.setSpeechRate(0.42);
-      await _tts.setPitch(1.0);
-      await _tts.awaitSpeakCompletion(true);
-    } catch (_) {
-      available = false;
-    }
-  }
 
   /// 학습용 마크업·강세 기호 제거.
   String _clean(String text) => text
@@ -71,44 +51,36 @@ class TtsService {
     await Future.delayed(_delay);
     if (my != _seq) return; // 그새 다른 문장이 들어옴 → 취소
 
-    // 1) 사전 합성 음성 (Supabase Storage) — 다운로드 후 로컬 캐시 재생
-    final url = (await _bundled())[clean];
-    if (url != null) {
+    // 1) 사전 합성 번들 음성 (오프라인·무지연) — 앱에 mp3 동봉
+    final asset = (await _bundled())[clean];
+    if (asset != null) {
       try {
-        final path = await _remoteFile(url);
-        if (my != _seq) return;
         await _player.stop();
-        await _player.play(DeviceFileSource(path));
+        await _player.play(AssetSource(asset)); // 'audio/<id>.mp3'
         return;
       } catch (_) {
-        // 실패(오프라인/DNS) → 런타임 Azure 폴백
+        // 번들 재생 실패 → 온라인 폴백 시도
       }
     }
 
+    // 2) 번들에 없는 텍스트만 런타임 Azure (온라인). 실패 시 무음.
+    //    기기 내장 flutter_tts 는 몽골어 보이스가 없어 오발음 → 사용 안 함.
     if (_azureOn) {
       try {
         final path = await _azureFile(clean);
         if (my != _seq) return;
         await _player.stop();
         await _player.play(DeviceFileSource(path));
-        return;
       } catch (_) {
-        // 실패 → 폴백
+        // 오프라인 등 → 무음
       }
     }
-    await _initTts();
-    if (my != _seq) return;
-    await _tts.stop();
-    await _tts.speak(clean);
   }
 
   Future<void> stop() async {
     _seq++; // 진행 중인 지연 취소
     try {
       await _player.stop();
-    } catch (_) {}
-    try {
-      await _tts.stop();
     } catch (_) {}
   }
 
@@ -126,39 +98,7 @@ class TtsService {
     }
   }
 
-  // 원격 mp3 다운로드 + 로컬 캐시 (재방문 시 즉시 재생)
-  Future<String> _remoteFile(String url) async {
-    final cached = _fileCache[url];
-    if (cached != null && File(cached).existsSync()) return cached;
-
-    final dir = await getTemporaryDirectory();
-    final fname = '${dir.path}/sb_${url.hashCode}.mp3';
-    final f = File(fname);
-    if (await f.exists() && await f.length() > 1000) {
-      _fileCache[url] = fname;
-      return fname;
-    }
-
-    final client = HttpClient();
-    try {
-      final req = await client.getUrl(Uri.parse(url));
-      final resp = await req.close();
-      if (resp.statusCode != 200) {
-        throw HttpException('audio ${resp.statusCode}');
-      }
-      final builder = BytesBuilder(copy: false);
-      await for (final chunk in resp) {
-        builder.add(chunk);
-      }
-      await f.writeAsBytes(builder.takeBytes(), flush: true);
-      _fileCache[url] = fname;
-      return fname;
-    } finally {
-      client.close();
-    }
-  }
-
-  // --- Azure REST 합성 + 캐시 ---
+  // --- Azure REST 합성 + 캐시 (번들 미수록 텍스트 온라인 폴백) ---
   Future<String> _azureFile(String text) async {
     final cached = _fileCache[text];
     if (cached != null && File(cached).existsSync()) return cached;
