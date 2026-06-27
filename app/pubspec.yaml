@@ -63,6 +63,8 @@ flutter:
     - assets/data/travel/ask_out.json
     - assets/data/travel/travel_together.json
     - assets/data/travel/romance.json
+    # 사전 합성 TTS (Azure mn-MN 여성) + manifest
+    - assets/audio/
     # 격변화 문법 노트 (이후 단계에서 채움 — 파일 생성 전까지 비활성화)
     # - assets/data/grammar/cases_overview.json
     # - assets/data/grammar/prep_case_map.json

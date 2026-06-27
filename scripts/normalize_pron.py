@@ -153,19 +153,39 @@ def _syllabify(word):
     return ''.join(res)
 
 
-def transliterate(text):
-    words = re.split(r'(\s+)', text.lower())
+# 구(phrase) 단위 관용 예외 — 단어별 규칙으로는 안 나오는 유명 표현.
+# 참조 표준 없음, 통용 표기 채택(사용자 결정): Сайн байна уу = 센베노.
+PHRASE_EXC = [
+    ('сайн байна уу', '센베노'),
+]
+_PHRASE_RE = re.compile('|'.join(re.escape(k) for k, _ in PHRASE_EXC))
+_PHRASE_MAP = dict(PHRASE_EXC)
+
+
+def _translit_words(text):
     parts = []
-    for w in words:
+    for w in re.split(r'(\s+)', text.lower()):
         if w.strip() == '':
             parts.append(w)
             continue
-        core = re.sub(r'[^а-яёөү]', '', w.lower())
-        if core in EXC:
-            parts.append(EXC[core])
-        else:
-            parts.append(_syllabify(core) if core else '')
+        core = re.sub(r'[^а-яёөү]', '', w)
+        parts.append(EXC[core] if core in EXC else (_syllabify(core) if core else ''))
     return ''.join(parts).strip()
+
+
+def transliterate(text):
+    low = text.lower()
+    out, idx = [], 0
+    for m in _PHRASE_RE.finditer(low):
+        gap = _translit_words(text[idx:m.start()])
+        if gap:
+            out.append(gap)
+        out.append(_PHRASE_MAP[m.group(0)])
+        idx = m.end()
+    tail = _translit_words(text[idx:])
+    if tail:
+        out.append(tail)
+    return ' '.join(out).strip()
 
 
 # ── dart 토큰 독음 재생성 ──────────────────────────────

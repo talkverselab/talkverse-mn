@@ -4,6 +4,7 @@ import 'dart:typed_data';
 
 import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/foundation.dart';
+import 'package:flutter/services.dart' show rootBundle;
 import 'package:flutter_tts/flutter_tts.dart';
 import 'package:path_provider/path_provider.dart';
 
@@ -29,6 +30,7 @@ class TtsService {
   final FlutterTts _tts = FlutterTts();
   final AudioPlayer _player = AudioPlayer();
   final Map<String, String> _fileCache = {}; // text -> 로컬 mp3 경로
+  Map<String, String>? _manifest; // clean text -> 번들 에셋 경로(audio/xxx.mp3)
   bool _ttsInited = false;
   bool available = true;
   int _seq = 0; // 빠른 연속 탭 시 직전 요청 취소용
@@ -69,6 +71,18 @@ class TtsService {
     await Future.delayed(_delay);
     if (my != _seq) return; // 그새 다른 문장이 들어옴 → 취소
 
+    // 1) 사전 합성 번들 오디오 우선 (오프라인·무지연)
+    final asset = (await _bundled())[clean];
+    if (asset != null) {
+      try {
+        await _player.stop();
+        await _player.play(AssetSource(asset));
+        return;
+      } catch (_) {
+        // 실패 → 다음 경로
+      }
+    }
+
     if (_azureOn) {
       try {
         final path = await _azureFile(clean);
@@ -94,6 +108,20 @@ class TtsService {
     try {
       await _tts.stop();
     } catch (_) {}
+  }
+
+  // --- 사전 합성 번들 manifest (clean text -> audio/xxx.mp3) ---
+  Future<Map<String, String>> _bundled() async {
+    final m = _manifest;
+    if (m != null) return m;
+    try {
+      final raw = await rootBundle.loadString('assets/audio/manifest.json');
+      final map = (json.decode(raw) as Map<String, dynamic>)
+          .map((k, v) => MapEntry(k, v as String));
+      return _manifest = map;
+    } catch (_) {
+      return _manifest = <String, String>{};
+    }
   }
 
   // --- Azure REST 합성 + 캐시 ---
