@@ -7,24 +7,24 @@ const Map<String, List<Sentence>> curriculumSentences = {
   // ── 1단계 · 형용사 + 명사 (어순=한국어, 일치 없음) ───────────
   's1': [
     Sentence([
-      Tok('Энэ', stemKo: '엔'),
-      Tok('сайхан', stemKo: '새한'),
-      Tok('өдөр', stemKo: '우두르'),
+      Tok('Энэ', stemKo: '엥'),
+      Tok('сайхан', stemKo: '세항'),
+      Tok('өдөр', stemKo: '으드르'),
     ], ko: '이거 좋은 날이야.', note: '형용사 сайхан은 변하지 않고 명사 앞에 그대로 — 한국어 어순.'),
     Sentence([
       Tok('Чи', stemKo: '치'),
-      Tok('сайн', stemKo: '사인'),
-      Tok('найз', stemKo: '나이즈'),
+      Tok('сайн', stemKo: '셍'),
+      Tok('найз', stemKo: '네즈'),
     ], ko: '너는 좋은 친구야.', note: '계사(이다) 없이 명사로 끝난다. "А는 B" 명사문.'),
     Sentence([
       Tok('Тэр', stemKo: '테르'),
-      Tok('гоё', stemKo: '고요'),
-      Tok('охин', stemKo: '오힝'),
+      Tok('гоё', stemKo: '거요'),
+      Tok('охин', stemKo: '어힝'),
     ], ko: '그녀는 예쁜 여자야.', note: '형용사 гоё도 무변화. 수식어→피수식어 순서.'),
     Sentence([
-      Tok('Улаанбаатар', stemKo: '올랑바타르'),
-      Tok('том', stemKo: '톰'),
-      Tok('хот', stemKo: '호트'),
+      Tok('Улаанбаатар', stemKo: '울란바토르'),
+      Tok('том', stemKo: '텀'),
+      Tok('хот', stemKo: '허트'),
     ], ko: '울란바토르는 큰 도시야.', note: '관사 없음 — 영어 a/the 부담 없음.'),
   ],
 
@@ -32,25 +32,25 @@ const Map<String, List<Sentence>> curriculumSentences = {
   's2': [
     Sentence([
       Tok('Би', stemKo: '비'),
-      Tok('ном', infl: 'ыг', stemKo: '놈', inflKo: '익', gender: Gender.masc, josa: '을/를'),
-      Tok('унш', infl: 'сан', stemKo: '운시', inflKo: '승', gender: Gender.masc, verb: true),
+      Tok('ном', infl: 'ыг', stemKo: '넘', inflKo: '익', gender: Gender.masc, josa: '을/를'),
+      Tok('унш', infl: 'сан', stemKo: '옹시', inflKo: '상', gender: Gender.masc, verb: true),
     ], ko: '나는 책을 읽었어.', note: '남성모음 단어 ном → а형 어미(-ыг, -сан). 색이 같으면 같은 조화.'),
     Sentence([
       Tok('Би', stemKo: '비'),
-      Tok('гэр', infl: 'ийг', stemKo: '게르', inflKo: '이익', gender: Gender.fem, josa: '을/를'),
+      Tok('гэр', infl: 'ийг', stemKo: '게르', inflKo: '익', gender: Gender.fem, josa: '을/를'),
       Tok('үз', infl: 'сэн', stemKo: '우즈', inflKo: '셍', gender: Gender.fem, verb: true),
     ], ko: '나는 집을 봤어.', note: '여성모음 단어 гэр → э형 어미(-ийг, -сэн). ном과 비교해 보세요.'),
     Sentence([
       Tok('Чи', stemKo: '치'),
-      Tok('цай', infl: 'г', stemKo: '차이', inflKo: '익', gender: Gender.neut, josa: '을/를'),
-      Tok('уу', infl: 'сан', stemKo: '오', inflKo: '승', gender: Gender.masc, verb: true),
+      Tok('цай', infl: 'г', stemKo: '체', inflKo: '그', gender: Gender.neut, josa: '을/를'),
+      Tok('уу', infl: 'сан', stemKo: '오', inflKo: '상', gender: Gender.masc, verb: true),
     ], ko: '너 차 마셨어?', note: '모음으로 끝나면 목적격은 짧은 -г.'),
   ],
 
   // ── 3단계 · 소유격 -ын/-ийн · 목적격 -ыг/-ийг ───────────────
   's3': [
     Sentence([
-      Tok('Найз', infl: 'ын', stemKo: '나이즈', inflKo: '잉', gender: Gender.masc, josa: '의'),
+      Tok('Найз', infl: 'ын', stemKo: '네즈', inflKo: '잉', gender: Gender.masc, josa: '의'),
       Tok('нэр', stemKo: '네르'),
       Tok('хэн', stemKo: '헹'),
       Tok('бэ', stemKo: '베'),
@@ -58,13 +58,13 @@ const Map<String, List<Sentence>> curriculumSentences = {
     Sentence([
       Tok('Чиний', stemKo: '치니'),
       Tok('нүд', stemKo: '누드'),
-      Tok('гоё', stemKo: '고요'),
+      Tok('гоё', stemKo: '거요'),
     ], ko: '네 눈 예뻐.', note: 'чи의 소유격은 불규칙 чиний(너의).'),
     Sentence([
       Tok('Би', stemKo: '비'),
-      Tok('чамайг', stemKo: '차마익', josa: '을/를'),
-      Tok('бод', infl: 'ож', stemKo: '보드', inflKo: '오즈', gender: Gender.masc, verb: true),
-      Tok('байна', stemKo: '바인'),
+      Tok('чамайг', stemKo: '차멕', josa: '을/를'),
+      Tok('бод', infl: 'ож', stemKo: '버드', inflKo: '어즈', gender: Gender.masc, verb: true),
+      Tok('байна', stemKo: '벵'),
     ], ko: '너 생각하고 있어.', note: 'чи의 목적격은 불규칙 чамайг(너를).'),
   ],
 
@@ -73,17 +73,17 @@ const Map<String, List<Sentence>> curriculumSentences = {
     Sentence([
       Tok('Би', stemKo: '비'),
       Tok('Монгол', infl: 'д', stemKo: '몽골', inflKo: '드', gender: Gender.neut, josa: '에'),
-      Tok('байна', stemKo: '바인'),
+      Tok('байна', stemKo: '벵'),
     ], ko: '나 몽골에 있어.', note: '여처격 -д(에/에게). 장소·도착점.'),
     Sentence([
       Tok('Би', stemKo: '비'),
-      Tok('Солонгос', infl: 'оос', stemKo: '솔롱고스', inflKo: '오스', gender: Gender.masc, josa: '에서'),
+      Tok('Солонгос', infl: 'оос', stemKo: '솔롱고스', inflKo: '어스', gender: Gender.masc, josa: '에서'),
       Tok('ир', infl: 'сэн', stemKo: '이르', inflKo: '셍', gender: Gender.fem, verb: true),
     ], ko: '나 한국에서 왔어.', note: '탈격: о로 끝나 -оос(원순조화). 출발점.'),
     Sentence([
       Tok('Чамд', stemKo: '참드', josa: '에게'),
-      Tok('бэлэг', stemKo: '벨렉'),
-      Tok('өг', infl: 'нө', stemKo: '우그', inflKo: '누', gender: Gender.fem, verb: true),
+      Tok('бэлэг', stemKo: '베렉'),
+      Tok('өг', infl: 'нө', stemKo: '윽', inflKo: '느', gender: Gender.fem, verb: true),
     ], ko: '너에게 선물 줄게.', note: 'чи의 여격은 불규칙 чамд(너에게).'),
   ],
 
@@ -91,18 +91,18 @@ const Map<String, List<Sentence>> curriculumSentences = {
   's5': [
     Sentence([
       Tok('Би', stemKo: '비'),
-      Tok('машин', infl: 'аар', stemKo: '마시', inflKo: '나르', gender: Gender.masc, josa: '로'),
-      Tok('явна', stemKo: '야운'),
+      Tok('машин', infl: 'аар', stemKo: '마싱', inflKo: '아르', gender: Gender.masc, josa: '로'),
+      Tok('явна', stemKo: '얍나'),
     ], ko: '나 차로 갈게.', note: '도구격 -аар(로/타고). 수단·재료.'),
     Sentence([
       Tok('Би', stemKo: '비'),
-      Tok('найз', infl: 'тай', stemKo: '나이즈', inflKo: '타이', gender: Gender.masc, josa: '와/과'),
+      Tok('найз', infl: 'тай', stemKo: '네즈', inflKo: '테', gender: Gender.masc, josa: '와/과'),
       Tok('уулз', infl: 'на', stemKo: '올즈', inflKo: '나', gender: Gender.masc, verb: true),
     ], ko: '나 친구랑 만날 거야.', note: '공동격 -тай(와/과). 동반.'),
     Sentence([
       Tok('Чи', stemKo: '치'),
-      Tok('зав', infl: 'тай', stemKo: '자우', inflKo: '타이', gender: Gender.masc, josa: '있는'),
-      Tok('юу', stemKo: '요'),
+      Tok('зав', infl: 'тай', stemKo: '잡', inflKo: '테', gender: Gender.masc, josa: '있는'),
+      Tok('юу', stemKo: '유오'),
     ], ko: '너 시간 있어?', note: '-тай는 "~가 있다(소유)"에도 쓰여 아주 흔하다.'),
   ],
 
@@ -111,13 +111,13 @@ const Map<String, List<Sentence>> curriculumSentences = {
     Sentence([
       Tok('Ширээн', stemKo: '시렝'),
       Tok('дээр', stemKo: '데르', josa: '위에'),
-      Tok('ном', stemKo: '놈'),
-      Tok('байна', stemKo: '바인'),
+      Tok('ном', stemKo: '넘'),
+      Tok('байна', stemKo: '벵'),
     ], ko: '책상 위에 책 있어.', note: '후치사 дээр(위에) — 명사 뒤에. 한국어 "위"와 똑같다.'),
     Sentence([
-      Tok('Гэр', infl: 'ийн', stemKo: '게르', inflKo: '이잉', gender: Gender.fem, josa: '의'),
-      Tok('дотор', stemKo: '도토르', josa: '안에'),
-      Tok('дулаахан', stemKo: '돌라항'),
+      Tok('Гэр', infl: 'ийн', stemKo: '게르', inflKo: '잉', gender: Gender.fem, josa: '의'),
+      Tok('дотор', stemKo: '더터르', josa: '안에'),
+      Tok('дулаахан', stemKo: '도라항'),
     ], ko: '게르 안은 따뜻해.', note: '후치사 앞 명사는 보통 소유격(-ийн).'),
     Sentence([
       Tok('Миний', stemKo: '미니'),
@@ -130,19 +130,19 @@ const Map<String, List<Sentence>> curriculumSentences = {
   's7': [
     Sentence([
       Tok('Би', stemKo: '비'),
-      Tok('хоол', stemKo: '홀'),
+      Tok('хоол', stemKo: '헐'),
       Tok('ид', infl: 'сэн', stemKo: '이드', inflKo: '셍', gender: Gender.fem, verb: true),
     ], ko: '나 밥 먹었어.', note: '과거 -сэн. идэх가 여성모음이라 -сэн.'),
     Sentence([
       Tok('Би', stemKo: '비'),
       Tok('маргааш', stemKo: '마르가시'),
-      Tok('яв', infl: 'на', stemKo: '야우', inflKo: '나', gender: Gender.masc, verb: true),
+      Tok('яв', infl: 'на', stemKo: '얍', inflKo: '나', gender: Gender.masc, verb: true),
     ], ko: '나 내일 갈 거야.', note: '현재·미래 -на. явах가 남성모음이라 -на. 인칭 변화 없음.'),
     Sentence([
       Tok('Чи', stemKo: '치'),
-      Tok('хаана', stemKo: '하나'),
+      Tok('хаана', stemKo: '항'),
       Tok('амьдар', infl: 'даг', stemKo: '암다르', inflKo: '닥', gender: Gender.masc, verb: true),
-      Tok('вэ', stemKo: '웨'),
+      Tok('вэ', stemKo: '베'),
     ], ko: '너 어디 살아?', note: '습관·일반 -даг("늘 ~한다").'),
   ],
 };

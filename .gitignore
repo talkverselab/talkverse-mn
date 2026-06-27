@@ -56,3 +56,7 @@ scripts/_verify_report.md
 scripts/_phrase_report.md
 scripts/_realusage_report.md
 db/gemini_check/
+
+# Python
+scripts/__pycache__/
+*.pyc
