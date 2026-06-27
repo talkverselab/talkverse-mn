@@ -44,9 +44,13 @@ def _env(name):
 
 
 def public_base():
-    """manifest 의 mp3 공개 URL prefix. SUPABASE_URL 없으면 로컬 에셋 경로로 폴백."""
-    url = (_env("SUPABASE_URL") or "").rstrip("/")
-    return f"{url}/storage/v1/object/public/{BUCKET}" if url else "audio"
+    """manifest 의 mp3 경로 prefix.
+    기본 = 로컬 번들 'audio'(오프라인 재생). TTS_REMOTE=1 이면 Supabase 공개 URL."""
+    if os.environ.get("TTS_REMOTE") == "1":
+        url = (_env("SUPABASE_URL") or "").rstrip("/")
+        if url:
+            return f"{url}/storage/v1/object/public/{BUCKET}"
+    return "audio"
 
 
 def load_key():
