@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../core/display_settings.dart';
 import '../../domain/models/dialogue.dart';
 import '../../domain/models/flashcard.dart';
 import '../../services/tts_service.dart';
@@ -122,6 +123,7 @@ class _DialogueChatScreenState extends State<DialogueChatScreen> {
       appBar: AppBar(
         title: Text(d.title, style: AppType.serif(17)),
         actions: [
+          const ReadingToggleAction(),
           Padding(
             padding: const EdgeInsets.only(right: 12),
             child: _GenderToggle(

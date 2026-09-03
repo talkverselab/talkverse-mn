@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../core/display_settings.dart';
 import '../domain/models/sentence.dart';
 import '../services/tts_service.dart';
 import '../theme/app_colors.dart';
@@ -88,6 +89,16 @@ class SentenceReading extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    return ValueListenableBuilder<bool>(
+      valueListenable: DisplaySettings.showReading,
+      builder: (context, on, _) {
+        if (!on) return const SizedBox.shrink();
+        return _readingWrap();
+      },
+    );
+  }
+
+  Widget _readingWrap() {
     return Wrap(
       spacing: 6,
       runSpacing: 4,

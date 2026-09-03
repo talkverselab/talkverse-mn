@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'theme/app_theme.dart';
+import 'core/display_settings.dart';
 import 'data/db/app_database.dart';
 import 'screens/main_screen.dart';
 
@@ -9,6 +10,7 @@ late final AppDatabase appDb;
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   appDb = AppDatabase();
+  await DisplaySettings.load();
   runApp(const MongolianUniverseApp());
 }
 

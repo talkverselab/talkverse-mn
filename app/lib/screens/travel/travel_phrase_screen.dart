@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../core/display_settings.dart';
 import '../../data/travel_dating.dart';
 import '../../services/tts_service.dart';
 import '../../theme/app_colors.dart';
@@ -45,6 +46,7 @@ class _TravelPhraseScreenState extends State<TravelPhraseScreen> {
         title: Text(widget.theme.title, style: AppType.serif(18)),
         centerTitle: true,
         actions: [
+          const ReadingToggleAction(),
           if (_items.isNotEmpty)
             Center(
               child: Padding(
@@ -125,7 +127,14 @@ class _TravelPhraseScreenState extends State<TravelPhraseScreen> {
         const SizedBox(height: 28),
         Text(p.mn, style: AppType.serif(28, weight: FontWeight.w700, height: 1.25)),
         const SizedBox(height: 12),
-        Text(p.pron, style: AppType.sans(15, weight: FontWeight.w500, color: AppColors.inkSoft)),
+        ValueListenableBuilder<bool>(
+          valueListenable: DisplaySettings.showReading,
+          builder: (context, on, _) => !on
+              ? const SizedBox.shrink()
+              : Text(p.pron,
+                  style: AppType.sans(15,
+                      weight: FontWeight.w500, color: AppColors.inkSoft)),
+        ),
         const SizedBox(height: 28),
         Row(
           children: [
@@ -154,7 +163,13 @@ class _TravelPhraseScreenState extends State<TravelPhraseScreen> {
           ],
         ),
         const SizedBox(height: 4),
-        Text(p.pron, style: AppType.sans(13, color: AppColors.inkFaint)),
+        ValueListenableBuilder<bool>(
+          valueListenable: DisplaySettings.showReading,
+          builder: (context, on, _) => !on
+              ? const SizedBox.shrink()
+              : Text(p.pron,
+                  style: AppType.sans(13, color: AppColors.inkFaint)),
+        ),
         const Divider(height: 24, color: AppColors.line),
         Text(p.ko, style: AppType.serif(20, weight: FontWeight.w600, height: 1.3)),
         const SizedBox(height: 16),
