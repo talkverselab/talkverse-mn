@@ -2,6 +2,7 @@ import 'dart:math' as math;
 
 import 'package:flutter/material.dart';
 
+import '../../core/display_settings.dart';
 import '../../domain/models/flashcard.dart';
 import '../../services/tts_service.dart';
 import '../../theme/app_colors.dart';
@@ -78,6 +79,7 @@ class _FlashcardSessionScreenState extends State<FlashcardSessionScreen>
       appBar: AppBar(
         title: Text(widget.title, style: AppType.serif(18)),
         actions: [
+          const ReadingToggleAction(),
           IconButton(
             icon: const Icon(Icons.shuffle_rounded),
             tooltip: '섞기',
