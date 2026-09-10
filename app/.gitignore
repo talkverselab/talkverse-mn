@@ -43,3 +43,7 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
+
+# 서명 키 (로컬 전용)
+android/key.properties
+android/app/signing-key.jks
