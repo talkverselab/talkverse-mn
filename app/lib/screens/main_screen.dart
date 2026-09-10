@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'update_screen.dart';
+
 import '../theme/app_colors.dart';
 import '../theme/app_typography.dart';
 import '../widgets/ui_kit.dart';
@@ -243,6 +245,7 @@ class _LearningTab extends StatelessWidget {
     return ListView(
       padding: const EdgeInsets.fromLTRB(20, 16, 20, 28),
       children: [
+        const UpdateEntryTile(),
         Text('내 학습', style: AppType.serif(26)),
         const SizedBox(height: 6),
         Text('L1~L4 lemma 1,985개 · 빈도순 · POS 필터',
