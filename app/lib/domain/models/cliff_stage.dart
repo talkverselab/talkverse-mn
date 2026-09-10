@@ -27,7 +27,7 @@ class CliffStage {
   int get count => rankTo - rankFrom + 1;
 }
 
-/// OpenSubtitles/Tatoeba 기반 몽골어 고빈도 lemma 절벽(근사치).
+/// 공개 말뭉치 기반 몽골어 고빈도 lemma 절벽(근사치).
 /// L1 골격(대명사·첨사·후치사·기본동사) → L2 일상 명사·형용사 → L3 여행 → L4 감정.
 const cliffStages = <CliffStage>[
   CliffStage(

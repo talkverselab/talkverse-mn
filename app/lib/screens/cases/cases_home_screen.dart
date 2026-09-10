@@ -61,7 +61,7 @@ class _CliffHeader extends StatelessWidget {
         const SizedBox(height: 10),
         Text(
           '120 → 210 → 230 → 250 lemma. '
-          'OpenSubtitles/Tatoeba 기반 고빈도 절벽구간 — 빈도순으로 익힌다.',
+          '공개 말뭉치 기반 고빈도 절벽구간 — 빈도순으로 익힌다.',
           style: AppType.sans(13, weight: FontWeight.w400, color: AppColors.inkSoft, height: 1.5),
         ),
         const SizedBox(height: 4),
