@@ -1,15 +1,19 @@
 import 'package:flutter/material.dart';
 
-import 'update_screen.dart';
-
-import '../theme/app_colors.dart';
-import '../theme/app_typography.dart';
-import '../widgets/ui_kit.dart';
-import 'alphabet/cyrillic_alphabet_screen.dart';
-import 'cases/cases_home_screen.dart';
-import 'conversation/flashcards_home_screen.dart';
-import 'curriculum/curriculum_home_screen.dart';
-import 'travel/travel_dating_home_screen.dart';
+import '../core/theme.dart';
+import '../main.dart';
+import '../widgets/spanish_decor.dart';
+import 'chunk_search_screen.dart';
+import 'conversation_screen.dart';
+import 'episode_screen.dart';
+import 'grammar_lesson_screen.dart';
+import 'profile_screen.dart';
+import 'sentence_flashcard_screen.dart';
+import 'speaking_practice_screen.dart';
+import 'progress_screen.dart';
+import 'topic_vocab_screen.dart';
+import 'word_flashcard_screen.dart';
+import 'word_freq_screen.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({super.key});
@@ -21,303 +25,365 @@ class MainScreen extends StatefulWidget {
 class _MainScreenState extends State<MainScreen> {
   int _index = 0;
 
-  static const _tabs = <_TabDef>[
-    _TabDef('홈', Icons.cottage_rounded, Icons.cottage_outlined),
-    _TabDef('회화', Icons.style_rounded, Icons.style_outlined),
-    _TabDef('문법', Icons.account_tree_rounded, Icons.account_tree_outlined),
-    _TabDef('내 학습', Icons.person_rounded, Icons.person_outline_rounded),
+  static const List<Widget> _screens = [
+    HomeScreen(),
+    ConversationScreen(),
+    ProgressScreen(),
+    ProfileScreen(),
+  ];
+
+  static const List<NavigationDestination> _tabs = [
+    NavigationDestination(icon: Icon(Icons.home_outlined), selectedIcon: Icon(Icons.home), label: '홈'),
+    NavigationDestination(icon: Icon(Icons.menu_book_outlined), selectedIcon: Icon(Icons.menu_book), label: '학습'),
+    NavigationDestination(icon: Icon(Icons.bar_chart_outlined), selectedIcon: Icon(Icons.bar_chart), label: '진행'),
+    NavigationDestination(icon: Icon(Icons.person_outline), selectedIcon: Icon(Icons.person), label: '프로필'),
   ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.bg,
-      body: SafeArea(
-        bottom: false,
-        child: IndexedStack(
-          index: _index,
-          children: [
-            _HomeTab(onJump: (i) => setState(() => _index = i)),
-            const FlashcardsHomeScreen(),
-            const CurriculumHomeScreen(),
-            const _LearningTab(),
-          ],
-        ),
-      ),
-      bottomNavigationBar: _BottomNav(
-        index: _index,
-        tabs: _tabs,
-        onTap: (i) => setState(() => _index = i),
+      body: IndexedStack(index: _index, children: _screens),
+      bottomNavigationBar: NavigationBar(
+        selectedIndex: _index,
+        onDestinationSelected: (i) => setState(() => _index = i),
+        destinations: _tabs,
       ),
     );
   }
 }
 
-class _TabDef {
-  final String label;
-  final IconData active;
-  final IconData inactive;
-  const _TabDef(this.label, this.active, this.inactive);
-}
-
-// ─────────────────────────────────────────────────────────── 홈 탭
-
-class _HomeTab extends StatelessWidget {
-  const _HomeTab({required this.onJump});
-  final ValueChanged<int> onJump;
+class HomeScreen extends StatelessWidget {
+  const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return ListView(
-      padding: const EdgeInsets.fromLTRB(20, 14, 20, 28),
-      children: [
-        const SizedBox(height: 2),
-        const BrandMark(),
-        const SizedBox(height: 26),
-        const Eyebrow('한국 화자를 위한 몽골어'),
-        const SizedBox(height: 10),
-        Text('여행에서 만나\n데이트까지 가는 몽골어',
-            style: AppType.serif(28, height: 1.16)),
-        const SizedBox(height: 12),
-        Text(
-          '몽골은 한국어와 같은 어순(SOV) · 격은 조사와 1:1 · 관사 없음 — 한국인에게 유리합니다. '
-          '여행 데이팅 250문장을 문법 설명과 함께.',
-          style: AppType.sans(14, color: AppColors.inkSoft, height: 1.55),
-        ),
-        const SizedBox(height: 22),
-        _HeroCard(
-          eyebrow: '여행 데이팅 회화',
-          title: '테마별 50문장 × 5',
-          subtitle: '첫인사·자기소개·데이트·여행·로맨스',
-          fill: AppColors.peach,
-          icon: Icons.favorite_rounded,
-          onTap: () => Navigator.of(context).push(
-            MaterialPageRoute(builder: (_) => const TravelDatingHomeScreen()),
-          ),
-        ),
-        const SizedBox(height: 12),
-        _HeroCard(
-          eyebrow: '문법 골격',
-          title: '알파벳 + 9단계 커리큘럼',
-          subtitle: '모음조화 · 격 · 동사 어미',
-          fill: AppColors.mint,
-          icon: Icons.account_tree_rounded,
-          onTap: () => onJump(2),
-        ),
-        const SizedBox(height: 12),
-        _HeroCard(
-          eyebrow: '플래시카드',
-          title: '문장으로 굴려 익히기',
-          subtitle: '회화 문장을 카드로 · 뒤집기 + 발음',
-          fill: AppColors.lilac,
-          icon: Icons.style_rounded,
-          onTap: () => onJump(1),
-        ),
-        const SizedBox(height: 12),
-        _HeroCard(
-          eyebrow: '몽골 키릴 35자',
-          title: 'Аа · 소리부터',
-          subtitle: '모음조화 · 가짜친구 · 몽골 자음 · Ө Ү',
-          fill: AppColors.sky,
-          icon: Icons.abc_rounded,
-          onTap: () => Navigator.of(context).push(
-            MaterialPageRoute(builder: (_) => const CyrillicAlphabetScreen()),
-          ),
-        ),
-        const SizedBox(height: 26),
-        const Eyebrow('왜 한국인에게 유리한가'),
-        const SizedBox(height: 12),
-        Row(
-          children: const [
-            Expanded(child: _StatCard(value: '1:1', label: '격 ↔ 조사', fill: AppColors.peach)),
-            SizedBox(width: 12),
-            Expanded(child: _StatCard(value: '자유', label: '어순', fill: AppColors.mint)),
-            SizedBox(width: 12),
-            Expanded(child: _StatCard(value: '0', label: '관사', fill: AppColors.sky)),
-          ],
-        ),
-        const SizedBox(height: 14),
-        OutlineCard(
-          fill: AppColors.lilacLight,
-          child: Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              const Icon(Icons.hearing_rounded, color: AppColors.ink, size: 20),
-              const SizedBox(width: 12),
-              Expanded(
-                child: Text(
-                  '진짜 보스는 모음조화·발음. 규칙은 단순하니 [소리]로 익히고 '
-                  '나머지는 현지 듣기로 떠넘깁니다.',
-                  style: AppType.sans(13, weight: FontWeight.w500, color: AppColors.ink, height: 1.5),
-                ),
-              ),
-            ],
-          ),
-        ),
-      ],
-    );
-  }
-}
-
-class _HeroCard extends StatelessWidget {
-  const _HeroCard({
-    required this.eyebrow,
-    required this.title,
-    required this.subtitle,
-    required this.fill,
-    required this.icon,
-    required this.onTap,
-  });
-  final String eyebrow;
-  final String title;
-  final String subtitle;
-  final Color fill;
-  final IconData icon;
-  final VoidCallback onTap;
-
-  @override
-  Widget build(BuildContext context) {
-    return OutlineCard(
-      fill: fill,
-      padding: const EdgeInsets.all(18),
-      onTap: onTap,
-      child: Row(
+    return Scaffold(
+      backgroundColor: AppColors.cal,
+      body: Stack(
         children: [
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+          const Positioned.fill(child: AzulejoPattern(opacity: 0.06)),
+          SafeArea(
+            child: ListView(
+              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
               children: [
-                Text(eyebrow.toUpperCase(),
-                    style: AppType.sans(10.5, weight: FontWeight.w800, color: AppColors.inkSoft, spacing: 1.2)),
+                Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Row(
+                            children: const [
+                              Text(
+                                '¡Hola!',
+                                style: TextStyle(
+                                  fontSize: 26,
+                                  fontWeight: FontWeight.w900,
+                                  color: AppColors.rojo,
+                                ),
+                              ),
+                              SizedBox(width: 6),
+                              Text('👋', style: TextStyle(fontSize: 22)),
+                            ],
+                          ),
+                          const SizedBox(height: 2),
+                          const Text(
+                            '한국 학습자, 오늘도 시작해요',
+                            style: TextStyle(
+                              fontSize: 13,
+                              color: AppColors.tintaLight,
+                              fontWeight: FontWeight.w500,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    const StreakChip(days: 1),
+                    const SizedBox(width: 8),
+                    Container(
+                      width: 36,
+                      height: 36,
+                      decoration: BoxDecoration(
+                        color: AppColors.cal,
+                        border: Border.all(color: AppColors.gualda),
+                        shape: BoxShape.circle,
+                      ),
+                      child: const Icon(Icons.person, color: AppColors.rojo, size: 20),
+                    ),
+                  ],
+                ),
+                const SizedBox(height: 18),
+                const Text(
+                  '오늘의 학습',
+                  style: TextStyle(
+                    fontSize: 14,
+                    fontWeight: FontWeight.w800,
+                    color: AppColors.tinta,
+                    letterSpacing: 1.5,
+                  ),
+                ),
                 const SizedBox(height: 8),
-                Text(title, style: AppType.serif(20)),
-                const SizedBox(height: 6),
-                Text(subtitle,
-                    style: AppType.sans(12.5, weight: FontWeight.w500, color: AppColors.inkSoft, height: 1.4)),
+                const _TodayMission(),
+                const SizedBox(height: 22),
+                Row(
+                  children: const [
+                    SolMark(size: 22),
+                    SizedBox(width: 8),
+                    Text(
+                      '메인 메뉴',
+                      style: TextStyle(
+                        fontSize: 14,
+                        fontWeight: FontWeight.w800,
+                        color: AppColors.tinta,
+                        letterSpacing: 2,
+                      ),
+                    ),
+                  ],
+                ),
+                const SizedBox(height: 10),
+                _MenuGrid(),
+                const SizedBox(height: 28),
+                const BandDivider(),
+                const SizedBox(height: 12),
+                const Center(
+                  child: Text(
+                    '몽골어유니버스 · 2026',
+                    style: TextStyle(
+                      color: AppColors.tintaLight,
+                      fontSize: 11,
+                      letterSpacing: 4,
+                    ),
+                  ),
+                ),
+                const SizedBox(height: 120),
               ],
             ),
           ),
-          const SizedBox(width: 12),
-          Container(
-            width: 50,
-            height: 50,
-            decoration: BoxDecoration(
-              color: AppColors.surface,
-              shape: BoxShape.circle,
-              border: Border.all(color: AppColors.outline, width: 1.6),
+        ],
+      ),
+    );
+  }
+}
+
+/// 홈 '오늘의 학습' — 첫 미완료 에피소드와 실제 진행도 연결.
+class _TodayMission extends StatefulWidget {
+  const _TodayMission();
+
+  @override
+  State<_TodayMission> createState() => _TodayMissionState();
+}
+
+class _TodayMissionState extends State<_TodayMission> {
+  EpisodeMeta? _meta;
+  int _learned = 0;
+  int _total = 40;
+
+  @override
+  void initState() {
+    super.initState();
+    _load();
+  }
+
+  Future<void> _load() async {
+    await EpisodeCatalog.instance.ensureLoaded();
+    final all = EpisodeCatalog.instance.all;
+    if (all.isEmpty) return;
+    final turns = await appDb.select(appDb.turns).get();
+    final progress = await appDb.select(appDb.userProgress).get();
+    final learnedIds = progress.where((p) => p.learned).map((p) => p.turnId).toSet();
+    for (final meta in all) {
+      final epTurns = turns
+          .where((t) => t.level == meta.level && t.episodeId == meta.id)
+          .toList();
+      final total = epTurns.length;
+      final learned = epTurns.where((t) => learnedIds.contains(t.id)).length;
+      if (total == 0 || learned < total || meta == all.last) {
+        if (mounted) {
+          setState(() {
+            _meta = meta;
+            _learned = learned;
+            _total = total == 0 ? 40 : total;
+          });
+        }
+        return;
+      }
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final meta = _meta;
+    if (meta == null) return const SizedBox(height: 120);
+    final ratio = _total == 0 ? 0.0 : _learned / _total;
+    return InkWell(
+      onTap: () async {
+        await Navigator.push(
+          context,
+          MaterialPageRoute(builder: (_) => EpisodeScreen(meta: meta)),
+        );
+        _load();
+      },
+      child: Container(
+        padding: const EdgeInsets.all(16),
+        decoration: BoxDecoration(
+          gradient: const LinearGradient(
+            colors: [AppColors.rojoDeep, AppColors.rojo],
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+          ),
+          borderRadius: BorderRadius.circular(12),
+          border: Border.all(color: AppColors.gualda, width: 1.5),
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              meta.level == 'L1' ? 'PRINCIPIANTE 1' : meta.level,
+              style: const TextStyle(
+                color: AppColors.gualdaBright,
+                fontSize: 11,
+                fontWeight: FontWeight.w800,
+                letterSpacing: 2,
+              ),
             ),
-            child: Icon(icon, color: AppColors.ink, size: 24),
-          ),
-        ],
+            const SizedBox(height: 6),
+            Text(
+              '${meta.level} · ${meta.title}',
+              style: const TextStyle(
+                color: AppColors.cal,
+                fontSize: 19,
+                fontWeight: FontWeight.w900,
+              ),
+            ),
+            const SizedBox(height: 2),
+            Text(
+              'Minjun & Lucía 스토리 ${meta.emoji}',
+              style: TextStyle(color: AppColors.cal.withValues(alpha: 0.85), fontSize: 12),
+            ),
+            const SizedBox(height: 12),
+            ClipRRect(
+              borderRadius: BorderRadius.circular(3),
+              child: LinearProgressIndicator(
+                value: ratio,
+                minHeight: 6,
+                backgroundColor: AppColors.rojoDeep,
+                color: AppColors.gualda,
+              ),
+            ),
+            const SizedBox(height: 6),
+            Text(
+              '$_learned / $_total turn',
+              style: const TextStyle(color: AppColors.cal, fontSize: 11, fontWeight: FontWeight.w600),
+            ),
+          ],
+        ),
       ),
     );
   }
 }
 
-class _StatCard extends StatelessWidget {
-  const _StatCard({required this.value, required this.label, required this.fill});
-  final String value;
+class _MenuGrid extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    final items = <_MenuItem>[
+      _MenuItem(label: '회화', sub: 'Яриа', badge: 'Ch', color: AppColors.rojo,
+        builder: (_) => const ConversationScreen()),
+      _MenuItem(label: '문법', sub: 'Дүрэм', badge: 'G', color: AppColors.rojoDeep,
+        builder: (_) => const GrammarHubScreen()),
+      _MenuItem(label: '문장 카드', sub: 'Өгүүлбэр', badge: 'S', color: AppColors.tinta,
+        builder: (_) => const SentenceFlashcardScreen()),
+      _MenuItem(label: '말하기', sub: 'Ярих', badge: '🎙', color: AppColors.rojo,
+        builder: (_) => const SpeakingPracticeScreen()),
+      _MenuItem(label: '청크 검색', sub: 'Хайлт', badge: '🔍', color: AppColors.gualdaDeep,
+        builder: (_) => const ChunkSearchScreen()),
+      _MenuItem(label: '단어', sub: 'Үг', badge: 'W', color: AppColors.oliva,
+        builder: (_) => const TopicVocabScreen()),
+      _MenuItem(label: '표현', sub: 'Хэллэг', badge: 'E', color: AppColors.rojoLight,
+        builder: (_) => const TopicVocabScreen(
+            title: '주제별 표현',
+            asset: 'assets/data/vocab/travel_expressions.json')),
+      _MenuItem(label: '빈도 단어', sub: 'Давтамж', badge: 'F', color: AppColors.gualda,
+        builder: (_) => const WordFreqScreen()),
+      _MenuItem(label: '발음', sub: 'Дуудлага', badge: 'rr', color: AppColors.er,
+        builder: (_) => const _ComingSoon(title: '발음 (rr · ñ · 강세)')),
+      _MenuItem(label: '단어 카드', sub: 'Карт', badge: 'R', color: AppColors.gualdaDeep,
+        builder: (_) => const WordFlashcardScreen()),
+    ];
+
+    return GridView.builder(
+      shrinkWrap: true,
+      physics: const NeverScrollableScrollPhysics(),
+      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+        crossAxisCount: 3,
+        mainAxisSpacing: 10,
+        crossAxisSpacing: 10,
+        childAspectRatio: 0.95,
+      ),
+      itemCount: items.length,
+      itemBuilder: (context, i) => _MenuTile(item: items[i]),
+    );
+  }
+}
+
+class _MenuItem {
   final String label;
-  final Color fill;
-
-  @override
-  Widget build(BuildContext context) {
-    return OutlineCard(
-      fill: fill,
-      padding: const EdgeInsets.symmetric(vertical: 18, horizontal: 8),
-      child: Column(
-        children: [
-          Text(value, style: AppType.serif(22)),
-          const SizedBox(height: 4),
-          Text(label, style: AppType.sans(12, weight: FontWeight.w700, color: AppColors.inkSoft)),
-        ],
-      ),
-    );
-  }
+  final String sub;
+  final String badge;
+  final Color color;
+  final WidgetBuilder builder;
+  _MenuItem({
+    required this.label,
+    required this.sub,
+    required this.badge,
+    required this.color,
+    required this.builder,
+  });
 }
 
-// ─────────────────────────────────────────────────── 내 학습 / placeholder
+class _MenuTile extends StatelessWidget {
+  final _MenuItem item;
+  const _MenuTile({required this.item});
 
-class _LearningTab extends StatelessWidget {
-  const _LearningTab();
   @override
   Widget build(BuildContext context) {
-    return ListView(
-      padding: const EdgeInsets.fromLTRB(20, 16, 20, 28),
-      children: [
-        const UpdateEntryTile(),
-        Text('내 학습', style: AppType.serif(26)),
-        const SizedBox(height: 6),
-        Text('L1~L4 lemma 1,985개 · 빈도순 · POS 필터',
-            style: AppType.sans(13, color: AppColors.inkSoft)),
-        const SizedBox(height: 20),
-        OutlineCard(
-          onTap: () => Navigator.of(context).push(
-            MaterialPageRoute(builder: (_) => const CasesHomeScreen()),
-          ),
-          padding: const EdgeInsets.all(18),
-          child: Row(
-            children: [
-              Container(
-                width: 46,
-                height: 46,
-                decoration: BoxDecoration(
-                  color: AppColors.peach,
-                  borderRadius: BorderRadius.circular(13),
-                  border: Border.all(color: AppColors.outline, width: 1.4),
-                ),
-                child: const Icon(Icons.menu_book_rounded, color: AppColors.ink),
-              ),
-              const SizedBox(width: 14),
-              Expanded(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text('단어 사전 · cliff browser', style: AppType.serif(16)),
-                    const SizedBox(height: 3),
-                    Text('격변화 5단계 절벽 탐색',
-                        style: AppType.sans(12.5, color: AppColors.inkSoft)),
-                  ],
-                ),
-              ),
-              const Icon(Icons.chevron_right_rounded, color: AppColors.inkFaint),
-            ],
-          ),
+    return InkWell(
+      onTap: () => Navigator.push(context, MaterialPageRoute(builder: item.builder)),
+      borderRadius: BorderRadius.circular(10),
+      child: Container(
+        decoration: BoxDecoration(
+          color: AppColors.cal,
+          borderRadius: BorderRadius.circular(10),
+          border: Border.all(color: AppColors.gualda.withValues(alpha: 0.5)),
+          boxShadow: [
+            BoxShadow(
+              color: AppColors.tinta.withValues(alpha: 0.06),
+              blurRadius: 6,
+              offset: const Offset(1, 2),
+            ),
+          ],
         ),
-      ],
-    );
-  }
-}
-
-// ─────────────────────────────────────────────────────── 하단 내비
-
-class _BottomNav extends StatelessWidget {
-  const _BottomNav({required this.index, required this.tabs, required this.onTap});
-  final int index;
-  final List<_TabDef> tabs;
-  final ValueChanged<int> onTap;
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      decoration: const BoxDecoration(
-        color: AppColors.surface,
-        border: Border(top: BorderSide(color: AppColors.outline, width: 1.4)),
-      ),
-      child: SafeArea(
-        top: false,
-        child: SizedBox(
-          height: 60,
-          child: Row(
+        child: Padding(
+          padding: const EdgeInsets.all(10),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              for (var i = 0; i < tabs.length; i++)
-                Expanded(
-                  child: _NavItem(
-                    def: tabs[i],
-                    selected: i == index,
-                    onTap: () => onTap(i),
-                  ),
+              TileBadge(text: item.badge, size: 44, color: item.color),
+              const SizedBox(height: 8),
+              Text(
+                item.label,
+                style: const TextStyle(
+                  fontSize: 13,
+                  fontWeight: FontWeight.w800,
+                  color: AppColors.tinta,
                 ),
+              ),
+              const SizedBox(height: 2),
+              Text(
+                item.sub,
+                style: const TextStyle(fontSize: 10, color: AppColors.tintaLight),
+                overflow: TextOverflow.ellipsis,
+              ),
             ],
           ),
         ),
@@ -326,32 +392,20 @@ class _BottomNav extends StatelessWidget {
   }
 }
 
-class _NavItem extends StatelessWidget {
-  const _NavItem({required this.def, required this.selected, required this.onTap});
-  final _TabDef def;
-  final bool selected;
-  final VoidCallback onTap;
+class _ComingSoon extends StatelessWidget {
+  final String title;
+  const _ComingSoon({required this.title});
 
   @override
   Widget build(BuildContext context) {
-    final color = selected ? AppColors.ink : AppColors.inkFaint;
-    return GestureDetector(
-      behavior: HitTestBehavior.opaque,
-      onTap: onTap,
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          AnimatedScale(
-            scale: selected ? 1.1 : 1,
-            duration: const Duration(milliseconds: 220),
-            curve: Curves.easeOutBack,
-            child: Icon(selected ? def.active : def.inactive, color: color, size: 25),
-          ),
-          const SizedBox(height: 4),
-          Text(def.label,
-              style: AppType.sans(10.5,
-                  weight: selected ? FontWeight.w800 : FontWeight.w600, color: color)),
-        ],
+    return Scaffold(
+      backgroundColor: AppColors.cal,
+      appBar: AppBar(title: Text(title)),
+      body: const Center(
+        child: Text(
+          'Próximamente · 준비 중',
+          style: TextStyle(color: AppColors.tintaLight, letterSpacing: 2),
+        ),
       ),
     );
   }

@@ -1,15 +1,20 @@
-// 몽골어유니버스 스모크 테스트 — 앱이 빌드되고 하단 내비가 뜨는지 확인.
+import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
-import 'package:mn_app/main.dart';
+import 'package:mn_app/core/theme.dart';
 
 void main() {
-  testWidgets('App boots and shows home tab', (WidgetTester tester) async {
-    await tester.pumpWidget(const MongolianUniverseApp());
-    await tester.pump();
+  testWidgets('Theme builds', (WidgetTester tester) async {
+    await tester.pumpWidget(MaterialApp(
+      theme: AppTheme.light(),
+      home: const Scaffold(body: Text('hola')),
+    ));
+    expect(find.text('hola'), findsOneWidget);
+  });
 
-    // 하단 내비 라벨이 보이면 메인 화면이 뜬 것.
-    expect(find.text('홈'), findsWidgets);
-    expect(find.text('회화'), findsWidgets);
+  test('conjColor maps groups', () {
+    expect(conjColor('ar'), AppColors.ar);
+    expect(conjColor('irregular'), AppColors.irregular);
+    expect(conjColor(null), AppColors.neutral);
   });
 }

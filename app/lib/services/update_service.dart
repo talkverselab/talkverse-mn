@@ -56,7 +56,7 @@ class UpdateService {
   UpdateService._();
   static final UpdateService instance = UpdateService._();
 
-  static const repo = 'talkverselab/talkverse-mn';
+  static const repo = 'talkverselab/talkverse-de';
   static const _base = 'https://github.com/$repo/releases/download/latest';
   static const apkName = 'app-latest.apk';
   static const releasePage = 'https://github.com/$repo/releases/tag/latest';
