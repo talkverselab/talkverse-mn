@@ -1,5 +1,5 @@
 name: mn_app
-description: "몽골어유니버스 — 한국 화자 몽골어 학습 앱 (cliff·격·모음조화 중심)"
+description: "몽골어유니버스 — 한국 화자 몽골어 학습 앱"
 publish_to: 'none'
 version: 0.1.0+1
 
@@ -23,8 +23,8 @@ dependencies:
   # Util
   csv: ^6.0.0
   flutter_svg: ^2.0.10+1
+  speech_to_text: ^7.4.0
   flutter_tts: ^4.2.0
-  google_fonts: ^8.1.0
 
   # Drift (SQLite ORM)
   drift: ^2.20.3
@@ -35,37 +35,29 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^6.0.0
+  flutter_launcher_icons: ^0.14.1
 
+  # Drift codegen
   drift_dev: ^2.20.3
   build_runner: ^2.4.13
 
-  flutter_launcher_icons: ^0.14.1
-
-flutter_launcher_icons:
-  android: true
-  ios: false
-  image_path: "assets/icon/icon_full.png"
-  min_sdk_android: 21
-  adaptive_icon_background: "#FCFCF8"
-  adaptive_icon_foreground: "assets/icon/icon_fg.png"
 
 flutter:
   uses-material-design: true
 
   assets:
-    # cliff 데이터 (L1~L4 lemma 목록)
-    - assets/data/cliff/l1_lemma.tsv
-    - assets/data/cliff/l2_lemma.tsv
-    - assets/data/cliff/l3_lemma.tsv
-    - assets/data/cliff/l4_lemma.tsv
-    # 여행 데이팅 회화 (테마별 50문장)
-    - assets/data/travel/arrival.json
-    - assets/data/travel/self_intro.json
-    - assets/data/travel/ask_out.json
-    - assets/data/travel/travel_together.json
-    - assets/data/travel/romance.json
-    # 사전 합성 TTS (Azure mn-MN 여성) + manifest
+    - assets/data/audio_manifest.json
+    - assets/data/dialogues/
+    - assets/data/freq/
+    - assets/data/grammar/
+    - assets/data/vocab/
     - assets/audio/
-    # 격변화 문법 노트 (이후 단계에서 채움 — 파일 생성 전까지 비활성화)
-    # - assets/data/grammar/cases_overview.json
-    # - assets/data/grammar/prep_case_map.json
+
+flutter_launcher_icons:
+  android: true
+  ios: true
+  remove_alpha_ios: true
+  image_path: "assets/icon/icon_full.png"
+  adaptive_icon_background: "#FCFCF8"
+  adaptive_icon_foreground: "assets/icon/icon_fg.png"
+  min_sdk_android: 21

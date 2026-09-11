@@ -1,50 +1,171 @@
 import 'package:flutter/material.dart';
 
+/// Deutschland 컬러 팔레트 — 국기 Schwarz·Rot·Gold + 석회벽 백색·올리브·청색
+class AppColors {
+  // 主色 — Rojo (국기 빨강)
+  static const Color rojo = Color(0xFF0F5FA8);
+  static const Color rojoDeep = Color(0xFF0A3F70);
+  static const Color rojoLight = Color(0xFF4A8FD1);
+
+  // 副色 — Gualda (국기 노랑/금)
+  static const Color gualda = Color(0xFFC8102E);
+  static const Color gualdaBright = Color(0xFFE04A62);
+  static const Color gualdaDeep = Color(0xFF8F0B21);
+
+  // Tinta (잉크, 본문 텍스트)
+  static const Color tinta = Color(0xFF1F1A17);
+  static const Color tintaLight = Color(0xFF5A4F48);
+
+  // Cal (석회 벽, 부드러운 미색 배경)
+  static const Color cal = Color(0xFFFBF5E6);
+  static const Color calDeep = Color(0xFFF1E6C8);
+
+  // Oliva (보조 강조)
+  static const Color oliva = Color(0xFF3E8E5A);
+
+  // Mediterráneo (정보성 강조)
+  static const Color mar = Color(0xFF1E6FA8);
+
+  // 명사 성(gender) 시각화
+  static const Color masc = Color(0xFF1E88E5); // el / -o
+  static const Color fem = Color(0xFFE53935); // la / -a
+  static const Color neutral = Color(0xFF8E8579); // 불변화·기타
+
+  // 동사 활용군 (시각 학습용)
+  static const Color ar = Color(0xFFE53935); // -ar
+  static const Color er = Color(0xFFFB8C00); // -er
+  static const Color ir = Color(0xFF43A047); // -ir
+  static const Color irregular = Color(0xFF6A1B9A); // 불규칙
+
+  // brand alias
+  static const Color brand = rojo;
+}
+
 class AppTheme {
-  // 러시아어유니버스 brand — 따뜻한 자작나무·계피·앰버 톤.
-  // 강렬한 러시아 적색 대신, 사모바르 차 한 잔의 따뜻함을 모티프로.
-  static const brand = Color(0xFFC58B5B); // cinnamon-amber
-
-  // Surface 보조 톤 (페일 자작나무 / 따뜻한 미백)
-  static const _bgLight = Color(0xFFFAF6F0); // birch ivory
-  static const _bgDark = Color(0xFF1E1612);  // warm dark espresso
-
   static ThemeData light() {
-    final scheme = ColorScheme.fromSeed(
-      seedColor: brand,
-      brightness: Brightness.light,
-    );
-    return ThemeData(
-      colorScheme: scheme,
+    final base = ThemeData(
       useMaterial3: true,
-      brightness: Brightness.light,
-      scaffoldBackgroundColor: _bgLight,
-      fontFamilyFallback: const [
-        'Noto Sans',
-        'Noto Sans KR',
-        'PT Sans',
-        'Malgun Gothic',
-      ],
-      appBarTheme: AppBarTheme(
-        backgroundColor: _bgLight,
-        foregroundColor: scheme.onSurface,
+      colorScheme: ColorScheme(
+        brightness: Brightness.light,
+        primary: AppColors.rojo,
+        onPrimary: AppColors.cal,
+        primaryContainer: AppColors.rojoLight,
+        onPrimaryContainer: AppColors.tinta,
+        secondary: AppColors.gualda,
+        onSecondary: AppColors.tinta,
+        secondaryContainer: AppColors.gualdaBright,
+        onSecondaryContainer: AppColors.tinta,
+        tertiary: AppColors.oliva,
+        onTertiary: AppColors.cal,
+        tertiaryContainer: const Color(0xFFD6E4B0),
+        onTertiaryContainer: AppColors.tinta,
+        error: const Color(0xFFB00020),
+        onError: Colors.white,
+        surface: AppColors.cal,
+        onSurface: AppColors.tinta,
+        surfaceContainerHighest: AppColors.calDeep,
+        onSurfaceVariant: AppColors.tintaLight,
+        outline: AppColors.gualdaDeep,
+        outlineVariant: const Color(0xFFDCCDA4),
+      ),
+      scaffoldBackgroundColor: AppColors.cal,
+      fontFamily: 'Pretendard',
+    );
+
+    return base.copyWith(
+      appBarTheme: const AppBarTheme(
+        centerTitle: true,
         elevation: 0,
-        centerTitle: false,
-        scrolledUnderElevation: 0,
+        backgroundColor: AppColors.rojo,
+        foregroundColor: AppColors.cal,
+        titleTextStyle: TextStyle(
+          color: AppColors.cal,
+          fontSize: 18,
+          fontWeight: FontWeight.w700,
+          letterSpacing: 1.2,
+        ),
+      ),
+      cardTheme: CardThemeData(
+        elevation: 0,
+        color: AppColors.cal,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(8),
+          side: const BorderSide(color: AppColors.gualda, width: 0.8),
+        ),
+      ),
+      navigationBarTheme: NavigationBarThemeData(
+        backgroundColor: AppColors.tinta,
+        indicatorColor: AppColors.rojo,
+        labelTextStyle: WidgetStateProperty.resolveWith((states) {
+          final selected = states.contains(WidgetState.selected);
+          return TextStyle(
+            color: selected ? AppColors.gualdaBright : AppColors.calDeep,
+            fontSize: 11,
+            fontWeight: FontWeight.w600,
+          );
+        }),
+        iconTheme: WidgetStateProperty.resolveWith((states) {
+          final selected = states.contains(WidgetState.selected);
+          return IconThemeData(
+            color: selected ? AppColors.cal : AppColors.calDeep,
+            size: 24,
+          );
+        }),
+      ),
+      chipTheme: ChipThemeData(
+        backgroundColor: AppColors.calDeep,
+        labelStyle: const TextStyle(color: AppColors.tinta, fontWeight: FontWeight.w600),
+        side: const BorderSide(color: AppColors.gualda),
+        selectedColor: AppColors.rojo,
+        secondaryLabelStyle: const TextStyle(color: AppColors.cal),
+      ),
+      dividerTheme: const DividerThemeData(
+        color: AppColors.gualda,
+        thickness: 0.5,
+      ),
+      listTileTheme: const ListTileThemeData(
+        iconColor: AppColors.rojo,
+        textColor: AppColors.tinta,
       ),
     );
   }
 
   static ThemeData dark() {
-    final scheme = ColorScheme.fromSeed(
-      seedColor: brand,
-      brightness: Brightness.dark,
-    );
     return ThemeData(
-      colorScheme: scheme,
       useMaterial3: true,
-      brightness: Brightness.dark,
-      scaffoldBackgroundColor: _bgDark,
+      colorScheme: ColorScheme.fromSeed(
+        seedColor: AppColors.rojo,
+        brightness: Brightness.dark,
+      ),
+      fontFamily: 'Pretendard',
     );
+  }
+}
+
+/// 동사 활용군 색 — 'ar' | 'er' | 'ir' | 'irregular'
+Color conjColor(String? group) {
+  switch (group) {
+    case 'ar':
+      return AppColors.ar;
+    case 'er':
+      return AppColors.er;
+    case 'ir':
+      return AppColors.ir;
+    case 'irregular':
+      return AppColors.irregular;
+    default:
+      return AppColors.neutral;
+  }
+}
+
+/// 명사 성 색 — 'm' | 'f'
+Color genderColor(String? gender) {
+  switch (gender) {
+    case 'm':
+      return AppColors.masc;
+    case 'f':
+      return AppColors.fem;
+    default:
+      return AppColors.neutral;
   }
 }

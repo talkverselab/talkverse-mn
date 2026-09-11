@@ -14,6 +14,9 @@ import 'package:path_provider/path_provider.dart';
 ///    런타임 합성(온라인). 실패 시 무음 — 기기 내장 TTS 는 몽골어 보이스가 없어 쓰지 않는다.
 class TtsService {
   TtsService._();
+
+  /// 음성 인식 로케일 (말하기 연습). 재생은 번들 mp3 를 쓴다.
+  static const String locale = 'mn-MN';
   static final TtsService instance = TtsService._();
 
   // --- 설정 (빌드 시 --dart-define 으로 주입) ---
@@ -149,4 +152,7 @@ class TtsService {
       .replaceAll('&', '&amp;')
       .replaceAll('<', '&lt;')
       .replaceAll('>', '&gt;');
+
+  /// 화자 성별은 번들 음성이 하나라 구분하지 않는다.
+  Future<void> speakAs(String text, {required String gender}) => speak(text);
 }
