@@ -6,6 +6,7 @@ import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart' show rootBundle;
 import 'package:path_provider/path_provider.dart';
+import '../core/platform.dart';
 
 /// 몽골어 음성 — 1초 지연 후 재생.
 ///
@@ -44,10 +45,26 @@ class TtsService {
       .replaceAll('́', '')
       .trim();
 
+  bool _iosAudioSet = false;
+
+  /// iOS: 무음 스위치가 켜져 있어도 학습 음성이 나오게 재생 카테고리를 잡는다.
+  Future<void> _ensureIosAudio() async {
+    if (_iosAudioSet || !isIOS) return;
+    _iosAudioSet = true;
+    await AudioPlayer.global.setAudioContext(AudioContext(
+      iOS: AudioContextIOS(
+        category: AVAudioSessionCategory.playback,
+        options: const {AVAudioSessionOptions.duckOthers},
+      ),
+      android: const AudioContextAndroid(),
+    ));
+  }
+
   /// 1초 지연 후 재생. 연속 호출 시 마지막 것만 재생.
   Future<void> speak(String text) async {
     final clean = _clean(text);
     if (clean.isEmpty) return;
+    await _ensureIosAudio();
 
     await stop(); // 이전 재생/지연 취소 (_seq 증가)
     final my = ++_seq; // 그 다음 내 시퀀스 토큰을 잡는다
