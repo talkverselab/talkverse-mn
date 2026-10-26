@@ -30,7 +30,7 @@ class ProfileScreen extends StatelessWidget {
             ),
             child: Row(
               children: [
-                const TileBadge(text: 'DE', size: 60, color: AppColors.tinta),
+                const TileBadge(text: 'MN', size: 60, color: AppColors.mongol),
                 SizedBox(width: 14),
                 Expanded(
                   child: Column(
