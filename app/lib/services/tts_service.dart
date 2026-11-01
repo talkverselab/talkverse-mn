@@ -104,7 +104,7 @@ class TtsService {
     } catch (_) {}
   }
 
-  // --- 사전 합성 manifest (clean text -> Supabase 공개 mp3 URL) ---
+  // --- 사전 합성 manifest (clean text -> 번들 mp3 경로) ---
   Future<Map<String, String>> _bundled() async {
     final m = _manifest;
     if (m != null) return m;

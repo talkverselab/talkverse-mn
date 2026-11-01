@@ -29,7 +29,6 @@ OUT = ROOT / "app" / "assets" / "audio"
 ENV = Path("C:/Users/Johnjeon/OneDrive/Archive/PROJECT/talkverse-learning/.env")
 VOICE = "mn-MN-YesuiNeural"  # 여성 (성별 없음 → 기본)
 REGION_DEFAULT = "koreacentral"
-BUCKET = "tts"  # Supabase Storage 공개 버킷
 
 
 def _env(name):
@@ -44,12 +43,7 @@ def _env(name):
 
 
 def public_base():
-    """manifest 의 mp3 경로 prefix.
-    기본 = 로컬 번들 'audio'(오프라인 재생). TTS_REMOTE=1 이면 Supabase 공개 URL."""
-    if os.environ.get("TTS_REMOTE") == "1":
-        url = (_env("SUPABASE_URL") or "").rstrip("/")
-        if url:
-            return f"{url}/storage/v1/object/public/{BUCKET}"
+    """manifest 의 mp3 경로 prefix — 앱 번들 'audio'(오프라인 재생)."""
     return "audio"
 
 
@@ -168,7 +162,7 @@ def main():
     for i, text in enumerate(texts, 1):
         fid = hashlib.md5(text.encode("utf-8")).hexdigest()[:12]
         fpath = OUT / f"{fid}.mp3"
-        manifest[text] = f"{base}/{fid}.mp3"  # 공개 URL (SUPABASE_URL 있으면)
+        manifest[text] = f"{base}/{fid}.mp3"
         if args.resume and fpath.exists() and fpath.stat().st_size > 1000:
             skip += 1
             continue
