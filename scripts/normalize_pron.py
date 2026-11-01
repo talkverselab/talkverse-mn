@@ -1,6 +1,6 @@
 """몽골 키릴 → 한글 독음 결정론적 변환기 (db/notes/mn_ko_transcription.md 규칙).
 
-학술 표준: 음성실험 기반 (о=어, у=오, ө=으, ү=우).
+학술 표준(음성실험 기반 모음 대응) (о=어, у=오, ө=으, ү=우).
 travel JSON 5개의 `pron` 필드를 mn 으로부터 일괄 재생성해 일관성을 보장한다.
 usage: python normalize_pron.py            # 미리보기(앞 12개)
        python normalize_pron.py --write     # 실제 기록

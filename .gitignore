@@ -48,7 +48,7 @@ Thumbs.db
 # Flutter create boilerplate (앱 root README 는 의미 없음, 루트 README 사용)
 app/README.md
 
-# 검수 코퍼스 캐시 (build_corpus.py 로 재생성 — DATA_Raw 에서)
+# 검수용 로컬 캐시(저장소에 넣지 않음)
 scripts/_corpus_wordforms.txt
 scripts/_corpus_freq.tsv
 scripts/_verify_report.md
