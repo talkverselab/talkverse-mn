@@ -149,7 +149,11 @@ class _SettingsGroup extends StatelessWidget {
         borderRadius: BorderRadius.circular(8),
         border: Border.all(color: AppColors.gualda.withValues(alpha: 0.5)),
       ),
-      child: Column(
+      clipBehavior: Clip.antiAlias,
+      // ListTile 의 잉크가 색칠한 Container 에 가려지지 않게 투명 Material 을 끼운다(Flutter 3.47 assert)
+      child: Material(
+        color: Colors.transparent,
+        child: Column(
         children: [
           for (var i = 0; i < items.length; i++) ...[
             ListTile(
@@ -174,6 +178,7 @@ class _SettingsGroup extends StatelessWidget {
               Container(height: 0.5, color: AppColors.gualda.withValues(alpha: 0.3)),
           ],
         ],
+      ),
       ),
     );
   }
