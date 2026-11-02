@@ -78,7 +78,7 @@ void main() {
     await t.tap(find.text('탈격').first);
     await wait(t, 2500);
     await shot(t, '11_affix_sheet');
-    await t.tapAt(const Offset(20, 20));
+    await t.tapAt(const Offset(500, 100)); // 시트 바깥(어두운 막)을 눌러 닫기
     await wait(t, 1000);
     await t.tap(find.byTooltip('접사 카드로 연습'));
     await wait(t, 2000);
