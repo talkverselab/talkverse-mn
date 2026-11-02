@@ -203,6 +203,9 @@ const Map<String, String> kDictEn = {
   '중급': 'Intermediate',
   '고급': 'Advanced',
   '최상급': 'Expert',
+  '어순 맞대기': 'Word order match',
+  '남성 모음': 'Back vowels',
+  '여성 모음': 'Front vowels',
 };
 
 const Map<String, String> kDictJa = {
@@ -394,6 +397,9 @@ const Map<String, String> kDictJa = {
   '중급': '中級',
   '고급': '上級',
   '최상급': '最上級',
+  '어순 맞대기': '語順あわせ',
+  '남성 모음': '男性母音',
+  '여성 모음': '女性母音',
 };
 
 const Map<String, String> kDictZh = {
@@ -585,4 +591,7 @@ const Map<String, String> kDictZh = {
   '중급': '中级',
   '고급': '高级',
   '최상급': '最高级',
+  '어순 맞대기': '语序对照',
+  '남성 모음': '阳性元音',
+  '여성 모음': '阴性元音',
 };

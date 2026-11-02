@@ -13,6 +13,7 @@ import '../services/dialogue_service.dart';
 import '../services/learner_prefs.dart';
 import '../services/tts_service.dart';
 import 'achievement_desk.dart';
+import 'word_order_panel.dart';
 
 /// 「모든 문장 듣기」 재생 패널 — 일본어앱 Grok UXUI 시안 02 「만화책 읽기형」을 옮김(2026-11-02, 일본어앱 `data/review/uxui/sian_02.md`).
 ///
@@ -301,6 +302,8 @@ class _CutPanel extends StatelessWidget {
         Expanded(child: SceneCut(dialogue: d, turn: turn, bubble: true)),
         const SizedBox(height: 10),
         _Caption(d: d, turn: turn, showGloss: showGloss, showRd: showRd, showKo: showKo, onSpeak: onSpeak),
+        // 몽골어 칸(UX 시안 01): 넓은 화면에서만 — 폰은 컷·캡션만으로도 빠듯하다
+        if (wide) ...[const SizedBox(height: 10), WordOrderPanel(turn: turn)],
       ]),
     );
   }

@@ -20,6 +20,8 @@ class DialogueTurn {
   final String note;
   final List<String> tags;
   final String? art; // 장면 그림 URL(나중에 채움)
+  /// 「어순 맞대기」 낱말 대응 [(몽골어, 한국어)] — 데이터에 `align: [[mn, ko], …]` 가 있을 때만(회화 작업 때 채움).
+  final List<(String, String)> align;
   const DialogueTurn({
     required this.num,
     required this.speaker,
@@ -30,6 +32,7 @@ class DialogueTurn {
     required this.note,
     required this.tags,
     this.art,
+    this.align = const [],
   });
 
   factory DialogueTurn.fromL1(Map<String, dynamic> j) => DialogueTurn(
@@ -42,6 +45,10 @@ class DialogueTurn {
         note: j['note'] as String? ?? '',
         tags: (j['tags'] as List?)?.cast<String>() ?? const [],
         art: j['art'] as String?,
+        align: [
+          for (final a in (j['align'] as List? ?? const []))
+            if (a is List && a.length >= 2) ('${a[0]}', '${a[1]}'),
+        ],
       );
 
   /// 그림 조회용 핵심 단어 후보: 몽골어 문장의 낱말(소문자, 2자 이상).
