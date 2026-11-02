@@ -272,3 +272,95 @@ class MeshBackdrop extends StatelessWidget {
     );
   }
 }
+
+// ── 일본어앱 장식(워드마크 그라데이션·구분선) — 2026-11-02 복제 ──
+/// 麻の葉 스타일 지그재그 디바이더 (수평 패턴)
+class AsanohaDivider extends StatelessWidget {
+  final double height;
+  final Color color;
+  const AsanohaDivider({super.key, this.height = 16, this.color = AppColors.kin});
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      height: height,
+      width: double.infinity,
+      child: CustomPaint(painter: _AsanohaPainter(color: color)),
+    );
+  }
+}
+
+class _AsanohaPainter extends CustomPainter {
+  final Color color;
+  _AsanohaPainter({required this.color});
+
+  @override
+  void paint(Canvas canvas, Size size) {
+    final paint = Paint()
+      ..color = color
+      ..style = PaintingStyle.stroke
+      ..strokeWidth = 1.0;
+    final h = size.height;
+    final unit = h * 0.9;
+    final path = Path()..moveTo(0, h * 0.85);
+    var up = true;
+    for (var x = 0.0; x <= size.width + unit; x += unit) {
+      path.lineTo(x, up ? h * 0.15 : h * 0.85);
+      up = !up;
+    }
+    canvas.drawPath(path, paint);
+    // 하단 얇은 기준선
+    canvas.drawLine(Offset(0, h * 0.95), Offset(size.width, h * 0.95),
+        paint..strokeWidth = 0.5);
+  }
+
+  @override
+  bool shouldRepaint(_) => false;
+}
+
+/// 붓 분리선 — 붓터치 느낌 그라데이션 라인
+class BrushDivider extends StatelessWidget {
+  final double height;
+  final Color? color; // null 이면 워드마크 그라데이션
+  const BrushDivider({super.key, this.height = 3, this.color});
+
+  @override
+  Widget build(BuildContext context) {
+    final c = color;
+    return Container(
+      height: height,
+      decoration: BoxDecoration(
+        gradient: c == null
+            ? AppColors.wordmark
+            : LinearGradient(
+                colors: [
+                  c.withValues(alpha: 0),
+                  c.withValues(alpha: 0.6),
+                  c,
+                  c.withValues(alpha: 0.6),
+                  c.withValues(alpha: 0),
+                ],
+              ),
+        borderRadius: BorderRadius.circular(height),
+      ),
+    );
+  }
+}
+
+/// 「몽골어」 워드마크처럼 그라데이션으로 칠한 글자(사이트 `.hero h1 .grad`).
+class GradText extends StatelessWidget {
+  final String text;
+  final TextStyle style;
+  const GradText(this.text, {super.key, required this.style});
+
+  @override
+  Widget build(BuildContext context) {
+    return ShaderMask(
+      blendMode: BlendMode.srcIn,
+      shaderCallback: (r) => AppColors.wordmark.createShader(Rect.fromLTWH(0, 0, r.width, r.height)),
+      child: Text(text, style: style.copyWith(color: Colors.white)),
+    );
+  }
+}
+
+/// 홈 상단 파스텔 메시 — 사이트 첫 화면의 번진 원(복숭아·금빛·라벤더·하늘)을 따뜻한 쪽으로, 아래로 갈수록 흰 바탕에 녹는다.

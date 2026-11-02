@@ -46,7 +46,35 @@ class AppColors {
 
   // brand alias
   static const Color brand = rojo;
+
+  // 일본어앱 화면 코드가 쓰는 이름(별칭, 2026-11-02 — LANG_APP_REPLICATE_PROMPT §3).
+  // 포인트(beni 계열) = 사이트 몽골어 페이지 `--a #3aa6e0` 을 글자 대비용으로 한 단계 진하게.
+  static const Color beni = Color(0xFF2B87BC);
+  static const Color beniDeep = Color(0xFF1F6E9C);
+  static const Color beniLight = Color(0xFF3AA6E0); // 사이트 `--a`
+  static const Color ai = Color(0xFF635BFF); // 사이트 `--accent` 인디고
+  static const Color aiDeep = Color(0xFF4B44D6);
+  static const Color aiLight = Color(0xFFA9A4FF);
+  static const Color kin = Color(0xFFDDE3EC);
+  static const Color kinBright = Color(0xFFB8DCF0); // 사이트 `--a2`
+  static const Color kinDeep = Color(0xFF3AA6E0);
+  static const Color sumi = tinta;
+  static const Color sumiLight = tintaLight;
+  static const Color washi = cal;
+  static const Color washiDeep = calDeep;
+  static const Color matcha = Color(0xFF0E6245);
+  static const Color line = Color(0xFFE6EBF1);
+  static const Color muted = Color(0xFF6B7C93);
+
+  /// 「몽골어」 워드마크 그라데이션(진한 하늘 파랑 → 사이트 하늘 파랑).
+  static const LinearGradient wordmark = LinearGradient(colors: [beni, kinDeep]);
 }
+
+/// 카드·타일 공통 그림자(사이트 `0 2px 5px -1px rgba(50,50,93,.1), 0 1px 3px -1px rgba(0,0,0,.1)`)
+const List<BoxShadow> kCardShadow = [
+  BoxShadow(color: Color(0x1A32325D), blurRadius: 5, offset: Offset(0, 2)),
+  BoxShadow(color: Color(0x1A000000), blurRadius: 3, offset: Offset(0, 1)),
+];
 
 class AppTheme {
   static ThemeData light() {

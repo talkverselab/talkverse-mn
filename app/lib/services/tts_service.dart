@@ -61,15 +61,19 @@ class TtsService {
   }
 
   /// 1초 지연 후 재생. 연속 호출 시 마지막 것만 재생.
-  Future<void> speak(String text) async {
+  Future<void> speak(String text) => _play(text, delay: _delay);
+
+  /// 재생 속도 [playbackRate](1.0 = 보통)로 지연 없이 재생하고, [wait] 면 끝날 때까지 기다린다(회화 리더 연속 재생용).
+  Future<void> _play(String text, {Duration delay = Duration.zero, double playbackRate = 1.0, bool wait = false}) async {
     final clean = _clean(text);
     if (clean.isEmpty) return;
     await _ensureIosAudio();
 
     await stop(); // 이전 재생/지연 취소 (_seq 증가)
     final my = ++_seq; // 그 다음 내 시퀀스 토큰을 잡는다
-    await Future.delayed(_delay);
+    if (delay > Duration.zero) await Future.delayed(delay);
     if (my != _seq) return; // 그새 다른 문장이 들어옴 → 취소
+    final done = wait ? _player.onPlayerComplete.first.timeout(const Duration(seconds: 30), onTimeout: () {}) : null;
 
     // 1) 사전 합성 번들 음성 (오프라인·무지연) — 앱에 mp3 동봉
     final asset = (await _bundled())[clean];
@@ -77,6 +81,8 @@ class TtsService {
       try {
         await _player.stop();
         await _player.play(AssetSource(asset)); // 'audio/<id>.mp3'
+        if (playbackRate != 1.0) await _player.setPlaybackRate(playbackRate);
+        if (done != null) await done;
         return;
       } catch (_) {
         // 번들 재생 실패 → 온라인 폴백 시도
@@ -91,6 +97,8 @@ class TtsService {
         if (my != _seq) return;
         await _player.stop();
         await _player.play(DeviceFileSource(path));
+        if (playbackRate != 1.0) await _player.setPlaybackRate(playbackRate);
+        if (done != null) await done;
       } catch (_) {
         // 오프라인 등 → 무음
       }
@@ -170,6 +178,8 @@ class TtsService {
       .replaceAll('<', '&lt;')
       .replaceAll('>', '&gt;');
 
-  /// 화자 성별은 번들 음성이 하나라 구분하지 않는다.
-  Future<void> speakAs(String text, {required String gender}) => speak(text);
+  /// 회화 리더용 — 지연 없이 재생하고 끝날 때까지 기다린다.
+  /// 화자 성별은 번들 음성이 하나라 구분하지 않는다. [rate] 는 일본어앱과 같은 flutter_tts 척도(0.45 = 보통)로 받아 재생 속도로 바꾼다.
+  Future<void> speakAs(String text, {required String gender, double? rate}) =>
+      _play(text, playbackRate: rate == null ? 1.0 : (rate / 0.45).clamp(0.5, 2.0), wait: true);
 }
