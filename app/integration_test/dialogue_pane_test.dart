@@ -86,6 +86,14 @@ void main() {
     await t.pageBack();
     await wait(t, 1200);
 
+    // 동사 형태 맵(2026-11-03)
+    await t.tap(find.text('동사').first);
+    await wait(t, 2000);
+    await shot(t, '13_verb_list');
+    await t.tap(find.byType(ListTile).at(1));
+    await wait(t, 2000);
+    await shot(t, '14_verb_map');
+
     await t.tap(rail('진행'));
     await wait(t, 1500);
     await shot(t, '08_progress_achievements');

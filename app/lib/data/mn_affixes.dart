@@ -1,3 +1,4 @@
+// ignore_for_file: prefer_interpolation_to_compose_strings — 동사 규칙형은 덧셈이 더 읽기 쉽다
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
@@ -31,20 +32,11 @@ extension AffixKindX on AffixKind {
 
 /// 모음조화 열쇠: a = 남성(а у), o = 남성 원순(о), e = 여성(э ү и), ö = 여성 원순(ө).
 String harmonyOf(String stem) {
-  final s = stem.toLowerCase();
-  for (var i = s.length - 1; i >= 0; i--) {
-    final c = s[i];
-    if ('ао'.contains(c) || c == 'у') {
-      // 남성: 어간에 о 만 있고 а·у 가 없으면 원순
-      final hasA = s.contains('а') || s.contains('у');
-      return (s.contains('о') && !hasA) ? 'o' : 'a';
-    }
-    if ('эүө'.contains(c)) {
-      final hasE = s.contains('э') || s.contains('ү');
-      return (s.contains('ө') && !hasE) ? 'ö' : 'e';
-    }
-  }
-  return 'e'; // и 만 있으면 여성 쪽
+  // я·ю = йа·йу(남성), ё = йо(남성 원순), е = йэ(여성)
+  final s = stem.toLowerCase().replaceAll('я', 'а').replaceAll('ю', 'у').replaceAll('ё', 'о').replaceAll('е', 'э');
+  final male = s.contains('а') || s.contains('у') || s.contains('о');
+  if (male) return (s.contains('о') && !s.contains('а') && !s.contains('у')) ? 'o' : 'a';
+  return (s.contains('ө') && !s.contains('э') && !s.contains('ү')) ? 'ö' : 'e';
 }
 
 class Affix {
@@ -187,4 +179,97 @@ class AffixCorpus {
   List<AffixExample> examplesOf(String affixId) => _all.where((e) => e.hit.affix.id == affixId).toList();
   List<AffixExample> get all => List.unmodifiable(_all);
   int count(String affixId) => _all.where((e) => e.hit.affix.id == affixId).length;
+}
+
+// ── 동사 형태 맵(2026-11-03 사용자 지시 "동사 형태 맵") ──────────────────────────
+// 앱 문장에서 나눈 동사 접사의 어간을 사전 어간으로 맞추고(연결 모음 떼기), 규칙으로 각 형태를 만든다.
+// 앱 문장에 실제로 나온 형태는 예문과 함께, 나오지 않은 형태는 「규칙형」으로 표시한다.
+
+const String _vowels = 'аэиоуөүыяеёюАЭИОУӨҮЫЯЕЁЮ';
+bool _isV(String c) => _vowels.contains(c);
+
+/// 분석된 어간 → 사전 어간. 자음 뒤 짧은 연결 모음 하나(а э о ө)는 뗀다: уулза(на) → уулз, хүлээ(нэ) 은 장모음이라 그대로.
+String verbStem(String stem) {
+  final s = stem.toLowerCase();
+  if (s.length >= 3) {
+    final last = s[s.length - 1], prev = s[s.length - 2];
+    if ('аэоө'.contains(last) && !_isV(prev)) return s.substring(0, s.length - 1);
+  }
+  return s;
+}
+
+/// 어간 끝 모양: 'v' = 모음(장모음)·й 로 끝남, 'c' = 자음으로 끝남.
+String _endKind(String stem) {
+  final last = stem[stem.length - 1];
+  return (_isV(last) || last == 'й') ? 'v' : 'c';
+}
+
+String _link(String h) => switch (h) { 'o' => 'о', 'ö' => 'ө', 'a' => 'а', _ => 'э' };
+
+/// 동사 어간 + 접사 id → 규칙형. 모르면 null.
+/// 현재 -на 는 「모음 + 자음 하나」로 끝나면 바로(явна·ирнэ), 자음이 겹치면 연결 모음(уулзана).
+String? verbForm(String stem, String affixId) {
+  final h = harmonyOf(stem);
+  final v = _endKind(stem) == 'v';
+  final l = _link(h);
+  final dbl = l + l; // аа ээ оо өө
+  final last = stem[stem.length - 1];
+  final cluster = !v && stem.length >= 2 && !_isV(stem[stem.length - 2]);
+  final inf = v ? stem + 'х' : stem + l + 'х';
+  switch (affixId) {
+    case 'inf':
+      return inf;
+    case 'pres':
+      return (v || !cluster) ? stem + 'н' + l : stem + l + 'н' + l;
+    case 'pastp':
+      return stem + 'с' + l + 'н';
+    case 'past':
+      return stem + 'л' + dbl;
+    case 'hab':
+      return stem + 'д' + l + 'г';
+    case 'cond':
+      return stem + ('вмл'.contains(last) ? 'б' : 'в') + l + 'л';
+    case 'imp':
+      return (v ? stem + 'г' : stem) + dbl + _impTail(h);
+    case 'desid':
+      return stem + 'м' + dbl + 'р';
+    case 'conv':
+      return (v ? stem + 'г' : stem) + dbl + 'д';
+    case 'neg':
+      return inf + 'гүй';
+  }
+  return null;
+}
+
+String _impTail(String h) => switch (h) { 'o' => 'рой', 'ö' => 'рэй', 'a' => 'рай', _ => 'рэй' };
+
+/// 동사 형태 맵에 펼칠 접사 순서.
+const List<String> kVerbMapSlots = ['inf', 'pres', 'pastp', 'past', 'hab', 'conv', 'cond', 'imp', 'desid', 'neg'];
+
+class VerbEntry {
+  final String stem;
+  final Map<String, List<AffixExample>> seen; // 접사 id → 앱 문장 예문
+  VerbEntry(this.stem, this.seen);
+  int get count => seen.values.fold(0, (a, b) => a + b.length);
+
+  /// 제목: 앱 문장에 나온 부정사가 있으면 그것, 없으면 「어간-」(모음이 빠지는 어간이 있어 규칙형 부정사는 제목에 쓰지 않는다).
+  String get title => seen['inf']?.first.hit.word.toLowerCase() ?? '$stem-';
+}
+
+extension AffixCorpusVerbs on AffixCorpus {
+  /// 앱 문장에 나온 동사 어간(사전 어간) 목록 — 형태가 많이 나온 순.
+  List<VerbEntry> verbs() {
+    final by = <String, Map<String, List<AffixExample>>>{};
+    for (final e in all) {
+      if (e.hit.affix.kind != AffixKind.verb) continue;
+      // 부정 -гүй 는 부정사(-х) 뒤에 붙으므로 х(와 연결 모음)를 떼고 어간을 잡는다: мартахгүй → марта(х) → март
+      var raw = e.hit.stem;
+      if (e.hit.affix.id == 'neg' && raw.toLowerCase().endsWith('х')) raw = raw.substring(0, raw.length - 1);
+      final st = verbStem(raw);
+      by.putIfAbsent(st, () => {}).putIfAbsent(e.hit.affix.id, () => []).add(e);
+    }
+    final out = [for (final en in by.entries) VerbEntry(en.key, en.value)]
+      ..sort((a, b) => b.seen.length != a.seen.length ? b.seen.length.compareTo(a.seen.length) : b.count.compareTo(a.count));
+    return out;
+  }
 }

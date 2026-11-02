@@ -9,6 +9,7 @@ import 'chunk_search_screen.dart';
 import 'conversation_screen.dart';
 import 'affix_screens.dart';
 import 'dialogue_screen.dart';
+import 'verb_map_screen.dart';
 import 'episode_screen.dart';
 import 'grammar_lesson_screen.dart';
 import 'profile_screen.dart';
@@ -371,6 +372,8 @@ class _MenuGrid extends StatelessWidget {
         builder: (_) => const DialogueHomeScreen()),
       _MenuItem(label: tr('접사'), sub: 'Нөхцөл', badge: '-аас', color: AppColors.ai,
         builder: (_) => const AffixDictionaryScreen()),
+      _MenuItem(label: tr('동사'), sub: 'Үйл үг', badge: 'V', color: AppColors.beniDeep,
+        builder: (_) => const VerbListScreen()),
       _MenuItem(label: tr('문법'), sub: 'Дүрэм', badge: 'G', color: AppColors.rojoDeep,
         builder: (_) => const GrammarHubScreen()),
       _MenuItem(label: tr('문장 카드'), sub: 'Өгүүлбэр', badge: 'S', color: AppColors.tinta,
