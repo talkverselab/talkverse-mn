@@ -18,7 +18,7 @@
 - 단어 그림: `talkversehanja` `talkverse_art/words/mn.csv`(250)·`mn_food.csv`(50) 푸시(fa49e98) → `/art/mn/manifest` 124장 적재(앱이 자동으로 씀).
 - 아이콘은 talkverse.uk 세션 담당(직접 고치지 말 것).
 - 회화 원칙 링크·몽골어 특이점 `docs/DIALOGUE.md`.
-- **접사(2026-11-03 사용자 지시)** `5a1adff`: 접사표 19개 + 자동 분석(`app/lib/data/mn_affixes.dart`), 어순 맞대기의 접사 블록·조사 테두리, 모음조화 연출 시트, 접사 카드, 홈 「접사 사전」. CI 빌드 13 · Zealot https://apps.talkverse.uk/xBHY8/217. iOS 는 아직 2611030055(접사 전) — M6 부하로 재업로드 보류. 터키어앱 세션에 구조 전달함.
+- **접사(2026-11-03 사용자 지시)** `5a1adff`: 접사표 19개 + 자동 분석(`app/lib/data/mn_affixes.dart`), 어순 맞대기의 접사 블록·조사 테두리, 모음조화 연출 시트, 접사 카드, 홈 「접사 사전」. CI 빌드 13 · Zealot https://apps.talkverse.uk/xBHY8/217. iOS 는 2611030755(접사·동사 맵 포함, 2026-11-03 07:56) TestFlight 업로드. 터키어앱 세션에 구조 전달함.
 - **동사 형태 맵(2026-11-03, Grok 글 시안 `data/review/uxui/sian_mn_grok_01.md` ③ 사용자 선택)**: 홈 「동사」, 앱에 나온 형태 + 규칙형(흐리게). CI 빌드 14 · Zealot https://apps.talkverse.uk/xBHY8/220. 시안의 나머지(존대·반말 카드, 장모음·Ө·Ү 듣기, х·ц·л 자음)는 새 문장·음성이 필요해 보류 — 시안 속 몽골어 예시는 틀린 것이 많음(쓰지 말 것).
 
 ## 알아 둘 것
