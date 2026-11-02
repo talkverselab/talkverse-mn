@@ -2,11 +2,14 @@ import 'package:flutter/material.dart';
 
 import '../core/l10n.dart';
 import '../core/theme.dart';
+import '../data/mn_affixes.dart';
 import '../services/dialogue_service.dart';
+import 'affix_sheet.dart';
 
 /// 「어순 맞대기」 — 몽골어 UX 시안 01(사용자 통과 2026-11-03)의 몽골어 칸.
 /// 현재 문장의 낱말을 칩으로 늘어놓고, 낱말마다 모음조화 점(남성 모음 а о у = 하늘 파랑, 여성 모음 э ө ү = 분홍, и = 회색)을 찍는다.
 /// 턴에 낱말 대응 데이터(`align`: [[몽골어, 한국어], …])가 있으면 한국어 낱말을 아래에 맞대어 보인다 — 대응표는 회화 작업 때 채운다(지금은 없음).
+/// 2026-11-03: 접사가 붙은 낱말은 어간 + 접사 블록(종류별 색)으로 나누고, 대응 한국어 조사를 같은 색 테두리로 묶는다. 접사를 누르면 설명 시트.
 class WordOrderPanel extends StatelessWidget {
   final DialogueTurn turn;
   const WordOrderPanel({super.key, required this.turn});
@@ -68,7 +71,13 @@ class WordOrderPanel extends StatelessWidget {
 
   Widget _pair(String tl, String ko) {
     final dots = _dots(tl);
+    final hit = analyzeWord(tl);
+    // 한국어 낱말에 이 접사의 조사가 들어 있으면 같은 색 테두리로 묶는다
+    final koColor = hit != null && ko.isNotEmpty && hit.affix.koMarkers.any(ko.contains) ? hit.affix.kind.color : null;
     return Column(mainAxisSize: MainAxisSize.min, crossAxisAlignment: CrossAxisAlignment.start, children: [
+      if (hit != null)
+        AffixBlock(hit: hit, showKo: ko.isEmpty)
+      else
       Container(
         padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
         decoration: BoxDecoration(color: AppColors.beni.withValues(alpha: 0.08), borderRadius: BorderRadius.circular(10)),
@@ -90,7 +99,11 @@ class WordOrderPanel extends StatelessWidget {
         Container(
           margin: const EdgeInsets.only(top: 3),
           padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
-          decoration: BoxDecoration(color: const Color(0xFFFDEFF6), borderRadius: BorderRadius.circular(10)),
+          decoration: BoxDecoration(
+            color: const Color(0xFFFDEFF6),
+            borderRadius: BorderRadius.circular(10),
+            border: koColor == null ? null : Border.all(color: koColor, width: 1.4),
+          ),
           child: Text(ko, style: const TextStyle(fontSize: 13, color: AppColors.sumiLight, fontWeight: FontWeight.w600)),
         ),
     ]);

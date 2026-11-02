@@ -69,6 +69,23 @@ void main() {
     await t.pageBack();
     await wait(t, 1200);
 
+    // 접사(2026-11-03): 리더의 접사 블록 → 설명 시트, 홈 접사 사전 → 카드
+    await t.tap(rail('홈'));
+    await wait(t, 1000);
+    await t.tap(find.text('접사').first);
+    await wait(t, 2000);
+    await shot(t, '10_affix_dictionary');
+    await t.tap(find.text('탈격').first);
+    await wait(t, 2500);
+    await shot(t, '11_affix_sheet');
+    await t.tapAt(const Offset(20, 20));
+    await wait(t, 1000);
+    await t.tap(find.byTooltip('접사 카드로 연습'));
+    await wait(t, 2000);
+    await shot(t, '12_affix_quiz');
+    await t.pageBack();
+    await wait(t, 1200);
+
     await t.tap(rail('진행'));
     await wait(t, 1500);
     await shot(t, '08_progress_achievements');
