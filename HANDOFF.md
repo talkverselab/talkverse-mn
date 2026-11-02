@@ -36,4 +36,4 @@
 ## 주의
 - 새 키스토어 금지, `applicationId kr.mlab.mn` 유지. 로컬 빌드 번호는 CI 실행 번호보다 크게.
 - M6 자원: 시뮬레이터는 자기가 켠 1대만, 과부하 공지면 바로 멈춤. 코드 push 는 폰 업데이트 알림이 가니 묶어서.
-- Zealot 앱이름 「몽골어유니버스」(`app/CLAUDE.md` §8 — 이 절은 아직 로컬 수정만, 미커밋).
+- Zealot 앱이름 「몽골어유니버스」(`app/CLAUDE.md` §8, 올리기 `app/tools/zealot_push.sh`).
