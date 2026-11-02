@@ -9,6 +9,7 @@ import 'services/ko_reading.dart';
 import 'core/l10n.dart';
 import 'data/account.dart';
 import 'data/purchase.dart';
+import 'services/achievement_service.dart';
 import 'services/learner_prefs.dart';
 
 late final AppDatabase appDb;
@@ -20,6 +21,7 @@ void main() async {
   await KoReadingPrefs.load();
   await AppLangPrefs.load();
   await LearnerPrefs.load(); // 학습자 이름·성별 — 화자 A 의 목소리·{name}
+  await AchievementService.instance.load(); // 성과(편 완주·그림 카드)
   Account.load(); // Talkverse ID — 저장된 로그인 표시 + 뒤에서 토큰 갱신(기다리지 않음)
   // 몽골어 평생 이용권 — iOS 상품 번호 / Android 상품 번호 (Talkverse ID 상품 lang_mn_life)
   Purchase.configure({'mn': ('com.talkverse.mongolianUniverse.lifetime', 'lang_mn')});

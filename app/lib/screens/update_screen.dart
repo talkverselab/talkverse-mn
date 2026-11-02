@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 
+import '../core/pane.dart';
 import '../services/update_service.dart';
 import '../core/platform.dart';
 import '../core/l10n.dart';
@@ -352,10 +353,7 @@ class UpdateEntryTile extends StatelessWidget {
           style: TextStyle(fontSize: 11.5),
         ),
         trailing: Icon(Icons.chevron_right, color: cs.primary),
-        onTap: () => Navigator.push(
-          context,
-          MaterialPageRoute(builder: (_) => const UpdateScreen()),
-        ),
+        onTap: () => openPane(context, (_) => const UpdateScreen()),
       ),
     );
   }

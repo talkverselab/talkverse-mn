@@ -4,6 +4,7 @@ import 'update_screen.dart';
 
 import '../core/theme.dart';
 import '../widgets/account_section.dart';
+import '../widgets/learner_section.dart';
 import '../widgets/spanish_decor.dart';
 import '../core/l10n.dart';
 import '../core/platform.dart';
@@ -62,6 +63,10 @@ class ProfileScreen extends StatelessWidget {
               ],
             ),
           ),
+          const SizedBox(height: 18),
+          _SectionTitle(tr('학습자')),
+          const SizedBox(height: 8),
+          const LearnerSection(),
           const SizedBox(height: 18),
           _SectionTitle(tr('계정')),
           const SizedBox(height: 8),
