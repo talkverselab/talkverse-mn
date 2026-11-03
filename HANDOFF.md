@@ -9,7 +9,7 @@
 | ① 캐릭터 시안 | **통과 2026-11-03** — `data/review/art/chars_mn_v1.jpg`, `CHARACTERS.md` |
 | ② UX/UI 시안 | **통과 2026-11-03** — `data/review/uxui/sian_mn_01.jpg`(시안 02 + 「어순 맞대기」), 답 글 `sian_mn_01_img.md` |
 | ③ 아이패드 빌드 | Android 끝 — 커밋 `03544cc`, CI 빌드 12, Zealot https://apps.talkverse.uk/xBHY8/201, PC 백업. 아이패드 스크린샷 9장 넘침 0·테스트 통과(`app/integration_test/dialogue_pane_test.dart`, `app/tools/pane_shots.py`, 시뮬레이터 `mn-shots-ipad` C2345B5E…). **TestFlight 업로드 성공 — 빌드 2611030055**(2026-11-03 00:58, PC 백업 `D:\OneDrive\app project\mn_app\ios\`). 단 IPA 에 Sign in with Apple 권한이 빠짐(포털 capability 꺼짐) → Apple 로그인만 안 됨 |
-| ④ 회화 | 보류(사용자 지시 뒤). **범위 150편·R3 까지·카오스 45편+**(`docs/DIALOGUE.md`). 그때 Grok 재작성 뒤 **Gemini 검수도**(몇 편 해 보고 별로면 중단 보고) — `CHARACTERS.md` 끝 메모 |
+| ④ 회화 | 보류(사용자 지시 뒤). **범위 150편·R3 까지(185위)·카오스 45편+**(`docs/DIALOGUE.md`). 절벽 단어 1,500 = talkversehanja words/mn.csv b53def1. 그때 Grok 재작성 뒤 **Gemini 검수도**(몇 편 해 보고 별로면 중단 보고) — `CHARACTERS.md` 끝 메모 |
 
 ## 이번에 한 것 (2026-11-02~03)
 - Supabase 제거·저작권 정리·이력 정리(filter-repo, 강제 push) — `docs/CLOUDFLARE_MIGRATION.md`.
