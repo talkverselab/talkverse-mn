@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import '../core/theme.dart';
 import '../data/db/app_database.dart';
 import '../main.dart';
-import '../services/tts_service.dart';
+import '../widgets/lemma_chips.dart';
 import '../core/platform.dart';
 import '../core/l10n.dart';
 
@@ -71,7 +71,7 @@ class _WordFreqScreenState extends State<WordFreqScreen> {
                       final gc = genderColor(w.gender);
                       return ListTile(
                         dense: true,
-                        onTap: () => TtsService.instance.speak(w.word),
+                        onTap: () => showWordSheet(context, w),
                         leading: SizedBox(
                           width: 36,
                           child: Text(
@@ -105,15 +105,13 @@ class _WordFreqScreenState extends State<WordFreqScreen> {
                               ),
                           ],
                         ),
-                        subtitle: Text(w.meaningKo ?? ''),
+                        subtitle: Text([if ((w.cefr ?? '').isNotEmpty) w.cefr!, w.meaningKo ?? ''].join(' · ')),
                         trailing: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           crossAxisAlignment: CrossAxisAlignment.end,
                           children: [
-                            if (w.cefr != null)
-                              Text(w.cefr!, style: const TextStyle(fontSize: 11, fontWeight: FontWeight.w700, color: AppColors.mar)),
                             if (w.region != null)
-                              Text(w.region!, style: const TextStyle(fontSize: 10, color: AppColors.tintaLight)),
+                              Text(w.region!, style: const TextStyle(fontSize: 11, fontWeight: FontWeight.w700, color: AppColors.mar)),
                           ],
                         ),
                       );

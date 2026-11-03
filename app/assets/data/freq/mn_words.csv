@@ -1,0 +1,1501 @@
+rank,word,reading,ko,en,pos,level,picturable
+1,байх,베흐,있다/이다,be,verb,R1,N
+2,би,비,나,I,pron,R1,N
+3,нь,느,(그)것은·주제 첨사,topic particle,part,R1,N
+4,энэ,엥,이것,this,pron,R1,N
+5,тэр,테르,그것/그 사람,that,pron,R1,N
+6,болох,버러흐,되다,become,verb,R1,N
+7,чи,치,너,you,pron,R1,N
+8,гэх,게흐,말하다/~라고 하다,say,verb,R1,N
+9,ч,치,~도,also/even,part,R1,N
+10,л,르,~만/바로,just,part,R1,N
+11,та,타,당신(존칭),you (polite),pron,R1,N
+12,хийх,히흐,하다/만들다,do,verb,R1,N
+13,юм,윰,~인 것이다(첨사),it is (particle),part,R1,N
+14,бид,비드,우리,we,pron,R1,N
+15,хүн,훙,사람,person,noun,R1,Y
+16,юу,유오,무엇,what,pron,R1,N
+17,их,이흐,많이/매우,much,adv,R1,N
+18,сайн,셍,좋은,good,adj,R1,N
+19,авах,아바흐,받다/사다,take,verb,R1,Y
+20,өгөх,으그흐,주다,give,verb,R1,Y
+21,одоо,어더,지금,now,adv,R1,N
+22,явах,야바흐,가다,go,verb,R1,Y
+23,ирэх,이레흐,오다,come,verb,R1,Y
+24,уу,오,"~까?(의문, 남성 모음)",question particle,part,R1,N
+25,бас,바스,또/역시,also,adv,R1,N
+26,мэдэх,메데흐,알다,know,verb,R1,N
+27,бэ,베,~가?(의문사 의문),question particle,part,R1,N
+28,хэн,헹,누구,who,pron,R1,N
+29,үгүй,우구이,없다/아니요,no,part,R1,N
+30,яах,야아흐,어떻게 하다,do what,verb,R1,N
+31,хэлэх,헤레흐,말하다,tell,verb,R1,N
+32,үзэх,우제흐,보다,watch,verb,R1,Y
+33,болно,벌너,괜찮다/된다,okay,pred,R1,N
+34,биш,비시,아니다,not,part,R1,N
+35,үү,우,"~까?(의문, 여성 모음)",question particle,part,R1,N
+36,вэ,베,~가?(의문사 의문),question particle,part,R1,N
+37,цаг,착,시간/시계,clock,noun,R1,Y
+38,өдөр,으드르,날/낮,day,noun,R1,Y
+39,бодох,버더흐,생각하다,think,verb,R1,N
+40,хэрэгтэй,헤레그테,필요하다,need,pred,R1,N
+41,ба,바,그리고,and,conj,R1,N
+42,гэхдээ,게흐데,하지만,but,conj,R1,N
+43,аа,아,~네/~요(어조),emphatic particle,part,R1,N
+44,бөгөөд,브그드,그리고/~이며,and,conj,R1,N
+45,даа,다,~지/~요(어조),emphatic particle,part,R1,N
+46,хэрэв,헤렙,만약,if,conj,R1,N
+47,болохоор,버러허르,그래서/~라서,so,conj,R1,N
+48,хойно,허잉,뒤에/북쪽,behind,postp,R1,N
+49,ямар,야마르,어떤,what kind,adj,R1,N
+50,талаар,타라르,~에 관해,regarding,postp,R1,N
+51,өөр,으르,다른,other,adj,R1,N
+52,бүх,부흐,모든,all,adj,R1,N
+53,гэр,게르,집/게르,ger,noun,R1,Y
+54,дараа,다라,뒤에/다음,after,postp,R1,N
+55,үнэхээр,우네헤르,정말,really,adv,R1,N
+56,дотор,더터르,안에,inside,postp,R1,N
+57,дээр,데르,위에,on,postp,R1,N
+58,өмнө,음느,앞에/전에,before,postp,R1,N
+59,доор,더르,아래에,under,postp,R1,N
+60,нэг,넥,하나,one,num,R1,N
+61,харах,하라흐,보다,look,verb,R1,Y
+62,олон,어렁,많은,many,adj,R1,N
+63,энд,엥드,여기,here,adv,R1,N
+64,ажил,아질,일,work,noun,R1,Y
+65,маш,마시,매우,very,adv,R1,N
+66,тэнд,텡드,저기,there,adv,R1,N
+67,зарим,자림,어떤/일부,some,adj,R1,N
+68,ус,오스,물,water,noun,R1,Y
+69,өнөөдөр,으느드르,오늘,today,adv,R1,N
+70,нэр,네르,이름,name,noun,R1,N
+71,жил,질,해/년,year,noun,R1,N
+72,маргааш,마르가시,내일,tomorrow,adv,R1,N
+73,тухай,토헤,~에 대해,about,postp,R1,N
+74,хэдэн,헤뎅,몇,how many,num,R1,N
+75,өчигдөр,으치그드르,어제,yesterday,adv,R1,N
+76,газар,가자르,땅/곳,land,noun,R1,Y
+77,мөнгө,믕그,돈,money,noun,R1,Y
+78,хамт,함트,함께,together,adv,R1,N
+79,шиг,식,~처럼,like,postp,R1,N
+80,төлөө,트르,~을 위해,for,postp,R1,N
+81,хүртэл,후르텔,~까지,until,postp,R1,N
+82,сайхан,세항,좋은/아름다운,beautiful,adj,R1,N
+83,сонсох,성서흐,듣다,listen,verb,R1,Y
+84,суух,소흐,앉다,sit,verb,R1,Y
+85,чадах,차다흐,할 수 있다,can,verb,R1,N
+86,шинэ,싱,새로운,new,adj,R1,N
+87,гадна,가드나,밖,outside,adv,R1,N
+88,хоёр,허요르,둘,two,num,R1,N
+89,учир,오치르,이유,reason,noun,R1,N
+90,гурав,고랍,셋,three,num,R1,N
+91,гоё,거요,예쁜/멋진,pretty,adj,R1,N
+92,том,텀,큰,big,adj,R1,Y
+93,жижиг,지직,작은,small,adj,R1,Y
+94,идэх,이데흐,먹다,eat,verb,R1,Y
+95,уух,오흐,마시다,drink,verb,R1,Y
+96,амьдрах,암드라흐,살다,live,verb,R1,N
+97,ажиллах,아질라흐,일하다,work,verb,R1,Y
+98,зам,잠,길,road,noun,R1,Y
+99,сурах,소라흐,배우다,study,verb,R1,Y
+100,дуртай,도르테,좋아하다,like,adj,R1,N
+101,бичих,비치흐,쓰다,write,verb,R1,Y
+102,босох,버서흐,일어나다,get up,verb,R1,Y
+103,унших,옹시흐,읽다,read,verb,R1,Y
+104,уулзах,올자흐,만나다,meet,verb,R1,Y
+105,ойлгох,어일거흐,이해하다,understand,verb,R1,N
+106,учраас,오치라스,~때문에,because,conj,R1,N
+107,найз,네즈,친구,friend,noun,R1,Y
+108,зогсох,저그서흐,서다/멈추다,stand,verb,R1,Y
+109,үг,욱,말/단어,word,noun,R1,N
+110,ээж,에즈,엄마,mother,noun,R1,Y
+111,аав,압,아빠,father,noun,R1,Y
+112,инээх,이네흐,웃다,laugh,verb,R1,Y
+113,хүүхэд,후헤드,아이,child,noun,R1,Y
+114,хоол,헐,음식/밥,food,noun,R1,Y
+115,ном,넘,책,book,noun,R1,Y
+116,эмэгтэй,에메그테,여자,woman,noun,R1,Y
+117,дахин,다힝,다시,again,adv,R1,N
+118,эрэгтэй,에레그테,남자,man,noun,R1,Y
+119,хот,허트,도시,city,noun,R1,Y
+120,улс,올스,나라,country,noun,R1,N
+121,ядрах,야드라흐,지치다,get tired,verb,R1,Y
+122,амралт,암랄트,휴가/휴식,vacation,noun,R1,Y
+123,тэд,테드,그들,they,pron,R1,N
+124,үхэх,우헤흐,죽다,die,verb,R1,N
+125,төрөх,트르흐,태어나다,be born,verb,R1,N
+126,хөгшрөх,흐그시르흐,늙다,grow old,verb,R1,N
+127,тийм,팀,그런/네,so/yes,adv,R1,N
+128,гар,가르,손,hand,noun,R1,Y
+129,эвдэх,엡데흐,부수다,break,verb,R1,Y
+130,өөрөө,으르,자기 자신,oneself,pron,R2,N
+131,сургууль,소르골,학교,school,noun,R2,Y
+132,унтах,옹타흐,자다,sleep,verb,R2,Y
+133,машин,마싱,자동차,car,noun,R2,Y
+134,утас,오타스,전화/휴대폰,phone,noun,R2,Y
+135,хаана,항,어디,where,adv,R2,N
+136,хэзээ,헤제,언제,when,adv,R2,N
+137,дөрөв,드릅,넷,four,num,R2,N
+138,тав,탑,다섯,five,num,R2,N
+139,яагаад,야아가드,왜,why,adv,R2,N
+140,зургаа,조르가,여섯,six,num,R2,N
+141,үргэлж,우르겔즈,항상,always,adv,R2,N
+142,долоо,더러,일곱,seven,num,R2,N
+143,найм,넴,여덟,eight,num,R2,N
+144,ес,예스,아홉,nine,num,R2,N
+145,арав,아랍,열,ten,num,R2,N
+146,зуу,조,백,hundred,num,R2,N
+147,харин,하링,그런데,however,conj,R2,N
+148,мянга,먕가,천,thousand,num,R2,N
+149,мах,마흐,고기,meat,noun,R2,Y
+150,баярлах,바야르라흐,기뻐하다,be glad,verb,R2,Y
+151,бол,벌,~은/는(주제),topic marker,part,R2,N
+152,уйлах,오이라흐,울다,cry,verb,R2,Y
+153,цай,체,차,tea,noun,R2,Y
+154,за,자,네/좋아,okay,interj,R2,N
+155,сүү,수,우유,milk,noun,R2,Y
+156,талх,탈흐,빵,bread,noun,R2,Y
+157,уурлах,오르라흐,화내다,get angry,verb,R2,Y
+158,айраг,에락,마유주,fermented mare's milk,noun,R2,Y
+159,ийм,임,이런,such,adj,R2,N
+160,сар,사르,달/월,moon,noun,R2,Y
+161,жимс,짐스,과일,fruit,noun,R2,Y
+162,ногоо,너거,채소,vegetable,noun,R2,Y
+163,өндөг,응득,달걀,egg,noun,R2,Y
+164,угаах,오가흐,씻다,wash,verb,R2,Y
+165,хүлээх,후레흐,기다리다,wait,verb,R2,Y
+166,гарах,가라흐,나가다,go out,verb,R2,Y
+167,орох,어러흐,들어가다,enter,verb,R2,Y
+168,амьдрал,암드랄,삶,life,noun,R2,N
+169,санах,사나흐,그리워하다/기억하다,miss,verb,R2,N
+170,мартах,마르타흐,잊다,forget,verb,R2,N
+171,хэрэг,헤렉,일/필요,matter,noun,R2,N
+172,хүсэх,후세흐,원하다,want,verb,R2,N
+173,машид,마시드,매우,very,adv,R2,N
+174,хичнээн,히치넹,얼마나,how much,adv,R2,N
+175,минут,미노트,분,minute,noun,R2,N
+176,баян,바양,부유한,rich,adj,R2,N
+177,ядуу,야도,가난한,poor,adj,R2,N
+178,сэрэх,세레흐,깨다,wake up,verb,R2,Y
+179,сэтгэл,세트겔,마음,heart (mind),noun,R2,N
+180,ярих,야리흐,이야기하다,talk,verb,R2,Y
+181,тэнгэр,텡게르,하늘,sky,noun,R2,Y
+182,нар,나르,해,sun,noun,R2,Y
+183,од,어드,별,star,noun,R2,Y
+184,салхи,살히,바람,wind,noun,R2,Y
+185,бороо,버러,비,rain,noun,R2,Y
+186,хүрэх,후레흐,닿다/도착하다,reach,verb,R2,N
+187,царай,차레,얼굴/표정,face,noun,R2,Y
+188,эхлэх,에흐레흐,시작하다,begin,verb,R3,N
+189,асуух,아소흐,묻다,ask,verb,R3,N
+190,дуусах,도사흐,끝나다,finish,verb,R3,N
+191,туслах,토스라흐,돕다,help,verb,R3,Y
+192,цас,차스,눈,snow,noun,R3,Y
+193,хариулах,하리오라흐,대답하다,answer,verb,R3,N
+194,олох,어러흐,찾다/얻다,find,verb,R3,N
+195,буцах,보차흐,돌아가다,return,verb,R3,N
+196,мод,머드,나무,tree,noun,R3,Y
+197,цэцэг,체첵,꽃,flower,noun,R3,Y
+198,жуулчин,졸칭,여행자,tourist,noun,R3,Y
+199,газрын,가즈링,땅의(газрын зураг = 지도),of the land,noun,R3,N
+200,дурсгал,도르스갈,기념/유적,monument,noun,R3,Y
+201,байгаль,베갈,자연,nature,noun,R3,Y
+202,амьтан,암탕,동물,animal,noun,R3,Y
+203,говь,고비,고비(사막 초원),desert steppe,noun,R3,Y
+204,нохой,너허이,개,dog,noun,R3,Y
+205,тал,탈,초원/쪽,steppe,noun,R3,Y
+206,муур,모르,고양이,cat,noun,R3,Y
+207,ухаан,오항,정신/지혜,mind,noun,R3,N
+208,тавих,타비흐,놓다,put,verb,R3,Y
+209,амь,암,목숨,life,noun,R3,N
+210,морь,머르,말,horse,noun,R3,Y
+211,үхэр,우헤르,소,cow,noun,R3,Y
+212,бараг,바락,거의,almost,adv,R3,N
+213,хонь,헝,양,sheep,noun,R3,Y
+214,наадам,나담,나담 축제,naadam festival,noun,R3,Y
+215,хөлс,흘스,땀/삯,sweat,noun,R3,Y
+216,шувуу,소보,새,bird,noun,R3,Y
+217,гал,갈,불,fire,noun,R3,Y
+218,баяр,바야르,명절/기쁨,festival,noun,R3,Y
+219,загас,자가스,물고기,fish,noun,R3,Y
+220,инээд,이네드,웃음,laughter,noun,R3,Y
+221,уур,오르,화/김,anger,noun,R3,N
+222,хэл,헬,언어/혀,language,noun,R3,N
+223,хаалга,할가,문,door,noun,R3,Y
+224,цонх,청흐,창문,window,noun,R3,Y
+225,ширээ,시레,책상/탁자,table,noun,R3,Y
+226,сандал,상달,의자,chair,noun,R3,Y
+227,хайр,헤르,사랑,love,noun,R3,Y
+228,мэдрэмж,메드렘즈,느낌/감정,feeling,noun,R3,N
+229,хэд,헤드,몇/얼마,how much,num,R3,N
+230,аль,알,어느,which,pron,R3,N
+231,учрах,오치라흐,마주치다,run into,verb,R3,Y
+232,болзох,벌저흐,데이트하다,date,verb,R3,Y
+233,өнгө,응그,색,color,noun,R3,Y
+234,итгэх,이트게흐,믿다,believe,verb,R3,N
+235,цагаан,차강,흰,white,adj,R3,Y
+236,улаан,오랑,빨간,red,adj,R3,Y
+237,жаргал,자르갈,행복,happiness,noun,R3,N
+238,хар,하르,검은,black,adj,R3,Y
+239,итгэл,이트겔,믿음,trust,noun,R3,N
+240,халуун,하롱,뜨거운/더운,hot,adj,R3,Y
+241,хүйтэн,후이텡,차가운/추운,cold,adj,R3,Y
+242,жаргалтай,자르갈테,행복한,happy,adj,R3,Y
+243,мөрөөдөл,므르들,꿈,dream,noun,R3,N
+244,ногоон,너겅,초록,green,adj,R3,Y
+245,хөх,흐흐,파란,blue,adj,R3,Y
+246,шар,사르,노란,yellow,adj,R3,Y
+247,ганцаардал,강차르달,외로움,loneliness,noun,R3,N
+248,дурлал,도르랄,사랑에 빠짐,falling in love,noun,R3,N
+249,цуг,촉,함께,together,adv,R3,N
+250,ах,아흐,형/오빠,older brother,noun,R3,Y
+251,компьютер,컴퓨톄르,컴퓨터,computer,noun,R3,Y
+252,эгч,에그치,누나/언니,older sister,noun,R3,Y
+253,уул,올,산,mountain,noun,R3,Y
+254,дүү,두,동생,younger sibling,noun,R3,Y
+255,гол,걸,강,river,noun,R3,Y
+256,ирээдүй,이레두이,미래,future,noun,R3,N
+257,нуур,노르,호수,lake,noun,R3,Y
+258,охин,어힝,딸/소녀,girl,noun,R3,Y
+259,хэзээд,헤제드,언제나,always,adv,R3,N
+260,хүү,후,아들/소년,boy,noun,R3,Y
+261,нөхөр,느흐르,남편,husband,noun,R3,Y
+262,эхнэр,에흐네르,아내,wife,noun,R3,Y
+263,бодол,버덜,생각,thought,noun,R3,N
+264,манай,마네,우리의,our,pron,R3,N
+265,миний,미니,나의,my,pron,R3,N
+266,чиний,치니,너의,your,pron,R3,N
+267,таны,타니,당신의,your (polite),pron,R3,N
+268,түүний,투니,그의/그녀의,his/her,pron,R3,N
+269,тэмээ,테메,낙타,camel,noun,R3,Y
+270,багш,바그시,선생님,teacher,noun,R3,Y
+271,бүр,부르,심지어/매,even/every,adv,R3,N
+272,зөвхөн,즙흥,오직,only,adv,R3,N
+273,оюутан,어유오탕,대학생,university student,noun,R3,Y
+274,сурагч,소라그치,학생,student,noun,R3,Y
+275,дандаа,당다,늘,always,adv,R3,N
+276,долоо хоног,더러 허넉,주(일주일),week,noun,R3,N
+277,өглөө,으그르,아침,morning,noun,R3,Y
+278,орой,어러이,저녁/늦게,evening,noun,R3,Y
+279,арай,아레,조금 더,slightly,adv,R3,N
+280,шөнө,승,밤,night,noun,R3,Y
+281,одоохондоо,어더헝더,당분간,for now,adv,R3,N
+282,эрт,에르트,일찍,early,adv,R3,N
+283,зураг,조락,그림/사진,picture,noun,R3,Y
+284,дэлгүүр,델구르,가게,shop,noun,R3,Y
+285,үд,우드,정오,noon,noun,R3,N
+286,алхах,알하흐,걷다,walk,verb,R3,Y
+287,гүйх,구이흐,달리다,run,verb,R3,Y
+288,эмнэлэг,엠네렉,병원,hospital,noun,R3,Y
+289,толгой,털거이,머리,head,noun,R3,Y
+290,нүд,누드,눈,eye,noun,R3,Y
+291,хэр,헤르,얼마나,how (much),adv,R3,N
+292,бие,비예,몸,body,noun,R3,Y
+293,ам,암,입,mouth,noun,R3,Y
+294,хувцас,홉차스,옷,clothes,noun,R3,Y
+295,чих,치흐,귀,ear,noun,R3,Y
+296,хаашаа,하사,어디로,where to,adv,R3,N
+297,хөл,흘,다리/발,leg,noun,R3,Y
+298,хамар,하마르,코,nose,noun,R3,Y
+299,тэгвэл,테그벨,그러면,then,conj,R3,N
+300,зүрх,주르흐,심장,heart,noun,R3,Y
+301,шүд,수드,이,tooth,noun,R3,Y
+302,үс,우스,머리카락,hair,noun,R3,Y
+303,гэж,게즈,~라고,quotative,part,R3,N
+304,баярлалаа,바야르라라,고마워요,thank you,interj,R3,N
+305,уучлаарай,오치라레,미안해요,sorry,interj,R3,N
+306,зүгээр,주게르,괜찮아요,it's fine,adv,R3,N
+307,баяртай,바야르테,안녕히/기쁜,goodbye,interj,R3,N
+308,бага,박,적은,little/less,adj,R3,N
+309,дуу,도,노래/소리,song,noun,R3,Y
+310,өө,으,아/오,oh,interj,R3,N
+311,хөөе,흐예,이봐,hey,interj,R3,N
+312,соёл,서욜,문화,culture,noun,R3,N
+313,түүх,투흐,역사,history,noun,R3,N
+314,муу,모,나쁜,bad,adj,R3,N
+315,зөв,즙,옳은,right,adj,R3,N
+316,буруу,보로,틀린,wrong,adj,R3,N
+317,хүргэх,후르게흐,데려다주다,deliver,verb,R3,N
+318,үнэн,우넹,진실/참,true,adj,R3,N
+319,худал,호달,거짓,lie,noun,R3,N
+320,дуудах,도다흐,부르다,call,verb,R3,N
+321,төмөр,트므르,쇠,iron,noun,R3,Y
+322,залгах,잘가흐,전화하다,call (phone),verb,R3,Y
+323,аялах,아야라흐,여행하다,travel,verb,R3,Y
+324,хуванцар,호방차르,플라스틱,plastic,noun,R3,Y
+325,даавуу,다보,천,cloth,noun,R3,Y
+326,нисэх,니세흐,날다,fly,verb,R3,Y
+327,хайх,헤흐,찾다(검색),search,verb,R3,Y
+328,худалдах,호달다흐,팔다,sell,verb,R3,Y
+329,тоглох,터그러흐,놀다,play,verb,R3,Y
+330,үнэ,웅,값,price,noun,R3,N
+331,хүсэлт,후셀트,요청,request,noun,R3,N
+332,асуулт,아솔트,질문,question,noun,R3,N
+333,тааз,타즈,천장,ceiling,noun,R3,Y
+334,зарах,자라흐,팔다,sell,verb,R3,Y
+335,хариулт,하리올트,대답,answer,noun,R3,N
+336,яриа,야리아,대화,conversation,noun,R3,Y
+337,санаа,사나,생각/아이디어,idea,noun,R3,N
+338,үнсэх,웅세흐,입맞추다,kiss,verb,R3,Y
+339,арга,아르가,방법,way/method,noun,R3,N
+340,плитка,프리트카,가스레인지,stove,noun,R3,Y
+341,тэврэх,텝레흐,안다,hug,verb,R3,Y
+342,зүйл,주일,것/물건,thing,noun,R3,N
+343,хэсэг,헤섹,부분,part,noun,R3,N
+344,эхэн,에헹,처음,beginning,noun,R3,N
+345,төгсгөл,트그스글,끝,end,noun,R3,N
+346,эхлэл,에흐렐,시작,start,noun,R3,N
+347,саван,사방,비누,soap,noun,R3,Y
+348,хүмүүс,후무스,사람들,people,noun,R3,Y
+349,алчуур,알초르,수건,towel,noun,R3,Y
+350,сойз,서이즈,솔,brush,noun,R3,Y
+351,оо,어,치약,toothpaste,noun,R3,Y
+352,сая,사야,백만,million,num,R3,N
+353,сам,삼,빗,comb,noun,R3,Y
+354,тэрбум,테르봄,십억,billion,num,R3,N
+355,мэдээ,메데,소식,news,noun,R3,N
+356,мэдээлэл,메데렐,정보,information,noun,R3,N
+357,цоож,처즈,자물쇠,lock,noun,R3,Y
+358,хэтэвч,헤텝치,지갑,wallet,noun,R3,Y
+359,шүхэр,수헤르,우산,umbrella,noun,R3,Y
+360,хамаатан,하마탕,친척,relative,noun,R3,N
+361,хайрт,헤르트,사랑하는 이,beloved,noun,R3,N
+362,найз охин,네즈 어힝,여자친구,girlfriend,noun,R3,Y
+363,хань,항,짝/동반자,partner,noun,R3,N
+364,өрөө,으르,방,room,noun,R3,Y
+365,баллуур,발로르,지우개,eraser,noun,R3,Y
+366,хана,항,벽,wall,noun,R3,Y
+367,шал,살,바닥,floor,noun,R3,Y
+368,нүүр,누르,얼굴,face,noun,R3,Y
+369,ор,어르,침대,bed,noun,R3,Y
+370,цавуу,차보,풀(접착제),glue,noun,R3,Y
+371,гудамж,고담즈,거리,street,noun,R3,Y
+372,интернэт,잉톄르네트,인터넷,internet,noun,R3,N
+373,тоглоом,터그럼,게임/놀이,game,noun,R3,Y
+374,буудал,보달,역/정류장,station,noun,R3,Y
+375,онгоц,엉거츠,비행기,airplane,noun,R3,Y
+376,кино,킹,영화,movie,noun,R3,Y
+377,хөгжим,흐그짐,음악,music,noun,R3,Y
+378,түлхүүр,툴후르,열쇠,key,noun,R3,Y
+379,спорт,스퍼르트,운동,sport,noun,R3,Y
+380,цүнх,충흐,가방,bag,noun,R3,Y
+381,бөх,브흐,씨름,wrestling,noun,R3,Y
+382,сур харваа,소르 하르바,활쏘기,archery,noun,R3,Y
+383,чөтгөр,츠트그르,악마,devil,noun,R3,Y
+384,морин уралдаан,머링 오랄당,말 경주,horse race,noun,R3,Y
+385,сүнс,숭스,영혼/귀신,ghost,noun,R3,Y
+386,зах,자흐,시장,market,noun,R3,Y
+387,шил,실,병/유리,bottle/glass,noun,R3,Y
+388,ресторан,례스터랑,식당,restaurant,noun,R3,Y
+389,ямаа,야마,염소,goat,noun,R3,Y
+390,бэлэг,베렉,선물,gift,noun,R3,Y
+391,кафе,카페,카페,cafe,noun,R4,Y
+392,төлөх,트르흐,지불하다,pay,verb,R4,Y
+393,төр,트르,국가,state,noun,R4,N
+394,хавар,하바르,봄,spring,noun,R4,Y
+395,засаг,자삭,정부,government,noun,R4,N
+396,зун,종,여름,summer,noun,R4,Y
+397,секунд,셰콩드,초,second,noun,R4,N
+398,намар,나마르,가을,autumn,noun,R4,Y
+399,аяга,아약,그릇/잔,bowl/cup,noun,R4,Y
+400,өвөл,으블,겨울,winter,noun,R4,Y
+401,таваг,타박,접시,plate,noun,R4,Y
+402,сүм,숨,절/사원,temple,noun,R4,Y
+403,халбага,할박,숟가락,spoon,noun,R4,Y
+404,сэрээ,세레,포크,fork,noun,R4,Y
+405,хутга,호트가,칼,knife,noun,R4,Y
+406,байр,베르,아파트/숙소,apartment,noun,R4,Y
+407,орон сууц,어렁 소츠,아파트,apartment,noun,R4,Y
+408,тариаланч,타리아랑치,농부,farmer,noun,R4,Y
+409,малгай,말게,모자,hat,noun,R4,Y
+410,дээл,델,델(전통 의상),deel,noun,R4,Y
+411,айх,에흐,무서워하다,be afraid,verb,R4,Y
+412,хүрэм,후렘,재킷,jacket,noun,R4,Y
+413,нүдний шил,누드니 실,안경,glasses,noun,R4,Y
+414,очих,어치흐,가다(방문),go to,verb,R4,N
+415,бөгж,브그즈,반지,ring,noun,R4,Y
+416,тариур,타리오르,주사기,syringe,noun,R4,Y
+417,халдвар,할드바르,감염,infection,noun,R4,N
+418,буух,보흐,내리다,get off,verb,R4,Y
+419,тасалбар,타살바르,표/티켓,ticket,noun,R4,Y
+420,найтаах,네타흐,재채기하다,sneeze,verb,R4,Y
+421,бөөлжих,블지흐,토하다,vomit,verb,R4,N
+422,галт тэрэг,갈트 테렉,기차,train,noun,R4,Y
+423,дугуй,도고이,자전거/바퀴,bicycle,noun,R4,Y
+424,нисэх онгоцны буудал,니세흐 엉거츠니 보달,공항,airport,noun,R4,Y
+425,гүүр,구르,다리(교량),bridge,noun,R4,Y
+426,уулзвар,올즈바르,교차로,intersection,noun,R4,Y
+427,баруун,바롱,오른쪽/서쪽,right/west,noun,R4,N
+428,засах,자사흐,고치다,fix,verb,R4,Y
+429,зүүн,중,왼쪽/동쪽,left/east,noun,R4,N
+430,хойд,허이드,북쪽,north,noun,R4,N
+431,залуу,자로,젊은,young,adj,R4,Y
+432,хөгшин,흐그싱,늙은,old (person),adj,R4,Y
+433,илгээх,일게흐,보내다,send,verb,R4,N
+434,харайх,하레흐,뛰어넘다,leap,verb,R4,Y
+435,өмнөд,음느드,남쪽,south,noun,R4,N
+436,мөлхөх,믈흐흐,기다,crawl,verb,R4,Y
+437,мөргөх,므르그흐,절하다/부딪치다,bow/bump,verb,R4,Y
+438,дулаан,도랑,따뜻한,warm,adj,R4,Y
+439,сэрүүн,세룽,시원한,cool,adj,R4,N
+440,мордох,머르더흐,말에 오르다,mount (horse),verb,R4,Y
+441,жолоодох,저러더흐,운전하다,drive,verb,R4,Y
+442,малчин,말칭,목동,herder,noun,R4,Y
+443,цэс,체스,메뉴,menu,noun,R4,Y
+444,бусад,보사드,그 밖의,other,adj,R4,N
+445,шүүс,수스,주스,juice,noun,R4,Y
+446,пиво,핍,맥주,beer,noun,R4,Y
+447,цадах,차다흐,배부르다,be full,verb,R4,N
+448,цангах,창가흐,목마르다,be thirsty,verb,R4,N
+449,бор,버르,갈색,brown,adj,R4,Y
+450,ягаан,야강,분홍,pink,adj,R4,Y
+451,саарал,사랄,회색,gray,adj,R4,Y
+452,цэнхэр,쳉헤르,하늘색,light blue,adj,R4,Y
+453,зочид буудал,저치드 보달,호텔,hotel,noun,R4,Y
+454,халуун ногоо,하롱 너거,매운 양념,spicy,noun,R4,N
+455,алт,알트,금,gold,noun,R4,Y
+456,будаа,보다,쌀/밥,rice,noun,R4,Y
+457,хуучин,호칭,낡은/옛,old,adj,R4,N
+458,гурил,고릴,밀가루,flour,noun,R4,Y
+459,банк,방크,은행,bank,noun,R4,Y
+460,хайртай,헤르테,사랑하는,in love,adj,R4,Y
+461,шуудан,소당,우체국,post office,noun,R4,Y
+462,байцаа,베차,양배추,cabbage,noun,R4,Y
+463,гадил,가딜,바나나,banana,noun,R4,Y
+464,тарвас,타르바스,수박,watermelon,noun,R4,Y
+465,тахиа,타히아,닭,chicken,noun,R4,Y
+466,автобус,압터보스,버스,bus,noun,R4,Y
+467,гахай,가헤,돼지,pig,noun,R4,Y
+468,такси,타크시,택시,taxi,noun,R4,Y
+469,адуу,아도,말(떼),horses,noun,R4,Y
+470,найдах,네다흐,기대하다/믿다,hope,verb,R4,N
+471,найдвар,네드바르,희망,hope,noun,R4,N
+472,мөрөөдөх,므르드흐,꿈꾸다,dream,verb,R4,N
+473,мал,말,가축,livestock,noun,R4,Y
+474,паспорт,파스퍼르트,여권,passport,noun,R4,Y
+475,виз,비즈,비자,visa,noun,R4,Y
+476,эргэх,에르게흐,돌다,turn,verb,R4,Y
+477,захидал,자히달,편지,letter,noun,R4,Y
+478,чоно,청,늑대,wolf,noun,R4,Y
+479,заавал,자발,반드시,surely,adv,R4,N
+480,баавгай,밥게,곰,bear,noun,R4,Y
+481,бүргэд,부르게드,독수리,eagle,noun,R4,Y
+482,гэрэл,게렐,빛/등,light,noun,R4,Y
+483,туулай,토레,토끼,rabbit,noun,R4,Y
+484,цаас,차스,종이,paper,noun,R4,Y
+485,могой,머거이,뱀,snake,noun,R4,Y
+486,амжилт,암질트,성공,success,noun,R4,N
+487,бар,바르,호랑이,tiger,noun,R4,Y
+488,ирвэс,이르베스,표범,leopard,noun,R4,Y
+489,хорь,허르,스물,twenty,num,R4,N
+490,гуч,고치,서른,thirty,num,R4,N
+491,гал тогоо,갈 터거,부엌,kitchen,noun,R4,Y
+492,дөч,드치,마흔,forty,num,R4,N
+493,талбай,탈베,광장,square,noun,R4,Y
+494,шат,사트,계단,stairs,noun,R4,Y
+495,тавь,탑,쉰,fifty,num,R4,N
+496,жар,자르,예순,sixty,num,R4,N
+497,дал,달,일흔,seventy,num,R4,N
+498,дээвэр,데베르,지붕,roof,noun,R4,Y
+499,музей,모졔이,박물관,museum,noun,R4,Y
+500,ер,예르,아흔,ninety,num,R4,N
+501,зурагт,조라그트,텔레비전,TV,noun,R4,Y
+502,их сургууль,이흐 소르골,대학교,university,noun,R4,Y
+503,урт,오르트,긴,long,adj,R4,Y
+504,өндөр,응드르,높은/키 큰,tall,adj,R4,Y
+505,хагас,하가스,절반,half,num,R4,N
+506,богино,버깅,짧은,short,adj,R4,Y
+507,намхан,남항,낮은/키 작은,short (height),adj,R4,Y
+508,сүүлийн,수링,마지막의,last,adj,R4,N
+509,үзэг,우젝,펜,pen,noun,R4,Y
+510,дараагийн,다라깅,다음의,next,adj,R4,N
+511,дэвтэр,뎁테르,공책,notebook,noun,R4,Y
+512,харандаа,하랑다,연필,pencil,noun,R4,Y
+513,нэгдүгээр,네그두게르,첫째,first (ordinal),num,R4,N
+514,хүнд,훙드,무거운,heavy,adj,R4,Y
+515,хоёрдугаар,허요르도가르,둘째,second (ordinal),num,R4,N
+516,дарга,다르가,상사/장,boss,noun,R4,Y
+517,хөнгөн,흥긍,가벼운,light,adj,R4,Y
+518,даваа,다바,월요일,Monday,noun,R4,N
+519,үүл,울,구름,cloud,noun,R4,Y
+520,мягмар,먀그마르,화요일,Tuesday,noun,R4,N
+521,эмч,엠치,의사,doctor,noun,R4,Y
+522,лхагва,르하그바,수요일,Wednesday,noun,R4,N
+523,сувилагч,소비라그치,간호사,nurse,noun,R4,Y
+524,пүрэв,푸렙,목요일,Thursday,noun,R4,N
+525,цагдаа,차그다,경찰,police,noun,R4,Y
+526,цэрэг,체렉,군인,soldier,noun,R4,Y
+527,баасан,바상,금요일,Friday,noun,R4,N
+528,гэр бүл,게르 불,가족,family,noun,R4,Y
+529,бямба,뱜바,토요일,Saturday,noun,R4,N
+530,жолооч,저러치,운전기사,driver,noun,R4,Y
+531,агаар,아가르,공기/날씨,air,noun,R4,N
+532,ням,냠,일요일,Sunday,noun,R4,N
+533,тогооч,터거치,요리사,cook,noun,R4,Y
+534,чулуу,초로,돌,stone,noun,R4,Y
+535,худалдагч,호달다그치,판매원,salesperson,noun,R4,Y
+536,эмээ,에메,할머니,grandmother,noun,R4,Y
+537,өвөө,으브,할아버지,grandfather,noun,R4,Y
+538,далай,다레,바다,sea,noun,R4,Y
+539,өвс,읍스,풀,grass,noun,R4,Y
+540,элс,엘스,모래,sand,noun,R4,Y
+541,цагаан сар,차강 사르,설날(차강사르),Lunar New Year,noun,R4,Y
+542,дуучин,도칭,가수,singer,noun,R4,Y
+543,зураач,조라치,화가,painter,noun,R4,Y
+544,төрсөн өдөр,트르승 으드르,생일,birthday,noun,R4,Y
+545,жүжигчин,주지그칭,배우,actor,noun,R4,Y
+546,хулгана,홀강,쥐,mouse,noun,R4,Y
+547,амралтын өдөр,암랄팅 으드르,주말/휴일,day off,noun,R4,N
+548,найз залуу,네즈 자로,남자친구,boyfriend,noun,R4,Y
+549,тамирчин,타미르칭,운동선수,athlete,noun,R4,Y
+550,хөрш,흐르시,이웃,neighbor,noun,R4,Y
+551,хугацаа,호가차,기간,period,noun,R4,N
+552,чухал,초할,중요한,important,adj,R4,N
+553,үе,우예,때/세대,time/generation,noun,R4,N
+554,мөч,므치,순간,moment,noun,R4,N
+555,одоогийн,어더깅,현재의,current,adj,R4,N
+556,гутал,고탈,신발,shoes,noun,R4,Y
+557,өнгөрсөн,응그르승,지난,past,adj,R4,N
+558,хямд,햠드,싼,cheap,adj,R4,N
+559,үнэтэй,우네테,비싼,expensive,adj,R4,N
+560,удахгүй,오다흐구이,곧,soon,adv,R4,N
+561,аль хэдийн,알 헤딩,이미,already,adv,R4,N
+562,амархан,아마르항,쉬운,easy,adj,R4,N
+563,хараахан,하라항,아직,yet,adv,R4,N
+564,хэцүү,헤추,어려운,difficult,adj,R4,N
+565,одоо болтол,어더 벌털,지금까지,until now,adv,R4,N
+566,гэнэт,게네트,갑자기,suddenly,adv,R4,N
+567,шалтгаан,살트강,이유,reason,noun,R4,N
+568,цамц,참츠,셔츠,shirt,noun,R4,Y
+569,аажмаар,아즈마르,천천히,gradually,adv,R4,N
+570,өмд,음드,바지,pants,noun,R4,Y
+571,хамгийн,함깅,가장,most,adv,R4,N
+572,илүү,이루,더,more,adv,R4,N
+573,асуудал,아소달,문제,problem,noun,R4,N
+574,өвдөх,읍드흐,아프다,hurt,verb,R4,Y
+575,хангалттай,항갈트테,충분한,enough,adj,R4,N
+576,арьс,아르스,가죽,leather,noun,R4,Y
+577,бүтэн,부텡,온전한,whole,adj,R4,N
+578,сайжрах,세즈라흐,좋아지다,improve,verb,R4,N
+579,хурдан,호르당,빠른/빨리,fast,adj,R4,Y
+580,удаан,오당,느린/오래,slow,adj,R4,Y
+581,батарей,바타례이,배터리,battery,noun,R4,Y
+582,уйтгартай,오이트가르테,지루한,boring,adj,R4,N
+583,хөгжилтэй,흐그질테,즐거운,fun,adj,R4,Y
+584,инээдтэй,이네드테,웃긴,funny,adj,R4,Y
+585,товч,텁치,단추/버튼,button,noun,R4,Y
+586,ялах,야라흐,이기다,win,verb,R4,Y
+587,чихэвч,치헵치,이어폰,earphones,noun,R4,Y
+588,ялагдах,야라그다흐,지다,lose,verb,R4,N
+589,хожих,허지흐,이기다,win,verb,R4,N
+590,хайрлах,헤르라흐,사랑하다,love,verb,R4,Y
+591,нээлттэй,넬트테,열린,open,adj,R4,Y
+592,тоглуулах,터그로라흐,재생하다,play (media),verb,R4,N
+593,хаалттай,할트테,닫힌,closed,adj,R4,Y
+594,таних,타니흐,알아보다,recognize,verb,R4,N
+595,ойлгомжтой,어일검즈터이,이해하기 쉬운,understandable,adj,R4,N
+596,тайлан,테랑,보고서,report,noun,R4,N
+597,гэрээ,게레,계약,contract,noun,R4,N
+598,завгүй,잡구이,바쁜,busy,adj,R4,Y
+599,тамга,탐가,도장,seal,noun,R4,Y
+600,барих,바리흐,잡다/짓다,hold/build,verb,R4,Y
+601,чөлөөтэй,츠르테,한가한,free,adj,R4,N
+602,ядарсан,야다르상,피곤한,tired,adj,R4,Y
+603,имэйл,이멜,이메일,email,noun,R4,N
+604,бүртгэл,부르트겔,등록,registration,noun,R4,N
+605,нээх,네흐,열다,open,verb,R4,Y
+606,өлсгөлөн,을스그릉,배고픈,hungry,adj,R4,Y
+607,нэвтрэх,넵트레흐,들어가다/로그인하다,enter/log in,verb,R4,N
+608,хаах,하흐,닫다,close,verb,R4,Y
+609,асаах,아사흐,켜다,turn on,verb,R4,Y
+610,гэдэс,게데스,배(신체),belly,noun,R4,Y
+611,унтраах,옹트라흐,끄다,turn off,verb,R4,Y
+612,хууль,홀,법,law,noun,R4,N
+613,нуруу,노로,등,back,noun,R4,Y
+614,давхар,답하르,층,floor,noun,R4,Y
+615,зөөлөн,즈릉,부드러운,soft,adj,R4,Y
+616,эрх,에르흐,권리,right,noun,R4,N
+617,ерөнхийлөгч,예릉히르그치,대통령,president,noun,R4,Y
+618,хуруу,호로,손가락,finger,noun,R4,Y
+619,мөр,므르,어깨/줄,shoulder,noun,R4,Y
+620,хатуу,하토,단단한,hard,adj,R4,Y
+621,үүрэг,우렉,의무/역할,duty,noun,R4,N
+622,лифт,리프트,엘리베이터,elevator,noun,R4,Y
+623,хонгил,헝길,복도,corridor,noun,R4,Y
+624,өвдөг,읍득,무릎,knee,noun,R4,Y
+625,хоолой,허러이,목/목구멍,throat,noun,R4,Y
+626,гүн,궁,깊은,deep,adj,R4,Y
+627,цус,초스,피,blood,noun,R4,N
+628,алдах,알다흐,잃다,lose,verb,R4,N
+629,гүехэн,구예헹,얕은,shallow,adj,R4,N
+630,яс,야스,뼈,bone,noun,R4,Y
+631,бүдүүн,부둥,굵은/뚱뚱한,thick,adj,R4,Y
+632,онцгой,엉츠거이,특별한,special,adj,R4,N
+633,туранхай,토랑헤,마른(몸),thin,adj,R4,Y
+634,яг,약,딱/바로,exactly,adv,R4,N
+635,ная,나야,여든,eighty,num,R4,N
+636,тагт,타그트,발코니,balcony,noun,R4,Y
+637,тарган,타르강,뚱뚱한,fat,adj,R4,Y
+638,хөөрхөн,흐르흥,귀여운,cute,adj,R4,Y
+639,царайлаг,차레락,잘생긴,handsome,adj,R4,Y
+640,үзэсгэлэнтэй,우제스게렝테,아름다운,beautiful,adj,R4,Y
+641,ухаантай,오항테,똑똑한,smart,adj,R4,N
+642,парк,파르크,공원,park,noun,R4,Y
+643,барилга,바릴가,건물,building,noun,R4,Y
+644,эелдэг,에옐덱,친절한,kind,adj,R4,N
+645,ичимхий,이침히,수줍은,shy,adj,R4,Y
+646,зоригтой,저리그터이,용감한,brave,adj,R4,N
+647,тогоо,터거,솥,pot,noun,R4,Y
+648,шашин,사싱,종교,religion,noun,R4,N
+649,бурхан,보르항,부처/신,Buddha/god,noun,R4,Y
+650,театр,톄아트르,극장,theater,noun,R4,Y
+651,яаж,야아즈,어떻게,how,adv,R4,N
+652,мессеж,몌스셰즈,메시지,message,noun,R4,Y
+653,харанхуй,하랑호이,어두운,dark,adj,R4,Y
+654,алтан,알탕,금빛의,golden,adj,R4,Y
+655,дүрэм,두렘,규칙/문법,rule,noun,R4,N
+656,цэнэглэгч,체네그레그치,충전기,charger,noun,R4,Y
+657,мөнгөн,믕긍,은빛의,silver,adj,R4,N
+658,шинжлэх ухаан,싱즈레흐 오항,과학,science,noun,R4,N
+659,камер,카몌르,카메라,camera,noun,R4,Y
+660,төгрөг,트그륵,투그릭(화폐),tugrik,noun,R4,Y
+661,доллар,덜라르,달러,dollar,noun,R4,Y
+662,зочин,저칭,손님,guest,noun,R4,Y
+663,карт,카르트,카드,card,noun,R4,Y
+664,хаяг,하약,주소,address,noun,R4,N
+665,бэлэн мөнгө,베렝 믕그,현금,cash,noun,R4,Y
+666,дунд,동드,가운데,middle,noun,R4,N
+667,оффис,어프피스,사무실,office,noun,R4,Y
+668,тэгээд,테게드,그리고 나서,and then,conj,R4,N
+669,эсвэл,에스벨,또는,or,conj,R4,N
+670,заримдаа,자림다,가끔,sometimes,adv,R4,N
+671,мөн,믕,또한,also,conj,R4,N
+672,тодруулагч,터드로라그치,형광펜,highlighter,noun,R4,Y
+673,ажилтан,아질탕,직원,employee,noun,R4,Y
+674,ганцаараа,강차라,혼자서,alone,adv,R4,N
+675,цавуудах,차보다흐,풀칠하다,glue,verb,R4,N
+676,хайчлах,헤치라흐,오리다,cut out,verb,R4,Y
+677,үдэгч,우데그치,스테이플러,stapler,noun,R4,Y
+678,үдээс,우데스,스테이플 심,staple,noun,R4,N
+679,хавчаар,합차르,클립,clip,noun,R4,Y
+680,тор,터르,그물,net,noun,R4,Y
+681,бөмбөг,븜븍,공,ball,noun,R4,Y
+682,бариул,바리올,손잡이,handle,noun,R4,Y
+683,кран,크랑,수도꼭지,faucet,noun,R4,Y
+684,ойр,어이르,가까운,near,adj,R4,N
+685,раковина,라커빙,세면대,sink,noun,R4,Y
+686,хол,헐,먼,far,adj,R4,N
+687,хөтөч,흐트치,가이드,guide,noun,R4,Y
+688,ванн,방느,욕조,bathtub,noun,R4,Y
+689,орчуулагч,어르초라그치,통역사,translator,noun,R4,Y
+690,ажилгүй,아질구이,일 없는,unemployed,adj,R4,N
+691,душ,도시,샤워,shower,noun,R4,Y
+692,зугаалах,조가라흐,산책하다/놀러 가다,stroll,verb,R4,Y
+693,тольдох,털더흐,거울을 보다,look in mirror,verb,R4,Y
+694,цалин,차링,월급,salary,noun,R4,N
+695,төсөл,트슬,프로젝트,project,noun,R4,N
+696,оймс,어임스,양말,socks,noun,R4,Y
+697,амттай,암트테,맛있는,delicious,adj,R4,Y
+698,бээлий,베리,장갑,gloves,noun,R4,Y
+699,гашуун,가송,쓴,bitter,adj,R4,N
+700,давстай,답스테,짠,salty,adj,R4,N
+701,самбар,삼바르,칠판,board,noun,R4,Y
+702,чихэрлэг,치헤르렉,달콤한,sweet,adj,R4,N
+703,бүс,부스,허리띠,belt,noun,R4,Y
+704,толь бичиг,털 비칙,사전,dictionary,noun,R4,Y
+705,зангиа,장기아,넥타이,necktie,noun,R4,Y
+706,сонин,서닝,신문/신기한,newspaper,noun,R4,Y
+707,сэтгүүл,세트굴,잡지,magazine,noun,R4,Y
+708,хослол,허스럴,정장,suit,noun,R4,Y
+709,интернет,잉톄르녜트,인터넷,internet,noun,R4,N
+710,пальто,팔터,외투,coat,noun,R4,Y
+711,куртка,코르트카,점퍼,jacket,noun,R4,Y
+712,цэвэрлэх,체베르레흐,청소하다,clean,verb,R4,Y
+713,өмсөх,음스흐,입다,wear,verb,R4,Y
+714,дугаар,도가르,번호,number,noun,R4,N
+715,тайлах,테라흐,벗다,take off,verb,R4,Y
+716,хүсэл,후셀,소원,wish,noun,R4,N
+717,цахим шуудан,차힘 소당,이메일,email,noun,R4,N
+718,юбка,유브카,치마,skirt,noun,R4,Y
+719,даашинз,다싱즈,원피스,dress,noun,R4,Y
+720,дуулах,도라흐,노래하다,sing,verb,R4,Y
+721,радио,라디어,라디오,radio,noun,R4,Y
+722,бүжиглэх,부지그레흐,춤추다,dance,verb,R4,Y
+723,наушник,나오시닉,헤드폰,headphones,noun,R4,Y
+724,сэлэх,세레흐,수영하다,swim,verb,R4,Y
+725,хямдрал,햠드랄,할인,discount,noun,R4,N
+726,төлбөр,틀브르,요금,payment,noun,R4,N
+727,данс,당스,계좌,account,noun,R4,N
+728,програм,프러그람,프로그램,program,noun,R4,N
+729,тоглогч,터그러그치,선수/플레이어,player,noun,R4,Y
+730,шууд,소드,곧장,straight,adv,R4,N
+731,хожигдох,허지그더흐,지다,lose,verb,R4,N
+732,тэмцээн,템쳉,대회,competition,noun,R4,Y
+733,бэлтгэл,벨트겔,준비/훈련,preparation,noun,R4,N
+734,бэлдэх,벨데흐,준비하다,prepare,verb,R4,N
+735,компани,컴파니,회사,company,noun,R4,Y
+736,нулимс,노림스,눈물,tear,noun,R4,Y
+737,худ,호드,사돈,in-law,noun,R4,N
+738,шийдэх,시데흐,결정하다,decide,verb,R4,N
+739,зовлон,접렁,고통,suffering,noun,R4,N
+740,баг,박,팀,team,noun,R4,Y
+741,хамгаалах,함가라흐,지키다,protect,verb,R4,N
+742,ханиад,하니아드,감기,cold (illness),noun,R4,Y
+743,эм,엠,약,medicine,noun,R4,Y
+744,тусламж,토스람즈,도움,help,noun,R4,N
+745,халуурах,하로라흐,열나다,have a fever,verb,R4,Y
+746,үйлдвэр,우일드베르,공장,factory,noun,R4,Y
+747,ханиалгах,하니알가흐,기침하다,cough,verb,R4,Y
+748,танил,타닐,아는 사람,acquaintance,noun,R4,N
+749,урилга,오릴가,초대장,invitation,noun,R4,Y
+750,дуудлага,도드락,발음,pronunciation,noun,R4,N
+751,өрсөлдөгч,으르슬드그치,경쟁자,rival,noun,R4,N
+752,эрүүл,에룰,건강한,healthy,adj,R4,Y
+753,өвчтэй,읍치테,아픈,sick,adj,R4,Y
+754,танилцах,타닐차흐,알게 되다,get acquainted,verb,R4,N
+755,бүлэг,부렉,무리/장(章),group,noun,R4,N
+756,дутуу,도토,모자란,insufficient,adj,R4,N
+757,нөхөрлөл,느흐르를,우정,friendship,noun,R4,N
+758,эхний,에흐니,첫 번째의,first,adj,R4,N
+759,өсөх,으스흐,크다/자라다,grow up,verb,R4,N
+760,бохир,버히르,더러운,dirty,adj,R4,Y
+761,харилцаа,하릴차,관계,relationship,noun,R4,N
+762,цэвэр,체베르,깨끗한,clean,adj,R4,Y
+763,шинэхэн,시네헹,신선한,fresh,adj,R4,N
+764,дурлах,도르라흐,반하다,fall in love,verb,R4,Y
+765,гэрлэх,게르레흐,결혼하다,marry,verb,R4,Y
+766,тэнэг,테넥,바보 같은,stupid,adj,R4,N
+767,залхуу,잘호,게으른,lazy,adj,R4,N
+768,ажилсаг,아질삭,부지런한,hardworking,adj,R4,N
+769,өргөн,으르긍,넓은,wide,adj,R4,Y
+770,нарийн,나링,좁은/섬세한,narrow,adj,R4,Y
+771,аз жаргал,아즈 자르갈,행복,happiness,noun,R4,N
+772,аз,아즈,운,luck,noun,R4,N
+773,тус,토스,도움/각,help,noun,R4,N
+774,хоосон,허성,빈,empty,adj,R4,Y
+775,азтай,아즈테,운 좋은,lucky,adj,R4,N
+776,аюултай,아유올테,위험한,dangerous,adj,R4,N
+777,дүүрэн,두렝,가득 찬,full,adj,R4,Y
+778,хохирол,허히럴,손해,damage,noun,R4,N
+779,аюулгүй,아유올구이,안전한,safe,adj,R4,N
+780,гуниг,고닉,슬픔,sadness,noun,R4,N
+781,алдагдал,알다그달,손실,loss,noun,R4,N
+782,гунигтай,고니그테,슬픈,sad,adj,R4,Y
+783,энгийн,엥깅,평범한,ordinary,adj,R4,N
+784,ичих,이치흐,부끄러워하다,be shy,verb,R4,Y
+785,хүзүү,후주,목,neck,noun,R4,Y
+786,гайхалтай,게할테,놀라운,amazing,adj,R4,N
+787,нойтон,너이텅,젖은,wet,adj,R4,Y
+788,хуурай,호레,마른,dry,adj,R4,N
+789,таалагдах,타라그다흐,마음에 들다,be liked,verb,R4,N
+790,чанга,창가,큰 소리/단단한,loud,adj,R4,N
+791,сонирхох,서니르허흐,관심 갖다,be interested,verb,R4,N
+792,зүүд,주드,꿈(잠),dream,noun,R4,Y
+793,зүүдлэх,주드레흐,꿈꾸다,dream,verb,R4,N
+794,шүү,수,~야(강조),emphatic particle,part,R4,N
+795,зөвлөгөө,즙르그,조언,advice,noun,R4,N
+796,даатгал,다트갈,보험,insurance,noun,R4,N
+797,итгэлтэй,이트겔테,확신하는,confident,adj,R4,N
+798,боломжтой,버럼즈터이,가능한,possible,adj,R4,N
+799,эргэлзэх,에르겔제흐,망설이다,hesitate,verb,R4,N
+800,боломжгүй,버럼즈구이,불가능한,impossible,adj,R4,N
+801,байгууллага,베골락,기관,organization,noun,R4,N
+802,эвдрэх,엡드레흐,부서지다,break,verb,R4,Y
+803,тушаал,토살,명령,order,noun,R4,N
+804,чимээгүй,치메구이,조용한,quiet,adj,R4,N
+805,бүтэлгүйтэл,부텔구이텔,실패,failure,noun,R4,N
+806,гэрэлтэй,게렐테,밝은,bright,adj,R4,N
+807,нэмэх,네메흐,더하다,add,verb,R4,N
+808,сорилт,서릴트,시련/시험,trial,noun,R4,N
+809,хасах,하사흐,빼다,subtract,verb,R4,N
+810,тоолох,터러흐,세다,count,verb,R4,N
+811,нийгэм,니겜,사회,society,noun,R4,N
+812,тооцоо,터처,계산,calculation,noun,R4,N
+813,хэмжээ,헴제,크기/양,size,noun,R4,N
+814,жин,징,무게,weight,noun,R4,N
+815,метр,몌트르,미터,meter,noun,R4,N
+816,нөлөө,느르,영향,influence,noun,R4,N
+817,километр,키러몌트르,킬로미터,kilometer,noun,R4,N
+818,өөрчлөлт,으르치를트,변화,change,noun,R4,N
+819,кило,킬,킬로그램,kilogram,noun,R4,N
+820,хөгжил,흐그질,발전,development,noun,R4,N
+821,дэвшил,뎁실,진보,progress,noun,R4,N
+822,литр,리트르,리터,liter,noun,R4,N
+823,маргах,마르가흐,다투다,argue,verb,R4,Y
+824,гомдох,검더흐,서운해하다,be offended,verb,R5,N
+825,градус,그라도스,도(온도),degree,noun,R5,N
+826,зодолдох,저덜더흐,싸우다,fight,verb,R5,Y
+827,ухралт,오흐랄트,후퇴,retreat,noun,R5,N
+828,шалгах,살가흐,확인하다,check,verb,R5,N
+829,солих,서리흐,바꾸다/교환하다,exchange,verb,R5,N
+830,цаг агаар,착 아가르,날씨,weather,noun,R5,Y
+831,шийдэл,시델,해결책,solution,noun,R5,N
+832,санал,사날,의견/제안,opinion,noun,R5,N
+833,тайван,테방,평온한,calm,adj,R5,N
+834,тохиролцоо,터히럴처,합의,agreement,noun,R5,N
+835,шуурга,소르가,폭풍,storm,noun,R5,Y
+836,маргаан,마르강,논쟁,dispute,noun,R5,N
+837,утаа,오타,연기,smoke,noun,R5,Y
+838,солонго,서렁거,무지개,rainbow,noun,R5,Y
+839,хэлэлцээр,헤렐체르,협상,negotiation,noun,R5,N
+840,дэлхий,델히,지구/세상,earth,noun,R5,Y
+841,бизнес,비즈녜스,사업,business,noun,R5,N
+842,нөхцөл,느흐츨,조건,condition,noun,R5,N
+843,орчлон,어르치렁,우주,universe,noun,R5,Y
+844,цэцэрлэг,체체르렉,공원/유치원,park/kindergarten,noun,R5,Y
+845,унах,오나흐,타다/떨어지다,ride/fall,verb,R5,Y
+846,заавар,자바르,안내/지침,instruction,noun,R5,N
+847,хариуцлага,하리오츠락,책임,responsibility,noun,R5,N
+848,арал,아랄,섬,island,noun,R5,Y
+849,баталгаа,바탈가,보증,guarantee,noun,R5,N
+850,туршилт,토르실트,실험,experiment,noun,R5,N
+851,шороо,서러,흙/먼지,dirt,noun,R5,Y
+852,дүгнэлт,두그넬트,결론,conclusion,noun,R5,N
+853,ой,어이,숲,forest,noun,R5,Y
+854,навч,납치,잎,leaf,noun,R5,Y
+855,гэрч,게르치,증인,witness,noun,R5,N
+856,үндэс,웅데스,뿌리,root,noun,R5,Y
+857,баталгаажуулах,바탈가조라흐,확인하다,verify,verb,R5,N
+858,булаг,보락,샘,spring (water),noun,R5,Y
+859,хад,하드,바위,rock,noun,R5,Y
+860,судлах,소드라흐,연구하다,study,verb,R5,N
+861,хөндий,흥디,골짜기,valley,noun,R5,Y
+862,толь,털,거울,mirror,noun,R5,Y
+863,шүүгээ,수게,옷장,wardrobe,noun,R5,Y
+864,байдал,베달,상태,situation,noun,R5,N
+865,шинжлэх,싱즈레흐,분석하다,analyze,verb,R5,N
+866,дүгнэх,두그네흐,결론짓다,conclude,verb,R5,N
+867,баримтлах,바림트라흐,지키다/따르다,adhere,verb,R5,N
+868,орчин,어르칭,환경,environment,noun,R5,N
+869,хөргөгч,흐르그그치,냉장고,refrigerator,noun,R5,Y
+870,мөрдөх,므르드흐,따르다/수사하다,follow,verb,R5,N
+871,засгийн газар,자스깅 가자르,정부,government,noun,R5,N
+872,зөрчих,즈르치흐,어기다,violate,verb,R5,N
+873,буруутгах,보로트가흐,탓하다,blame,verb,R5,N
+874,сонгууль,성골,선거,election,noun,R5,N
+875,цагаатгах,차가트가흐,무죄로 하다,acquit,verb,R5,N
+876,шийтгэх,시트게흐,벌하다,punish,verb,R5,N
+877,өршөөх,으르스흐,용서하다,pardon,verb,R5,N
+878,эдийн засаг,에딩 자삭,경제,economy,noun,R5,N
+879,гомдол,검덜,불만,complaint,noun,R5,N
+880,тодорхой,터더르허이,분명한,clear,adj,R5,N
+881,урам,오람,의욕,motivation,noun,R5,N
+882,уурхай,오르헤,광산,mine,noun,R5,Y
+883,сонирхолтой,서니르헐터이,재미있는,interesting,adj,R5,N
+884,нүүрс,누르스,석탄,coal,noun,R5,Y
+885,зэс,제스,구리,copper,noun,R5,N
+886,газрын тос,가즈링 터스,석유,oil,noun,R5,N
+887,хөдөө,흐드,시골,countryside,noun,R5,Y
+888,аймаг,에막,아이막(도),province,noun,R5,N
+889,сум,솜,솜(군),district,noun,R5,N
+890,газ,가즈,가스,gas,noun,R5,N
+891,дүүрэг,두렉,구,district,noun,R5,N
+892,хороо,허러,동/위원회,subdistrict,noun,R5,N
+893,нийслэл,니스렐,수도,capital,noun,R5,Y
+894,төв,틉,중심,center,noun,R5,N
+895,уйтгар,오이트가르,지루함,boredom,noun,R5,N
+896,хэрвээ,헤르베,만약,if,conj,R5,N
+897,ачаа,아차,짐,luggage,noun,R5,Y
+898,монгол,몽골,몽골,Mongolia,noun,R5,Y
+899,солонгос,솔롱고스,한국,Korea,noun,R5,Y
+900,хятад,햐타드,중국,China,noun,R5,Y
+901,орос,어러스,러시아,Russia,noun,R5,Y
+902,япон,야펑,일본,Japan,noun,R5,Y
+903,америк,아몌릭,미국,America,noun,R5,Y
+904,салхилах,살히라흐,바람 쐬다,get fresh air,verb,R5,N
+905,англи,앙그리,영국/영어,English,noun,R5,N
+906,нарлах,나르라흐,햇볕 쬐다,sunbathe,verb,R5,Y
+907,бүжиг,부직,춤,dance,noun,R5,Y
+908,герман,계르망,독일,Germany,noun,R5,N
+909,улаанбаатар,울란바토르,울란바토르,Ulaanbaatar,noun,R5,Y
+910,хувцаслах,홉차스라흐,옷을 입다,dress,verb,R5,Y
+911,хөдөлгөөнтэй,흐들긍테,활발한,active,adj,R5,N
+912,дархан,다르항,다르항,Darkhan,noun,R5,N
+913,урлаг,오르락,예술,art,noun,R5,N
+914,шүлэг,수렉,시,poem,noun,R5,N
+915,эрдэнэт,에르데네트,에르데네트,Erdenet,noun,R5,N
+916,ухаалаг,오하락,똑똑한,smart,adj,R5,N
+917,хархорин,하르허링,하라호링,Kharkhorin,noun,R5,Y
+918,хөвсгөл,흡스글,홉스골,Khuvsgul,noun,R5,Y
+919,галзуу,갈조,미친,crazy,adj,R5,N
+920,тэрэлж,테렐즈,테를지,Terelj,noun,R5,Y
+921,сохор,서허르,눈먼,blind,adj,R5,N
+922,чингис хаан,칭기스 항,칭기스칸,Genghis Khan,noun,R5,Y
+923,хаан,항,왕/칸,khan,noun,R5,Y
+924,түүхэн,투헹,역사적인,historical,adj,R5,N
+925,хэлгүй,헬구이,말 못하는,mute,adj,R5,N
+926,тиймэрхүү,티메르후,그런 식의,that kind of,adj,R5,N
+927,тахир,타히르,굽은,crooked,adj,R5,N
+928,эртний,에르트니,옛날의,ancient,adj,R5,N
+929,уламжлал,오람즈랄,전통,tradition,noun,R5,N
+930,уламжлалт,오람즈랄트,전통적인,traditional,adj,R5,N
+931,үнэгүй,우네구이,무료의,free (of charge),adj,R5,N
+932,залуухан,자로항,젊디젊은,youngish,adj,R5,N
+933,зан заншил,장 장실,풍습,custom,noun,R5,N
+934,сүүдэр,수데르,그림자,shadow,noun,R5,Y
+935,лам,람,라마승,lama,noun,R5,Y
+936,бөө,브,무당,shaman,noun,R5,Y
+937,сайд,세드,장관,minister,noun,R5,Y
+938,бичлэг,비치렉,녹화/글,recording,noun,R5,N
+939,овоо,어버,어워(돌무더기),ovoo,noun,R5,Y
+940,хадаг,하닥,하닥(푸른 비단),khadag,noun,R5,Y
+941,морин хуур,머링 호르,마두금,horsehead fiddle,noun,R5,Y
+942,зохиолч,저히얼치,작가,writer,noun,R5,Y
+943,зузаан,조장,두꺼운,thick,adj,R5,Y
+944,хөөмий,흐미,허미(목노래),throat singing,noun,R5,Y
+945,нимгэн,님겡,얇은,thin,adj,R5,Y
+946,уртын дуу,오르팅 도,오르팅 도,long song,noun,R5,N
+947,бичиг,비칙,문자/글,script,noun,R5,N
+948,шугам,소감,선,line,noun,R5,Y
+949,монгол бичиг,몽골 비칙,몽골 문자,Mongolian script,noun,R5,Y
+950,ажилчин,아질칭,노동자,worker,noun,R5,Y
+951,кирилл,키릴르,키릴 문자,Cyrillic,noun,R5,N
+952,үсэг,우섹,글자,letter,noun,R5,Y
+953,өгүүлбэр,으굴베르,문장,sentence,noun,R5,N
+954,утга,오트가,의미,meaning,noun,R5,N
+955,хэлбэр,헬베르,형태,form,noun,R5,N
+956,орчуулах,어르초라흐,번역하다,translate,verb,R5,N
+957,чихэр,치헤르,사탕/설탕,candy,noun,R5,Y
+958,давтах,답타흐,반복하다,repeat,verb,R5,N
+959,давс,답스,소금,salt,noun,R5,Y
+960,цээжлэх,체즈레흐,외우다,memorize,verb,R5,N
+961,заах,자흐,가르치다,teach,verb,R5,Y
+962,амтгүй,암트구이,맛없는,tasteless,adj,R5,N
+963,жишээ,지세,예,example,noun,R5,N
+964,гадаад,가다드,외국,foreign,adj,R5,N
+965,дотоод,더터드,국내의,domestic,adj,R5,N
+966,мэргэжил,메르게질,전공/직업,profession,noun,R5,N
+967,исгэлэн,이스게렝,신(맛),sour,adj,R5,N
+968,аялал,아야랄,여행,trip,noun,R5,Y
+969,тослог,터스럭,기름진,greasy,adj,R5,N
+970,жуулчны бааз,졸치니 바즈,여행자 캠프,tourist camp,noun,R5,Y
+971,майхан,메항,텐트,tent,noun,R5,Y
+972,түлээ,투레,땔감,firewood,noun,R5,Y
+973,хайч,헤치,가위,scissors,noun,R5,Y
+974,зуух,조흐,난로,stove,noun,R5,Y
+975,хувин,호빙,양동이,bucket,noun,R5,Y
+976,эсгий,에스기,펠트,felt,noun,R5,Y
+977,авдар,압다르,궤짝,chest,noun,R5,Y
+978,тоосго,터스거,벽돌,brick,noun,R5,Y
+979,хашаа,하사,울타리/마당,fence/yard,noun,R5,Y
+980,худаг,호닥,우물,well,noun,R5,Y
+981,шуугиантай,소기앙테,시끄러운,noisy,adj,R5,N
+982,бэлчээр,벨체르,목초지,pasture,noun,R5,Y
+983,нүүх,누흐,이동하다(유목),move,verb,R5,Y
+984,татгалзах,타트갈자흐,거절하다,refuse,verb,R5,N
+985,нүүдэл,누델,이동,migration,noun,R5,N
+986,ашигтай,아시그테,이로운,beneficial,adj,R5,N
+987,нүүдэлчин,누델칭,유목민,nomad,noun,R5,Y
+988,ноос,너스,양털,wool,noun,R5,Y
+989,ноолуур,너로르,캐시미어,cashmere,noun,R5,Y
+990,алдартай,알다르테,유명한,famous,adj,R5,N
+991,эмээл,에멜,안장,saddle,noun,R5,Y
+992,ташуур,타소르,채찍,whip,noun,R5,Y
+993,уурга,오르가,올가미 막대,lasso pole,noun,R5,Y
+994,төвөгтэй,트브그테,번거로운,troublesome,adj,R5,N
+995,унага,오낙,망아지,foal,noun,R5,Y
+996,гүү,구,암말,mare,noun,R5,Y
+997,азарга,아자르가,종마,stallion,noun,R5,Y
+998,ботго,버트거,새끼 낙타,baby camel,noun,R5,Y
+999,хурга,호르가,새끼 양,lamb,noun,R5,Y
+1000,хөдлөх,흐드르흐,움직이다,move,verb,R5,N
+1001,ишиг,이식,새끼 염소,kid (goat),noun,R5,Y
+1002,алдаатай,알다테,틀린 데가 있는,erroneous,adj,R5,N
+1003,тугал,토갈,송아지,calf,noun,R5,Y
+1004,ижил,이질,같은,same,adj,R5,N
+1005,сарлаг,사르락,야크,yak,noun,R5,Y
+1006,буга,복,사슴,deer,noun,R5,Y
+1007,ойрхон,어이르헝,가까운,nearby,adj,R5,N
+1008,үнэг,우넥,여우,fox,noun,R5,Y
+1009,тарвага,타르박,마멋,marmot,noun,R5,Y
+1010,хэрээ,헤레,까마귀,crow,noun,R5,Y
+1011,сонгох,성거흐,고르다,choose,verb,R5,N
+1012,хамааралтай,하마랄테,관련 있는,related,adj,R5,N
+1013,шонхор,성허르,매,falcon,noun,R5,Y
+1014,тогоруу,터거로,두루미,crane,noun,R5,Y
+1015,тусгай,토스게,특별한,special,adj,R5,N
+1016,эрвээхэй,에르베헤,나비,butterfly,noun,R5,Y
+1017,ялаа,야라,파리,fly,noun,R5,Y
+1018,шумуул,소몰,모기,mosquito,noun,R5,Y
+1019,шоргоолж,서르걸즈,개미,ant,noun,R5,Y
+1020,оролцох,어럴처흐,참가하다,participate,verb,R5,N
+1021,зөгий,즈기,벌,bee,noun,R5,Y
+1022,мэлхий,멜히,개구리,frog,noun,R5,Y
+1023,хаях,하야흐,버리다,throw away,verb,R5,Y
+1024,яст мэлхий,야스트 멜히,거북,turtle,noun,R5,Y
+1025,тэжээвэр,테제베르,애완의,pet,adj,R5,N
+1026,амьтны хүрээлэн,암트니 후레렝,동물원,zoo,noun,R5,Y
+1027,турших,토르시흐,시도하다,try,verb,R5,N
+1028,тоглоомын талбай,터그러밍 탈베,놀이터,playground,noun,R5,Y
+1029,усан бассейн,오상 바스셰잉,수영장,swimming pool,noun,R5,Y
+1030,загасчлах,자가스치라흐,낚시하다,fish,verb,R5,Y
+1031,авирах,아비라흐,오르다,climb,verb,R5,Y
+1032,тогтмол,터그트멀,일정한,regular,adj,R5,N
+1033,үсрэх,우스레흐,뛰다,jump,verb,R5,Y
+1034,салах,사라흐,헤어지다,break up,verb,R5,N
+1035,ховор,허버르,드문,rare,adj,R5,N
+1036,хөлбөмбөг,흘븜븍,축구,football,noun,R5,Y
+1037,сагсан бөмбөг,사그상 븜븍,농구,basketball,noun,R5,Y
+1038,санамсаргүй,사남사르구이,무심코,accidentally,adv,R5,N
+1039,зориудаар,저리오다르,일부러,on purpose,adv,R5,N
+1040,цуглуулах,초그로라흐,모으다,collect,verb,R5,N
+1041,шатар,사타르,체스,chess,noun,R5,Y
+1042,зөвшөөрөх,즙스르흐,허락하다,allow,verb,R5,N
+1043,хурал,호랄,회의,meeting,noun,R5,Y
+1044,шагай,사게,샤가이(복사뼈 놀이),knucklebones,noun,R5,Y
+1045,урих,오리흐,초대하다,invite,verb,R5,N
+1046,шийдвэр,시드베르,결정,decision,noun,R5,N
+1047,байнга,벵가,항상,constantly,adv,R5,N
+1048,хөзөр,흐즈르,카드놀이,playing cards,noun,R5,Y
+1049,ерөөсөө,예르스,전혀/도대체,at all,adv,R5,N
+1050,уучлах,오치라흐,용서하다,forgive,verb,R5,N
+1051,зочлох,저치러흐,방문하다,visit,verb,R5,N
+1052,будах,보다흐,칠하다,paint,verb,R5,Y
+1053,хичээл,히첼,수업,lesson,noun,R5,Y
+1054,оёх,어요흐,바느질하다,sew,verb,R5,Y
+1055,шалгалт,살갈트,시험,exam,noun,R5,Y
+1056,даалгавар,달가바르,과제,assignment,noun,R5,N
+1057,хатгамал,하트가말,자수,embroidery,noun,R5,Y
+1058,нэхэх,네헤흐,짜다,knit,verb,R5,Y
+1059,чанах,차나흐,삶다,boil,verb,R5,Y
+1060,ашиг,아식,이익,profit,noun,R5,N
+1061,шарах,사라흐,굽다/튀기다,fry,verb,R5,Y
+1062,жигнэх,지그네흐,찌다,steam,verb,R5,Y
+1063,сандрах,상드라흐,당황하다,panic,verb,R5,Y
+1064,хэрчих,헤르치흐,썰다,cut,verb,R5,Y
+1065,хуваах,호바흐,나누다,divide,verb,R5,N
+1066,сэтгэл хангалуун,세트겔 항가롱,만족한,satisfied,adj,R5,N
+1067,тайвшрах,텝시라흐,진정하다,calm down,verb,R5,N
+1068,холих,허리흐,섞다,mix,verb,R5,Y
+1069,амтлах,암트라흐,맛보다,taste,verb,R5,N
+1070,сэтгэл дундуур,세트겔 동도르,불만스러운,disappointed,adj,R5,N
+1071,үнэрлэх,우네르레흐,냄새 맡다,smell,verb,R5,Y
+1072,үнэр,우네르,냄새,smell,noun,R5,N
+1073,амт,암트,맛,taste,noun,R5,N
+1074,үдийн хоол,우딩 헐,점심,lunch,noun,R5,Y
+1075,уйтгарлах,오이트가르라흐,지루해하다,be bored,verb,R5,N
+1076,гайхах,게하흐,놀라다,be surprised,verb,R5,Y
+1077,адил,아딜,같은,alike,adj,R5,N
+1078,өлсөх,을스흐,배고프다,be hungry,verb,R5,Y
+1079,үйлчлүүлэгч,우일치루레그치,고객,customer,noun,R5,N
+1080,боломж,버럼즈,기회,opportunity,noun,R5,N
+1081,тухайлбал,토헬발,예컨대,namely,adv,R5,N
+1082,жимсгэнэ,짐스겡,베리,berry,noun,R5,Y
+1083,чацаргана,차차르강,비타민나무 열매,sea buckthorn,noun,R5,Y
+1084,тайлбарлах,텔바르라흐,설명하다,explain,verb,R5,N
+1085,үндсэндээ,웅드셍데,기본적으로,basically,adv,R5,N
+1086,зардал,자르달,비용,expense,noun,R5,N
+1087,ямарваа,야마르바,어떠한,any,adj,R5,N
+1088,орлого,어르럭,수입,income,noun,R5,N
+1089,түүнчлэн,퉁치렝,또한,furthermore,conj,R5,N
+1090,эрдэнэ шиш,에르뎅 시시,옥수수,corn,noun,R5,Y
+1091,татвар,타트바르,세금,tax,noun,R5,N
+1092,зээл,젤,대출,loan,noun,R5,N
+1093,хумс,홈스,손톱,nail,noun,R5,Y
+1094,тархи,타르히,뇌,brain,noun,R5,Y
+1095,уушиг,오식,폐,lung,noun,R5,N
+1096,цахилгаан,차힐강,전기,electricity,noun,R5,N
+1097,хэзээ ч,헤제 치,결코,never,adv,R5,N
+1098,тариа,타리아,주사,injection,noun,R5,Y
+1099,инженер,잉졔녜르,기술자,engineer,noun,R5,Y
+1100,осол,어설,사고,accident,noun,R5,Y
+1101,инээмсэглэх,이넴세그레흐,미소 짓다,smile,verb,R5,Y
+1102,гэмтэх,겜테흐,다치다,get injured,verb,R5,N
+1103,хурим,호림,결혼식,wedding,noun,R5,Y
+1104,сэтгүүлч,세트굴치,기자,journalist,noun,R5,Y
+1105,магадгүй,마가드구이,아마,maybe,adv,R5,N
+1106,хулгай,홀게,도둑질,theft,noun,R5,N
+1107,хулгайч,홀게치,도둑,thief,noun,R5,Y
+1108,алдагдах,알다그다흐,잃어버리다,get lost (thing),verb,R5,N
+1109,төөрөх,트르흐,길을 잃다,get lost,verb,R5,Y
+1110,газрын зураг,가즈링 조락,지도,map,noun,R5,Y
+1111,төмс,틈스,감자,potato,noun,R5,Y
+1112,эрх чөлөө,에르흐 츠르,자유,freedom,noun,R5,N
+1113,чиглэл,치그렐,방향,direction,noun,R5,N
+1114,ялгаатай,얄가테,다른,different,adj,R5,N
+1115,сонгино,성깅,양파,onion,noun,R5,Y
+1116,лууван,로방,당근,carrot,noun,R5,Y
+1117,хил,힐,국경,border,noun,R5,N
+1118,хуваалцах,호발차흐,나누다,share,verb,R5,N
+1119,гааль,갈,세관,customs,noun,R5,Y
+1120,чемодан,쳬머당,여행 가방,suitcase,noun,R5,Y
+1121,үсчин,우스칭,미용사,hairdresser,noun,R5,Y
+1122,нислэг,니스렉,비행편,flight,noun,R5,N
+1123,алим,아림,사과,apple,noun,R5,Y
+1124,суудал,소달,좌석,seat,noun,R5,Y
+1125,жүрж,주르즈,오렌지,orange,noun,R5,Y
+1126,цуцлах,초츠라흐,취소하다,cancel,verb,R5,N
+1127,хойшлуулах,허이시로라흐,미루다,postpone,verb,R5,N
+1128,хоцрох,허츠러흐,늦다,be late,verb,R5,Y
+1129,хайрцаг,헤르착,상자,box,noun,R5,Y
+1130,яарах,야아라흐,서두르다,hurry,verb,R5,Y
+1131,сав,삽,그릇/용기,container,noun,R5,Y
+1132,хүлээлгэх,후렐게흐,기다리게 하다,make wait,verb,R5,N
+1133,цагтаа,차그타,제때에,on time,adv,R5,N
+1134,кофе,코페,커피,coffee,noun,R5,Y
+1135,ихэвчлэн,이헵치렝,대개,usually,adv,R5,N
+1136,хааяа,하야아,이따금,occasionally,adv,R5,N
+1137,хаа сайгүй,하 세구이,어디에나,everywhere,adv,R5,N
+1138,архи,아르히,술(보드카),vodka,noun,R5,Y
+1139,ерөнхийдөө,예릉히드,대체로,overall,adv,R5,N
+1140,хамтдаа,함트다,함께,together,adv,R5,N
+1141,хортой,허르터이,해로운,harmful,adj,R5,N
+1142,нууц,노츠,비밀,secret,noun,R5,N
+1143,мэдээж,메데즈,물론,of course,adv,R5,N
+1144,лав,랍,확실히,surely,adv,R5,N
+1145,авчрах,압치라흐,가져오다,bring,verb,R5,Y
+1146,аваачих,아바치흐,가져가다,take away,verb,R5,Y
+1147,өргөх,으르그흐,들어 올리다,lift,verb,R5,Y
+1148,яаравчлан,야아랍치랑,서둘러,hastily,adv,R5,N
+1149,болгоомжтой,벌검즈터이,조심스러운,careful,adj,R5,N
+1150,тэвчих,텝치흐,참다,endure,verb,R5,N
+1151,үр дүн,우르 둥,결과,result,noun,R5,N
+1152,бүдүүлэг,부두렉,무례한,rude,adj,R5,N
+1153,зурах,조라흐,그리다,draw,verb,R5,Y
+1154,сонирхолгүй,서니르헐구이,재미없는,uninteresting,adj,R5,N
+1155,дарах,다라흐,누르다,press,verb,R5,Y
+1156,дасгал,다스갈,연습,exercise,noun,R5,N
+1157,харуулах,하로라흐,보여 주다,show,verb,R5,N
+1158,захиалах,자히아라흐,예약하다/주문하다,reserve/order,verb,R5,N
+1159,захиалга,자히알가,예약/주문,reservation,noun,R5,N
+1160,үзүүлэх,우주레흐,보여 주다,show,verb,R5,N
+1161,санах ой,사나흐 어이,기억,memory,noun,R5,N
+1162,дурсах,도르사흐,추억하다,recall,verb,R5,N
+1163,хүндэтгэх,훙데트게흐,존중하다,honor,verb,R5,N
+1164,сургах,소르가흐,가르치다,train,verb,R5,N
+1165,атаархах,아타르하흐,질투하다,be jealous,verb,R5,N
+1166,суралцах,소랄차흐,공부하다,study,verb,R5,Y
+1167,дадлага,다드락,실습,practice,noun,R5,N
+1168,анхаарах,앙하라흐,주의하다,pay attention,verb,R5,N
+1169,сануулах,사노라흐,일깨우다,remind,verb,R5,N
+1170,сануулга,사놀가,경고,warning,noun,R5,N
+1171,татах,타타흐,당기다,pull,verb,R5,Y
+1172,амжих,암지흐,해내다/시간 맞추다,manage,verb,R5,N
+1173,оролдох,어럴더흐,노력하다,try,verb,R5,N
+1174,тайлбар,텔바르,설명,explanation,noun,R5,N
+1175,түлхэх,툴헤흐,밀다,push,verb,R5,Y
+1176,бүтэх,부테흐,이루어지다,succeed,verb,R5,N
+1177,хичээх,히체흐,애쓰다,make an effort,verb,R5,N
+1178,ойлгуулах,어일고라흐,이해시키다,make understand,verb,R5,N
+1179,хөгжих,흐그지흐,발전하다,develop,verb,R5,N
+1180,өөрчлөх,으르치르흐,바꾸다,change,verb,R5,N
+1181,өөрчлөгдөх,으르치르그드흐,바뀌다,be changed,verb,R5,N
+1182,шаардлага,사르드락,요구,requirement,noun,R5,N
+1183,тохирох,터히러흐,맞다,fit,verb,R5,N
+1184,бүтээх,부테흐,만들다/창조하다,create,verb,R5,N
+1185,тохиролцох,터히럴처흐,합의하다,agree,verb,R5,N
+1186,болих,버리흐,그만두다,stop,verb,R5,N
+1187,эвлэрэх,엡레레흐,화해하다,reconcile,verb,R5,N
+1188,гүйцэтгэх,구이체트게흐,수행하다,perform,verb,R5,N
+1189,талархах,타라르하흐,감사하다,be grateful,verb,R5,N
+1190,хадгалах,하드가라흐,보관하다,keep,verb,R5,N
+1191,зохиох,저히어흐,짓다,compose,verb,R5,N
+1192,магтах,마그타흐,칭찬하다,praise,verb,R5,N
+1193,шүүмжлэх,숨즈레흐,비판하다,criticize,verb,R5,N
+1194,удирдагч,오디르다그치,지도자,leader,noun,R5,N
+1195,захирах,자히라흐,지휘하다,command,verb,R5,N
+1196,аав ээж,압 에즈,부모,parents,noun,R5,Y
+1197,ах дүү,아흐 두,형제,siblings,noun,R5,Y
+1198,захирагдах,자히라그다흐,복종하다,obey,verb,R5,N
+1199,эвгүй,엡구이,불편한,awkward,adj,R5,N
+1200,ичгүүртэй,이치구르테,창피한,embarrassing,adj,R5,N
+1201,номын сан,너밍 상,도서관,library,noun,R5,Y
+1202,хэцүүхэн,헤추헹,좀 어려운,rather difficult,adj,R5,N
+1203,амар,아마르,쉬운/편한,easy,adj,R5,N
+1204,тав тухтай,탑 토흐테,편안한,comfortable,adj,R5,N
+1205,ая тухгүй,아야 토흐구이,불편한,uncomfortable,adj,R5,N
+1206,зээ,제,외손주,grandchild (daughter's),noun,R5,N
+1207,бэр,베르,며느리,daughter-in-law,noun,R5,N
+1208,авга,압가,삼촌/고모,paternal uncle/aunt,noun,R5,N
+1209,хүргэн,후르겡,사위,son-in-law,noun,R5,N
+1210,унагах,오나가흐,떨어뜨리다,drop,verb,R5,Y
+1211,хүлээлт,후렐트,기대,expectation,noun,R5,N
+1212,бодит,버디트,실제의,real,adj,R5,N
+1213,эргүүлэх,에르구레흐,돌리다,turn,verb,R5,N
+1214,хуурамч,호람치,가짜의,fake,adj,R5,N
+1215,жинхэнэ,징헹,진짜의,genuine,adj,R5,N
+1216,хувиргах,호비르가흐,바꾸다,transform,verb,R5,N
+1217,хувирах,호비라흐,변하다,change,verb,R5,N
+1218,адилхан,아딜항,같은,same,adj,R5,N
+1219,багасгах,바가스가흐,줄이다,reduce,verb,R5,N
+1220,төстэй,트스테,비슷한,similar,adj,R5,N
+1221,ялгаа,얄가,차이,difference,noun,R5,N
+1222,ихэсгэх,이헤스게흐,늘리다,increase,verb,R5,N
+1223,харьцуулах,하르초라흐,비교하다,compare,verb,R5,N
+1224,ихсэх,이흐세흐,늘다,grow,verb,R5,N
+1225,сонголт,성걸트,선택,choice,noun,R5,N
+1226,дэвших,뎁시흐,나아가다,advance,verb,R5,N
+1227,төлөвлөгөө,트릅르그,계획,plan,noun,R5,N
+1228,ухрах,오흐라흐,물러서다,retreat,verb,R5,N
+1229,тэлэх,테레흐,넓히다,expand,verb,R5,N
+1230,төлөвлөх,트릅르흐,계획하다,plan,verb,R5,N
+1231,хумих,호미흐,오므리다/줄이다,shrink,verb,R5,N
+1232,устгах,오스트가흐,없애다,destroy,verb,R5,N
+1233,хүсэлтэй,후셀테,원하는,willing,adj,R5,N
+1234,сэргээх,세르게흐,되살리다,restore,verb,R5,N
+1235,аврах,압라흐,구하다,rescue,verb,R5,N
+1236,хобби,허브비,취미,hobby,noun,R5,N
+1237,ерөнхий,예릉히,일반의,general,adj,R5,N
+1238,уншлага,옹시락,독서,reading,noun,R5,N
+1239,дүрс,두르스,모양/영상,image,noun,R5,N
+1240,хуваарилах,호바리라흐,배분하다,distribute,verb,R5,N
+1241,гэрэл зураг,게렐 조락,사진,photograph,noun,R5,Y
+1242,тараах,타라흐,나눠 주다,hand out,verb,R5,N
+1243,сэлфи,셀피,셀카,selfie,noun,R5,Y
+1244,сошиал,서시알,소셜미디어,social media,noun,R5,N
+1245,пост,퍼스트,게시물,post,noun,R5,N
+1246,ялгах,얄가흐,구별하다,distinguish,verb,R5,N
+1247,үнэнч,우넹치,진실한,faithful,adj,R5,N
+1248,лайк,렉,좋아요,like (SNS),noun,R5,N
+1249,дагагч,다가그치,팔로워,follower,noun,R5,N
+1250,сорих,서리흐,시험하다,test,verb,R5,N
+1251,чат,차트,채팅,chat,noun,R5,Y
+1252,видео,비뎨어,동영상,video,noun,R5,Y
+1253,хэмжих,헴지흐,재다,measure,verb,R5,N
+1254,тооцоолох,터처러흐,계산하다,calculate,verb,R5,N
+1255,хариу,하리오,답장,reply,noun,R5,N
+1256,гомдоох,검더흐,상처 주다,hurt (feelings),verb,R5,N
+1257,сэтгэл санаа,세트겔 사나,마음/기분,mood,noun,R5,N
+1258,шаардах,사르다흐,요구하다,demand,verb,R5,N
+1259,ааш,아시,성미,temper,noun,R5,N
+1260,бэлтгэх,벨트게흐,준비하다,prepare,verb,R5,N
+1261,зан,장,성격,character,noun,R5,N
+1262,зохицуулах,저히초라흐,조정하다,coordinate,verb,R5,N
+1263,зан чанар,장 차나르,성격,personality,noun,R5,N
+1264,хянах,햐나흐,감독하다,supervise,verb,R5,N
+1265,гишгэх,기시게흐,밟다,step,verb,R5,Y
+1266,нас,나스,나이,age,noun,R5,N
+1267,хамт олон,함트 어렁,동료들,colleagues,noun,R5,N
+1268,насанд хүрсэн,나상드 후르셍,성인,adult,noun,R5,N
+1269,өвгөн,읍긍,노인(남),old man,noun,R5,Y
+1270,давах,다바흐,넘다,cross,verb,R5,N
+1271,удирдах,오디르다흐,이끌다,lead,verb,R5,N
+1272,эмгэн,엠겡,노인(여),old woman,noun,R5,Y
+1273,нялх,냘흐,갓난,infant,adj,R5,Y
+1274,хүүхдүүд,후흐두드,아이들,children,noun,R5,Y
+1275,оролцуулах,어럴초라흐,참여시키다,involve,verb,R5,N
+1276,хүн ам,훙 암,인구,population,noun,R5,N
+1277,иргэн,이르겡,시민,citizen,noun,R5,N
+1278,ард түмэн,아르드 투멩,국민,people,noun,R5,N
+1279,нийлэх,니레흐,합쳐지다,merge,verb,R5,N
+1280,холбох,헐버흐,잇다,connect,verb,R5,N
+1281,үндэстэн,웅데스텡,민족,nation,noun,R5,N
+1282,жуулчид,졸치드,여행객들,tourists,noun,R5,Y
+1283,салгах,살가흐,떼어 놓다,separate,verb,R5,N
+1284,хэлэлцэх,헤렐체흐,논의하다,discuss,verb,R5,N
+1285,нэгтгэх,네그트게흐,통합하다,unite,verb,R5,N
+1286,ярилцах,야릴차흐,대화하다,talk together,verb,R5,Y
+1287,таг,탁,뚜껑,lid,noun,R5,Y
+1288,ярилцлага,야릴츠락,인터뷰,interview,noun,R5,N
+1289,дуу хоолой,도 허러이,목소리,voice,noun,R5,N
+1290,чимээ,치메,소리/소음,sound,noun,R5,N
+1291,шуугиан,소기앙,소음,noise,noun,R5,N
+1292,амрах,암라흐,쉬다,rest,verb,R5,Y
+1293,нам гүм,남 굼,고요한,silent,adj,R5,N
+1294,туршлага,토르시락,경험,experience,noun,R5,N
+1295,чадвар,차드바르,능력,ability,noun,R5,N
+1296,мэдрэх,메드레흐,느끼다,feel,verb,R5,N
+1297,хүрэлцэх,후렐체흐,충분하다,suffice,verb,R5,N
+1298,хэрэглэх,헤레그레흐,사용하다,use,verb,R5,N
+1299,ашиглах,아시그라흐,이용하다,utilize,verb,R5,N
+1300,хашхирах,하시히라흐,소리치다,shout,verb,R5,Y
+1301,хор,허르,해,harm,noun,R5,N
+1302,тангараглах,탕가라그라흐,맹세하다,swear,verb,R5,N
+1303,тустай,토스테,유익한,useful,adj,R5,N
+1304,хэрэггүй,헤레그구이,필요 없는,unnecessary,adj,R5,N
+1305,баяр хөөр,바야르 흐르,기쁨,joy,noun,R5,N
+1306,сүлжээ,술제,네트워크,network,noun,R5,N
+1307,угтах,오그타흐,맞이하다,welcome,verb,R5,N
+1308,аюул,아유올,위험,danger,noun,R5,N
+1309,үдэх,우데흐,배웅하다,see off,verb,R5,N
+1310,айдас,에다스,두려움,fear,noun,R5,N
+1311,хориглох,허리그러흐,금지하다,forbid,verb,R5,N
+1312,жаргах,자르가흐,행복하다,be happy,verb,R5,N
+1313,хэн нэгэн,헹 네겡,누군가,someone,pron,R5,N
+1314,инээмсэглэл,이넴세그렐,미소,smile,noun,R5,Y
+1315,хэн ч,헹 치,아무도,nobody,pron,R5,N
+1316,тайвшруулах,텝시로라흐,진정시키다,calm,verb,R5,N
+1317,баярлуулах,바야르로라흐,기쁘게 하다,please,verb,R5,N
+1318,тэврэлт,텝렐트,포옹,hug,noun,R5,Y
+1319,үнсэлт,웅셀트,입맞춤,kiss,noun,R5,Y
+1320,уурлуулах,오르로라흐,화나게 하다,anger,verb,R5,N
+1321,айлгах,엘가흐,겁주다,frighten,verb,R5,N
+1322,мэнд,멩드,안부/건강,greeting,noun,R5,N
+1323,сайн уу,셍 오,안녕,hi,interj,R5,N
+1324,гайхшруулах,게흐시로라흐,놀라게 하다,surprise,verb,R5,N
+1325,дагах,다가흐,따르다,follow,verb,R5,N
+1326,зорилго,저릴거,목표,goal,noun,R5,N
+1327,тавтай морил,탑테 머릴,어서 오세요,welcome,interj,R5,N
+1328,бахархах,바하르하흐,자랑스러워하다,be proud,verb,R5,N
+1329,гуйх,고이흐,부탁하다,beg,verb,R5,N
+1330,сонирхол,서니르헐,관심/취미,interest,noun,R5,N
+1331,баримт,바림트,영수증,receipt,noun,R5,Y
+1332,хүргэлт,후르겔트,배달,delivery,noun,R5,N
+1333,ачих,아치흐,싣다,load,verb,R5,Y
+1334,эмийн сан,에밍 상,약국,pharmacy,noun,R5,Y
+1335,буулгах,볼가흐,내리다,unload,verb,R5,N
+1336,гутрах,고트라흐,낙담하다,get depressed,verb,R5,N
+1337,дамжуулах,담조라흐,전달하다,pass on,verb,R5,N
+1338,батлах,바트라흐,확정하다,confirm,verb,R5,N
+1339,нотлох,너트러흐,증명하다,prove,verb,R5,N
+1340,аянга,아양가,천둥,thunder,noun,R5,Y
+1341,манан,마낭,안개,fog,noun,R5,Y
+1342,тусгаарлах,토스가르라흐,격리하다,isolate,verb,R5,N
+1343,хэрэгжүүлэх,헤레그주레흐,실행하다,implement,verb,R5,N
+1344,эмчлэх,엠치레흐,치료하다,treat,verb,R5,N
+1345,удирдлага,오디르드락,지도부,management,noun,R5,N
+1346,эдгэрэх,에드게레흐,낫다,recover,verb,R5,N
+1347,ажиллагаа,아질라가,활동,operation,noun,R5,N
+1348,няцаах,냐차흐,반박하다,refute,verb,R5,N
+1349,үйл ажиллагаа,우일 아질라가,활동,activity,noun,R5,N
+1350,эцэст нь,에체스트 느,마침내,finally,adv,R5,N
+1351,үйлчилгээ,우일칠게,서비스,service,noun,R5,N
+1352,үйлчлэх,우일치레흐,봉사하다,serve,verb,R5,N
+1353,өглөөний цай,으그르니 체,아침 식사,breakfast,noun,R5,Y
+1354,бараа,바라,상품,goods,noun,R5,Y
+1355,мэдүүлэх,메두레흐,신고하다,declare,verb,R5,N
+1356,бүтээгдэхүүн,부테그데훙,제품,product,noun,R5,N
+1357,мөс,므스,얼음,ice,noun,R5,Y
+1358,тайлагнах,테라그나흐,보고하다,report,verb,R5,N
+1359,оройн хоол,어러잉 헐,저녁 식사,dinner,noun,R5,Y
+1360,бүртгүүлэх,부르트구레흐,등록하다,register,verb,R5,N
+1361,үйлдвэрлэх,우일드베르레흐,생산하다,produce,verb,R5,N
+1362,зууш,조시,간식,snack,noun,R5,Y
+1363,худалдаа,호달다,무역/판매,trade,noun,R5,N
+1364,амттан,암트탕,디저트,dessert,noun,R5,Y
+1365,борлуулах,버르로라흐,판매하다,sell,verb,R5,N
+1366,өрсөлдөх,으르슬드흐,경쟁하다,compete,verb,R5,N
+1367,өсгөх,으스그흐,기르다,raise,verb,R5,N
+1368,түргэн тусламж,투르겡 토스람즈,구급차,ambulance,noun,R5,Y
+1369,хэрэглэгч,헤레그레그치,소비자,consumer,noun,R5,N
+1370,хөрөнгө,흐릉그,재산,property,noun,R5,N
+1371,хадгаламж,하드가람즈,저금,savings,noun,R5,N
+1372,эд зүйл,에드 주일,물건,item,noun,R5,N
+1373,хог,헉,쓰레기,garbage,noun,R5,Y
+1374,хэлэлцүүлэг,헤렐추렉,토론회,discussion,noun,R5,N
+1375,ер нь,예르 느,대체로,generally,adv,R5,N
+1376,илтгэл,일트겔,발표,presentation,noun,R5,N
+1377,лекц,례크츠,강의,lecture,noun,R5,N
+1378,угаалга,오갈가,빨래,laundry,noun,R5,Y
+1379,индүүдэх,잉두데흐,다림질하다,iron,verb,R5,Y
+1380,сертификат,셰르티피카트,증명서,certificate,noun,R5,N
+1381,диплом,디프럼,졸업장,diploma,noun,R5,N
+1382,зүүх,주흐,차다/걸다,put on (accessory),verb,R5,Y
+1383,шалгаруулах,살가로라흐,선발하다,select,verb,R5,N
+1384,самнах,삼나흐,빗다,comb,verb,R5,Y
+1385,хусах,호사흐,면도하다,shave,verb,R5,Y
+1386,сурвалжлагч,소르발즈라그치,기자,reporter,noun,R5,Y
+1387,шүршүүр,수르수르,샤워기,shower,noun,R5,Y
+1388,ариун цэврийн өрөө,아리옹 쳅링 으르,화장실,toilet,noun,R5,Y
+1389,редактор,례다크터르,편집자,editor,noun,R5,N
+1390,найруулагч,네로라그치,감독,director,noun,R5,Y
+1391,оролцогч,어럴처그치,참가자,participant,noun,R5,N
+1392,хэвтэх,헵테흐,눕다,lie down,verb,R5,Y
+1393,үзэгч,우제그치,관객,viewer,noun,R5,N
+1394,дэрлэх,데르레흐,베다,use as pillow,verb,R5,N
+1395,сонсогч,성서그치,청취자,listener,noun,R5,N
+1396,гишүүн,기숭,회원,member,noun,R5,N
+1397,дэр,데르,베개,pillow,noun,R5,Y
+1398,тэргүүн,테르궁,대표,head,noun,R5,N
+1399,хөнжил,흥질,이불,blanket,noun,R5,Y
+1400,орлогч,어르러그치,부(副),deputy,noun,R5,N
+1401,мэргэжилтэн,메르게질텡,전문가,expert,noun,R5,N
+1402,цахилгаан шат,차힐강 사트,엘리베이터,elevator,noun,R5,Y
+1403,цонхны хөшиг,청흐니 흐식,커튼,curtain,noun,R5,Y
+1404,эрдэмтэн,에르뎀텡,학자,scientist,noun,R5,Y
+1405,хивс,힙스,카펫,carpet,noun,R5,Y
+1406,буйдан,보이당,소파,sofa,noun,R5,Y
+1407,мэдлэг,메드렉,지식,knowledge,noun,R5,N
+1408,хогийн сав,허깅 삽,쓰레기통,trash can,noun,R5,Y
+1409,үргэлжлүүлэх,우르겔즈루레흐,계속하다,continue,verb,R5,N
+1410,улаан лооль,오랑 럴,토마토,tomato,noun,R5,Y
+1411,өргөст хэмх,으르그스트 헴흐,오이,cucumber,noun,R5,Y
+1412,сармис,사르미스,마늘,garlic,noun,R5,Y
+1413,авьяас,아뱌아스,재능,talent,noun,R5,N
+1414,бүрэн,부렝,완전한,complete,adj,R5,N
+1415,шуу,소,팔뚝,forearm,noun,R5,Y
+1416,алга,알가,손바닥/없다,palm/absent,noun,R5,N
+1417,саад,사드,방해,obstacle,noun,R5,N
+1418,тохой,터허이,팔꿈치,elbow,noun,R5,Y
+1419,эрсдэл,에르스델,위험,risk,noun,R5,N
+1420,өсгий,으스기,발꿈치,heel,noun,R5,Y
+1421,гарц,가르츠,출구,exit,noun,R5,Y
+1422,гүзээлзгэнэ,구젤즈겡,딸기,strawberry,noun,R5,Y
+1423,хөмсөг,흠슥,눈썹,eyebrow,noun,R5,Y
+1424,сахал,사할,수염,beard,noun,R5,Y
+1425,шоколад,서커라드,초콜릿,chocolate,noun,R5,Y
+1426,самар,사마르,잣/견과,nut,noun,R5,Y
+1427,бялуу,뱌로,케이크,cake,noun,R5,Y
+1428,уруул,오롤,입술,lip,noun,R5,Y
+1429,хэл ам,헬 암,말다툼,quarrel,noun,R5,N
+1430,хацар,하차르,볼,cheek,noun,R5,Y
+1431,хийсвэр,히스베르,추상적인,abstract,adj,R5,N
+1432,багасах,바가사흐,줄다,decrease,verb,R5,N
+1433,магнай,마그네,이마,forehead,noun,R5,Y
+1434,онол,어널,이론,theory,noun,R5,N
+1435,практик,프라크틱,실습,practice,noun,R5,N
+1436,эрүү,에루,턱,chin,noun,R5,Y
+1437,хүч,후치,힘,strength,noun,R5,N
+1438,хүчтэй,후치테,강한,strong,adj,R5,Y
+1439,перец,폐례츠,고추/피망,pepper,noun,R5,Y
+1440,сул,솔,약한/느슨한,weak,adj,R5,N
+1441,угаалгын машин,오갈깅 마싱,세탁기,washing machine,noun,R5,Y
+1442,эрч хүч,에르치 후치,에너지,energy,noun,R5,N
+1443,хөдөлгөөн,흐들긍,움직임,movement,noun,R5,N
+1444,сэрүүлэг,세루렉,알람시계,alarm clock,noun,R5,Y
+1445,хуанли,호앙리,달력,calendar,noun,R5,Y
+1446,уран зураг,오랑 조락,그림(회화),painting,noun,R5,Y
+1447,нуух,노흐,숨기다,hide,verb,R5,Y
+1448,дүн,둥,성적,grade,noun,R5,N
+1449,зохиол,저히얼,작품/소설,literary work,noun,R5,N
+1450,яруу найрагч,야로 네라그치,시인,poet,noun,R5,Y
+1451,үлгэр,울게르,옛날이야기,fairy tale,noun,R5,Y
+1452,домог,더먹,전설,legend,noun,R5,N
+1453,дэвсгэр,뎁스게르,깔개,mat,noun,R5,Y
+1454,хүндэтгэл,훙데트겔,존경,respect,noun,R5,N
+1455,баатар,바타르,영웅,hero,noun,R5,Y
+1456,шүдэнз,수뎅즈,성냥,match,noun,R5,Y
+1457,дэнлүү,뎅루,등불,lamp,noun,R5,Y
+1458,лаа,라,양초,candle,noun,R5,Y
+1459,мартагдах,마르타그다흐,잊히다,be forgotten,verb,R5,N
+1460,халамжлах,하람즈라흐,돌보다,care for,verb,R5,N
+1461,дайн,뎅,전쟁,war,noun,R5,N
+1462,залгуур,잘고르,콘센트,socket,noun,R5,Y
+1463,энх тайван,엥흐 테방,평화,peace,noun,R5,N
+1464,огт,어그트,전혀,not at all,adv,R5,N
+1465,тусгаар тогтнол,토스가르 터그트널,독립,independence,noun,R5,N
+1466,хүчдэл,후치델,전압,voltage,noun,R5,N
+1467,туг,톡,깃발,flag,noun,R5,Y
+1468,илчлэг,일치렉,칼로리,calorie,noun,R5,N
+1469,сүлд,술드,문장(紋章),emblem,noun,R5,N
+1470,соёмбо,서욤버,소욤보,Soyombo,noun,R5,Y
+1471,албан,알방,공식의,official,adj,R5,N
+1472,агааржуулагч,아가르조라그치,에어컨,air conditioner,noun,R5,Y
+1473,албан тушаал,알방 토살,직위,position,noun,R5,N
+1474,чийгшүүлэгч,치그수레그치,가습기,humidifier,noun,R5,Y
+1475,хурандаа,호랑다,대령,colonel,noun,R5,N
+1476,тариачин,타리아칭,농부,farmer,noun,R5,Y
+1477,анчин,앙칭,사냥꾼,hunter,noun,R5,Y
+1478,ан,앙,사냥,hunting,noun,R5,Y
+1479,агнах,아그나흐,사냥하다,hunt,verb,R5,N
+1480,газар тариалан,가자르 타리아랑,농업,farming,noun,R5,N
+1481,холигч,허리그치,믹서,blender,noun,R5,Y
+1482,ургац,오르가츠,수확,harvest,noun,R5,Y
+1483,индүү,잉두,다리미,iron,noun,R5,Y
+1484,тарих,타리흐,심다,plant,verb,R5,Y
+1485,ургах,오르가흐,자라다,grow,verb,R5,Y
+1486,тэжээх,테제흐,먹이다,feed,verb,R5,Y
+1487,бэлчээх,벨체흐,방목하다,graze,verb,R5,Y
+1488,нүцгэн,누츠겡,벌거벗은,naked,adj,R5,N
+1489,хөнгөхөн,흥그흥,가벼운,light,adj,R5,N
+1490,хүндхэн,훙드헹,좀 무거운,rather heavy,adj,R5,N
+1491,томхон,텀헝,좀 큰,rather big,adj,R5,N
+1492,жижигхэн,지지그헹,자그마한,tiny,adj,R5,Y
+1493,бяцхан,뱌츠항,작은,little,adj,R5,Y
+1494,аварга,아바르가,거대한,giant,adj,R5,Y
+1495,асаагуур,아사고르,라이터,lighter,noun,R5,Y
+1496,нийт,니트,전체의,total,adj,R5,N
+1497,мэндлэх,멩드레흐,인사하다,greet,verb,R5,Y
+1498,онцлог,엉츠럭,특징,feature,noun,R5,N
+1499,ач холбогдол,아치 헐버그덜,의의,significance,noun,R5,N
+1500,шуруп,소롭,나사,screw,noun,R5,Y

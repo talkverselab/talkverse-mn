@@ -8,21 +8,32 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'app_database.dart';
 
 class SeedLoader {
-  // v1: 초기 시드 (L1 샘플 대화 + 빈도 단어 + 핵심 동사)
-  static const _kSeededKey = 'db_seeded_v2'; // v2: 독음(rd) + 회화 초안
+  /// 번들 `assets/data/version.json` 의 `db`(업데이트 번호)와 저장된 번호가 다르면 DB 를 전부 다시 채운다(사용자 지시 2026-11-04, 일본어앱과 같음).
+  /// 옛 키(`db_seeded_v2`)는 더 쓰지 않는다 — 데이터를 바꾸면 version.json 의 번호만 올린다.
+  static const _kDbVersion = 'db_version';
 
   final AppDatabase db;
   SeedLoader(this.db);
 
   Future<void> seedIfNeeded() async {
     final prefs = await SharedPreferences.getInstance();
-    if (prefs.getBool(_kSeededKey) == true) return;
-
+    final bundled = await bundledVersion();
+    if (prefs.getInt(_kDbVersion) == bundled) return;
+    await db.delete(db.words).go();
+    await db.delete(db.verbs).go();
     await _seedWords();
     await _seedVerbs();
     await _seedTurns();
+    await prefs.setInt(_kDbVersion, bundled);
+  }
 
-    await prefs.setBool(_kSeededKey, true);
+  static Future<int> bundledVersion() async {
+    try {
+      final j = json.decode(await rootBundle.loadString('assets/data/version.json')) as Map<String, dynamic>;
+      return (j['db'] as num).toInt();
+    } catch (_) {
+      return 0;
+    }
   }
 
   static String? _s(dynamic v) {
@@ -33,26 +44,24 @@ class SeedLoader {
   Future<void> _seedWords() async {
     final String raw;
     try {
-      raw = await rootBundle.loadString('assets/data/freq/lang_es_top.csv');
+      raw = await rootBundle.loadString('assets/data/freq/mn_words.csv');
     } catch (_) {
       return;
     }
-    final rows = const CsvToListConverter(eol: '\n').convert(raw);
+    final rows = const CsvToListConverter(eol: '\n', shouldParseNumbers: false).convert(raw.replaceAll('\r', ''));
     final batch = <Insertable<WordRow>>[];
-    // header: rank,word,pos,gender,ko,freq,cum_pct,region,cefr
+    // 몽골어 단어장 1,500(그림 목록과 같은 것): rank,word,reading,ko,en,pos,level,picturable
+    // 칸 대응: region = 절벽 레벨(R1~R5), cefr = 한글 독음(화면에 보조로)
     for (var i = 1; i < rows.length; i++) {
       final row = rows[i];
-      if (row.length < 9) continue;
+      if (row.length < 7) continue;
       batch.add(WordsCompanion.insert(
         rank: Value(int.tryParse('${row[0]}') ?? 0),
-        word: '${row[1]}',
-        pos: Value(_s(row[2])),
-        gender: Value(_s(row[3])),
-        meaningKo: Value(_s(row[4])),
-        freq: Value(double.tryParse('${row[5]}')),
-        cumPct: Value(double.tryParse('${row[6]}')),
-        region: Value(_s(row[7])),
-        cefr: Value(_s(row[8])),
+        word: '${row[1]}'.trim(),
+        pos: Value(_s(row[5])),
+        meaningKo: Value(_s(row[3])),
+        region: Value(_s(row[6])),
+        cefr: Value(_s(row[2])),
       ));
     }
     await db.batch((b) => b.insertAllOnConflictUpdate(db.words, batch));

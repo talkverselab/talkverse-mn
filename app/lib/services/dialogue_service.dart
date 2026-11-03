@@ -22,6 +22,8 @@ class DialogueTurn {
   final String? art; // 장면 그림 URL(나중에 채움)
   /// 「어순 맞대기」 낱말 대응 [(몽골어, 한국어)] — 데이터에 `align: [[mn, ko], …]` 가 있을 때만(회화 작업 때 채움).
   final List<(String, String)> align;
+  /// 문장 내용어 `lemmas: [[표면형, 기본형, 읽기]]`(있을 때만 — 없으면 앱이 접사 분석으로 만든다, 2026-11-04).
+  final List<(String, String, String)> lemmas;
   const DialogueTurn({
     required this.num,
     required this.speaker,
@@ -33,6 +35,7 @@ class DialogueTurn {
     required this.tags,
     this.art,
     this.align = const [],
+    this.lemmas = const [],
   });
 
   factory DialogueTurn.fromL1(Map<String, dynamic> j) => DialogueTurn(
@@ -48,6 +51,10 @@ class DialogueTurn {
         align: [
           for (final a in (j['align'] as List? ?? const []))
             if (a is List && a.length >= 2) ('${a[0]}', '${a[1]}'),
+        ],
+        lemmas: [
+          for (final l in (j['lemmas'] as List? ?? const []))
+            if (l is List && l.length >= 2) ('${l[0]}', '${l[1]}', l.length > 2 ? '${l[2]}' : ''),
         ],
       );
 
