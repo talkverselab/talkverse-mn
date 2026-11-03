@@ -36,6 +36,7 @@
 - Supabase `tts` 버킷의 몽골어 음성(맨 위 578 + `mn/` 1,546) 삭제.
 
 ## 주의
+- Grok·Gemini 를 직접 쓸 때(지금은 한자 세션 경유): 로그인 원본은 M4 `~/chrome-grok`, 쿠키 복사는 M4 안에서만, 자기 포트로 띄우고 M6 에서 ssh 터널 — `~/talkverse/GROK_M4_LOGIN.md`. 사용자 지시가 있을 때만 켜고, 한 번에 한 작업, 탭·Chrome 은 끝나면 닫기.
 - 새 키스토어 금지, `applicationId kr.mlab.mn` 유지. 로컬 빌드 번호는 CI 실행 번호보다 크게.
 - M6 자원: 시뮬레이터는 자기가 켠 1대만, 과부하 공지면 바로 멈춤. 코드 push 는 폰 업데이트 알림이 가니 묶어서.
 - Zealot 앱이름 「몽골어유니버스」(`app/CLAUDE.md` §8, 올리기 `app/tools/zealot_push.sh`).
