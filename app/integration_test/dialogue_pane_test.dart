@@ -44,7 +44,7 @@ void main() {
     await wait(t, 1500);
     await shot(t, '01_home_wide');
 
-    await t.tap(find.text('회화').first);
+    await t.tap(find.text('회화').at(1));
     await wait(t, 2500);
     await shot(t, '02_dialogue_home_right');
 
@@ -93,6 +93,19 @@ void main() {
     await t.tap(find.byType(ListTile).at(1));
     await wait(t, 2000);
     await shot(t, '14_verb_map');
+
+    await t.tap(rail('홈'));
+    await wait(t, 800);
+    await t.ensureVisible(find.text('절벽 단어').first);
+    await wait(t, 500);
+    await shot(t, '15_home_sections');
+    await t.tap(find.text('절벽 단어').first);
+    await wait(t, 2500);
+    await shot(t, '16_cliff_words');
+
+    await t.tap(find.text('앱 소개').first);
+    await wait(t, 1500);
+    await shot(t, '17_about');
 
     await t.tap(rail('진행'));
     await wait(t, 1500);

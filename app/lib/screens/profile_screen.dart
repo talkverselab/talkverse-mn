@@ -1,26 +1,52 @@
 import 'package:flutter/material.dart';
 
-import 'update_screen.dart';
+import 'about_screen.dart';
 
+import '../core/pane.dart';
 import '../core/theme.dart';
+import '../main.dart';
+import '../services/achievement_service.dart';
+import '../services/ko_reading.dart';
 import '../widgets/account_section.dart';
 import '../widgets/learner_section.dart';
 import '../widgets/spanish_decor.dart';
 import '../core/l10n.dart';
-import '../core/platform.dart';
 
-class ProfileScreen extends StatelessWidget {
+class ProfileScreen extends StatefulWidget {
   const ProfileScreen({super.key});
+
+  @override
+  State<ProfileScreen> createState() => _ProfileScreenState();
+}
+
+class _ProfileScreenState extends State<ProfileScreen> {
+  Future<void> _resetProgress() async {
+    final ok = await showDialog<bool>(
+      context: context,
+      builder: (ctx) => AlertDialog(
+        title: Text(tr('학습 기록 초기화')),
+        content: Text(tr('회화 진행·동사 기록·성과를 모두 지웁니다. 메모는 유지돼요.')),
+        actions: [
+          TextButton(onPressed: () => Navigator.pop(ctx, false), child: Text(tr('취소'))),
+          TextButton(onPressed: () => Navigator.pop(ctx, true), child: Text(tr('초기화'), style: const TextStyle(color: AppColors.beni))),
+        ],
+      ),
+    );
+    if (ok != true) return;
+    await appDb.delete(appDb.userProgress).go();
+    await appDb.delete(appDb.verbProgress).go();
+    await AchievementService.instance.reset();
+    if (mounted) ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(tr('초기화 완료'))));
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.cal,
-      appBar: AppBar(title: Text(tr('프로필 · 설정'))),
+      appBar: AppBar(title: Text(tr('프로필'))),
       body: ListView(
         padding: const EdgeInsets.all(16),
         children: [
-          if (!isIOS) const UpdateEntryTile(),
           Container(
             padding: const EdgeInsets.all(18),
             decoration: BoxDecoration(
@@ -47,16 +73,6 @@ class ProfileScreen extends StatelessWidget {
                           letterSpacing: 2,
                         ),
                       ),
-                      SizedBox(height: 4),
-                      Text(
-                        tr('Día 1 · 입문 (A1)'),
-                        style: TextStyle(
-                          color: AppColors.gualdaBright,
-                          fontSize: 13,
-                          fontWeight: FontWeight.w600,
-                          letterSpacing: 2,
-                        ),
-                      ),
                     ],
                   ),
                 ),
@@ -64,54 +80,45 @@ class ProfileScreen extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 18),
-          _SectionTitle(tr('학습자')),
-          const SizedBox(height: 8),
-          const LearnerSection(),
-          const SizedBox(height: 18),
           _SectionTitle(tr('계정')),
           const SizedBox(height: 8),
           const AccountSection(),
           const SizedBox(height: 18),
-          _SectionTitle(tr('설정')),
+          _SectionTitle(tr('기록')),
           const SizedBox(height: 8),
           _SettingsGroup(items: [
-            _SettingItem(
-                icon: Icons.language,
-                title: tr('언어 / Language'),
-                subtitle: '${AppLangPrefs.lang.value.label}  →  ${AppLangPrefs.peekNext().label}',
-                onTap: AppLangPrefs.next),
-            if (isIOS)
-              _SettingItem(
-                  icon: Icons.flight_takeoff,
-                  title: tr('앱 업데이트'),
-                  subtitle: tr('아이폰은 TestFlight 앱에서 새 빌드를 받습니다')),
-            _SettingItem(icon: Icons.volume_up, title: tr('TTS 음성'), subtitle: tr('de-DE (시스템 보이스)')),
-            _SettingItem(icon: Icons.public, title: tr('변종'), subtitle: tr('표준 몽골어 (Улаанбаатар) · Монгол хэл')),
-            _SettingItem(icon: Icons.palette, title: tr('테마'), subtitle: tr('낮 · Schwarz-Rot-Gold #DD0000')),
+            _SettingItem(icon: Icons.delete_outline, title: tr('학습 기록 초기화'), subtitle: tr('회화·동사·성과 기록 삭제'), onTap: _resetProgress),
           ]),
+          const SizedBox(height: 18),
+          _SectionTitle(tr('학습자 프로필')),
+          const SizedBox(height: 8),
+          const LearnerSection(),
+          const SizedBox(height: 18),
+          _SectionTitle(tr('설정')),
+          const SizedBox(height: 8),
+          ValueListenableBuilder<bool>(
+            valueListenable: KoReadingPrefs.show,
+            builder: (context, on, _) => _SettingsGroup(items: [
+              _SettingItem(
+                  icon: Icons.language,
+                  title: tr('언어 / Language'),
+                  subtitle: '${AppLangPrefs.lang.value.label}  →  ${AppLangPrefs.peekNext().label}',
+                  onTap: AppLangPrefs.next),
+              _SettingItem(
+                  icon: Icons.text_fields,
+                  title: tr('한글 독음'),
+                  subtitle: on ? tr('표시 — 탭하면 숨김') : tr('미표시(기본) — 힘들어도 보지 않고 익혀보세요'),
+                  onTap: () => KoReadingPrefs.toggle(context)),
+            ]),
+          ),
           const SizedBox(height: 16),
           _SectionTitle(tr('정보')),
           const SizedBox(height: 8),
           _SettingsGroup(items: [
-            _SettingItem(icon: Icons.info_outline, title: tr('앱 버전'), subtitle: '0.1.0 · alpha'),
-            _SettingItem(icon: Icons.code, title: 'Stack', subtitle: 'Flutter 3.41 · Material 3 · Drift'),
+            _SettingItem(icon: Icons.info_outline, title: tr('앱 소개'), subtitle: tr('절벽구간 — 이 앱이 단어를 나누는 기준'), onTap: () => openPane(context, (_) => const AboutScreen())),
+            _SettingItem(icon: Icons.tag, title: tr('앱 버전'), subtitle: '0.1.0 · alpha'),
             _SettingItem(icon: Icons.copyright, title: tr('저작권'), subtitle: tr('몽골어유니버스 · 2026')),
           ]),
-          const SizedBox(height: 20),
-          const BandDivider(),
-          const SizedBox(height: 12),
-          const Center(child: SolMark(size: 28)),
-          const SizedBox(height: 6),
-          Center(
-            child: Text(
-              'Übung macht den Meister',
-              style: TextStyle(
-                color: AppColors.tintaLight,
-                fontSize: 11,
-                letterSpacing: 3,
-              ),
-            ),
-          ),
           const SizedBox(height: 32),
         ],
       ),

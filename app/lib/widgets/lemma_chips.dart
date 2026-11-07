@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../core/cliff.dart';
 import '../core/l10n.dart';
 import '../core/theme.dart';
 import '../data/db/app_database.dart';
@@ -89,7 +90,7 @@ Future<void> showWordSheet(BuildContext context, WordRow w) => showModalBottomSh
             const SizedBox(height: 8),
             Text(w.meaningKo ?? '', style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w800, color: AppColors.sumi)),
             const SizedBox(height: 6),
-            Text([if (w.pos != null) w.pos!, if (w.region != null) w.region!, trf('빈도 {0}위', [w.rank])].join(' · '),
+            Text([if (w.pos != null) w.pos!, regionOf(w.rank), trf('빈도 {0}위', [w.rank])].join(' · '),
                 style: const TextStyle(fontSize: 12, color: AppColors.muted)),
             FutureBuilder<String?>(
               future: ArtService.instance.urlFor(w.word, rank: w.rank),

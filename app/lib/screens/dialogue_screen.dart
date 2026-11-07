@@ -4,6 +4,8 @@ import '../core/l10n.dart';
 import '../core/platform.dart';
 import '../core/pane.dart';
 import '../core/theme.dart';
+import '../services/ko_reading.dart';
+import '../widgets/selectable_mn_text.dart';
 import '../services/dialogue_service.dart';
 import '../services/learner_prefs.dart';
 import '../services/tts_service.dart';
@@ -223,6 +225,7 @@ class _DialogueScreenState extends State<DialogueScreen> {
               style: const TextStyle(color: AppColors.muted, fontSize: 10, letterSpacing: 1)),
         ]),
         actions: [
+          const KoReadingToggleAction(),
           IconButton(
             tooltip: tr('그림 카드(글자 없이)'),
             icon: const Icon(Icons.style_outlined, color: AppColors.ai),
@@ -270,7 +273,10 @@ class _PlayFull extends StatelessWidget {
   @override
   Widget build(BuildContext context) => Scaffold(
         backgroundColor: AppColors.washi,
-        appBar: AppBar(title: Text('${dialogue.emoji} ${dialogue.title}', style: const TextStyle(color: AppColors.sumi, fontWeight: FontWeight.w800, fontSize: 15))),
+        appBar: AppBar(
+          title: Text('${dialogue.emoji} ${dialogue.title}', style: const TextStyle(color: AppColors.sumi, fontWeight: FontWeight.w800, fontSize: 15)),
+          actions: const [KoReadingToggleAction()],
+        ),
         body: EpisodePlayPane(dialogue: dialogue, initialIndex: at),
       );
 }
@@ -317,9 +323,9 @@ class _Bubble extends StatelessWidget {
                   InkWell(onTap: onPlayFrom, child: const Icon(Icons.play_circle_outline, size: 16, color: AppColors.ai)),
                 ]),
                 const SizedBox(height: 4),
-                Text(LearnerPrefs.fill(t.tl), style: const TextStyle(fontSize: 17, fontWeight: FontWeight.w800, color: AppColors.sumi, height: 1.4)),
+                SelectableMnText(text: LearnerPrefs.fill(t.tl), lemmas: t.lemmas, style: const TextStyle(fontSize: 17, fontWeight: FontWeight.w800, color: AppColors.sumi, height: 1.4)),
                 if (t.gloss.isNotEmpty) Text(t.gloss, style: const TextStyle(fontSize: 11.5, color: AppColors.ai, fontWeight: FontWeight.w600)),
-                if (t.rd.isNotEmpty) Text(LearnerPrefs.fill(t.rd, ko: true), style: const TextStyle(fontSize: 12, color: AppColors.muted)),
+                if (t.rd.isNotEmpty) KoReadingText(LearnerPrefs.fill(t.rd, ko: true), style: const TextStyle(fontSize: 12, color: AppColors.muted)),
                 const SizedBox(height: 3),
                 Text(LearnerPrefs.fill(t.ko, ko: true), style: const TextStyle(fontSize: 13, color: AppColors.sumiLight, height: 1.35)),
                 if (t.note.isNotEmpty) ...[

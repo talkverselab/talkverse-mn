@@ -27,6 +27,9 @@ class SeedLoader {
     await prefs.setInt(_kDbVersion, bundled);
   }
 
+  /// 테스트용 — 단어만 넣는다.
+  Future<void> seedWordsOnly() => _seedWords();
+
   static Future<int> bundledVersion() async {
     try {
       final j = json.decode(await rootBundle.loadString('assets/data/version.json')) as Map<String, dynamic>;

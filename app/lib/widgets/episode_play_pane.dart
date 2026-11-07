@@ -16,6 +16,8 @@ import '../services/tts_service.dart';
 import 'achievement_desk.dart';
 import 'learner_setup_dialog.dart';
 import 'lemma_chips.dart';
+import 'selectable_mn_text.dart';
+import '../services/ko_reading.dart';
 import 'word_order_panel.dart';
 
 /// 「모든 문장 듣기」 재생 패널 — 일본어앱 Grok UXUI 시안 02 「만화책 읽기형」을 옮김(2026-11-02, 일본어앱 `data/review/uxui/sian_02.md`).
@@ -39,7 +41,7 @@ class _EpisodePlayPaneState extends State<EpisodePlayPane> {
   bool _playing = false;
   double _rate = 1.0; // 0.75 / 1.0 / 1.25
   bool _showGloss = false;
-  bool _showRd = true;
+  bool get _showRd => KoReadingPrefs.show.value;
   bool _showKo = true;
   int _session = 0; // 재생 루프 세대(중단 판별)
   bool _done = false; // 완주 연출 표시
@@ -52,6 +54,7 @@ class _EpisodePlayPaneState extends State<EpisodePlayPane> {
   @override
   void initState() {
     super.initState();
+    KoReadingPrefs.show.addListener(_onReading);
     WidgetsBinding.instance.addPostFrameCallback((_) async {
       if (!mounted) return;
       // 대사에 {name} 자리가 있는데 이름이 없으면 먼저 묻는다(앱 켠 뒤 한 번, 사용자 지시 2026-11-04)
@@ -61,8 +64,13 @@ class _EpisodePlayPaneState extends State<EpisodePlayPane> {
     });
   }
 
+  void _onReading() {
+    if (mounted) setState(() {});
+  }
+
   @override
   void dispose() {
+    KoReadingPrefs.show.removeListener(_onReading);
     _session++;
     TtsService.instance.stop();
     super.dispose();
@@ -149,7 +157,7 @@ class _EpisodePlayPaneState extends State<EpisodePlayPane> {
       onSeek: (v) => _goto(v),
       onRate: () => setState(() => _rate = _rate >= 1.25 ? 0.75 : (_rate + 0.25)),
       onGloss: () => setState(() => _showGloss = !_showGloss),
-      onRd: () => setState(() => _showRd = !_showRd),
+      onRd: () => KoReadingPrefs.toggle(context),
       onKo: () => setState(() => _showKo = !_showKo),
     );
     return LayoutBuilder(builder: (context, c) {
@@ -246,7 +254,7 @@ class _Script extends StatelessWidget {
                     const SizedBox(width: 8),
                     Expanded(
                       child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-                        Text(LearnerPrefs.fill(t.tl), style: TextStyle(fontSize: on ? 16.5 : 15, fontWeight: FontWeight.w800, color: AppColors.sumi, height: 1.35)),
+                        SelectableMnText(text: LearnerPrefs.fill(t.tl), lemmas: t.lemmas, style: TextStyle(fontSize: on ? 16.5 : 15, fontWeight: FontWeight.w800, color: AppColors.sumi, height: 1.35)),
                         if (showGloss && t.gloss.isNotEmpty && t.gloss != t.tl) Text(t.gloss, style: const TextStyle(fontSize: 11, color: AppColors.ai, fontWeight: FontWeight.w600)),
                         if (showRd && t.rd.isNotEmpty) Text(LearnerPrefs.fill(t.rd, ko: true), style: const TextStyle(fontSize: 11.5, color: AppColors.muted)),
                         if (showKo) Text(LearnerPrefs.fill(t.ko, ko: true), style: const TextStyle(fontSize: 12.5, color: AppColors.sumiLight, height: 1.35)),
@@ -339,7 +347,7 @@ class _Caption extends StatelessWidget {
         child: Row(crossAxisAlignment: CrossAxisAlignment.center, children: [
           Expanded(
             child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-              Text(LearnerPrefs.fill(turn.tl), style: TextStyle(fontSize: wide ? 20 : 17, fontWeight: FontWeight.w800, color: AppColors.sumi, height: 1.35)),
+              SelectableMnText(text: LearnerPrefs.fill(turn.tl), lemmas: turn.lemmas, style: TextStyle(fontSize: wide ? 20 : 17, fontWeight: FontWeight.w800, color: AppColors.sumi, height: 1.35)),
               if (showGloss && turn.gloss.isNotEmpty && turn.gloss != turn.tl) Text(turn.gloss, style: const TextStyle(fontSize: 12, color: AppColors.ai, fontWeight: FontWeight.w600)),
               if (showRd && turn.rd.isNotEmpty) Text(LearnerPrefs.fill(turn.rd, ko: true), style: const TextStyle(fontSize: 12.5, color: AppColors.muted)),
               if (showKo) Padding(padding: const EdgeInsets.only(top: 2), child: Text(LearnerPrefs.fill(turn.ko, ko: true), style: const TextStyle(fontSize: 13.5, color: AppColors.sumiLight, height: 1.35))),

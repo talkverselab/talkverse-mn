@@ -70,6 +70,15 @@ class AchievementService {
     await _save();
   }
 
+  /// 학습 기록 초기화(프로필).
+  Future<void> reset() async {
+    await load();
+    _episodes.clear();
+    _cards.clear();
+    _daily.clear();
+    await _save();
+  }
+
   bool isDone(String id) => _episodes.containsKey(id);
   int get episodesDone => _episodes.length;
   List<int>? cardsOf(String id) => _cards[id];

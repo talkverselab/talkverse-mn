@@ -1,4 +1,7 @@
+import 'dart:convert';
+
 import 'package:drift/drift.dart';
+import 'package:flutter/services.dart' show rootBundle;
 
 import '../data/db/app_database.dart';
 import '../data/mn_affixes.dart';
@@ -65,4 +68,65 @@ Future<List<LemmaHit>> lemmasForTurn(DialogueTurn t) async {
     out.add(LemmaHit(e.key, base, hit));
   }
   return out;
+}
+
+/// 문장의 낱말 → 단어장 항목(기능어 포함) — 회화 문장 탭(`SelectableMnText`)용.
+Future<Map<String, WordRow>> wordsInText(String text, {List<(String, String, String)> lemmas = const []}) async {
+  final given = {for (final l in lemmas) l.$1: l.$2.toLowerCase()};
+  final cands = <String, List<String>>{
+    for (final s in splitWords(text))
+      if (s.length >= 2) s: [if (given[s] != null) given[s]!, ...lemmaCandidates(s)],
+  };
+  if (cands.isEmpty) return const {};
+  final all = {for (final l in cands.values) ...l}.toList();
+  final rows = await (appDb.select(appDb.words)
+        ..where((w) => w.word.lower().isIn(all))
+        ..orderBy([(w) => OrderingTerm.desc(w.rank)]))
+      .get();
+  final byWord = {for (final r in rows) r.word.toLowerCase(): r}; // 같은 표제어면 순위 높은 쪽이 남는다
+  final out = <String, WordRow>{};
+  cands.forEach((s, l) {
+    for (final c in l) {
+      final hit = byWord[c];
+      if (hit != null) {
+        out[s] = hit;
+        break;
+      }
+    }
+  });
+  return out;
+}
+
+/// 회화 단어 — 회화 레마 중 절벽 목록 밖이면서 주제 단어장에 뜻이 있는 것(등장 횟수순). DB 는 합치지 않고 화면에서만 붙인다.
+class ConvWord {
+  final String word, reading, ko;
+  final int n;
+  const ConvWord(this.word, this.reading, this.ko, this.n);
+}
+
+Future<List<ConvWord>> convExtraWords() async {
+  final j = json.decode(await rootBundle.loadString('assets/data/vocab/travel_words.json')) as Map<String, dynamic>;
+  final vocab = <String, Map<String, dynamic>>{};
+  for (final t in (j['themes'] as List).cast<Map<String, dynamic>>()) {
+    for (final s in (t['sections'] as List).cast<Map<String, dynamic>>()) {
+      for (final w in (s['words'] as List).cast<Map<String, dynamic>>()) {
+        vocab['${w['tx']}'.toLowerCase()] = w;
+      }
+    }
+  }
+  await DialogueService.instance.ensureLoaded();
+  final counts = <String, int>{};
+  for (final d in DialogueService.instance.all) {
+    for (final t in d.turns) {
+      final text = t.tl.replaceAll(RegExp(r'\{[a-z_]+\}'), '');
+      final known = await wordsInText(text, lemmas: t.lemmas);
+      for (final s in splitWords(text)) {
+        if (known.containsKey(s)) continue;
+        final base = lemmaCandidates(s).where(vocab.containsKey).firstOrNull;
+        if (base != null) counts[base] = (counts[base] ?? 0) + 1;
+      }
+    }
+  }
+  final keys = counts.keys.toList()..sort((a, b) => counts[b]!.compareTo(counts[a]!));
+  return [for (final k in keys) ConvWord('${vocab[k]!['tx']}', '${vocab[k]!['rd'] ?? ''}', '${vocab[k]!['ko'] ?? ''}', counts[k]!)];
 }
