@@ -41,7 +41,7 @@ for e in eps:
                  f"<div class=meta>{tag}<br>{e_(e['scene'])}<br>{e['region']} · {e.get('register')} · 턴 {len(e['turns'])} · 반전 {e.get('twist')}턴({e.get('twist_type')}) · {e_(sp)}</div>")
     for t in e['turns']:
         k = f"{e['id']}:{t['num']}"
-        parts.append(f"<div class='t {t['speaker']}'><div class=sp>{t['num']} {t['speaker']}</div><div class=tl>{e_(t['tl'])}</div><div class=rd>{e_(t.get('rd', ''))}</div><div class=ko>{e_(t['ko'])}</div>"
+        parts.append(f"<div class='t {t['speaker']}'><div class=sp>{t['num']} {t['speaker']} · {e_(' → '.join(g[0] for g in t['segs']) if t.get('segs') else t.get('emotion', ''))}</div><div class=tl>{e_(t['tl'])}</div><div class=rd>{e_(t.get('rd', ''))}</div><div class=ko>{e_(t['ko'])}</div>"
                      f"<div class=rv><textarea data-k='{k}' placeholder='이 턴 리뷰…'></textarea><button onclick=\"sv(this)\">저장</button></div><div class=rs data-s='{k}'></div></div>")
 parts.append(f"<script>{js}</script></body></html>")
 out.write_text('\n'.join(parts), encoding='utf-8')

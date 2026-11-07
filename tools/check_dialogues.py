@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """몽골어 회화 편 검사기(2026-11-07).
   python3 tools/check_dialogues.py [--fix-rd] [--report] [파일...]   파일이 없으면 R 구조 전체
-검사: 턴 수(R1 6~8 · R2 8~12 · R3 12~16)·한 턴 낱말 수·1단어 턴·표현 풀 ≥2·반전·twist_type·독음·한국어·expressions 가 대사에 있는지.
+검사: 턴 수(R1 6~8 · R2 8~12 · R3 12~16)·한 턴 낱말 수·1단어 턴·표현 풀 ≥2·반전·twist_type·독음·한국어·감정(emotion·segs, 값은 ja/data/tts/PLAN_GUIDE.md 16개)·expressions 가 대사에 있는지.
 --fix-rd: scripts/normalize_pron.py 로 rd 를 채운다(결정론, 손으로 고치지 않는다).
 --report: twist_type·주제·레벨 분포, 카오스 비율, 단어 목록 안 비율(경고용 통계 — 절벽 R1 이 49어라 구간 어휘는 막지 않는다)."""
 import argparse, collections, csv, glob, json, pathlib, re, sys
@@ -12,6 +12,7 @@ DLG = ROOT / 'app/assets/data/dialogues'
 TURNS = {'R1': (6, 8), 'R2': (8, 12), 'R3': (12, 16)}
 MAXW = {'R1': 7, 'R2': 9, 'R3': 12}
 TWISTS = {'chaos', 'slip', 'reveal', 'emotion', 'ignore'}
+EMOTIONS = set('neutral polite stiff cheerful amused teasing excited surprised shout tsukkomi annoyed sad worried flustered shy gentle'.split())
 WORD = re.compile(r"[А-Яа-яЁёӨөҮү-]+")
 
 def words(s): return WORD.findall(re.sub(r'\{[a-z_]+\}', '', s))
@@ -41,6 +42,11 @@ def check(e, P):
         if n == 1 and i != e.get('twist') and i != len(T) and fold(t['tl']) not in P: errs.append(f'{i}턴 1단어')
         if not t.get('ko'): errs.append(f'{i}턴 한국어 없음')
         if not t.get('rd'): errs.append(f'{i}턴 독음 없음')
+        if t.get('emotion') not in EMOTIONS: errs.append(f'{i}턴 emotion')
+        if 'segs' in t:
+            if any(g[0] not in EMOTIONS for g in t['segs']): errs.append(f'{i}턴 segs 감정')
+            if fold(' '.join(g[1] for g in t['segs'])) != fold(t['tl']): errs.append(f'{i}턴 segs 본문')
+    if len(T) >= 4 and sum(t.get('emotion') == 'neutral' for t in T) * 2 > len(T): errs.append('neutral 절반 넘음')
     return errs
 
 def main():
