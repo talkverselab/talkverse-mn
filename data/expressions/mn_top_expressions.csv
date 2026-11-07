@@ -1,0 +1,64 @@
+expr,ko,kind
+За,응·네·자,response
+За за,알았어 알았어,response
+Тийм,네·그래,response
+Тийм үү?,그래?,reaction
+Тиймээ,그럼·맞아,response
+Үгүй,아니,response
+Биш,아니야,response
+Зүгээр,괜찮아,response
+Зүгээр зүгээр,괜찮아 괜찮아,response
+Болно,돼·좋아,response
+Болохгүй,안 돼,response
+Мэдэхгүй,몰라,response
+Мэдэж байна,알고 있어,response
+Ойлголоо,알겠어,response
+Ойлгохгүй байна,이해가 안 돼요,survival
+Дахиад хэлээч,다시 말해 줘,survival
+Удаан хэлээч,천천히 말해 줘,survival
+Түр хүлээгээрэй,잠깐만 기다려요,survival
+Хүлээгээрэй,기다려,survival
+Уучлаарай,미안해요·실례해요,survival
+Баярлалаа,고마워요,survival
+Хэд вэ?,얼마예요?,survival
+Өгөөч,주세요,survival
+Хаана вэ?,어디예요?,survival
+Хөөх,우와,reaction
+Өө,어·오,reaction
+Аан,아~,reaction
+Яанаа,어머·어쩌나,reaction
+Ёоё,아이고,reaction
+Хаха,하하,reaction
+Үнэхээр үү?,진짜?,reaction
+Нээрээ,맞다·참·진짜,reaction
+Ёстой,정말·완전,intensifier
+Их,많이·아주,intensifier
+Ямар,엄청(감탄),intensifier
+Гоё,멋져·예뻐,reaction
+Сайхан,좋아·멋져,reaction
+Хөөрхөн,귀여워,reaction
+Мундаг,대단해,reaction
+Дажгүй,나쁘지 않아·괜찮네,reaction
+Яасан бэ?,왜 그래?,question
+Юу болсон бэ?,무슨 일이야?,question
+Яагаад?,왜?,question
+Яах вэ?,어떡하지?,question
+Тэгье,그러자,plan
+Тэгэх үү?,그럴까?,plan
+Тэгвэл,그럼,connector
+Тэгээд,그래서·그리고,connector
+Гэхдээ,근데,connector
+Харин,근데·그런데,connector
+Одоо,지금·이제,time
+Дараа,나중에,time
+Явъя,가자,plan
+Алив,자·이리 줘,plan
+Май,자 여기,plan
+шүү,~한다니까(강조),particle
+шүү дээ,~잖아,particle
+даа,~네(부드럽게),particle
+л,~만·그냥,particle
+байх,~일 거야,particle
+гэсэн юм,~하려던 건데·~한다는 거야,pattern
+шиг байна,~인 것 같아,pattern
+чи ч гэсэн,너도,pattern
