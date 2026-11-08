@@ -96,7 +96,7 @@ class _MainScreenState extends State<MainScreen> {
                       child: Padding(
                         padding: const EdgeInsets.only(bottom: 16),
                         child: InkWell(
-                          onTap: () => openPane(context, (_) => const AboutScreen()),
+                          onTap: () => _pane.currentState?.push(MaterialPageRoute(builder: (_) => const AboutScreen())), // 레일은 칸(Pane) 바깥이라 openPane 대신 칸 Navigator 에 직접
                           borderRadius: BorderRadius.circular(8),
                           child: Padding(
                             padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 6),
@@ -493,12 +493,16 @@ class _MenuTile extends StatelessWidget {
             children: [
               TileBadge(text: item.badge, size: 44, color: item.color),
               const SizedBox(height: 8),
-              Text(
-                item.label,
-                style: const TextStyle(
-                  fontSize: 13,
-                  fontWeight: FontWeight.w600,
-                  color: AppColors.tinta,
+              FittedBox(
+                fit: BoxFit.scaleDown,
+                child: Text(
+                  item.label,
+                  maxLines: 1,
+                  style: const TextStyle(
+                    fontSize: 13,
+                    fontWeight: FontWeight.w600,
+                    color: AppColors.tinta,
+                  ),
                 ),
               ),
               const SizedBox(height: 2),

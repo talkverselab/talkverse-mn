@@ -42,7 +42,7 @@ class _WordFreqScreenState extends State<WordFreqScreen> {
   static const _colors = {
     'R1': AppColors.beni,
     'R2': AppColors.beniLight,
-    'R3': AppColors.kin,
+    'R3': AppColors.kinDeep,
     'R4': AppColors.matcha,
     'R5': AppColors.muted,
     'C': AppColors.ai,
