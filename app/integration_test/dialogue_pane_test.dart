@@ -103,6 +103,19 @@ void main() {
     await wait(t, 2500);
     await shot(t, '16_cliff_words');
 
+    await t.tap(rail('홈'));
+    await wait(t, 800);
+    await t.ensureVisible(find.text('키릴 문자').first);
+    await wait(t, 500);
+    await t.tap(find.text('키릴 문자').first);
+    await wait(t, 1500);
+    await shot(t, '18_alphabet');
+    await t.tap(find.text('Өө').first);
+    await wait(t, 2500);
+    await shot(t, '19_letter_sheet');
+    await t.tapAt(const Offset(20, 20));
+    await wait(t, 800);
+
     await t.tap(find.text('앱 소개').first);
     await wait(t, 1500);
     await shot(t, '17_about');

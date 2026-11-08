@@ -63,6 +63,7 @@ flutter:
     - assets/data/freq/
     - assets/data/grammar/
     - assets/data/vocab/
+    - assets/images/ipa/
     - assets/audio/
 
 flutter_launcher_icons:
