@@ -5,6 +5,7 @@ import 'package:mn_app/core/theme.dart';
 import 'package:mn_app/data/db/app_database.dart';
 import 'package:mn_app/data/db/seed_loader.dart';
 import 'package:mn_app/main.dart';
+import 'package:mn_app/screens/keyboard_screen.dart';
 import 'package:mn_app/screens/main_screen.dart';
 import 'package:mn_app/screens/profile_screen.dart';
 import 'package:mn_app/screens/word_freq_screen.dart';
@@ -65,7 +66,8 @@ void main() {
         await t.runAsync(() => Future<void>.delayed(const Duration(milliseconds: 250)));
         await t.pump();
       }
-      expect(t.takeException(), isNull);
+      final e = t.takeException();
+      expect(e == null || '$e'.contains('MissingPluginException'), isTrue, reason: '$e'); // 음성 플러그인은 테스트에 없음 — 넘침만 본다
     }
 
     // 300 은 테스트 글꼴(Ahem)이 넓어 머리줄이 넘친다 — 실제 글꼴로는 아이패드 스크린샷에서 본다
@@ -75,6 +77,15 @@ void main() {
         expect(find.text('절벽 단어'), findsOneWidget);
       });
     }
+    testWidgets('keyboard practice fits at $width', (t) async {
+      await pumpAt(t, const KeyboardScreen());
+      expect(find.text('байх'), findsOneWidget);
+      await t.enterText(find.byType(TextField), 'БАЙХ');
+      await t.pump();
+      expect(find.text('🎉 정답!'), findsOneWidget);
+      await t.pumpWidget(const SizedBox());
+      await t.pump(const Duration(seconds: 2)); // 발음 1초 지연 타이머를 흘려보낸다
+    });
     testWidgets('profile fits at $width', (t) async {
       await pumpAt(t, const ProfileScreen());
       expect(find.text('프로필'), findsOneWidget);

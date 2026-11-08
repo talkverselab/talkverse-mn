@@ -7,6 +7,7 @@ import '../main.dart';
 import '../widgets/spanish_decor.dart';
 import 'about_screen.dart';
 import 'alphabet_screen.dart';
+import 'keyboard_screen.dart';
 import 'chunk_search_screen.dart';
 import 'conversation_screen.dart';
 import 'affix_screens.dart';
@@ -395,6 +396,8 @@ class _MenuGrid extends StatelessWidget {
       (tr('기초'), [
         _MenuItem(label: tr('키릴 문자'), sub: tr('35자 · 발음'), badge: 'Аа', color: AppColors.mongol,
           builder: (_) => const AlphabetScreen()),
+        _MenuItem(label: tr('키보드 연습'), sub: tr('몽골어로 쳐 보기'), badge: '⌨', color: AppColors.ai,
+          builder: (_) => const KeyboardScreen()),
       ]),
       (tr('문법'), [
         _MenuItem(label: tr('접사'), sub: 'Нөхцөл', badge: '-аас', color: AppColors.ai,

@@ -115,6 +115,16 @@ void main() {
     await shot(t, '19_letter_sheet');
     await t.tapAt(const Offset(20, 20));
     await wait(t, 800);
+    await t.ensureVisible(find.text('키보드 연습').first);
+    await wait(t, 500);
+    await t.tap(find.text('키보드 연습').first);
+    await wait(t, 2000);
+    await shot(t, '20_keyboard');
+    await t.tap(find.byTooltip('키보드 설정법'));
+    await wait(t, 1500);
+    await shot(t, '21_keyboard_guide');
+    await t.tap(find.byIcon(Icons.close));
+    await wait(t, 800);
 
     await t.tap(find.text('앱 소개').first);
     await wait(t, 1500);
