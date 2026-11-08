@@ -1,0 +1,119 @@
+{
+ "id": "r1_travel_c1",
+ "region": "R1",
+ "island": "travel",
+ "kind": "chat",
+ "draft": true,
+ "purpose": [
+  "travel"
+ ],
+ "domain": [
+  "travel"
+ ],
+ "title": "읽고 안 읽은 척",
+ "emoji": "🥟",
+ "scene": "호텔 앞에서 바트를 기다리는 학습자의 메시지. 읽음 표시만 뜬다",
+ "speakers": {
+  "A": "{name}",
+  "B": "Бат"
+ },
+ "register": "chat",
+ "twist": 4,
+ "twist_type": "ignore",
+ "flags": [],
+ "expressions": [
+  "шүү дээ",
+  "За"
+ ],
+ "goal": "어디야·기다릴게",
+ "turns": [
+  {
+   "num": 1,
+   "speaker": "A",
+   "tl": "Бат аа, хаана байна? 🙂",
+   "rd": "바트 아 항 벵",
+   "ko": "바트, 어디야? 🙂",
+   "note": "хаана = 어디",
+   "tags": [],
+   "new": [],
+   "emotion": "cheerful"
+  },
+  {
+   "num": 2,
+   "speaker": "A",
+   "tl": "Би зочид буудлын үүдэнд байна.",
+   "rd": "비 저치드 보드링 우뎅드 벵",
+   "ko": "나 호텔 입구에 있어.",
+   "note": "зочид буудал = 호텔 · үүд = 입구",
+   "tags": [],
+   "new": [],
+   "emotion": "neutral"
+  },
+  {
+   "num": 3,
+   "speaker": "A",
+   "tl": "Бат аа?? 😟",
+   "rd": "바트 아",
+   "ko": "바트?? 😟",
+   "note": "",
+   "tags": [],
+   "new": [],
+   "emotion": "worried"
+  },
+  {
+   "num": 4,
+   "speaker": "A",
+   "tl": "Уншсан байна шүү дээ! 👀",
+   "rd": "옹시상 벵 수 데",
+   "ko": "읽었잖아! 👀",
+   "note": "унших = 읽다",
+   "tags": [],
+   "new": [],
+   "emotion": "annoyed"
+  },
+  {
+   "num": 5,
+   "speaker": "B",
+   "tl": "[Зураг] Хуушуур.",
+   "rd": "조락 호소르",
+   "ko": "[사진] 호쇼르.",
+   "note": "хуушуур = 고기 튀김만두",
+   "tags": [],
+   "new": [],
+   "emotion": "neutral"
+  },
+  {
+   "num": 6,
+   "speaker": "A",
+   "tl": "Хоол идэж байна уу?! Би хүлээж байна!",
+   "rd": "헐 이데즈 벵 오 비 후레즈 벵",
+   "ko": "밥 먹고 있는 거야?! 나 기다리는 중이라고!",
+   "note": "хоол идэх = 밥 먹다",
+   "tags": [],
+   "new": [],
+   "emotion": "tsukkomi"
+  },
+  {
+   "num": 7,
+   "speaker": "B",
+   "tl": "Чамд бас авсан. Таван ширхэг.",
+   "rd": "참드 바스 압상 타방 시르헥",
+   "ko": "네 것도 샀어. 다섯 개.",
+   "note": "ширхэг = 개(세는 말)",
+   "tags": [],
+   "new": [],
+   "emotion": "neutral"
+  },
+  {
+   "num": 8,
+   "speaker": "A",
+   "tl": "...За, хүлээе. 😋",
+   "rd": "자 후레예",
+   "ko": "...좋아, 기다릴게. 😋",
+   "note": "хүлээе = 기다릴게",
+   "tags": [],
+   "new": [],
+   "emotion": "amused"
+  }
+ ]
+}

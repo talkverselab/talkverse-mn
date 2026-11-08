@@ -1,0 +1,119 @@
+{
+ "id": "r1_friends_c2",
+ "region": "R1",
+ "island": "friends",
+ "kind": "chat",
+ "draft": true,
+ "purpose": [
+  "making_friends"
+ ],
+ "domain": [
+  "friends"
+ ],
+ "title": "「응」이 무슨 뜻이야",
+ "emoji": "🎬",
+ "scene": "노민에게 영화 보자고 연달아 보내는데 답이 짧다",
+ "speakers": {
+  "A": "{name}",
+  "B": "Номин"
+ },
+ "register": "chat",
+ "twist": 4,
+ "twist_type": "ignore",
+ "flags": [],
+ "expressions": [
+  "Яагаад?",
+  "шүү"
+ ],
+ "goal": "약속 잡기, 답 재촉하기",
+ "turns": [
+  {
+   "num": 1,
+   "speaker": "A",
+   "tl": "Номин! Орой кино үзэх үү? 🎬",
+   "rd": "너밍 어러이 킹 우제흐 우",
+   "ko": "노민! 저녁에 영화 볼래? 🎬",
+   "note": "кино үзэх = 영화 보다",
+   "tags": [],
+   "new": [],
+   "emotion": "cheerful"
+  },
+  {
+   "num": 2,
+   "speaker": "A",
+   "tl": "Хоёр тасалбар авчихлаа шүү 😊",
+   "rd": "허요르 타살바르 압치흐라 수",
+   "ko": "표 두 장 사 놨다 😊",
+   "note": "тасалбар = 표",
+   "tags": [],
+   "new": [],
+   "emotion": "excited"
+  },
+  {
+   "num": 3,
+   "speaker": "A",
+   "tl": "Номин? Харсан уу?",
+   "rd": "너밍 하르상 오",
+   "ko": "노민? 봤어?",
+   "note": "харах = 보다",
+   "tags": [],
+   "new": [],
+   "emotion": "worried"
+  },
+  {
+   "num": 4,
+   "speaker": "B",
+   "tl": "За.",
+   "rd": "자",
+   "ko": "응.",
+   "note": "За = 응",
+   "tags": [],
+   "new": [],
+   "emotion": "stiff"
+  },
+  {
+   "num": 5,
+   "speaker": "A",
+   "tl": "«За» гэдэг чинь юу гэсэн үг вэ? 😅",
+   "rd": "자 게덱 칭 유오 게셍 욱 베",
+   "ko": "「응」이 무슨 뜻이야? 😅",
+   "note": "юу гэсэн үг = 무슨 뜻",
+   "tags": [],
+   "new": [],
+   "emotion": "tsukkomi"
+  },
+  {
+   "num": 6,
+   "speaker": "A",
+   "tl": "Ирэх үү, ирэхгүй юү?",
+   "rd": "이레흐 우 이레흐구이 유우",
+   "ko": "올 거야, 안 올 거야?",
+   "note": "ирэхгүй = 안 오다",
+   "tags": [],
+   "new": [],
+   "emotion": "annoyed"
+  },
+  {
+   "num": 7,
+   "speaker": "B",
+   "tl": "Ард чинь байна. Эргэж хар.",
+   "rd": "아르드 칭 벵 에르게즈 하르",
+   "ko": "네 뒤에 있어. 돌아봐.",
+   "note": "ард = 뒤 · эргэх = 돌다",
+   "tags": [],
+   "new": [],
+   "emotion": "teasing"
+  },
+  {
+   "num": 8,
+   "speaker": "A",
+   "tl": "Чи яагаад миний ард сууж байгаа юм?!",
+   "rd": "치 야아가드 미니 아르드 소즈 베가 윰",
+   "ko": "너 왜 내 뒤에 앉아 있는 건데?!",
+   "note": "сууж байгаа = 앉아 있는",
+   "tags": [],
+   "new": [],
+   "emotion": "shout"
+  }
+ ]
+}

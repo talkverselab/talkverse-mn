@@ -34,6 +34,7 @@
 - 절벽 R1 이 49어(접사 포함)라 「구간 단어만」은 회화가 안 된다 → 구간 어휘는 막지 않고 통계로만 본다. 레벨은 문장 길이·문형 난이도로 나눈다.
 - 턴마다 `emotion`(값 16개 = `~/talkverse/ja/data/tts/PLAN_GUIDE.md`, 사용자 지시 2026-11-07). 한 턴에서 감정이 바뀌면 `segs` = [[감정, 본문], …], 이어 붙이면 `tl` 과 같아야 함. neutral 만 쓰지 말 것.
 - 음성 감정 계획: `tools/tts/build_plan.py` → `data/tts/plan/<편id>.json`. 생성기는 몽골어 음성 모델이 정해진 뒤 이 계획을 읽게 쓴다.
+- 2026-11-08 Claude 초안 150편 완료(R1 90 · R2 36 · R3 24, 카오스 51 = 34%). 작성 규칙 `tools/prompts/dialogue_mn.md`. 목적 태그는 travel · study_abroad · work_mongolia · media · love · making_friends. Grok 재작성 때 겹치는 농담 정리: 단톡방 하트(r1_love_c3·r1_travel_c2), 「네」만 하다 일이 커짐(r1_survival_a1·r1_travel_a2·r2_life_b1), 끝없는 세배 줄(r1_culture_a1·r2_love_b5), 비슷한 단어 말실수(хурга·шүүс·үс·уйлдаг·өвдөж).
 - 도구: `tools/check_dialogues.py --fix-rd --report`, 표현 풀 `data/expressions/mn_top_expressions.csv`.
 
 ## 몽골어 범위 (사용자 지시 2026-11-03 — 소수언어 앱 공통)
