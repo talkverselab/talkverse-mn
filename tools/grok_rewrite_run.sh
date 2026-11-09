@@ -18,9 +18,9 @@ for id in "$@"; do
     r=$(python3 tools/grok_text.py -m "$id.txt" $out data/review/grok/src/$id.txt --chat "$chat" 2>&1)
   fi
   rc=$?
-  echo "$(date +%H:%M) $id rc=$rc $(echo $r | grep -E '저장|LIMIT|전문가' | tr '\n' ' ')" | tee -a data/review/grok/run.log
+  echo "$(date +%H:%M) $id rc=$rc $(echo $r | grep -E "저장|LIMIT|전문가|시간초과" | tr '\n' ' ')" | tee -a data/review/grok/run.log
   [[ $rc -eq 3 ]] && { echo "LIMIT — 멈춤"; exit 3; }
   c=$(echo $r | grep '^CHAT ' | awk '{print $2}' | sed 's/?.*//'); [[ -n $c ]] && chat=$c
-  sleep 20
+  sleep 5
 done
 echo "끝 $chat" | tee -a data/review/grok/run.log

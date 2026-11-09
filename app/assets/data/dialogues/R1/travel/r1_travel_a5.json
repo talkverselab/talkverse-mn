@@ -116,5 +116,8 @@
    "new": [],
    "emotion": "tsukkomi"
   }
- ]
+ ],
+ "review": {
+  "grok_rewrite": "2026-11-10 Grok 전문가 재작성 반영(data/review/grok/out/r1_travel_a5.md)"
+ }
 }
