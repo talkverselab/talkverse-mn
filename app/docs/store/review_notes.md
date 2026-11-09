@@ -1,3 +1,19 @@
+> ⚠ 2026-11-09 갱신: 가격·상품은 `~/talkverse/PRICING.md`(사용자 확정)로 바뀌었다 — 아래 2026-11-02 문안의 「평생 이용권 1개」·「4급 잠금」 서술은 한자앱 것이라 쓰지 않는다. **몽골어앱은 아직 제출하지 않는다**(출시 = 한자앱만, 언어앱은 완성된 것부터 하나씩).
+
+## 2026-11-09 — 심사 메모 필수 문단(STORE_DIFFERENTIATION.md, 애플 지침 4.3 대비)
+```
+This app is one of a family of language-specific apps by Universal Talking Lab (Talkverse). Each app is built from scratch for one target language for Korean speakers and is NOT a re-skin: the Mongolian app has its own script & pronunciation module (35 Cyrillic letters grouped by vowel harmony, with Ө/Ү and the lateral fricative л compared to Korean sounds), its own grammar tools (case-suffix dictionary mapped to Korean particles, vowel-harmony coloring, a verb form map, word-order alignment, keyboard practice for the Mongolian layout), [N] original conversation episodes with recorded audio written for this language, and a vocabulary list measured from a Mongolian conversation corpus (49 words = 55%, 522 words = 80% of dialogue). Content, curriculum and UI flows differ between apps; we keep them separate because learners search for and buy one language at a time.
+```
+[N] = 출시 빌드의 회화 편 수.
+
+## 2026-11-09 — 인앱 구입(새 가격표)
+- 구독(자동 갱신, 한 구독 그룹): `lang_mn_1m` ₩3,900 · `lang_mn_3m` ₩9,000 · `lang_mn_1y` ₩19,900 · `all_1y` ₩79,000(종합, 모든 언어 앱).
+- 비소모성: `lang_mn_life` ₩49,000 · `all_life` ₩329,000(평생 = 서비스 운영 기간 동안).
+- 결제 시트(프로필 → 계정 → 이용권): 상품을 미리 고르지 않음, 고른 상품의 가격·기간·자동 갱신·해지 방법을 구매 버튼 바로 위에, 구매 복원, 이용약관·개인정보처리방침 링크. 할인 전 정가(₩5,500 등)는 줄 그어 함께. 앱 안에서 사이트 가격을 안내하지 않는다.
+- 아직 잠그는 기능이 없다(사용자 결정 2026-11-02) — 무엇을 잠글지 정해지면 심사 메모의 IAP 위치 안내를 쓴다.
+
+---
+
 > ⚠ 몽골어앱판(2026-11-02, 한자 앱 문안을 옮김). **아직 잠긴 기능이 없어**(사용자 결정 — 이번 빌드는 TestFlight·Zealot 시험용, 스토어 심사 제출 안 함) 인앱 구입 설명(잠긴 단원·급수 등)은 잠금 범위가 정해지면 고친다.
 
 # 심사 메모(App Review Notes) 초안 · 개인정보처리방침 추가 문안 — 2026-11-02

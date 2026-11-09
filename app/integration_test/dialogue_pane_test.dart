@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:integration_test/integration_test.dart';
 import 'package:mn_app/core/l10n.dart';
+import 'package:mn_app/data/purchase.dart';
 import 'package:mn_app/data/db/app_database.dart';
 import 'package:mn_app/data/db/seed_loader.dart';
 import 'package:mn_app/main.dart';
@@ -40,6 +41,7 @@ void main() {
     await AppLangPrefs.load();
     await LearnerPrefs.load();
     await AchievementService.instance.load();
+    Purchase.plans = kMnPlans;
     await t.pumpWidget(const GermanUniverseApp());
     await wait(t, 1500);
     await shot(t, '01_home_wide');
@@ -137,5 +139,14 @@ void main() {
     await t.tap(rail('프로필'));
     await wait(t, 1500);
     await shot(t, '09_profile');
+    await t.ensureVisible(find.text('이용권').first);
+    await wait(t, 500);
+    await t.tap(find.text('이용권').first);
+    await wait(t, 1500);
+    await t.tap(find.text('1개월').first);
+    await wait(t, 800);
+    await shot(t, '22_paywall');
+    await t.tapAt(const Offset(20, 20));
+    await wait(t, 800);
   });
 }

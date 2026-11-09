@@ -25,8 +25,8 @@ void main() async {
   await LearnerPrefs.load(); // 학습자 이름·성별 — 화자 A 의 목소리·{name}
   await AchievementService.instance.load(); // 성과(편 완주·그림 카드)
   Account.load(); // Talkverse ID — 저장된 로그인 표시 + 뒤에서 토큰 갱신(기다리지 않음)
-  // 몽골어 평생 이용권 — iOS 상품 번호 / Android 상품 번호 (Talkverse ID 상품 lang_mn_life)
-  Purchase.configure({'mn': ('com.talkverse.mongolianUniverse.lifetime', 'lang_mn')});
+  // 이용권 — 상품 ID·가격 = ~/talkverse/PRICING.md(2026-11-09 사용자 확정). krw = 앱 할인가(스토어 등록가), listKrw = 앱 정가.
+  Purchase.configure('mn', kMnPlans);
   await _setOrientations(); // 폰은 세로 고정, 태블릿·폴드 펼침(짧은 변 600 이상)은 회전 허용
   // 그림(장면 컷·단어 그림) 기기 내려받기: 버전이 다르면 로딩 화면에서 받고 시작(사용자 지시 2026-11-04)
   final needSync = await ContentSync.instance.init(large: _wide ?? false);

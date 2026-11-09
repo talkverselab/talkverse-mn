@@ -3,10 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mn_app/core/theme.dart';
 import 'package:mn_app/data/db/app_database.dart';
+import 'package:mn_app/data/purchase.dart';
 import 'package:mn_app/data/db/seed_loader.dart';
 import 'package:mn_app/main.dart';
 import 'package:mn_app/screens/keyboard_screen.dart';
 import 'package:mn_app/screens/main_screen.dart';
+import 'package:mn_app/screens/paywall_screen.dart';
 import 'package:mn_app/screens/profile_screen.dart';
 import 'package:mn_app/screens/word_freq_screen.dart';
 import 'package:mn_app/services/word_lookup.dart';
@@ -85,6 +87,14 @@ void main() {
       expect(find.text('🎉 정답!'), findsOneWidget);
       await t.pumpWidget(const SizedBox());
       await t.pump(const Duration(seconds: 2)); // 발음 1초 지연 타이머를 흘려보낸다
+    });
+    testWidgets('paywall shows final prices at $width', (t) async {
+      Purchase.plans = kMnPlans;
+      await pumpAt(t, const Scaffold(body: PaywallScreen()));
+      expect(find.text('₩3,900'), findsWidgets);
+      expect(find.text('₩5,500'), findsWidgets); // 정가(줄 그음)
+      expect(find.text('₩329,000'), findsWidgets);
+      expect(find.text('₩469,000'), findsWidgets);
     });
     testWidgets('profile fits at $width', (t) async {
       await pumpAt(t, const ProfileScreen());
