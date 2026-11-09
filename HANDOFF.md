@@ -39,7 +39,7 @@
 - 앱을 고치면 **Android(Zealot)와 iOS(TestFlight)를 함께**: 커밋·push → CI(`release.yml`, 빌드 번호 = 실행 번호; HEAD 가 `[skip ci]` 면 `gh workflow run release.yml --ref master`) → **CI 가 성공하고 `latest.json` sha 가 그 커밋일 때만** `gh release download latest -R talkverselab/talkverse-mn -p app-latest.apk -p latest.json` → apksigner SHA-1 `9cc4bc93…` 확인 → `~/bin/zealot-upload app-latest.apk "몽골어유니버스" -c "…"` → `scp` PC 백업. iOS 는 `bash app/tools/ios_release.sh`(백그라운드, 끝나면 ios xcconfig·pbxproj·xcscheme·xcworkspace 잡음 `git checkout`). CI 가 Gradle 504 로 실패하면 몇 분 뒤 `gh run rerun`.
 - 스크린샷 넘침 0 · `flutter analyze` · `flutter test`(26개) 확인 뒤 배포.
 - M6: 시뮬레이터는 자기 것 1대만, **디스크가 빠듯함(2026-11-09 99%)** — 스크린샷·APK 는 스크래치에서 바로 지우고, 빌드 뒤 필요하면 `flutter clean`.
-- Grok·Gemini 는 사용자 지시가 있을 때만, M4 Chrome(`~/talkverse/GROK_M4_LOGIN.md`), 탭·Chrome 은 끝나면 닫기. 새 키스토어 금지, 시크릿 값은 어디에도 적지 않음(Doppler).
+- Grok·Gemini 는 사용자 지시가 있을 때만, 탭·Chrome 은 끝나면 닫기. **2026-11-09 허브 공지(`~/logs/rc/RELAY_grok_20261109.md`)**: Grok 은 옛 계정으로 다시 로그인됨(M4 uk 크롬 9231 — uk 방은 건드리지 말 것). 한자 세션은 이제 다른 세션 요청을 대행하지 않음 → 자기 크롬(M4 프로필 `~/chrome-grok-mn`, 포트 9235)을 켜고 M4 에서 `/usr/bin/python3 ~/talkverse-uk/tools/grok_cookie_sync.py 9231 9235`(`ssh macmini4` 경유)로 쿠키 동기화 뒤 직접. 도구는 M6 `~/Hanja/tools/grok_req.py`·`grok_cdp.py` 를 저장소로 복사. 새 키스토어 금지, 시크릿 값은 어디에도 적지 않음(Doppler).
 
 ## 사용자가 할 일
 - 개발자 포털 App ID `com.talkverse.mongolianUniverse` 에 Sign in with Apple 켜기.
