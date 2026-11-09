@@ -25,6 +25,7 @@
 ## 회화 작업(다음 할 일)
 - 초안: `app/assets/data/dialogues/R<레벨>/<주제>/<편id>.json`, 규칙 `tools/prompts/dialogue_mn.md`, 검사 `python3 tools/check_dialogues.py --fix-rd --report`(150편 오류 0), 리뷰 페이지 `python3 tools/review_html.py` → `data/review/REVIEW_mn.html`(uk 에 「REVIEW_mn 갱신」), 음성 감정 계획 `python3 tools/tts/build_plan.py` → `data/tts/plan/`.
 - 다음 순서(`~/talkverse/GEMINI_REVIEW_GUIDE.md`): **Grok 재작성(11/9 13:30 재개)** → 최소 수정 → **Gemini 3.1 Pro 검수**(한 번에 한 건·60초 간격, BLOCKED 면 멈추고 사용자에게) → 사용자 리뷰 통과 → 로더를 R 구조로 옮기고 빌드 → 장면 컷 요청.
+- **Grok 은 PC 에서(사용자 지시 2026-11-09 「소수언어들에게 pc에서 그록 켜서 집필 그림 작업 하라고 해」)**: PC(`ssh Administrator@100.127.143.37`)에서 크롬을 `--remote-debugging-port=9245 --user-data-dir=C:\Users\Administrator\chrome-grok-mn https://grok.com` 으로 띄우고(SSH 에서 직접 띄우면 세션과 함께 죽으니 작업 스케줄러로), M4 에서 `ssh -N -L 9245:127.0.0.1:9245 Administrator@100.127.143.37` 터널 → M4 에서 `/usr/bin/python3 ~/talkverse-uk/tools/grok_cookie_sync.py 9231 9245`(값은 출력·파일에 안 남음). 포트 9245 는 `~/talkverse-uk/docs/GROK_CHROME_PORTS.md` 에 등록함. 계정 주간 한도를 모든 세션이 같이 쓰니 회차는 작게.
 - **Grok 프롬프트 최소화(사용자 지시 2026-11-09, uk 전달)**: 규칙은 문서 하나에 한 번만 쓰고, 방 첫 메시지에서 「앞으로 파일 이름 한 줄만 보낸다」고 약속한 뒤 편마다 한 줄만 보낸다(긴 프롬프트를 매번 붙이지 않는다 — 토큰). 그림이 처음과 달라지면 최초 통과 그림을 기준으로(이미 만든 것은 그대로).
 - 감정 열(emotion·segs)은 150편 초안에 이미 있음 — 재작성 뒤에도 줄마다 유지·갱신.
 - Grok 때 정리할 것(`docs/DIALOGUE.md`): 겹치는 농담(단톡방 하트 2·「네」만 하다 커짐 3·세배 줄 2·비슷한 단어 말실수 5), 반전이 앞쪽(3~4턴)인 6편. 작성 묶음들이 표시한 「원어민 확인 필요」 표현은 Gemini 검수 프롬프트에 함께.
