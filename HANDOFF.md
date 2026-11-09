@@ -1,55 +1,49 @@
-# HANDOFF — talkverse-mn (몽골어) — 2026-11-09
+# HANDOFF — talkverse-mn (몽골어유니버스) — 2026-11-09 세션 종료
 
-> **⛔ 콘텐츠 생성 금지(사용자 지시 2026-11-02)** — 회화·단어·예문·문법 설명·음성 등 새 학습 콘텐츠를 만들거나 다시 쓰지 말 것(사용자 지시가 있을 때만). 공통 지침 `~/talkverse/LANG_APP_REPLICATE_PROMPT.md`.
+> 공통 지침 `~/talkverse/LANG_APP_REPLICATE_PROMPT.md`. 회화 밖 콘텐츠(단어·문법 설명 등) 새로 쓰기는 사용자 지시가 있을 때만. 회화는 2026-11-07 해제.
 
-## 진행 단계 (일본어앱 구조 복제)
+## 지금 상태
 
-| 단계 | 상태 |
+| 항목 | 상태 |
 |---|---|
-| ① 캐릭터 시안 | **통과 2026-11-03** — `data/review/art/chars_mn_v1.jpg`, `CHARACTERS.md` |
-| ② UX/UI 시안 | **통과 2026-11-03** — `data/review/uxui/sian_mn_01.jpg`(시안 02 + 「어순 맞대기」), 답 글 `sian_mn_01_img.md` |
-| ③ 아이패드 빌드 | Android 끝 — 커밋 `03544cc`, CI 빌드 12, Zealot https://apps.talkverse.uk/xBHY8/201, PC 백업. 아이패드 스크린샷 9장 넘침 0·테스트 통과(`app/integration_test/dialogue_pane_test.dart`, `app/tools/pane_shots.py`, 시뮬레이터 `mn-shots-ipad` C2345B5E…). **TestFlight 업로드 성공 — 빌드 2611030055**(2026-11-03 00:58, PC 백업 `D:\OneDrive\app project\mn_app\ios\`). 단 IPA 에 Sign in with Apple 권한이 빠짐(포털 capability 꺼짐) → Apple 로그인만 안 됨 |
-| ④ 회화 | 보류(사용자 지시 뒤). **범위 150편·R3 까지(185위)·카오스 45편+**(`docs/DIALOGUE.md`). 절벽 단어 1,500 = talkversehanja words/mn.csv b53def1. 그때 Grok 재작성 뒤 **Gemini 검수도**(몇 편 해 보고 별로면 중단 보고) — `CHARACTERS.md` 끝 메모 |
+| 최신 빌드 | 커밋 `dfc3f59` · Android CI 21 · Zealot https://apps.talkverse.uk/xBHY8/408 · TestFlight 2611091136 · PC 백업 `D:\OneDrive\app project\mn_app\` |
+| ① 캐릭터 | 통과 2026-11-03 — `CHARACTERS.md`, `data/review/art/chars_mn_v1.jpg` |
+| ② UX/UI | 통과 2026-11-03 — `data/review/uxui/sian_mn_01.jpg` |
+| ③ 아이패드 빌드 | 끝. 스크린샷 `app/integration_test/dialogue_pane_test.dart` + `app/tools/pane_shots.py <UDID> <폴더>`(시뮬레이터 `mn-shots-ipad` C2345B5E-F6D2-441C-B796-2216C7C880D4), 22장 넘침 0 |
+| ④ 회화 | **Claude 초안 150편 끝(검수 전)** — R1 90 · R2 36 · R3 24, 카오스 51(34%), 모든 턴 감정 열. 앱에는 아직 안 실림(로더는 `L1.json` 2편만) |
+| 출시 | **안 함** — 지금은 한자앱만 심사, 언어앱은 완성된 것부터 하나씩 |
+| 통합 앱 | 연결 준비 끝, uk 가 통합 앱 빌드 2에 넣음(https://apps.talkverse.uk/IfB4M/411) |
 
-## 이번에 한 것 (2026-11-02~03)
-- Supabase 제거·저작권 정리·이력 정리(filter-repo, 강제 push) — `docs/CLOUDFLARE_MIGRATION.md`.
-- Talkverse ID 로그인(선택)·평생 이용권 결제 연동 `f8f04d5` — 잠금 없음(사용자 결정), client_id `mn`, 딥링크 `talkverse.mn://auth`.
-- iOS: 아이콘 1024 + 다크·틴티드, `app/tools/ios_release.sh`. 2026-11-03 TestFlight 업로드 성공(빌드 2611030055).
-- 단어 그림: `talkversehanja` `talkverse_art/words/mn.csv`(250)·`mn_food.csv`(50) 푸시(fa49e98) → `/art/mn/manifest` 124장 적재(앱이 자동으로 씀).
-- 아이콘은 talkverse.uk 세션 담당(직접 고치지 말 것).
-- 회화 원칙 링크·몽골어 특이점 `docs/DIALOGUE.md`.
-- **접사(2026-11-03 사용자 지시)** `5a1adff`: 접사표 19개 + 자동 분석(`app/lib/data/mn_affixes.dart`), 어순 맞대기의 접사 블록·조사 테두리, 모음조화 연출 시트, 접사 카드, 홈 「접사 사전」. CI 빌드 13 · Zealot https://apps.talkverse.uk/xBHY8/217. iOS 는 2611030755(접사·동사 맵 포함, 2026-11-03 07:56) TestFlight 업로드. 터키어앱 세션에 구조 전달함.
-- **동사 형태 맵(2026-11-03, Grok 글 시안 `data/review/uxui/sian_mn_grok_01.md` ③ 사용자 선택)**: 홈 「동사」, 앱에 나온 형태 + 규칙형(흐리게). CI 빌드 14 · Zealot https://apps.talkverse.uk/xBHY8/220. 시안의 나머지(존대·반말 카드, 장모음·Ө·Ү 듣기, х·ц·л 자음)는 새 문장·음성이 필요해 보류 — 시안 속 몽골어 예시는 틀린 것이 많음(쓰지 말 것).
+## 앱에 있는 것(2026-11-02~09)
+- 일본어앱 구조: 두 화면(레일·왼쪽 칸·오른쪽 칸), 회화 리더(장면 컷 + 대사 띠), 그림 카드, 오늘의 컷, 성과(진행 탭), 학습자 이름·성별, 그림 기기 내려받기(`ContentSync`).
+- 홈 「기초」: **키릴 문자와 발음**(35자·모음조화 칩·로마자 토글·발음 시트, 데이터 `lib/data/mn_letters.dart`), **키보드 연습**(옛 아랍어앱 것을 왼쪽→오른쪽으로, 시스템 몽골어 입력기). 「문법」: 접사 사전(19개, `lib/data/mn_affixes.dart`)·동사 형태 맵·문법 레슨. 「회화」·「단어」(절벽 단어 20어 단원·타일, 주제 단어, 표현, 단어 카드)·「참고」(청크 검색).
+- 회화 문장 낱말 탭 → 단어창, 길게 → 접사 시트(`widgets/selectable_mn_text.dart`). 한글 독음 전역 토글 기본 미표시(`KoReadingPrefs`).
+- 절벽 경계는 코드 한 곳 `lib/core/cliff.dart`(49·71·185·522, R5 는 1,500위까지 누적 89.2%). 「앱 소개」(레일 맨 아래·프로필 → 정보).
+- 결제: `~/talkverse/PRICING.md` 상품 6개(`lib/data/purchase.dart` `kMnPlans`), 결제 시트 규정 표기·복원·약관/방침 링크. **잠그는 기능은 없음**(사용자 결정 2026-11-02).
+- 통합 앱 연결: `lib/embed.dart`(embedInit·embedApp·appDb), `lib/core/embed_env.dart`(assetPath·dataDir), `lib/core/prefs.dart`. **새 코드에서 설정은 `Prefs.getInstance()`, 에셋은 `assetPath()`** — 안 그러면 통합 앱에서 깨진다.
 
-- **일본어앱 11-04 변경 이식(2026-11-04, 공통 프롬프터 §5-1)** `0a5d5bd`: ① 「오늘의 컷」 대사는 그림 아래 띠, 재생 화면 컷엔 말풍선 없음 ② 그림 카드 앞면에 한국어 뜻 + 「이 말을 몽골어로 해 보세요」 ③ 문장 레마 칩 ↔ 단어장 — 단어장 = 그림 목록과 같은 1,500(`app/assets/data/freq/mn_words.csv`, 빈도 단어 화면도 이것), 레마는 턴 `lemmas` 가 있으면 그것, 없으면 접사 떼기로 앱이 찾음(`lib/services/word_lookup.dart`), 칩 누르면 단어 시트 ④ 시작 때 그림 기기 내려받기(`content_sync.dart`·`sync_screen.dart`, 모든 그림 `artProvider`) ⑤ `assets/data/version.json` db=3(데이터 바꾸면 이 번호만 올림) ⑥ `{name}` 회화를 열 때 이름 비면 이름·성별 창 ⑦ 여자 학습자면 `<편id>_f` 컷 먼저. CI 빌드 15 · Zealot https://apps.talkverse.uk/xBHY8/261 · TestFlight 2611040328. 아이패드 스크린샷 14장 넘침 0. ⑧ 조연 캐릭터 시트는 Grok 그림이 필요하고 조연이 나오는 편이 아직 없어 회화 작업 때.
+## 회화 작업(다음 할 일)
+- 초안: `app/assets/data/dialogues/R<레벨>/<주제>/<편id>.json`, 규칙 `tools/prompts/dialogue_mn.md`, 검사 `python3 tools/check_dialogues.py --fix-rd --report`(150편 오류 0), 리뷰 페이지 `python3 tools/review_html.py` → `data/review/REVIEW_mn.html`(uk 에 「REVIEW_mn 갱신」), 음성 감정 계획 `python3 tools/tts/build_plan.py` → `data/tts/plan/`.
+- 다음 순서(`~/talkverse/GEMINI_REVIEW_GUIDE.md`): **Grok 재작성(11/9 13:30 재개)** → 최소 수정 → **Gemini 3.1 Pro 검수**(한 번에 한 건·60초 간격, BLOCKED 면 멈추고 사용자에게) → 사용자 리뷰 통과 → 로더를 R 구조로 옮기고 빌드 → 장면 컷 요청.
+- Grok 때 정리할 것(`docs/DIALOGUE.md`): 겹치는 농담(단톡방 하트 2·「네」만 하다 커짐 3·세배 줄 2·비슷한 단어 말실수 5), 반전이 앞쪽(3~4턴)인 6편. 작성 묶음들이 표시한 「원어민 확인 필요」 표현은 Gemini 검수 프롬프트에 함께.
+- 음성: MOSS·VoxCPM2 가 몽골어 미지원 — 모델은 사용자 결정 뒤(uk 가 알림). 지금 앱 음성은 번들 mp3 578줄 + 글자 35자.
 
-- **단어·메뉴 개편(2026-11-07, `~/talkverse/ja/docs/MENU_WORDS_2026-11-07.md` §1·§3~§6)**: 절벽 단어 = 20어 단원·네모 타일·「회화 단어 포함」(탭 = 발음, 길게 = 단어 시트, 검색 유지). **R5 는 1,500위에서 끊음**(목록이 1,500개, 누적 89.2% — 일본어 2,000 대신). 경계는 코드 한 곳 `lib/core/cliff.dart`(49·71·185·522). `mn_words.csv` 의 level 칸이 옛 값(129·187·390·823)이라 공식 값으로 고침 — **db 번호는 안 올림**(올리면 재시딩이 회화 진행 기록을 지운다), 화면은 `regionOf(rank)` 를 씀. 회화 단어 = 회화 낱말 중 목록 밖이면서 `travel_words.json` 에 뜻이 있는 것(`convExtraWords`, 편이 적어 지금은 거의 없음). 「앱 소개」(`about_screen.dart`, 레일 맨 아래·프로필 → 정보). 홈 메뉴 = 문법 → 회화 → 단어 → 참고, 「빈도 단어」→「절벽 단어」, 「말하기」→「문장 말하기」, 준비 중이던 「발음」 칸 삭제. 프로필 = 계정·기록·학습자 프로필·설정·정보(앱 업데이트·TTS·테마·변종·Stack 삭제). 성과는 「진행」 탭에 그대로. 회화 문장 = 낱말 탭 → 단어창, 길게 → 접사 시트(`selectable_mn_text.dart`). 읽기 보조 = 한글 독음 전역 토글 기본 미표시(`KoReadingPrefs`, 켤 때 안내). §2(문자 기준 절벽)는 몽골어 해당 없음. 커밋 `29e5769`, CI 빌드 16 · Zealot https://apps.talkverse.uk/xBHY8/305 · TestFlight 2611071743. 넘침 확인은 `test/screens_fit_test.dart`(시뮬레이터 없이 300~1024 폭)로만 함 — 그날 공용 시뮬레이터 서비스가 멈춰 **아이패드 스크린샷 미확인**(`integration_test` 에 15~17번 샷을 추가해 둠, 풀리면 `tools/pane_shots.py` 로 볼 것).
+## 출시 전 걸림돌(지침 2.1·4.3)
+- 회화 2편뿐 → 150편 검수 뒤 로더 이전.
+- 홈 스페인어 템플릿 잔재(「¡Hola!」·「PRINCIPIANTE 1」·「Minjun & Lucía」)·진행 탭 「Poco a poco…」·학습 탭 회화 목록의 「준비 중」 레벨.
+- 키릴 문자 발음 설명·회화 원어민 확인. 조음 그림은 임시(출처 표기 안 함, 출시 전 Grok 그림으로 교체).
+- 스토어 설명 `app/docs/store/listing.md`·심사 메모 `app/docs/store/review_notes.md` 의 회화 편 수·음성 줄 수 채우기. 스크린샷 첫 두 장 = 키릴 문자표·접사 사전.
+- Apple 로그인 권한(포털 capability).
 
-- **2026-11-08**: 시뮬레이터 복구 뒤 아이패드 스크린샷 확인 — 「앱 소개」가 레일을 가리던 것(레일은 칸 바깥 → 칸 Navigator 에 직접 push)·메뉴 칸 이름 두 줄·R3 칩 색 고침 `be091d4`(CI 17 · Zealot 352 · TestFlight 2611081635). **키릴 문자와 발음**(공통 프롬프터 §5-3) `42683ed`: 홈 「기초」 첫 칸, 35자 격자 + 묶음 칩(모음조화 남성·여성·중성, 이+모음, 자음, 외래어 글자, 부호) + 로마자 토글, 글자 탭 = 1초 뒤 글자 소리(번들 음성 35자 모두 있음)·IPA·소리 나는 곳·조음/모음 위치 그림(임시 — 출처 표기 안 함, 출시 전 Grok 그림으로 교체)·한국어 비교·예시 단어(그 글자가 들고 번들 음성이 있는 것만). 데이터 `lib/data/mn_letters.dart` — 설명은 Claude 작성이라 원어민 확인 필요. CI 18 · Zealot https://apps.talkverse.uk/xBHY8/367 · TestFlight 2611081658. 스크린샷 19장 넘침 0.
-- **키보드 연습(2026-11-08 사용자 지시 「아랍어앱 키보드 좌우 반전해서 가져오기」)** `d42dd57`: 옛 아랍어앱(`~/talkverse/_legacy/ar`) 키보드 연습·키보드 설정 안내를 몽골어로 — 오른쪽→왼쪽 입력을 왼쪽→오른쪽으로, 시스템 몽골어 입력기로 단어장 단어(공백 없는 2~8자, R1~R5 칩)를 따라 침, 대소문자 무시. 홈 「기초」 둘째 칸. CI 19 · Zealot https://apps.talkverse.uk/xBHY8/383 · TestFlight 2611082048. (Zealot 382 는 CI 실패 때 잘못 다시 올린 빌드 18 — 무시)
-- **회화(2026-11-07 제한 해제)**: Claude 초안 샘플 6편(R1) `app/assets/data/dialogues/R1/` — 사용자 톤 확인 대기, 확인되면 나머지 144편. 감정 열(emotion·segs)·검사기 `tools/check_dialogues.py`·리뷰 페이지 `tools/review_html.py` → `data/review/REVIEW_mn.html`(음성 칸 없음)·음성 감정 계획 `tools/tts/build_plan.py`. Grok 은 11/9 13:30 재개.
-
-- **가격·스토어 정책(2026-11-09 uk 전달 사용자 지시 「지금 정책대로 다 바꿔야지」)**: 상품 6개 = `~/talkverse/PRICING.md` 앱 할인가/정가(`lib/data/purchase.dart` `kMnPlans` 한 곳 — lang_mn_1m 3,900/5,500 · 3m 9,000/12,900 · 1y 19,900/28,500 · life 49,000/69,900 · all_1y 79,000/112,900 · all_life 329,000/469,000). 결제 시트는 일본어앱 출시 점검판(미리 선택 없음·가격·기간·자동 갱신·해지 방법·「서비스 운영 기간 동안」·복원·약관/방침 링크), 로그인 동의 문구·프로필 정보에 약관/방침. 옛 평생 상품 ID 는 복원 때 lang_mn_life 로 침. 잠그는 기능은 여전히 없음. 스토어 설명 `app/docs/store/listing.md`(첫 줄 = 키릴·접사의 벽, 전용 도구 5, 절벽 49/522), 심사 메모 4.3 문단 `app/docs/store/review_notes.md`. **출시 안 함**(한자앱만 심사, 언어앱은 완성된 것부터).
-- **통합 앱(Talkverse) 연결 준비(2026-11-09, `~/talkverse/talkverse-app/EMBED_GUIDE.md`)** `dfc3f59`: `lib/embed.dart`(embedInit·embedApp, appDb 도 여기), `lib/core/embed_env.dart`(embedded·assetPath `packages/mn_app/`·audioAssetPrefix·dataDir Application Support/mn), `lib/core/prefs.dart`(SharedPreferences 를 `mn_` 접두로 — 단독 앱 옛 키 1회 이전), 통합 모드 clientId `talkverse`·로그아웃은 tv_* 만, 결제 `Purchase.ownStream`·`onPurchaseUpdates`, 프로필 「다른 언어 배우기」. drift 2.34·drift_flutter 0.3·sqlite3_flutter_libs 0.6.0+eol. 통합 앱은 uk 담당(직접 고치거나 빌드하지 말 것). CI 21 · Zealot https://apps.talkverse.uk/xBHY8/408 · TestFlight 2611091136. **새 SharedPreferences 를 쓸 때는 `Prefs.getInstance()`, 에셋은 `assetPath()`.**
-- **출시 전 걸림돌(지침 2.1)**: 앱에 실린 회화 2편뿐(150편 초안은 검수 뒤 로더 이전) · 홈 스페인어 템플릿 잔재(¡Hola!·PRINCIPIANTE 1·Minjun & Lucía)·진행 탭 「Poco a poco…」 · 학습 탭 회화 목록 「준비 중」 레벨 · 키릴 문자 발음 설명·회화 원어민 확인 · 조음 그림 Grok 교체 · 스토어 설명의 회화 편 수·음성 줄 수 채우기 · Apple 로그인 권한.
-
-## 알아 둘 것
-- 홈 화면에 스페인어 템플릿 잔재(「¡Hola!」·「PRINCIPIANTE 1」·「Minjun & Lucía」·진행 탭 「Poco a poco…」)가 남아 있음 — 문구 수정은 콘텐츠 금지가 풀리거나 사용자 지시가 있을 때.
-- 「어순 맞대기」의 한국어 낱말 대응은 턴 `align` 데이터가 있어야 나옴(회화 작업 때 채움). 지금은 몽골어 낱말 칩 + 모음조화 점만.
-
-## 다음 할 일(세션)
-- 사용자가 회화 작업을 풀면 ④(`LANG_APP_REPLICATE_PROMPT.md` §12): R 구조 편 파일 → Grok 재작성 → Gemini 검수 → 장면 컷 4장/편(한자 세션 경유) → 턴 `art`·`align` 채우기.
-- 홈 템플릿 문구 정리(사용자 지시 시).
-- Apple capability 켜지면 iOS 재업로드.
+## 공통 절차
+- 앱을 고치면 **Android(Zealot)와 iOS(TestFlight)를 함께**: 커밋·push → CI(`release.yml`, 빌드 번호 = 실행 번호; HEAD 가 `[skip ci]` 면 `gh workflow run release.yml --ref master`) → **CI 가 성공하고 `latest.json` sha 가 그 커밋일 때만** `gh release download latest -R talkverselab/talkverse-mn -p app-latest.apk -p latest.json` → apksigner SHA-1 `9cc4bc93…` 확인 → `~/bin/zealot-upload app-latest.apk "몽골어유니버스" -c "…"` → `scp` PC 백업. iOS 는 `bash app/tools/ios_release.sh`(백그라운드, 끝나면 ios xcconfig·pbxproj·xcscheme·xcworkspace 잡음 `git checkout`). CI 가 Gradle 504 로 실패하면 몇 분 뒤 `gh run rerun`.
+- 스크린샷 넘침 0 · `flutter analyze` · `flutter test`(26개) 확인 뒤 배포.
+- M6: 시뮬레이터는 자기 것 1대만, **디스크가 빠듯함(2026-11-09 99%)** — 스크린샷·APK 는 스크래치에서 바로 지우고, 빌드 뒤 필요하면 `flutter clean`.
+- Grok·Gemini 는 사용자 지시가 있을 때만, M4 Chrome(`~/talkverse/GROK_M4_LOGIN.md`), 탭·Chrome 은 끝나면 닫기. 새 키스토어 금지, 시크릿 값은 어디에도 적지 않음(Doppler).
 
 ## 사용자가 할 일
-- TestFlight 내부 테스트 그룹에 빌드 2611030055 추가·설치 확인.
-- 개발자 포털 App ID `com.talkverse.mongolianUniverse` 에 **Sign in with Apple** 켜기 → 그 뒤 `bash app/tools/ios_release.sh` 로 다시 올림(지금 빌드는 Apple 로그인 권한 없음). 스토어 인앱 상품(iOS `com.talkverse.mongolianUniverse.lifetime` / Android `lang_mn`).
-- Supabase `tts` 버킷의 몽골어 음성(맨 위 578 + `mn/` 1,546) 삭제.
-
-## 주의
-- **2026-11-03 Grok 새 계정**(M4 ~/chrome-grok, 포트 9222; 옛 계정 주간 한도 11/9 초기화) — 옛 프로젝트·챗 링크는 안 열림, 새로 만들기. 자기 프로필 `~/chrome-grok-mn`(포트 9235)은 Chrome 끄고 M4 안에서 쿠키 다시 복사 후 재시작. 절차: 샘플 1~2개 먼저 → PushNotification 으로 사용자 통과 요청 → 통과 뒤 본작업. 한도는 모든 세션 공유.
-- Grok·Gemini 를 직접 쓸 때(지금은 한자 세션 경유): 로그인 원본은 M4 `~/chrome-grok`, 쿠키 복사는 M4 안에서만, 자기 포트로 띄우고 M6 에서 ssh 터널 — `~/talkverse/GROK_M4_LOGIN.md`. 사용자 지시가 있을 때만 켜고, 한 번에 한 작업, 탭·Chrome 은 끝나면 닫기.
-- 새 키스토어 금지, `applicationId kr.mlab.mn` 유지. 로컬 빌드 번호는 CI 실행 번호보다 크게.
-- M6 자원: 시뮬레이터는 자기가 켠 1대만, 과부하 공지면 바로 멈춤. 코드 push 는 폰 업데이트 알림이 가니 묶어서.
-- Zealot 앱이름 「몽골어유니버스」(`app/CLAUDE.md` §8, 올리기 `app/tools/zealot_push.sh`).
+- 개발자 포털 App ID `com.talkverse.mongolianUniverse` 에 Sign in with Apple 켜기.
+- 스토어 인앱 상품 등록(`lang_mn_1m`·`_3m`·`_1y`·`_life`, `all_1y`·`all_life`) — 출시할 때.
+- Supabase `tts` 버킷의 옛 몽골어 음성 삭제.
+- M6 디스크 정리.
+- 회화 샘플·150편 톤 확인(리뷰 페이지).
