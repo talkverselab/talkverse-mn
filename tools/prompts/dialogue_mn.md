@@ -3,6 +3,12 @@
 공통 원칙 https://talkverse.uk/talkverse/dialogue-rules/ · 몽골어 특이점 `docs/DIALOGUE.md` · 인물 `CHARACTERS.md`.
 견본 6편: `app/assets/data/dialogues/R1/*/*.json` (먼저 두세 편을 읽고 형식·톤을 맞출 것).
 
+## 일상이 먼저 (사용자 지시 2026-11-09 — 다른 규칙보다 앞선다)
+- 회화의 중심은 학습자가 실제로 겪는 일상(가게·식당·길·집·학교·직장·약속·전화·메신저)과 그 자리의 흔한 표현이다.
+- 반전은 그 안에서 있을 법한 작은 의외성까지만: 말실수·착각·깜빡함·예상 밖 대답·설렘. 카오스도 「현실에서 있을 법한 꼬임」까지(주문이 하나 더 붙음, 단톡방에 잘못 보냄, 친구가 한 명 더 옴).
+- 금지: 비현실적 사건·과장된 소동(수십 명·동물 떼·건물 정전·경주 우승 등)·판타지·우연이 겹치는 억지 반전.
+- 반전 때문에 일상 표현이 빠지면 반전을 줄인다. 카오스 30% 기준보다 이 원칙이 앞선다.
+
 ## 파일
 - 경로 `app/assets/data/dialogues/R<레벨>/<주제>/<편id>.json`, 들여쓰기 1칸 JSON, 끝에 줄바꿈.
 - 편 칸: `id region island kind draft(true) purpose[] domain[] title(한국어) emoji scene(한국어 한 줄) speakers{A:"{name}", B:…, C:…} register(polite|casual|chat|mixed) twist(반전 턴 번호) twist_type flags[] expressions[] goal turns[]`.
