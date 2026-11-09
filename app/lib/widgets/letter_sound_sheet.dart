@@ -7,6 +7,7 @@ import '../core/platform.dart';
 import '../core/theme.dart';
 import '../data/mn_letters.dart';
 import '../services/tts_service.dart';
+import '../core/embed_env.dart';
 
 /// 글자 탭 → 발음 시트(일본어앱 kana_sound_sheet 의 몽골어판). 열리면 1초 뒤 글자 소리 자동 재생, 예시 단어 듣기, 다시 듣기, IPA·소리 나는 곳·한국어 비교.
 Future<void> showLetterSoundSheet(BuildContext context, MnLetter l, Color color) => showModalBottomSheet(
@@ -104,7 +105,7 @@ class _LetterSheetState extends State<_LetterSheet> {
                 child: Container(
                   color: Colors.white,
                   padding: const EdgeInsets.all(8),
-                  child: Image.asset(l.vowel ? 'assets/images/ipa/ipa_vowel_chart.png' : 'assets/images/ipa/places_of_articulation.png', fit: BoxFit.contain),
+                  child: Image.asset(assetPath(l.vowel ? 'assets/images/ipa/ipa_vowel_chart.png' : 'assets/images/ipa/places_of_articulation.png'), fit: BoxFit.contain),
                 ),
               ),
             const SizedBox(height: 14),

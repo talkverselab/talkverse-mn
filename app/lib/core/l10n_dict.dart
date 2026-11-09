@@ -387,6 +387,8 @@ const Map<String, String> kDictEn = {
   '1개월 · 3개월 · 1년 · 평생': '1 month · 3 months · 1 year · lifetime',
   '몽골어': 'Mongolian',
   '앞으로 추가되는 유료 과정·기능 전부 — 추가 결제 없이': 'Every paid course and feature added later — no extra charge',
+  '다른 언어 배우기': 'Learn another language',
+  'Talkverse 의 다른 언어로 이동': 'Go to another Talkverse language',
 };
 
 const Map<String, String> kDictJa = {
@@ -762,6 +764,8 @@ const Map<String, String> kDictJa = {
   '1개월 · 3개월 · 1년 · 평생': '1か月・3か月・1年・永久',
   '몽골어': 'モンゴル語',
   '앞으로 추가되는 유료 과정·기능 전부 — 추가 결제 없이': '今後追加される有料コース・機能すべて — 追加料金なし',
+  '다른 언어 배우기': '他の言語を学ぶ',
+  'Talkverse 의 다른 언어로 이동': 'Talkverseの他の言語へ',
 };
 
 const Map<String, String> kDictZh = {
@@ -1137,4 +1141,6 @@ const Map<String, String> kDictZh = {
   '1개월 · 3개월 · 1년 · 평생': '1个月·3个月·1年·永久',
   '몽골어': '蒙古语',
   '앞으로 추가되는 유료 과정·기능 전부 — 추가 결제 없이': '今后新增的所有付费课程和功能 — 无需额外付费',
+  '다른 언어 배우기': '学习其他语言',
+  'Talkverse 의 다른 언어로 이동': '前往 Talkverse 的其他语言',
 };

@@ -3,12 +3,14 @@ import 'dart:convert';
 import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/services.dart' show rootBundle;
 import '../core/platform.dart';
+import '../core/embed_env.dart';
 
 class AudioService {
   AudioService._();
   static final AudioService instance = AudioService._();
 
-  final AudioPlayer _player = AudioPlayer();
+  // 통합 앱이면 에셋이 packages/mn_app/ 아래 — 첫 사용 때(embedInit 뒤) 만든다
+  late final AudioPlayer _player = AudioPlayer()..audioCache = AudioCache(prefix: audioAssetPrefix);
   Map<String, String> _wordMap = const {};
   bool _loaded = false;
 
@@ -25,7 +27,7 @@ class AudioService {
       ));
     }
     try {
-      final raw = await rootBundle.loadString('assets/data/audio_manifest.json');
+      final raw = await rootBundle.loadString(assetPath('assets/data/audio_manifest.json'));
       final data = json.decode(raw) as Map<String, dynamic>;
       final words = (data['words'] as Map<String, dynamic>?) ?? {};
       _wordMap = words.map((k, v) => MapEntry(k, v.toString()));

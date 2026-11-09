@@ -7,7 +7,7 @@ import 'package:mn_app/core/l10n.dart';
 import 'package:mn_app/data/purchase.dart';
 import 'package:mn_app/data/db/app_database.dart';
 import 'package:mn_app/data/db/seed_loader.dart';
-import 'package:mn_app/main.dart';
+import 'package:mn_app/embed.dart';
 import 'package:mn_app/services/achievement_service.dart';
 import 'package:mn_app/services/ko_reading.dart';
 import 'package:mn_app/services/learner_prefs.dart';

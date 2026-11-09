@@ -5,7 +5,7 @@ import '../core/cliff.dart';
 import '../core/l10n.dart';
 import '../core/theme.dart';
 import '../data/db/app_database.dart';
-import '../main.dart';
+import '../embed.dart';
 import '../services/ko_reading.dart';
 import '../services/tts_service.dart';
 import '../widgets/mn_keyboard_guide.dart';

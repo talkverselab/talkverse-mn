@@ -10,6 +10,7 @@ import '../services/memorized_store.dart';
 import '../services/tts_service.dart';
 import '../core/platform.dart';
 import '../core/l10n.dart';
+import '../core/embed_env.dart';
 
 class _Word {
   final String ko;
@@ -49,7 +50,7 @@ class _WordFlashcardScreenState extends State<WordFlashcardScreen> {
   Future<void> _load() async {
     await MemorizedStore.load();
     try {
-      final d = json.decode(await rootBundle.loadString(widget.asset)) as Map<String, dynamic>;
+      final d = json.decode(await rootBundle.loadString(assetPath(widget.asset))) as Map<String, dynamic>;
       for (final t in (d['themes'] as List? ?? const []).whereType<Map>()) {
         final title = '${t['emoji'] ?? ''} ${t['title'] ?? ''}'.trim();
         _themes.add(title);

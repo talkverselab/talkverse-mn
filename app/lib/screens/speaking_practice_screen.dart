@@ -2,11 +2,10 @@ import 'dart:async';
 
 import 'package:drift/drift.dart' hide Column;
 import 'package:flutter/material.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 import '../core/theme.dart';
 import '../data/db/app_database.dart';
-import '../main.dart';
+import '../embed.dart';
 import '../services/ko_reading.dart';
 import '../services/speak_match.dart';
 import '../services/speech_service.dart';
@@ -15,6 +14,7 @@ import '../widgets/spanish_decor.dart';
 import 'episode_screen.dart';
 import '../core/platform.dart';
 import '../core/l10n.dart';
+import '../core/prefs.dart';
 
 /// 단계별 제한 시간(초).
 const _stageSeconds = {1: 10, 2: 5, 3: 2};
@@ -49,7 +49,7 @@ class _SpeakingPracticeScreenState extends State<SpeakingPracticeScreen> {
   }
 
   Future<void> _load() async {
-    final prefs = await SharedPreferences.getInstance();
+    final prefs = await Prefs.getInstance();
     _stage = prefs.getInt(_kStage) ?? 1;
     await EpisodeCatalog.instance.ensureLoaded();
     final turns = await appDb.select(appDb.turns).get();
@@ -74,7 +74,7 @@ class _SpeakingPracticeScreenState extends State<SpeakingPracticeScreen> {
   }
 
   Future<void> _setStage(int s) async {
-    final prefs = await SharedPreferences.getInstance();
+    final prefs = await Prefs.getInstance();
     await prefs.setInt(_kStage, s);
     setState(() => _stage = s);
   }
@@ -243,7 +243,7 @@ class _SpeakingTestScreenState extends State<SpeakingTestScreen> {
   }
 
   Future<void> _load() async {
-    final prefs = await SharedPreferences.getInstance();
+    final prefs = await Prefs.getInstance();
     _showHint = prefs.getBool(_kHint) ?? false;
     final q = appDb.select(appDb.turns)
       ..where((t) => t.level.equals(widget.meta.level) & t.episodeId.equals(widget.meta.id))
@@ -313,7 +313,7 @@ class _SpeakingTestScreenState extends State<SpeakingTestScreen> {
     await SpeechService.instance.cancel();
     final turn = _turns[_i];
     if (pass) {
-      final prefs = await SharedPreferences.getInstance();
+      final prefs = await Prefs.getInstance();
       final key = 'speak_best_${turn.id}';
       if ((prefs.getInt(key) ?? 0) < widget.stage) {
         await prefs.setInt(key, widget.stage);
@@ -353,7 +353,7 @@ class _SpeakingTestScreenState extends State<SpeakingTestScreen> {
   }
 
   Future<void> _toggleHint() async {
-    final prefs = await SharedPreferences.getInstance();
+    final prefs = await Prefs.getInstance();
     setState(() => _showHint = !_showHint);
     await prefs.setBool(_kHint, _showHint);
   }

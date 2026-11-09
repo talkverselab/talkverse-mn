@@ -10,6 +10,7 @@ import '../widgets/spanish_decor.dart';
 import 'grammar_test_screen.dart';
 import '../core/platform.dart';
 import '../core/l10n.dart';
+import '../core/embed_env.dart';
 
 /// 문법 강의 자산 — `assets/data/grammar/lessonN.json`
 /// `{lesson, title, subtitle, stages:[{stage,title}],
@@ -29,7 +30,7 @@ class GrammarLesson {
     final out = <GrammarLesson>[];
     for (var i = 1; i <= 20; i++) {
       try {
-        final raw = await rootBundle.loadString('assets/data/grammar/lesson$i.json');
+        final raw = await rootBundle.loadString(assetPath('assets/data/grammar/lesson$i.json'));
         final d = json.decode(raw) as Map<String, dynamic>;
         out.add(GrammarLesson(
           (d['lesson'] as num?)?.toInt() ?? i,

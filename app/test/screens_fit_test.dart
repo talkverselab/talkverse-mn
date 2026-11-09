@@ -5,7 +5,7 @@ import 'package:mn_app/core/theme.dart';
 import 'package:mn_app/data/db/app_database.dart';
 import 'package:mn_app/data/purchase.dart';
 import 'package:mn_app/data/db/seed_loader.dart';
-import 'package:mn_app/main.dart';
+import 'package:mn_app/embed.dart';
 import 'package:mn_app/screens/keyboard_screen.dart';
 import 'package:mn_app/screens/main_screen.dart';
 import 'package:mn_app/screens/paywall_screen.dart';

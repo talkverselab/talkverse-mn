@@ -6,6 +6,7 @@ import 'package:flutter/services.dart' show rootBundle;
 
 import '../core/theme.dart';
 import '../services/dialogue_service.dart';
+import '../core/embed_env.dart';
 
 /// 몽골어 접사(격어미·복수·재귀 소유·동사 어미) 표 + 자동 분석 — 2026-11-03 사용자 지시
 /// ("접사 블록·모음조화 연출·조사 테두리·접사 카드·접사 사전 만들어봐").
@@ -155,7 +156,7 @@ class AffixCorpus {
       }
     }
     try {
-      final j = json.decode(await rootBundle.loadString('assets/data/vocab/travel_expressions.json')) as Map<String, dynamic>;
+      final j = json.decode(await rootBundle.loadString(assetPath('assets/data/vocab/travel_expressions.json'))) as Map<String, dynamic>;
       for (final th in (j['themes'] as List? ?? const [])) {
         for (final sec in ((th as Map)['sections'] as List? ?? const [])) {
           for (final w in ((sec as Map)['words'] as List? ?? const [])) {

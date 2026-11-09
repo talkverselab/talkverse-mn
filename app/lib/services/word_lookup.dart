@@ -5,8 +5,9 @@ import 'package:flutter/services.dart' show rootBundle;
 
 import '../data/db/app_database.dart';
 import '../data/mn_affixes.dart';
-import '../main.dart';
+import '../embed.dart';
 import 'dialogue_service.dart';
+import '../core/embed_env.dart';
 
 /// 문장 레마 ↔ 단어장(빈도 단어 1,500) 연결 — 사용자 지시 2026-11-04(일본어앱 `byLemmas` 와 같은 역할).
 /// 턴에 `lemmas: [[표면형, 기본형, 읽기]]` 데이터가 있으면 그것을, 없으면 앱의 접사 분석기로 기본형 후보를 만든다
@@ -105,7 +106,7 @@ class ConvWord {
 }
 
 Future<List<ConvWord>> convExtraWords() async {
-  final j = json.decode(await rootBundle.loadString('assets/data/vocab/travel_words.json')) as Map<String, dynamic>;
+  final j = json.decode(await rootBundle.loadString(assetPath('assets/data/vocab/travel_words.json'))) as Map<String, dynamic>;
   final vocab = <String, Map<String, dynamic>>{};
   for (final t in (j['themes'] as List).cast<Map<String, dynamic>>()) {
     for (final s in (t['sections'] as List).cast<Map<String, dynamic>>()) {

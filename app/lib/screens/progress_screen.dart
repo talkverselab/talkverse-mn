@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 import '../core/theme.dart';
 import '../widgets/achievement_desk.dart';
-import '../main.dart';
+import '../embed.dart';
 import '../widgets/spanish_decor.dart';
 import '../core/l10n.dart';
 

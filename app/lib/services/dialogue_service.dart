@@ -1,9 +1,10 @@
 import 'dart:convert';
 
 import 'package:flutter/services.dart' show rootBundle;
-import 'package:shared_preferences/shared_preferences.dart';
 
 import 'learner_prefs.dart';
+import '../core/embed_env.dart';
+import '../core/prefs.dart';
 
 /// 회화 리더(일본어앱 시안 02 「만화책 읽기형」)용 회화 모델 — 2026-11-02, 일본어앱 `dialogue_service.dart` 를 옮김.
 ///
@@ -136,16 +137,16 @@ class DialogueService {
   String? get lastOpenedId => _lastOpened;
   Future<void> setLastOpened(String id) async {
     _lastOpened = id;
-    (await SharedPreferences.getInstance()).setString(_prefLast, id);
+    (await Prefs.getInstance()).setString(_prefLast, id);
   }
 
   /// 넓은 화면에서 탭이 동시에 떠 두 번 불려도 한 번만 읽는다(플래그로 막으면 경쟁으로 목록이 두 번 찬다).
   Future<void> ensureLoaded() => _loading ??= _load();
 
   Future<void> _load() async {
-    _lastOpened = (await SharedPreferences.getInstance()).getString(_prefLast);
+    _lastOpened = (await Prefs.getInstance()).getString(_prefLast);
     try {
-      final j = json.decode(await rootBundle.loadString('assets/data/dialogues/L1.json')) as Map<String, dynamic>;
+      final j = json.decode(await rootBundle.loadString(assetPath('assets/data/dialogues/L1.json'))) as Map<String, dynamic>;
       final chars = (j['characters'] as Map<String, dynamic>? ?? const {});
       final names = chars.map((k, v) => MapEntry(k, ((v as Map)['name'] ?? k).toString()));
       final genders = chars.map((k, v) => MapEntry(k, ((v as Map)['gender'] ?? 'female').toString()));

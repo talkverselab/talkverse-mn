@@ -7,6 +7,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart' show rootBundle;
 import 'package:path_provider/path_provider.dart';
 import '../core/platform.dart';
+import '../core/embed_env.dart';
 
 /// 몽골어 음성 — 1초 지연 후 재생.
 ///
@@ -30,7 +31,8 @@ class TtsService {
   /// 탭 후 재생까지의 지연(요청: 1초).
   static const _delay = Duration(seconds: 1);
 
-  final AudioPlayer _player = AudioPlayer();
+  // 통합 앱이면 에셋이 packages/mn_app/ 아래 — 첫 사용 때(embedInit 뒤) 만든다
+  late final AudioPlayer _player = AudioPlayer()..audioCache = AudioCache(prefix: audioAssetPrefix);
   final Map<String, String> _fileCache = {}; // text -> 로컬 mp3 경로
   Map<String, String>? _manifest; // clean text -> 번들 에셋 경로(audio/xxx.mp3)
   int _seq = 0; // 빠른 연속 탭 시 직전 요청 취소용
@@ -117,7 +119,7 @@ class TtsService {
     final m = _manifest;
     if (m != null) return m;
     try {
-      final raw = await rootBundle.loadString('assets/audio/manifest.json');
+      final raw = await rootBundle.loadString(assetPath('assets/audio/manifest.json'));
       final map = (json.decode(raw) as Map<String, dynamic>)
           .map((k, v) => MapEntry(k, v as String));
       return _manifest = map;

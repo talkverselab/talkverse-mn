@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 import '../core/l10n.dart';
+import '../core/prefs.dart';
 
 /// 한글독음(발음 표기) 표시/숨김 전역 설정 — 모든 메뉴 공용.
 /// (es 앱은 rd 필드가 이미 한글독음 데이터라 변환기 없이 표시만 제어)
@@ -12,14 +12,14 @@ class KoReadingPrefs {
   static final ValueNotifier<bool> show = ValueNotifier<bool>(false);
 
   static Future<void> load() async {
-    final p = await SharedPreferences.getInstance();
+    final p = await Prefs.getInstance();
     show.value = p.getBool(_key) ?? false;
   }
 
   /// 표시로 켤 때는 한 번 알린다.
   static Future<void> toggle(BuildContext context) async {
     show.value = !show.value;
-    final p = await SharedPreferences.getInstance();
+    final p = await Prefs.getInstance();
     await p.setBool(_key, show.value);
     if (show.value && context.mounted) {
       ScaffoldMessenger.of(context)
