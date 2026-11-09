@@ -1,0 +1,19 @@
+=== r1_travel_c1
+kind: chat
+title: 읽고 안 읽은 척
+emoji: 🥟
+scene: 호텔 앞에서 바트를 기다리는 학습자의 메시지. 읽음 표시만 뜬다
+b: Бат
+register: chat
+twist: 4 ignore
+purpose: travel
+goal: 어디야·기다릴게
+expressions: шүү дээ; За
+A | Бат аа, хаана байна? 🙂 | 바트, 어디야? 🙂 | хаана = 어디 | emotion=cheerful
+A | Би зочид буудлын үүдэнд байна. | 나 호텔 입구에 있어. | зочид буудал = 호텔 · үүд = 입구 | emotion=neutral
+A | Бат аа?? 😟 | 바트?? 😟 |  | emotion=worried
+A | Уншсан байна шүү дээ! 👀 | 읽었잖아! 👀 | унших = 읽다 | emotion=annoyed
+B | [Зураг] Хуушуур. | [사진] 호쇼르. | хуушуур = 고기 튀김만두 | emotion=neutral
+A | Хоол идэж байна уу?! Би хүлээж байна! | 밥 먹고 있는 거야?! 나 기다리는 중이라고! | хоол идэх = 밥 먹다 | emotion=tsukkomi
+B | Чамд бас авсан. Таван ширхэг. | 네 것도 샀어. 다섯 개. | ширхэг = 개(세는 말) | emotion=neutral
+A | ...За, хүлээе. 😋 | ...좋아, 기다릴게. 😋 | хүлээе = 기다릴게 | emotion=amused
