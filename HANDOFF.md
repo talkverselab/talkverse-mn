@@ -34,6 +34,13 @@
 - Grok 때 정리할 것(`docs/DIALOGUE.md`): 겹치는 농담(단톡방 하트 2·「네」만 하다 커짐 3·세배 줄 2·비슷한 단어 말실수 5), 반전이 앞쪽(3~4턴)인 6편. 작성 묶음들이 표시한 「원어민 확인 필요」 표현은 Gemini 검수 프롬프트에 함께.
 - 음성: MOSS·VoxCPM2 가 몽골어 미지원 — 모델은 사용자 결정 뒤(uk 가 알림). 지금 앱 음성은 번들 mp3 578줄 + 글자 35자.
 
+## 2026-11-10 오후 — 집필 마무리 = Gemini 검수(사용자 지시 「그림빼고 제미나이검수로 해서 집필은 완료해」)
+- **남은 Grok 재작성 17편은 하지 않는다** — Gemini 검수로 집필 완료. 그림은 나중.
+- Gemini: M4 크롬 9235(`~/chrome-grok-mn`, M6 터널 `ssh -fN -L 9235:127.0.0.1:9235 macmini4`), 모델 4 Argon. `tools/gemini_loop.sh` 가 끝까지 돈다(한도 걸리면 20분마다 재시도, BLOCKED 면 멈춤). 로그 `data/review/gemini/log.txt`, 답 `data/review/dialogues/<편>_gemini.md`. 한도는 약 17~30편마다 걸리고 5시간쯤 뒤 초기화.
+- 반영: `tools/apply_fix.py <fix.json>`(바뀐 턴 rd 재생성 + 검사), 편 JSON `review` 에 한 줄. 실제 오류만, 반전·농담·표현 풀은 유지. 51/150 반영(커밋 `462265d`).
+- **음성은 검수 다 끝난 뒤(사용자 지시 「음성은 제미나이 검수 끝나고 하자」)**: `doppler run -p keys -c prd -- python3 tools/tts/azure_pack.py all --upload` (Azure mn-MN Yesui·Bataa, R2 audio/mn + D1 audio_lines). 옛 대본 음성 134편이 올라가 있음 → 전부 다시. 그 뒤 `python3 tools/review_html.py`(NOAUDIO 없이) → M4 talkverse-uk 로 게시.
+- 리뷰 페이지 https://talkverse.uk/talkverse/review/mn/ — 한 편씩, 채팅 배치. 게시는 M4 `~/talkverse-uk` 에 scp + commit + `npx wrangler deploy`(M4 GitHub 로그인 풀려 push 실패 중 — uk 세션 몫). 페이지에 업체 이름(Azure 등) 넣으면 출처 검사에 걸림.
+
 ## 2026-11-10 종료 시점
 - 회화 Grok 재작성 13/30 반영(`7fde345`), 남은 17편은 위 「진행」 줄. Grok 주간 한도 11/16 초기화 — 그 전엔 쓰지 말 것.
 - **DB 올리기(사용자 지시 11/10 「모든 자산 db 에」) 못 함**: 대상은 D1 `talkverse-db` `audio_lines`(lang·episode·turn·voice·key NOT NULL…, 다른 언어는 `~/talkverse/<lang>/tools/tts/pack.py` 로 R2 `talkverse-art` audio/<lang>/<편>/<턴>_<m|f>.mp4 + 행). mn 은 0행 — 150편 회화 음성이 아직 없어(MOSS·VoxCPM 몽골어 미지원) 행을 못 만든다. 번들 mp3 578개(`app/assets/audio`, 옛 L1 구조)는 편·턴 형식이 아님 → 올릴지·어떻게 매핑할지 확인 필요. 장면 컷 0장.
