@@ -110,3 +110,50 @@ OK /Users/talkverse/talkverse/mn/data/review/dialogues/r1_travel_a5_gemini.md tr
 OK /Users/talkverse/talkverse/mn/data/review/dialogues/r1_travel_a6_gemini.md try=1 53s
   try1 r1_travel_b1_gemini.md: BADMODEL Flash-Lite 1s
 한도 대기 21:40
+  try1 r1_travel_b1_gemini.md: BADMODEL Flash-Lite 2s
+한도 대기 22:00
+  try1 r1_travel_b1_gemini.md: BADMODEL Flash-Lite 1s
+한도 대기 22:20
+  try1 r1_travel_b1_gemini.md: BADMODEL Flash-Lite 1s
+한도 대기 22:41
+  try1 r1_travel_b1_gemini.md: BADMODEL Flash-Lite 3s
+한도 대기 23:01
+OK /Users/talkverse/talkverse/mn/data/review/dialogues/r1_travel_b1_gemini.md try=1 39s
+  try1 r1_travel_b2_gemini.md: BADMODEL Flash-Lite 2s
+한도 대기 23:23
+  try1 r1_travel_b2_gemini.md: BADMODEL Flash-Lite 4s
+한도 대기 23:43
+  try1 r1_travel_b2_gemini.md: BADMODEL Flash-Lite 2s
+한도 대기 00:03
+  try1 r1_travel_b2_gemini.md: BADMODEL Flash-Lite 2s
+한도 대기 00:23
+  try1 r1_travel_b2_gemini.md: BADMODEL Flash-Lite 12s
+한도 대기 00:44
+  try1 r1_travel_b2_gemini.md: BADMODEL Flash-Lite 2s
+한도 대기 01:04
+  try1 r1_travel_b2_gemini.md: BADMODEL Flash-Lite 2s
+한도 대기 01:24
+  try1 r1_travel_b2_gemini.md: BADMODEL Flash-Lite 1s
+한도 대기 01:44
+OK /Users/talkverse/talkverse/mn/data/review/dialogues/r1_travel_b2_gemini.md try=1 59s
+OK /Users/talkverse/talkverse/mn/data/review/dialogues/r1_travel_b3_gemini.md try=1 54s
+OK /Users/talkverse/talkverse/mn/data/review/dialogues/r1_travel_b4_gemini.md try=1 136s
+OK /Users/talkverse/talkverse/mn/data/review/dialogues/r1_travel_b5_gemini.md try=1 69s
+OK /Users/talkverse/talkverse/mn/data/review/dialogues/r1_travel_b6_gemini.md try=1 80s
+OK /Users/talkverse/talkverse/mn/data/review/dialogues/r1_travel_c1_gemini.md try=1 53s
+OK /Users/talkverse/talkverse/mn/data/review/dialogues/r1_travel_c2_gemini.md try=1 64s
+OK /Users/talkverse/talkverse/mn/data/review/dialogues/r1_travel_c3_gemini.md try=1 54s
+OK /Users/talkverse/talkverse/mn/data/review/dialogues/r1_travel_c4_gemini.md try=1 53s
+OK /Users/talkverse/talkverse/mn/data/review/dialogues/r1_travel_c5_gemini.md try=1 49s
+OK /Users/talkverse/talkverse/mn/data/review/dialogues/r1_travel_c6_gemini.md try=1 74s
+OK /Users/talkverse/talkverse/mn/data/review/dialogues/r2_friends_b1_gemini.md try=1 53s
+  try1 r2_friends_b2_gemini.md: BADMODEL Flash-Lite 1s
+한도 대기 02:30
+  try1 r2_friends_b2_gemini.md: BADMODEL Flash-Lite 3s
+한도 대기 02:50
+  try1 r2_friends_b2_gemini.md: BADMODEL Flash-Lite 2s
+한도 대기 03:10
+  try1 r2_friends_b2_gemini.md: BADMODEL Flash-Lite 3s
+한도 대기 03:31
+  try1 r2_friends_b2_gemini.md: BADMODEL Flash-Lite 1s
+한도 대기 03:51
