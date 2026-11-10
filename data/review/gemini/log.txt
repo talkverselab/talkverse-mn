@@ -1,0 +1,112 @@
+OK /Users/talkverse/talkverse/mn/data/review/dialogues/r1_culture_a2_gemini.md try=1 58s
+OK /Users/talkverse/talkverse/mn/data/review/dialogues/r1_culture_a3_gemini.md try=1 49s
+OK /Users/talkverse/talkverse/mn/data/review/dialogues/r1_culture_a4_gemini.md try=1 48s
+OK /Users/talkverse/talkverse/mn/data/review/dialogues/r1_culture_a5_gemini.md try=1 48s
+OK /Users/talkverse/talkverse/mn/data/review/dialogues/r1_culture_a6_gemini.md try=1 48s
+OK /Users/talkverse/talkverse/mn/data/review/dialogues/r1_friends_a1_gemini.md try=1 48s
+OK /Users/talkverse/talkverse/mn/data/review/dialogues/r1_friends_a2_gemini.md try=1 48s
+OK /Users/talkverse/talkverse/mn/data/review/dialogues/r1_friends_a3_gemini.md try=1 53s
+OK /Users/talkverse/talkverse/mn/data/review/dialogues/r1_friends_a4_gemini.md try=1 50s
+OK /Users/talkverse/talkverse/mn/data/review/dialogues/r1_friends_a5_gemini.md try=1 48s
+OK /Users/talkverse/talkverse/mn/data/review/dialogues/r1_friends_a6_gemini.md try=1 48s
+OK /Users/talkverse/talkverse/mn/data/review/dialogues/r1_friends_b1_gemini.md try=1 53s
+OK /Users/talkverse/talkverse/mn/data/review/dialogues/r1_friends_b2_gemini.md try=1 53s
+OK /Users/talkverse/talkverse/mn/data/review/dialogues/r1_friends_b3_gemini.md try=1 44s
+OK /Users/talkverse/talkverse/mn/data/review/dialogues/r1_friends_b4_gemini.md try=1 43s
+OK /Users/talkverse/talkverse/mn/data/review/dialogues/r1_friends_b5_gemini.md try=1 44s
+  try1 r1_friends_b6_gemini.md: NOSEND 28s
+OK /Users/talkverse/talkverse/mn/data/review/dialogues/r1_friends_b6_gemini.md try=2 48s
+OK /Users/talkverse/talkverse/mn/data/review/dialogues/r1_friends_c1_gemini.md try=1 49s
+OK /Users/talkverse/talkverse/mn/data/review/dialogues/r1_friends_c2_gemini.md try=1 48s
+OK /Users/talkverse/talkverse/mn/data/review/dialogues/r1_friends_c3_gemini.md try=1 43s
+OK /Users/talkverse/talkverse/mn/data/review/dialogues/r1_friends_c4_gemini.md try=1 54s
+OK /Users/talkverse/talkverse/mn/data/review/dialogues/r1_friends_c5_gemini.md try=1 50s
+  try1 r1_friends_c6_gemini.md: NOSEND 27s
+  try2 r1_friends_c6_gemini.md: NOSEND 32s
+  try3 r1_friends_c6_gemini.md: NOSEND 27s
+OK /Users/talkverse/talkverse/mn/data/review/dialogues/r1_friends_c6_gemini.md try=4 49s
+OK /Users/talkverse/talkverse/mn/data/review/dialogues/r1_life_a1_gemini.md try=1 56s
+OK /Users/talkverse/talkverse/mn/data/review/dialogues/r1_life_a2_gemini.md try=1 53s
+OK /Users/talkverse/talkverse/mn/data/review/dialogues/r1_life_a3_gemini.md try=1 48s
+OK /Users/talkverse/talkverse/mn/data/review/dialogues/r1_life_a4_gemini.md try=1 48s
+OK /Users/talkverse/talkverse/mn/data/review/dialogues/r1_life_a5_gemini.md try=1 48s
+OK /Users/talkverse/talkverse/mn/data/review/dialogues/r1_life_a6_gemini.md try=1 53s
+OK /Users/talkverse/talkverse/mn/data/review/dialogues/r1_life_b1_gemini.md try=1 49s
+OK /Users/talkverse/talkverse/mn/data/review/dialogues/r1_life_b2_gemini.md try=1 53s
+OK /Users/talkverse/talkverse/mn/data/review/dialogues/r1_life_b3_gemini.md try=1 58s
+OK /Users/talkverse/talkverse/mn/data/review/dialogues/r1_life_b4_gemini.md try=1 55s
+  try1 r1_life_b5_gemini.md: BADMODEL Flash-Lite 1s
+  try1 r1_life_b5_gemini.md: BADMODEL Flash-Lite 3s
+OK /Users/talkverse/talkverse/mn/data/review/dialogues/r1_life_b5_gemini.md try=1 59s
+OK /Users/talkverse/talkverse/mn/data/review/dialogues/r1_life_b6_gemini.md try=1 64s
+OK /Users/talkverse/talkverse/mn/data/review/dialogues/r1_life_c1_gemini.md try=1 85s
+OK /Users/talkverse/talkverse/mn/data/review/dialogues/r1_life_c2_gemini.md try=1 53s
+OK /Users/talkverse/talkverse/mn/data/review/dialogues/r1_life_c3_gemini.md try=1 74s
+OK /Users/talkverse/talkverse/mn/data/review/dialogues/r1_life_c4_gemini.md try=1 58s
+OK /Users/talkverse/talkverse/mn/data/review/dialogues/r1_life_c5_gemini.md try=1 64s
+  try1 r1_life_c6_gemini.md: NOSEND 28s
+OK /Users/talkverse/talkverse/mn/data/review/dialogues/r1_life_c6_gemini.md try=2 94s
+OK /Users/talkverse/talkverse/mn/data/review/dialogues/r1_love_a1_gemini.md try=1 55s
+OK /Users/talkverse/talkverse/mn/data/review/dialogues/r1_love_a2_gemini.md try=1 53s
+OK /Users/talkverse/talkverse/mn/data/review/dialogues/r1_love_a3_gemini.md try=1 69s
+OK /Users/talkverse/talkverse/mn/data/review/dialogues/r1_love_a4_gemini.md try=1 60s
+OK /Users/talkverse/talkverse/mn/data/review/dialogues/r1_love_a5_gemini.md try=1 58s
+OK /Users/talkverse/talkverse/mn/data/review/dialogues/r1_love_a6_gemini.md try=1 74s
+OK /Users/talkverse/talkverse/mn/data/review/dialogues/r1_love_a7_gemini.md try=1 64s
+OK /Users/talkverse/talkverse/mn/data/review/dialogues/r1_love_a8_gemini.md try=1 53s
+OK /Users/talkverse/talkverse/mn/data/review/dialogues/r1_love_b1_gemini.md try=1 58s
+  try1 r1_love_b2_gemini.md: BADMODEL Flash-Lite 2s
+한도 대기 16:23
+  try1 r1_love_b2_gemini.md: BADMODEL Flash-Lite 2s
+한도 대기 16:44
+  try1 r1_love_b2_gemini.md: BADMODEL Flash-Lite 1s
+한도 대기 17:04
+  try1 r1_love_b2_gemini.md: BADMODEL Flash-Lite 1s
+한도 대기 17:24
+  try1 r1_love_b2_gemini.md: BADMODEL Flash-Lite 3s
+한도 대기 17:44
+  try1 r1_love_b2_gemini.md: BADMODEL Flash-Lite 3s
+한도 대기 18:05
+  try1 r1_love_b2_gemini.md: BADMODEL Flash-Lite 1s
+한도 대기 18:25
+  try1 r1_love_b2_gemini.md: BADMODEL Flash-Lite 1s
+한도 대기 18:45
+  try1 r1_love_b2_gemini.md: BADMODEL Flash-Lite 2s
+한도 대기 19:05
+  try1 r1_love_b2_gemini.md: BADMODEL Flash-Lite 1s
+한도 대기 19:25
+  try1 r1_love_b2_gemini.md: BADMODEL Flash-Lite 2s
+한도 대기 19:46
+  try1 r1_love_b2_gemini.md: BADMODEL Flash-Lite 2s
+한도 대기 20:06
+  try1 r1_love_b2_gemini.md: BADMODEL Flash-Lite 1s
+한도 대기 20:26
+OK /Users/talkverse/talkverse/mn/data/review/dialogues/r1_love_b2_gemini.md try=1 48s
+OK /Users/talkverse/talkverse/mn/data/review/dialogues/r1_love_b3_gemini.md try=1 64s
+OK /Users/talkverse/talkverse/mn/data/review/dialogues/r1_love_b4_gemini.md try=1 53s
+OK /Users/talkverse/talkverse/mn/data/review/dialogues/r1_love_b5_gemini.md try=1 54s
+OK /Users/talkverse/talkverse/mn/data/review/dialogues/r1_love_b6_gemini.md try=1 49s
+OK /Users/talkverse/talkverse/mn/data/review/dialogues/r1_love_b7_gemini.md try=1 53s
+OK /Users/talkverse/talkverse/mn/data/review/dialogues/r1_love_c1_gemini.md try=1 69s
+OK /Users/talkverse/talkverse/mn/data/review/dialogues/r1_love_c2_gemini.md try=1 60s
+OK /Users/talkverse/talkverse/mn/data/review/dialogues/r1_love_c3_gemini.md try=1 60s
+OK /Users/talkverse/talkverse/mn/data/review/dialogues/r1_love_c4_gemini.md try=1 55s
+OK /Users/talkverse/talkverse/mn/data/review/dialogues/r1_love_c5_gemini.md try=1 53s
+OK /Users/talkverse/talkverse/mn/data/review/dialogues/r1_love_c6_gemini.md try=1 54s
+OK /Users/talkverse/talkverse/mn/data/review/dialogues/r1_love_c7_gemini.md try=1 64s
+OK /Users/talkverse/talkverse/mn/data/review/dialogues/r1_love_c8_gemini.md try=1 74s
+OK /Users/talkverse/talkverse/mn/data/review/dialogues/r1_love_c9_gemini.md try=1 94s
+OK /Users/talkverse/talkverse/mn/data/review/dialogues/r1_survival_a1_gemini.md try=1 58s
+OK /Users/talkverse/talkverse/mn/data/review/dialogues/r1_survival_a2_gemini.md try=1 74s
+OK /Users/talkverse/talkverse/mn/data/review/dialogues/r1_survival_a3_gemini.md try=1 58s
+OK /Users/talkverse/talkverse/mn/data/review/dialogues/r1_survival_a4_gemini.md try=1 63s
+OK /Users/talkverse/talkverse/mn/data/review/dialogues/r1_survival_a5_gemini.md try=1 58s
+OK /Users/talkverse/talkverse/mn/data/review/dialogues/r1_survival_a6_gemini.md try=1 58s
+OK /Users/talkverse/talkverse/mn/data/review/dialogues/r1_travel_a1_gemini.md try=1 58s
+OK /Users/talkverse/talkverse/mn/data/review/dialogues/r1_travel_a2_gemini.md try=1 54s
+OK /Users/talkverse/talkverse/mn/data/review/dialogues/r1_travel_a3_gemini.md try=1 64s
+OK /Users/talkverse/talkverse/mn/data/review/dialogues/r1_travel_a4_gemini.md try=1 53s
+OK /Users/talkverse/talkverse/mn/data/review/dialogues/r1_travel_a5_gemini.md try=1 54s
+OK /Users/talkverse/talkverse/mn/data/review/dialogues/r1_travel_a6_gemini.md try=1 53s
+  try1 r1_travel_b1_gemini.md: BADMODEL Flash-Lite 1s
+한도 대기 21:40
