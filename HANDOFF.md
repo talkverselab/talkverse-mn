@@ -1,4 +1,4 @@
-# HANDOFF — talkverse-mn (몽골어유니버스) — 2026-11-09 세션 종료
+# HANDOFF — talkverse-mn (몽골어유니버스) — 2026-11-10 세션 종료(M6 디스크 정리)
 
 > 공통 지침 `~/talkverse/LANG_APP_REPLICATE_PROMPT.md`. 회화 밖 콘텐츠(단어·문법 설명 등) 새로 쓰기는 사용자 지시가 있을 때만. 회화는 2026-11-07 해제.
 
@@ -33,6 +33,12 @@
 - **일상 속 반전(사용자 지시 2026-11-09, 정정)**: 반전·러브·플러팅은 비율 그대로 다 넣되 실제 일상 장면·표현 흐름 속에서, 비현실적 설정만 금지(규칙 `tools/prompts/dialogue_mn.md` 맨 앞). 150편 점검 결과 **동떨어진 30편 목록 = `docs/DIALOGUE.md` 끝** — 아직 안 고침, Grok 재작성 때 이 30편부터 반전은 살리고 설정만 현실적으로 고친다.
 - Grok 때 정리할 것(`docs/DIALOGUE.md`): 겹치는 농담(단톡방 하트 2·「네」만 하다 커짐 3·세배 줄 2·비슷한 단어 말실수 5), 반전이 앞쪽(3~4턴)인 6편. 작성 묶음들이 표시한 「원어민 확인 필요」 표현은 Gemini 검수 프롬프트에 함께.
 - 음성: MOSS·VoxCPM2 가 몽골어 미지원 — 모델은 사용자 결정 뒤(uk 가 알림). 지금 앱 음성은 번들 mp3 578줄 + 글자 35자.
+
+## 2026-11-10 종료 시점
+- 회화 Grok 재작성 13/30 반영(`7fde345`), 남은 17편은 위 「진행」 줄. Grok 주간 한도 11/16 초기화 — 그 전엔 쓰지 말 것.
+- **DB 올리기(사용자 지시 11/10 「모든 자산 db 에」) 못 함**: 대상은 D1 `talkverse-db` `audio_lines`(lang·episode·turn·voice·key NOT NULL…, 다른 언어는 `~/talkverse/<lang>/tools/tts/pack.py` 로 R2 `talkverse-art` audio/<lang>/<편>/<턴>_<m|f>.mp4 + 행). mn 은 0행 — 150편 회화 음성이 아직 없어(MOSS·VoxCPM 몽골어 미지원) 행을 못 만든다. 번들 mp3 578개(`app/assets/audio`, 옛 L1 구조)는 편·턴 형식이 아님 → 올릴지·어떻게 매핑할지 확인 필요. 장면 컷 0장.
+- 정리: `.dart_tool`·`android/.gradle`·`ios/Pods`·`.symlinks`·`__pycache__` 삭제(약 114MB). 다음 빌드 전 `flutter pub get`·`pod install`. 지울 후보(안 지움): `scripts/_corpus_*.{tsv,txt}`(2.2MB, 재생성 방법 불확실), `db/gemini_check/`.
+- PC 크롬 9253 은 창만(빈 탭) 남김, 터널 모두 닫음. 예약 작업 `Grok-Chrome-mn-9253` 은 트리거 없이 남아 있음.
 
 ## 출시 전 걸림돌(지침 2.1·4.3)
 - 회화 2편뿐 → 150편 검수 뒤 로더 이전.
