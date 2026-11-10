@@ -2,10 +2,10 @@
 """회화 초안 → 사용자 리뷰 페이지(일본어앱 tools/review_html.py 의 몽골어판).
   python3 tools/review_html.py        → data/review/REVIEW_mn.html (R 구조 전체)
 한 번에 한 편만 보인다(목록에서 고르거나 이전·다음, 주소 #편id). 음성 = data/tts/audio_mn.json(Azure, tools/tts/azure_pack.py). 장면 컷은 나오면 칸을 더한다."""
-import datetime, glob, html, json, pathlib
+import datetime, glob, html, json, os, pathlib
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 _af = ROOT / 'data/tts/audio_mn.json'
-AUD = json.load(open(_af, encoding='utf-8')) if _af.exists() else {}
+AUD = json.load(open(_af, encoding='utf-8')) if _af.exists() and not os.environ.get('NOAUDIO') else {}  # NOAUDIO=1: 대본을 고친 뒤 음성을 다시 만들기 전
 EMO = {'stiff': '긴장', 'flustered': '당황', 'excited': '흥분', 'amused': '유쾌', 'teasing': '놀림', 'shout': '버럭', 'cheerful': '밝음', 'gentle': '다정', 'neutral': '담담',
        'polite': '공손', 'sad': '슬픔', 'annoyed': '짜증', 'surprised': '놀람', 'shy': '수줍음', 'worried': '걱정', 'happy': '기쁨', 'angry': '화남', 'tired': '지침'}
 
