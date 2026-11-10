@@ -1,0 +1,1 @@
+r1_life_c3 r1_life_a3 r1_life_b3 r2_friends_b1 r2_life_b5 r2_love_b2 r2_love_b5 r2_love_c3 r2_travel_b1 r2_travel_b2 r2_work_b1 r2_work_b6 r3_friends_b2 r3_life_b3 r3_life_b4 r3_travel_b1 r3_work_b1 r2_work_b4

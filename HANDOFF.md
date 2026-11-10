@@ -2,6 +2,12 @@
 
 > 공통 지침 `~/talkverse/LANG_APP_REPLICATE_PROMPT.md`. 회화 밖 콘텐츠(단어·문법 설명 등) 새로 쓰기는 사용자 지시가 있을 때만. 회화는 2026-11-07 해제.
 
+
+## 2026-11-11 02:30 — Grok 한도·Gemini 다음 언어
+- 사용자 지시 「그록한도까지 사용 그래도 제미나이는 계속 진행 몽골어 다음 소수언어도 제미나이작업은 계속」.
+- Grok: PC 9253 은 로그아웃돼 있었고 uk 9231 도 꺼져 있어 M4 9226(~/chrome-grok)에서 쿠키 동기화 → 전문가 확인 → 남은 18편(`data/review/grok/todo.txt`) 시작했으나 첫 편에서 **LIMIT**(주간 한도, 11/16 초기화). 옛 방 b7a785a6 은 이 로그인에선 입력창 없음 → 다음엔 새 방(GROK_CHAT 비움). 재작성한 편에 이미 `_gemini.md` 가 있으면 지우고 다시 검수.
+- Gemini: 몽골어 루프 진행 중(90/150 반영 78). `tools/gemini_next.sh` 가 몽골어 「끝」 뒤 **미얀마어 150편**을 같은 크롬 9235(4 Argon)로 이어 검수(답 `~/talkverse/my/data/review/dialogues/<편>_gemini.md`, 로그 `my/data/review/gemini_log.txt`; Grok 안 된 R3 14편은 맨 뒤). 반영은 세션이 따로.
+
 ## 지금 상태
 
 | 항목 | 상태 |
