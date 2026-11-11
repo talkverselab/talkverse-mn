@@ -61,7 +61,8 @@
    "ko": "...여기 단톡방이잖아. 😐",
    "tags": [],
    "new": [],
-   "emotion": "tsukkomi"
+   "emotion": "tsukkomi",
+   "note": "групп чат = 단톡방"
   },
   {
    "num": 4,
@@ -104,7 +105,8 @@
    "ko": "하하 😳 단톡 말고 갠톡으로 써.",
    "tags": [],
    "new": [],
-   "emotion": "shy"
+   "emotion": "shy",
+   "note": "хувиар = 개인적으로(갠톡)"
   },
   {
    "num": 8,

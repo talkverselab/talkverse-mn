@@ -60,7 +60,7 @@
    "tl": "Хаха. Тийм. Ойрхон.",
    "rd": "하하 팀 어이르헝",
    "ko": "하하. 응. 가까워.",
-   "note": "",
+   "note": "Тийм = 응, 그래",
    "tags": [],
    "new": [],
    "emotion": "amused"
@@ -117,7 +117,8 @@
    "ko": "근데 넌 한 번도 안 마셨잖아.",
    "tags": [],
    "new": [],
-   "emotion": "surprised"
+   "emotion": "surprised",
+   "note": "уух = 마시다"
   },
   {
    "num": 9,
@@ -149,7 +150,8 @@
    "ko": "바트... 그럼 넌 어디에 차 담아?",
    "tags": [],
    "new": [],
-   "emotion": "sad"
+   "emotion": "sad",
+   "note": "цай = 차"
   },
   {
    "num": 12,

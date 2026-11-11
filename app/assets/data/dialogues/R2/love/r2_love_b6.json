@@ -51,7 +51,8 @@
    "ko": "안 무서워. 그냥 손이 떨려.",
    "tags": [],
    "new": [],
-   "emotion": "flustered"
+   "emotion": "flustered",
+   "note": "айх = 무서워하다"
   },
   {
    "num": 3,
@@ -61,7 +62,8 @@
    "ko": "...안녕. 둘이 어떻게 알게 됐나?",
    "tags": [],
    "new": [],
-   "emotion": "stiff"
+   "emotion": "stiff",
+   "note": "хоёулаа = 둘이"
   },
   {
    "num": 4,
@@ -80,7 +82,7 @@
    "tl": "Аан. Сайхан шинэлж байна уу?",
    "rd": "앙 세항 시넬즈 벵 오",
    "ko": "아. 새해 잘 맞고 있나?",
-   "note": "",
+   "note": "шинэлэх = 설을 쇠다",
    "tags": [],
    "new": [],
    "emotion": "stiff"
@@ -102,7 +104,7 @@
    "tl": "...Аав аа?",
    "rd": "압 아",
    "ko": "...아빠?",
-   "note": "",
+   "note": "аав аа = 아빠!(부르는 말)",
    "tags": [],
    "new": [],
    "emotion": "surprised"
@@ -115,7 +117,8 @@
    "ko": "흠. 아빠라고 불렀으니... 결혼식은 언제지?",
    "tags": [],
    "new": [],
-   "emotion": "teasing"
+   "emotion": "teasing",
+   "note": "хурим = 결혼식"
   },
   {
    "num": 9,

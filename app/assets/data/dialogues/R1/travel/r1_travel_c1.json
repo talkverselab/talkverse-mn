@@ -55,7 +55,7 @@
    "tl": "Бат аа?? 😟",
    "rd": "바트 아",
    "ko": "바트?? 😟",
-   "note": "",
+   "note": "-аа = ~야(부르는 말)",
    "tags": [],
    "new": [],
    "emotion": "worried"
@@ -68,7 +68,8 @@
    "ko": "읽었잖아! 👀",
    "tags": [],
    "new": [],
-   "emotion": "annoyed"
+   "emotion": "annoyed",
+   "note": "харах = 보다(읽다)"
   },
   {
    "num": 5,
@@ -89,7 +90,8 @@
    "ko": "밥 먹고 있는 거야?! 나 기다리는 중이라고!",
    "tags": [],
    "new": [],
-   "emotion": "tsukkomi"
+   "emotion": "tsukkomi",
+   "note": "хоол = 밥, 음식"
   },
   {
    "num": 7,

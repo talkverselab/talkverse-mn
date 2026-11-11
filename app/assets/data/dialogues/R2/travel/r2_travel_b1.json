@@ -63,7 +63,8 @@
    "ko": "좋아! 천천히 갈게. 진짜야!",
    "tags": [],
    "new": [],
-   "emotion": "cheerful"
+   "emotion": "cheerful",
+   "note": "удаан = 천천히"
   },
   {
    "num": 4,
@@ -84,7 +85,8 @@
    "ko": "어떡해?! 말들이 차 옆으로 달리고 있어!",
    "tags": [],
    "new": [],
-   "emotion": "flustered"
+   "emotion": "flustered",
+   "note": "давхих = (말이) 달리다"
   },
   {
    "num": 6,

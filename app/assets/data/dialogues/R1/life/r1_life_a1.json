@@ -36,7 +36,8 @@
    "ko": "안녕하세요? 뭐 주문하실래요?",
    "tags": [],
    "new": [],
-   "emotion": "polite"
+   "emotion": "polite",
+   "note": "захиалах = 주문하다"
   },
   {
    "num": 2,
@@ -46,7 +47,8 @@
    "ko": "잘 모르겠어요. 아무거나 괜찮아요.",
    "tags": [],
    "new": [],
-   "emotion": "worried"
+   "emotion": "worried",
+   "note": "хамаагүй = 상관없다"
   },
   {
    "num": 3,

@@ -74,7 +74,8 @@
    "ko": "대박! 🎸 나 기타 가져갈게.",
    "tags": [],
    "new": [],
-   "emotion": "excited"
+   "emotion": "excited",
+   "note": "авч явах = 가져가다"
   },
   {
    "num": 5,
@@ -84,7 +85,8 @@
    "ko": "난 커피랑 호쇼르 가져갈게.",
    "tags": [],
    "new": [],
-   "emotion": "cheerful"
+   "emotion": "cheerful",
+   "note": "хуушуур = 호쇼르(몽골 튀김만두)"
   },
   {
    "num": 6,
@@ -105,7 +107,8 @@
    "ko": "야? 읽고 답 안 하는 거야? 👀",
    "tags": [],
    "new": [],
-   "emotion": "annoyed"
+   "emotion": "annoyed",
+   "note": "дуугүй = 말 없이"
   },
   {
    "num": 8,

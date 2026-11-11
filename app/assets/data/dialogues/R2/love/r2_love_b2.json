@@ -74,7 +74,8 @@
    "ko": "뭐? 너 질투해? 하하.",
    "tags": [],
    "new": [],
-   "emotion": "teasing"
+   "emotion": "teasing",
+   "note": "хардах = 질투하다"
   },
   {
    "num": 5,
@@ -117,7 +118,8 @@
    "ko": "어머, 카페 전체가 노래하고 있어!",
    "tags": [],
    "new": [],
-   "emotion": "surprised"
+   "emotion": "surprised",
+   "note": "даяар = ~전체에"
   },
   {
    "num": 9,

@@ -69,7 +69,7 @@
    "tl": "За. Нэг, хоёр, гурав!",
    "rd": "자 넥 허요르 고랍",
    "ko": "좋아. 하나, 둘, 셋!",
-   "note": "",
+   "note": "гурав = 셋",
    "tags": [],
    "new": [],
    "emotion": "shout"
@@ -82,7 +82,8 @@
    "ko": "아이고... 진흙에 넘어졌어.",
    "tags": [],
    "new": [],
-   "emotion": "flustered"
+   "emotion": "flustered",
+   "note": "унах = 넘어지다"
   },
   {
    "num": 5,
@@ -103,7 +104,8 @@
    "ko": "고마워요! 이제 다 같이 밀어요!",
    "tags": [],
    "new": [],
-   "emotion": "excited"
+   "emotion": "excited",
+   "note": "бүгдээрээ = 다 같이"
   },
   {
    "num": 7,
@@ -113,7 +115,8 @@
    "ko": "안 되네요. 말 데려올게요!",
    "tags": [],
    "new": [],
-   "emotion": "excited"
+   "emotion": "excited",
+   "note": "морь = 말(동물)"
   },
   {
    "num": 8,

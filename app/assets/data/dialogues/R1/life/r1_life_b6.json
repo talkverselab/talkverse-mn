@@ -38,7 +38,8 @@
    "ko": "안녕하세요. 옆집에 이사 왔어요.",
    "tags": [],
    "new": [],
-   "emotion": "polite"
+   "emotion": "polite",
+   "note": "нүүх = 이사하다"
   },
   {
    "num": 2,
@@ -48,7 +49,8 @@
    "ko": "어머, 안녕하세요! 무슨 일이에요?",
    "tags": [],
    "new": [],
-   "emotion": "cheerful"
+   "emotion": "cheerful",
+   "note": "Юу болсон бэ? = 무슨 일이에요?"
   },
   {
    "num": 3,
@@ -80,7 +82,8 @@
    "ko": "아니에요, 괜찮아요, 감사해요. 소금만...",
    "tags": [],
    "new": [],
-   "emotion": "flustered"
+   "emotion": "flustered",
+   "note": "зүгээр = 괜찮은"
   },
   {
    "num": 6,

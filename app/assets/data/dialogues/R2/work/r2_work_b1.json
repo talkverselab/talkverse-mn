@@ -62,7 +62,8 @@
    "ko": "한국에서 오셨어요?",
    "tags": [],
    "new": [],
-   "emotion": "polite"
+   "emotion": "polite",
+   "note": "Солонгос = 한국"
   },
   {
    "num": 4,
@@ -72,7 +73,8 @@
    "ko": "네, 서울에서 왔어요.",
    "tags": [],
    "new": [],
-   "emotion": "cheerful"
+   "emotion": "cheerful",
+   "note": "Сөүл = 서울"
   },
   {
    "num": 5,

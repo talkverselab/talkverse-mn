@@ -60,7 +60,8 @@
    "ko": "누구한테 보냈는지 봐 봐.",
    "tags": [],
    "new": [],
-   "emotion": "stiff"
+   "emotion": "stiff",
+   "note": "хэнд = 누구에게"
   },
   {
    "num": 4,
@@ -92,7 +93,8 @@
    "ko": "뭐라고? 나 해고한대?",
    "tags": [],
    "new": [],
-   "emotion": "worried"
+   "emotion": "worried",
+   "note": "ажлаас халах = 해고하다"
   },
   {
    "num": 7,

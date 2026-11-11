@@ -35,7 +35,8 @@
    "ko": "와 줘서 고마워! 마지막 노래 들었어?",
    "tags": [],
    "new": [],
-   "emotion": "excited"
+   "emotion": "excited",
+   "note": "сонсох = 듣다"
   },
   {
    "num": 2,
@@ -67,7 +68,8 @@
    "ko": "완전 멋졌어! 나 울 뻔했어.",
    "tags": [],
    "new": [],
-   "emotion": "excited"
+   "emotion": "excited",
+   "note": "уйлах = 울다"
   },
   {
    "num": 5,
@@ -99,7 +101,8 @@
    "ko": "고양이?! 나 고양이 때문에 운 거야?",
    "tags": [],
    "new": [],
-   "emotion": "tsukkomi"
+   "emotion": "tsukkomi",
+   "note": "~аас болж = ~때문에"
   },
   {
    "num": 8,

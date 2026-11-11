@@ -48,7 +48,8 @@
    "ko": "바트 아저씨 맨날 이렇게 말해. 괜찮아.",
    "tags": [],
    "new": [],
-   "emotion": "cheerful"
+   "emotion": "cheerful",
+   "note": "дандаа = 늘, 항상"
   },
   {
    "num": 3,
@@ -58,7 +59,8 @@
    "ko": "아이고! 엄청 덜컹거려.",
    "tags": [],
    "new": [],
-   "emotion": "worried"
+   "emotion": "worried",
+   "note": "донсолгох = 덜컹거리다"
   },
   {
    "num": 4,
@@ -68,7 +70,8 @@
    "ko": "그럼 내 어깨에 기대.",
    "tags": [],
    "new": [],
-   "emotion": "shy"
+   "emotion": "shy",
+   "note": "түших = 기대다"
   },
   {
    "num": 5,
@@ -78,7 +81,8 @@
    "ko": "너... 진짜로?",
    "tags": [],
    "new": [],
-   "emotion": "shy"
+   "emotion": "shy",
+   "note": "нээрээ = 진짜로"
   },
   {
    "num": 6,
@@ -88,7 +92,8 @@
    "ko": "이제 길 괜찮아졌다.",
    "tags": [],
    "new": [],
-   "emotion": "stiff"
+   "emotion": "stiff",
+   "note": "гайгүй = 괜찮은"
   },
   {
    "num": 7,
@@ -98,7 +103,8 @@
    "ko": "바트 아저씨! 나쁜 길로 돌아가 주세요!",
    "tags": [],
    "new": [],
-   "emotion": "flustered"
+   "emotion": "flustered",
+   "note": "буцах = 돌아가다"
   },
   {
    "num": 8,

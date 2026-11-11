@@ -37,7 +37,8 @@
    "ko": "노민, 외투 잠깐 빌려줘.",
    "tags": [],
    "new": [],
-   "emotion": "worried"
+   "emotion": "worried",
+   "note": "зээлэх = 빌리다"
   },
   {
    "num": 2,
@@ -69,7 +70,8 @@
    "ko": "밖은 영하 30도야. 해는 속인다니까.",
    "tags": [],
    "new": [],
-   "emotion": "stiff"
+   "emotion": "stiff",
+   "note": "хуурах = 속이다"
   },
   {
    "num": 5,

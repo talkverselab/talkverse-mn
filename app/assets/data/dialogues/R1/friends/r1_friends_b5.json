@@ -37,7 +37,8 @@
    "ko": "왜 그래? 왜 이렇게 말이 없어?",
    "tags": [],
    "new": [],
-   "emotion": "worried"
+   "emotion": "worried",
+   "note": "дуугүй = 말이 없는"
   },
   {
    "num": 2,
@@ -58,7 +59,8 @@
    "ko": "아~ 나 위로는 못 한다.",
    "tags": [],
    "new": [],
-   "emotion": "stiff"
+   "emotion": "stiff",
+   "note": "сэтгэл засах = 위로하다"
   },
   {
    "num": 4,
