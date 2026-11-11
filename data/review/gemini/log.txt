@@ -157,3 +157,52 @@ OK /Users/talkverse/talkverse/mn/data/review/dialogues/r2_friends_b1_gemini.md t
 한도 대기 03:31
   try1 r2_friends_b2_gemini.md: BADMODEL Flash-Lite 1s
 한도 대기 03:51
+  try1 r2_friends_b2_gemini.md: BADMODEL Flash-Lite 1s
+한도 대기 04:11
+  try1 r2_friends_b2_gemini.md: BADMODEL Flash-Lite 3s
+한도 대기 04:31
+  try1 r2_friends_b2_gemini.md: BADMODEL Flash-Lite 2s
+한도 대기 04:51
+  try1 r2_friends_b2_gemini.md: BADMODEL Flash-Lite 1s
+한도 대기 05:12
+  try1 r2_friends_b2_gemini.md: BADMODEL Flash-Lite 2s
+한도 대기 05:32
+  try1 r2_friends_b2_gemini.md: BADMODEL Flash-Lite 2s
+한도 대기 05:52
+  try1 r2_friends_b2_gemini.md: BADMODEL Flash-Lite 2s
+한도 대기 06:12
+  try1 r2_friends_b2_gemini.md: BADMODEL Flash-Lite 2s
+한도 대기 06:32
+OK /Users/talkverse/talkverse/mn/data/review/dialogues/r2_friends_b2_gemini.md try=1 48s
+OK /Users/talkverse/talkverse/mn/data/review/dialogues/r2_friends_b3_gemini.md try=1 48s
+OK /Users/talkverse/talkverse/mn/data/review/dialogues/r2_friends_b4_gemini.md try=1 48s
+OK /Users/talkverse/talkverse/mn/data/review/dialogues/r2_friends_b5_gemini.md try=1 59s
+OK /Users/talkverse/talkverse/mn/data/review/dialogues/r2_friends_b6_gemini.md try=1 58s
+OK /Users/talkverse/talkverse/mn/data/review/dialogues/r2_life_b1_gemini.md try=1 49s
+OK /Users/talkverse/talkverse/mn/data/review/dialogues/r2_life_b2_gemini.md try=1 54s
+OK /Users/talkverse/talkverse/mn/data/review/dialogues/r2_life_b3_gemini.md try=1 48s
+OK /Users/talkverse/talkverse/mn/data/review/dialogues/r2_life_b4_gemini.md try=1 54s
+OK /Users/talkverse/talkverse/mn/data/review/dialogues/r2_life_b5_gemini.md try=1 49s
+OK /Users/talkverse/talkverse/mn/data/review/dialogues/r2_life_b6_gemini.md try=1 53s
+OK /Users/talkverse/talkverse/mn/data/review/dialogues/r2_love_b1_gemini.md try=1 53s
+OK /Users/talkverse/talkverse/mn/data/review/dialogues/r2_love_b2_gemini.md try=1 59s
+OK /Users/talkverse/talkverse/mn/data/review/dialogues/r2_love_b3_gemini.md try=1 52s
+OK /Users/talkverse/talkverse/mn/data/review/dialogues/r2_love_b4_gemini.md try=1 48s
+OK /Users/talkverse/talkverse/mn/data/review/dialogues/r2_love_b5_gemini.md try=1 65s
+OK /Users/talkverse/talkverse/mn/data/review/dialogues/r2_love_b6_gemini.md try=1 54s
+OK /Users/talkverse/talkverse/mn/data/review/dialogues/r2_love_b7_gemini.md try=1 54s
+OK /Users/talkverse/talkverse/mn/data/review/dialogues/r2_love_b8_gemini.md try=1 48s
+  try1 r2_love_c1_gemini.md: BADMODEL Flash-Lite 1s
+한도 대기 07:28
+  try1 r2_love_c1_gemini.md: BADMODEL Flash-Lite 3s
+한도 대기 07:49
+  try1 r2_love_c1_gemini.md: BADMODEL Flash-Lite 2s
+한도 대기 08:09
+  try1 r2_love_c1_gemini.md: BADMODEL Flash-Lite 2s
+한도 대기 08:29
+  try1 r2_love_c1_gemini.md: BADMODEL Flash-Lite 1s
+한도 대기 08:49
+  try1 r2_love_c1_gemini.md: BADMODEL Flash-Lite 3s
+한도 대기 09:09
+  try1 r2_love_c1_gemini.md: BADMODEL Flash-Lite 2s
+한도 대기 09:30
