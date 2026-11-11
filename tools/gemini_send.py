@@ -34,7 +34,7 @@ def run(c):
         if model and c.ev("!!" + BOX): break
     else:
         return 'BLOCKED' if 'google.com/sorry' in (c.ev('location.href') or '') else 'NOINPUT'
-    if 'Lite' in model: return 'BADMODEL ' + model
+    if 'Lite' in model or not any(x in model for x in ('Argon', 'Pro')): return 'BADMODEL ' + model  # 2026-11-11 한도 뒤 Flash 로 떨어져 빈 답(오류 0) — Argon·Pro 만 받음
     c.ev(BOX + ".focus()")
     c.call('Input.insertText', text=open(src, encoding='utf-8').read().strip()); time.sleep(1)
     for _ in range(5):
