@@ -43,7 +43,7 @@ def run(c):
     else:
         return 'NOSEND'
     last, stable, blank = '', 0, 0
-    for k in range(60):
+    for k in range(100):  # 3편 묶음 답은 길다(최대 약 8분)
         time.sleep(5)
         path = c.ev('location.pathname') or ''
         busy = c.ev(BUSY)

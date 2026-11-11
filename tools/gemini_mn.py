@@ -16,4 +16,4 @@ for f in sorted(glob.glob(str(R / 'app/assets/data/dialogues/R*/*/*.json'))):
     lines = '\n'.join(f"{t['num']}. {t['speaker']}: {t['tl']}  — {t['ko']}" for t in e['turns'])
     txt = T.replace('{code}', ep).replace('{roles}', roles).replace('{scene}', e['scene']).replace('{{name}}', '{name}').replace('{lines}', lines)
     (P / f'{ep}.txt').write_text(txt, encoding='utf-8'); rows.append(f"{P / f'{ep}.txt'}\t{out}")
-(R / 'data/review/gemini/list.tsv').write_text('\n'.join(rows) + '\n', encoding='utf-8'); print(len(rows), '편')
+(R / 'data/review/gemini/list.tsv').write_text(''.join(r + '\n' for r in rows), encoding='utf-8'); print(len(rows), '편')
