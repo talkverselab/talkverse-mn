@@ -245,3 +245,26 @@ OK /Users/talkverse/talkverse/mn/data/review/dialogues/r3_culture_b1_gemini.md t
   try1 b_r3_culture_b2_ans.md: BADMODEL Flash-Lite 2s
 나눔 0 빠짐 0
 한도 대기 mn 12:50
+재시작 17:01
+23 편 8 묶음
+  try1 b_r3_culture_b2_ans.md: BADMODEL Flash-Lite 4s
+나눔 0 빠짐 0
+한도 대기 mn 17:01
+23 편 8 묶음
+OK data/review/gemini/bundle/mn/b_r3_culture_b2_ans.md try=1 116s
+OK data/review/gemini/bundle/mn/b_r3_friends_b2_ans.md try=1 148s
+OK data/review/gemini/bundle/mn/b_r3_life_b1_ans.md try=1 223s
+OK data/review/gemini/bundle/mn/b_r3_life_b4_ans.md try=1 146s
+  try1 b_r3_love_b3_ans.md: TIMEOUT /app q 0 r 0 517s
+OK data/review/gemini/bundle/mn/b_r3_love_b3_ans.md try=2 183s
+  try1 b_r3_love_b6_ans.md: TIMEOUT /app q 0 r 0 521s
+  try2 b_r3_love_b6_ans.md: TIMEOUT /app q 0 r 0 521s
+OK data/review/gemini/bundle/mn/b_r3_love_b6_ans.md try=3 152s
+OK data/review/gemini/bundle/mn/b_r3_travel_b3_ans.md try=1 162s
+OK data/review/gemini/bundle/mn/b_r3_work_b2_ans.md try=1 147s
+나눔 23 빠짐 0
+끝 mn 18:17
+150 편 50 묶음
+  try1 b_r1_culture_a1_ans.md: BADMODEL Flash-Lite 1s
+나눔 0 빠짐 0
+한도 대기 my 18:17
