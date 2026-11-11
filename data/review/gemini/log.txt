@@ -241,3 +241,7 @@ OK /Users/talkverse/talkverse/mn/data/review/dialogues/r3_culture_b1_gemini.md t
   try1 b_r3_culture_b2_ans.md: BADMODEL Flash-Lite 1s
 나눔 0 빠짐 0
 한도 대기 mn 12:30
+23 편 8 묶음
+  try1 b_r3_culture_b2_ans.md: BADMODEL Flash-Lite 2s
+나눔 0 빠짐 0
+한도 대기 mn 12:50
