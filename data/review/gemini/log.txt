@@ -206,3 +206,38 @@ OK /Users/talkverse/talkverse/mn/data/review/dialogues/r2_love_b8_gemini.md try=
 한도 대기 09:09
   try1 r2_love_c1_gemini.md: BADMODEL Flash-Lite 2s
 한도 대기 09:30
+  try1 r2_love_c1_gemini.md: BADMODEL Flash-Lite 1s
+한도 대기 09:50
+  try1 r2_love_c1_gemini.md: BADMODEL Flash-Lite 3s
+한도 대기 10:10
+  try1 r2_love_c1_gemini.md: BADMODEL Flash-Lite 2s
+한도 대기 10:30
+  try1 r2_love_c1_gemini.md: BADMODEL Flash-Lite 2s
+한도 대기 10:51
+  try1 r2_love_c1_gemini.md: BADMODEL Flash-Lite 1s
+한도 대기 11:11
+  try1 r2_love_c1_gemini.md: BADMODEL Flash-Lite 2s
+한도 대기 11:31
+OK /Users/talkverse/talkverse/mn/data/review/dialogues/r2_love_c1_gemini.md try=1 48s
+OK /Users/talkverse/talkverse/mn/data/review/dialogues/r2_love_c2_gemini.md try=1 59s
+OK /Users/talkverse/talkverse/mn/data/review/dialogues/r2_love_c3_gemini.md try=1 68s
+OK /Users/talkverse/talkverse/mn/data/review/dialogues/r2_love_c4_gemini.md try=1 48s
+OK /Users/talkverse/talkverse/mn/data/review/dialogues/r2_travel_b1_gemini.md try=1 53s
+OK /Users/talkverse/talkverse/mn/data/review/dialogues/r2_travel_b2_gemini.md try=1 53s
+OK /Users/talkverse/talkverse/mn/data/review/dialogues/r2_travel_b3_gemini.md try=1 59s
+OK /Users/talkverse/talkverse/mn/data/review/dialogues/r2_travel_b4_gemini.md try=1 58s
+OK /Users/talkverse/talkverse/mn/data/review/dialogues/r2_travel_b5_gemini.md try=1 102s
+OK /Users/talkverse/talkverse/mn/data/review/dialogues/r2_travel_b6_gemini.md try=1 59s
+OK /Users/talkverse/talkverse/mn/data/review/dialogues/r2_work_b1_gemini.md try=1 58s
+OK /Users/talkverse/talkverse/mn/data/review/dialogues/r2_work_b2_gemini.md try=1 53s
+OK /Users/talkverse/talkverse/mn/data/review/dialogues/r2_work_b3_gemini.md try=1 53s
+OK /Users/talkverse/talkverse/mn/data/review/dialogues/r2_work_b4_gemini.md try=1 53s
+OK /Users/talkverse/talkverse/mn/data/review/dialogues/r2_work_b5_gemini.md try=1 48s
+OK /Users/talkverse/talkverse/mn/data/review/dialogues/r2_work_b6_gemini.md try=1 58s
+OK /Users/talkverse/talkverse/mn/data/review/dialogues/r3_culture_b1_gemini.md try=1 60s
+  try1 r3_culture_b2_gemini.md: BADMODEL Flash-Lite 2s
+한도 대기 12:25
+23 편 8 묶음
+  try1 b_r3_culture_b2_ans.md: BADMODEL Flash-Lite 1s
+나눔 0 빠짐 0
+한도 대기 mn 12:30

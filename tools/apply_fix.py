@@ -11,7 +11,7 @@ for ep, x in F.items():
         c = x.get('turns', {}).get(str(t['num']))
         if not c: continue
         if 'tl' in c and c['tl'] != t['tl']: t['rd'] = ''
-        t.update(c)
+        t.update({k: v for k, v in c.items() if k != 'note'})  # fix 의 note 는 고친 이유 — 턴 note(어휘 설명)를 덮지 않는다
     d['review'] = 'Gemini 4 Argon 검수 반영 2026-11-10 — ' + x['review']
     miss = [w for w in d.get('expressions', []) if not any(w.lower() in t['tl'].lower() for t in d['turns'])]
     if miss: print(ep, '표현 빠짐', miss)
