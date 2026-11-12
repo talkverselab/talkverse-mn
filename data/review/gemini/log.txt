@@ -268,3 +268,255 @@ OK data/review/gemini/bundle/mn/b_r3_work_b2_ans.md try=1 147s
   try1 b_r1_culture_a1_ans.md: BADMODEL Flash-Lite 1s
 나눔 0 빠짐 0
 한도 대기 my 18:17
+150 편 50 묶음
+  try1 b_r1_culture_a1_ans.md: BADMODEL Flash-Lite 2s
+나눔 0 빠짐 0
+한도 대기 my 18:37
+150 편 50 묶음
+  try1 b_r1_culture_a1_ans.md: BADMODEL Flash-Lite 1s
+나눔 0 빠짐 0
+한도 대기 my 18:57
+150 편 50 묶음
+  try1 b_r1_culture_a1_ans.md: BADMODEL Flash-Lite 1s
+나눔 0 빠짐 0
+한도 대기 my 19:18
+150 편 50 묶음
+  try1 b_r1_culture_a1_ans.md: BADMODEL Flash-Lite 1s
+나눔 0 빠짐 0
+한도 대기 my 19:38
+150 편 50 묶음
+  try1 b_r1_culture_a1_ans.md: BADMODEL Flash-Lite 1s
+나눔 0 빠짐 0
+한도 대기 my 19:58
+150 편 50 묶음
+  try1 b_r1_culture_a1_ans.md: BADMODEL Flash-Lite 1s
+나눔 0 빠짐 0
+한도 대기 my 20:18
+150 편 50 묶음
+  try1 b_r1_culture_a1_ans.md: BADMODEL Flash-Lite 2s
+나눔 0 빠짐 0
+한도 대기 my 20:38
+150 편 50 묶음
+  try1 b_r1_culture_a1_ans.md: BADMODEL Flash-Lite 1s
+나눔 0 빠짐 0
+한도 대기 my 20:59
+150 편 50 묶음
+  try1 b_r1_culture_a1_ans.md: BADMODEL Flash-Lite 1s
+나눔 0 빠짐 0
+한도 대기 my 21:19
+150 편 50 묶음
+  try1 b_r1_culture_a1_ans.md: BADMODEL Flash-Lite 1s
+나눔 0 빠짐 0
+한도 대기 my 21:39
+150 편 50 묶음
+OK data/review/gemini/bundle/my/b_r1_culture_a1_ans.md try=1 58s
+OK data/review/gemini/bundle/my/b_r1_culture_a4_ans.md try=1 59s
+OK data/review/gemini/bundle/my/b_r1_culture_b1_ans.md try=1 64s
+OK data/review/gemini/bundle/my/b_r1_culture_b4_ans.md try=1 53s
+OK data/review/gemini/bundle/my/b_r1_friends_a1_ans.md try=1 58s
+OK data/review/gemini/bundle/my/b_r1_friends_a4_ans.md try=1 64s
+OK data/review/gemini/bundle/my/b_r1_friends_b1_ans.md try=1 53s
+OK data/review/gemini/bundle/my/b_r1_friends_b4_ans.md try=1 105s
+OK data/review/gemini/bundle/my/b_r1_friends_c1_ans.md try=1 59s
+OK data/review/gemini/bundle/my/b_r1_life_a2_ans.md try=1 69s
+OK data/review/gemini/bundle/my/b_r1_life_a5_ans.md try=1 121s
+OK data/review/gemini/bundle/my/b_r1_life_b2_ans.md try=1 62s
+OK data/review/gemini/bundle/my/b_r1_life_b5_ans.md try=1 38s
+  try1 b_r1_life_c2_ans.md: BADMODEL Flash-Lite 1s
+나눔 39 빠짐 0
+한도 대기 my 22:27
+114 편 38 묶음
+  try1 b_r1_life_b5_ans.md: BADMODEL Flash-Lite 1s
+나눔 0 빠짐 0
+한도 대기 my 22:47
+114 편 38 묶음
+  try1 b_r1_life_b5_ans.md: BADMODEL Flash-Lite 1s
+나눔 0 빠짐 0
+한도 대기 my 23:07
+114 편 38 묶음
+  try1 b_r1_life_b5_ans.md: BADMODEL Flash-Lite 1s
+나눔 0 빠짐 0
+한도 대기 my 23:27
+114 편 38 묶음
+  try1 b_r1_life_b5_ans.md: BADMODEL Flash-Lite 1s
+나눔 0 빠짐 0
+한도 대기 my 23:47
+114 편 38 묶음
+  try1 b_r1_life_b5_ans.md: BADMODEL Flash-Lite 1s
+나눔 0 빠짐 0
+한도 대기 my 00:08
+114 편 38 묶음
+  try1 b_r1_life_b5_ans.md: BADMODEL Flash-Lite 1s
+나눔 0 빠짐 0
+한도 대기 my 00:28
+114 편 38 묶음
+  try1 b_r1_life_b5_ans.md: BADMODEL Flash-Lite 1s
+나눔 0 빠짐 0
+한도 대기 my 00:48
+114 편 38 묶음
+  try1 b_r1_life_b5_ans.md: BADMODEL Flash-Lite 2s
+나눔 0 빠짐 0
+한도 대기 my 01:08
+114 편 38 묶음
+  try1 b_r1_life_b5_ans.md: BADMODEL Flash-Lite 2s
+나눔 0 빠짐 0
+한도 대기 my 01:28
+114 편 38 묶음
+  try1 b_r1_life_b5_ans.md: BADMODEL Flash-Lite 1s
+나눔 0 빠짐 0
+한도 대기 my 01:49
+114 편 38 묶음
+  try1 b_r1_life_b5_ans.md: BADMODEL Flash-Lite 2s
+나눔 0 빠짐 0
+한도 대기 my 02:09
+114 편 38 묶음
+  try1 b_r1_life_b5_ans.md: BADMODEL Flash-Lite 1s
+나눔 0 빠짐 0
+한도 대기 my 02:29
+114 편 38 묶음
+OK data/review/gemini/bundle/my/b_r1_life_b5_ans.md try=1 59s
+  try1 b_r1_life_c2_ans.md: TIMEOUT /app q 0 r 0 521s
+OK data/review/gemini/bundle/my/b_r1_life_c2_ans.md try=2 59s
+OK data/review/gemini/bundle/my/b_r1_love_a3_ans.md try=1 64s
+OK data/review/gemini/bundle/my/b_r1_love_a6_ans.md try=1 121s
+  try1 b_r1_love_b3_ans.md: BADMODEL Flash 2s
+나눔 12 빠짐 0
+한도 대기 my 03:07
+102 편 34 묶음
+OK data/review/gemini/bundle/my/b_r1_love_b3_ans.md try=1 53s
+OK data/review/gemini/bundle/my/b_r1_love_b6_ans.md try=1 53s
+OK data/review/gemini/bundle/my/b_r1_survival_s1_ans.md try=1 54s
+OK data/review/gemini/bundle/my/b_r1_survival_s4_ans.md try=1 64s
+OK data/review/gemini/bundle/my/b_r1_travel_a3_ans.md try=1 64s
+OK data/review/gemini/bundle/my/b_r1_travel_a6_ans.md try=1 54s
+OK data/review/gemini/bundle/my/b_r1_travel_b3_ans.md try=1 48s
+OK data/review/gemini/bundle/my/b_r1_travel_c2_ans.md try=1 59s
+OK data/review/gemini/bundle/my/b_r2_culture_b3_ans.md try=1 54s
+OK data/review/gemini/bundle/my/b_r2_culture_b6_ans.md try=1 59s
+OK data/review/gemini/bundle/my/b_r2_culture_c1_ans.md try=1 59s
+  try1 b_r2_friends_b2_ans.md: BADMODEL Flash-Lite 2s
+나눔 33 빠짐 0
+한도 대기 my 03:49
+69 편 23 묶음
+  try1 b_r2_friends_b2_ans.md: BADMODEL Flash-Lite 1s
+나눔 0 빠짐 0
+한도 대기 my 04:09
+69 편 23 묶음
+  try1 b_r2_friends_b2_ans.md: BADMODEL Flash-Lite 1s
+나눔 0 빠짐 0
+한도 대기 my 04:29
+69 편 23 묶음
+  try1 b_r2_friends_b2_ans.md: BADMODEL Flash-Lite 1s
+나눔 0 빠짐 0
+한도 대기 my 04:49
+69 편 23 묶음
+  try1 b_r2_friends_b2_ans.md: BADMODEL Flash-Lite 2s
+나눔 0 빠짐 0
+한도 대기 my 05:09
+69 편 23 묶음
+  try1 b_r2_friends_b2_ans.md: BADMODEL Flash-Lite 1s
+나눔 0 빠짐 0
+한도 대기 my 05:30
+69 편 23 묶음
+  try1 b_r2_friends_b2_ans.md: BADMODEL Flash-Lite 1s
+나눔 0 빠짐 0
+한도 대기 my 05:50
+69 편 23 묶음
+  try1 b_r2_friends_b2_ans.md: BADMODEL Flash-Lite 1s
+나눔 0 빠짐 0
+한도 대기 my 06:10
+69 편 23 묶음
+OK data/review/gemini/bundle/my/b_r2_friends_b2_ans.md try=1 38s
+  try1 b_r2_friends_b5_ans.md: BADMODEL Flash-Lite 2s
+나눔 3 빠짐 0
+한도 대기 my 06:32
+66 편 22 묶음
+  try1 b_r2_friends_b5_ans.md: BADMODEL Flash-Lite 1s
+나눔 0 빠짐 0
+한도 대기 my 06:52
+66 편 22 묶음
+  try1 b_r2_friends_b5_ans.md: BADMODEL Flash-Lite 1s
+나눔 0 빠짐 0
+한도 대기 my 07:12
+66 편 22 묶음
+  try1 b_r2_friends_b5_ans.md: BADMODEL Flash-Lite 1s
+나눔 0 빠짐 0
+한도 대기 my 07:32
+66 편 22 묶음
+OK data/review/gemini/bundle/my/b_r2_friends_b5_ans.md try=1 54s
+OK data/review/gemini/bundle/my/b_r2_friends_b8_ans.md try=1 49s
+OK data/review/gemini/bundle/my/b_r2_life_b1_ans.md try=1 49s
+OK data/review/gemini/bundle/my/b_r2_life_b4_ans.md try=1 58s
+OK data/review/gemini/bundle/my/b_r2_life_b7_ans.md try=1 54s
+OK data/review/gemini/bundle/my/b_r2_life_c2_ans.md try=1 48s
+OK data/review/gemini/bundle/my/b_r2_love_b3_ans.md try=1 48s
+OK data/review/gemini/bundle/my/b_r2_love_b6_ans.md try=1 54s
+OK data/review/gemini/bundle/my/b_r2_love_c1_ans.md try=1 54s
+OK data/review/gemini/bundle/my/b_r2_travel_b2_ans.md try=1 59s
+OK data/review/gemini/bundle/my/b_r2_travel_b5_ans.md try=1 54s
+OK data/review/gemini/bundle/my/b_r2_travel_b8_ans.md try=1 54s
+OK data/review/gemini/bundle/my/b_r3_culture_b1_ans.md try=1 64s
+OK data/review/gemini/bundle/my/b_r3_culture_b4_ans.md try=1 53s
+OK data/review/gemini/bundle/my/b_r3_friends_b2_ans.md try=1 54s
+OK data/review/gemini/bundle/my/b_r3_friends_b5_ans.md try=1 58s
+OK data/review/gemini/bundle/my/b_r3_life_b3_ans.md try=1 64s
+  try1 b_r3_love_b2_ans.md: BADMODEL Flash-Lite 1s
+나눔 51 빠짐 0
+한도 대기 my 08:25
+15 편 5 묶음
+  try1 b_r3_love_b2_ans.md: BADMODEL Flash-Lite 3s
+나눔 0 빠짐 0
+한도 대기 my 08:45
+15 편 5 묶음
+  try1 b_r3_love_b2_ans.md: BADMODEL Flash-Lite 1s
+나눔 0 빠짐 0
+한도 대기 my 09:06
+15 편 5 묶음
+  try1 b_r3_love_b2_ans.md: BADMODEL Flash-Lite 2s
+나눔 0 빠짐 0
+한도 대기 my 09:26
+15 편 5 묶음
+  try1 b_r3_love_b2_ans.md: BADMODEL Flash-Lite 1s
+나눔 0 빠짐 0
+한도 대기 my 09:46
+15 편 5 묶음
+  try1 b_r3_love_b2_ans.md: BADMODEL Flash-Lite 3s
+나눔 0 빠짐 0
+한도 대기 my 10:06
+15 편 5 묶음
+  try1 b_r3_love_b2_ans.md: BADMODEL Flash-Lite 1s
+나눔 0 빠짐 0
+한도 대기 my 10:26
+15 편 5 묶음
+  try1 b_r3_love_b2_ans.md: BADMODEL Flash-Lite 3s
+나눔 0 빠짐 0
+한도 대기 my 10:47
+15 편 5 묶음
+  try1 b_r3_love_b2_ans.md: BADMODEL Flash-Lite 2s
+나눔 0 빠짐 0
+한도 대기 my 11:07
+15 편 5 묶음
+  try1 b_r3_love_b2_ans.md: BADMODEL Flash-Lite 3s
+나눔 0 빠짐 0
+한도 대기 my 11:27
+15 편 5 묶음
+  try1 b_r3_love_b2_ans.md: BADMODEL Flash-Lite 2s
+나눔 0 빠짐 0
+한도 대기 my 11:47
+15 편 5 묶음
+  try1 b_r3_love_b2_ans.md: BADMODEL Flash-Lite 4s
+나눔 0 빠짐 0
+한도 대기 my 12:07
+15 편 5 묶음
+  try1 b_r3_love_b2_ans.md: BADMODEL Flash-Lite 2s
+나눔 0 빠짐 0
+한도 대기 my 12:28
+15 편 5 묶음
+OK data/review/gemini/bundle/my/b_r3_love_b2_ans.md try=1 79s
+OK data/review/gemini/bundle/my/b_r3_love_b4_ans.md try=1 70s
+OK data/review/gemini/bundle/my/b_r3_travel_b2_ans.md try=1 74s
+OK data/review/gemini/bundle/my/b_r3_travel_b5_ans.md try=1 64s
+OK data/review/gemini/bundle/my/b_r3_work_b3_ans.md try=1 49s
+나눔 15 빠짐 0
+끝 my 12:58
+끝 전체 12:58

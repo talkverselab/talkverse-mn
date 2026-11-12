@@ -1,0 +1,72 @@
+{
+ "data/review/gemini/bundle/my/b_r3_love_b2_ans.md": [
+  [
+   "r3_love_b2",
+   "/Users/talkverse/talkverse/my/data/review/dialogues/r3_love_b2_gemini.md"
+  ],
+  [
+   "r3_life_b5",
+   "/Users/talkverse/talkverse/my/data/review/dialogues/r3_life_b5_gemini.md"
+  ],
+  [
+   "r3_love_b3",
+   "/Users/talkverse/talkverse/my/data/review/dialogues/r3_love_b3_gemini.md"
+  ]
+ ],
+ "data/review/gemini/bundle/my/b_r3_love_b4_ans.md": [
+  [
+   "r3_love_b4",
+   "/Users/talkverse/talkverse/my/data/review/dialogues/r3_love_b4_gemini.md"
+  ],
+  [
+   "r3_love_b5",
+   "/Users/talkverse/talkverse/my/data/review/dialogues/r3_love_b5_gemini.md"
+  ],
+  [
+   "r3_travel_b1",
+   "/Users/talkverse/talkverse/my/data/review/dialogues/r3_travel_b1_gemini.md"
+  ]
+ ],
+ "data/review/gemini/bundle/my/b_r3_travel_b2_ans.md": [
+  [
+   "r3_travel_b2",
+   "/Users/talkverse/talkverse/my/data/review/dialogues/r3_travel_b2_gemini.md"
+  ],
+  [
+   "r3_travel_b3",
+   "/Users/talkverse/talkverse/my/data/review/dialogues/r3_travel_b3_gemini.md"
+  ],
+  [
+   "r3_travel_b4",
+   "/Users/talkverse/talkverse/my/data/review/dialogues/r3_travel_b4_gemini.md"
+  ]
+ ],
+ "data/review/gemini/bundle/my/b_r3_travel_b5_ans.md": [
+  [
+   "r3_travel_b5",
+   "/Users/talkverse/talkverse/my/data/review/dialogues/r3_travel_b5_gemini.md"
+  ],
+  [
+   "r3_work_b1",
+   "/Users/talkverse/talkverse/my/data/review/dialogues/r3_work_b1_gemini.md"
+  ],
+  [
+   "r3_work_b2",
+   "/Users/talkverse/talkverse/my/data/review/dialogues/r3_work_b2_gemini.md"
+  ]
+ ],
+ "data/review/gemini/bundle/my/b_r3_work_b3_ans.md": [
+  [
+   "r3_work_b3",
+   "/Users/talkverse/talkverse/my/data/review/dialogues/r3_work_b3_gemini.md"
+  ],
+  [
+   "r3_work_b4",
+   "/Users/talkverse/talkverse/my/data/review/dialogues/r3_work_b4_gemini.md"
+  ],
+  [
+   "r3_work_b5",
+   "/Users/talkverse/talkverse/my/data/review/dialogues/r3_work_b5_gemini.md"
+  ]
+ ]
+}

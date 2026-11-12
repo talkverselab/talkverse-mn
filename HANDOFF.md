@@ -8,8 +8,8 @@
 - **Gemini 반영 150/150**(`73181e0`, 남은 23편은 3편 묶음 답 — 나눔 23 빠짐 0). 검사 「150편 · 오류 0」.
 - 비어 있던 어휘 note 145줄 채움(`73bc71b`, 형식 「단어 = 뜻」).
 - Azure 음성 150편 다시 만들어 올림(m/f, `data/tts/audio_mn.json`), 리뷰 페이지 음성 켜고 게시(`2a26c9e`, uk Version 1b911761…). `app/assets/audio/manifest.json` 도 갱신됐지만 원래 dirty 파일이라 커밋 안 함.
-- **3편 묶음 루프** `tools/gemini_loop3.sh` 는 이제 **미얀마어 150편(50묶음)** 진행 중 — 답 `~/talkverse/my/data/review/dialogues/<편>_gemini.md`, 로그 `data/review/gemini/log.txt`. 재부팅되면 M6 터널(`ssh -fN -L 9235:127.0.0.1:9235 macmini4`) 열고 루프 다시 켤 것. 미얀마어 반영은 따로(my 저장소).
-- 남은 것: 미얀마어 검수 끝나면 반영, Grok 18편 11/16 뒤 새 방에서, 다 끝나면 9235 탭·터널 닫기.
+- **미얀마어 Gemini 검수 150/150 답 받음**(2026-11-12 12:58 「끝 전체」, 나눔 빠짐 0). 답 `~/talkverse/my/data/review/dialogues/<편>_gemini.md`(Argon 135 · Pro 15). 한도 뒤 Flash 로 떨어진 빈 답 3편은 지우고 다시 받음, `gemini_send.py` 는 이제 Argon·Pro 만 받는다(`1c48ce9`). **반영은 my 저장소에서 따로**(아직 안 함). Gemini 크롬 9235·M6 터널 닫음.
+- 남은 것: 미얀마어 반영(my), Grok 18편(mn) 11/16 뒤 새 방 — 재작성한 편은 `_gemini.md` 지우고 다시 검수(크롬 9235 다시 켜야 함). 미얀마어 Grok 안 된 R3 14편도 재작성 뒤 다시 검수.
 
 ## 2026-11-11 02:30 — Grok 한도·Gemini 다음 언어
 - 사용자 지시 「그록한도까지 사용 그래도 제미나이는 계속 진행 몽골어 다음 소수언어도 제미나이작업은 계속」.
