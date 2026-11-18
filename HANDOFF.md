@@ -10,7 +10,7 @@
   PC `Start-ScheduledTask -TaskName Grok-Chrome-mn-9253` → `ssh -fN -L 9253:127.0.0.1:9253 pc` → M4 `grok_cookie_sync.py 9231 9253` →
   `GROK_CDP_PORT=9253 python3 tools/grok_scenes_mn.py r1_culture_a1 r1_friends_a1 r1_life_a1 r1_travel_a1 r2_friends_b1 r2_life_b1 r2_love_b1 r3_culture_b1 r3_work_b1 r3_love_b1`
   (편 파일 `data/review/scenes/room/*.txt`, 편마다 1장 = 반전 턴. 앱은 가까운 컷을 쓰므로 1장이면 편 전체에 나옴).
-  → 검수 → 교환 저장소 `talkverse_art/scene/mn/<편>/cut1.jpg` 푸시 → `grok_art.py scene mn` 직접 게시 → uk 에 「mn pull <커밋>」 → 끝나면 「mn 끝」, 크롬·터널 닫기.
+  → 검수 → 교환 저장소 `talkverse_art/scene/mn/<편>/cut1.jpg` 푸시 → uk 에 「mn pull <커밋>」 → uk 가 M4 `~/talkverse-art` 를 받고 알림 → 그 뒤 `grok_art.py scene mn` 직접 게시(그 폴더를 읽음) → 「mn 끝」, 크롬·터널 닫기.
 - 아직 사용자 결정: 137편 Grok 다시 쓰기 여부, 서버 원고 올리기·빌드 순서.
 
 ## 2026-11-11 19:30 — 몽골어 검수·음성 끝
