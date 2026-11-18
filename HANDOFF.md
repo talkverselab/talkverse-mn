@@ -4,15 +4,12 @@
 
 
 
-## 2026-11-18 — Grok 「빠른」 모드(사용자 지시 「Grok 빠른 모드 진행」) · 장면 컷 10장 대기
-- `grok_text.py`·`grok_mode.py`(mn 사본) 가 「빠른」을 확인한다(11-09 「전문가」 지시를 대신함).
-- **장면 컷 10장 = uk Grok 순서표 6번째**(독일어 → 포르투갈어 → 미얀마어 → 스페인어 → 태국어 → 몽골어). uk 가 「mn 시작」을 보내면:
-  PC `Start-ScheduledTask -TaskName Grok-Chrome-mn-9253` → `ssh -fN -L 9253:127.0.0.1:9253 pc` → M4 `grok_cookie_sync.py 9231 9253` →
-  `GROK_CDP_PORT=9253 python3 tools/grok_scenes_mn.py r1_culture_a1 r1_friends_a1 r1_life_a1 r1_travel_a1 r2_friends_b1 r2_life_b1 r2_love_b1 r3_culture_b1 r3_work_b1 r3_love_b1`
-  (편 파일 `data/review/scenes/room/*.txt`, 편마다 1장 = 반전 턴. 앱은 가까운 컷을 쓰므로 1장이면 편 전체에 나옴).
-  → 검수 → 교환 저장소 `talkverse_art/scene/mn/<편>/cut1.jpg` 푸시 → uk 에 「mn pull <커밋>」 → uk 가 M4 `~/talkverse-art` 를 받고 알림 → 그 뒤 `grok_art.py scene mn` 직접 게시(그 폴더를 읽음) → 「mn 끝」, 크롬·터널 닫기.
+## 2026-11-19 — 장면 컷 10장 게시 끝(Grok 「빠른」, 사용자 지시 「Grok 빠른 모드 진행」)
+- 10편 × cut1: r1_culture_a1·r1_friends_a1·r1_life_a1·r1_travel_a1·r2_friends_b1·r2_life_b1·r2_love_b1·r3_culture_b1·r3_work_b1·r3_love_b1. Grok 방 ac2d24cd, 시간초과 0.
+- 그림 저장소 613f0c5 → uk pull → M4 `grok_art.py scene mn` 게시. `/art/mn/scene/manifest` count 10. 앱은 가까운 컷을 쓰므로 편 전체에 나옴.
+- 다시 할 때: `GROK_CDP_PORT=9253 python3 tools/grok_scenes_mn.py <편>…` → `tools/push_scenes.sh` → uk 에 「mn pull <커밋>」 → uk 답 뒤 게시. uk Grok 순서를 먼저 받는다.
+- 남은 흠: 테뮬렌이 마두금 대신 기타 케이스(시트 v1 부터).
 - 아직 사용자 결정: 137편 Grok 다시 쓰기 여부, 서버 원고 올리기·빌드 순서.
-
 ## 2026-11-11 19:30 — 몽골어 검수·음성 끝
 - **Gemini 반영 150/150**(`73181e0`, 남은 23편은 3편 묶음 답 — 나눔 23 빠짐 0). 검사 「150편 · 오류 0」.
 - 비어 있던 어휘 note 145줄 채움(`73bc71b`, 형식 「단어 = 뜻」).
