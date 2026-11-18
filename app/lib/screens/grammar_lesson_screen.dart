@@ -1,16 +1,15 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart' show rootBundle;
 
 import '../core/theme.dart';
 import '../services/ko_reading.dart';
+import '../services/script_sync.dart';
 import '../services/tts_service.dart';
 import '../widgets/spanish_decor.dart';
 import 'grammar_test_screen.dart';
 import '../core/platform.dart';
 import '../core/l10n.dart';
-import '../core/embed_env.dart';
 
 /// 문법 강의 자산 — `assets/data/grammar/lessonN.json`
 /// `{lesson, title, subtitle, stages:[{stage,title}],
@@ -30,7 +29,7 @@ class GrammarLesson {
     final out = <GrammarLesson>[];
     for (var i = 1; i <= 20; i++) {
       try {
-        final raw = await rootBundle.loadString(assetPath('assets/data/grammar/lesson$i.json'));
+        final raw = await ScriptSync.instance.load('grammar/lesson$i.json'); // 서버에 고친 판이 있으면 그것(원고 덮어쓰기)
         final d = json.decode(raw) as Map<String, dynamic>;
         out.add(GrammarLesson(
           (d['lesson'] as num?)?.toInt() ?? i,
