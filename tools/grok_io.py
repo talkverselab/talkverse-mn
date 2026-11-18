@@ -75,7 +75,7 @@ def do_import(eid):
     for k in ('title', 'scene'):
         if head.get(k):
             e[k] = head[k]
-    e.setdefault('review', {})['grok_rewrite'] = f'{datetime.date.today()} Grok 전문가 재작성 반영(data/review/grok/out/{eid}.md)'
+    e.setdefault('review', {})['grok_rewrite'] = f'{datetime.date.today()} Grok 빠른 재작성 반영(data/review/grok/out/{eid}.md)'
     json.dump(e, open(p, 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
     open(p, 'a').write('\n')
     print('반영', eid)
