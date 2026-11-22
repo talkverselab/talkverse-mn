@@ -11,6 +11,7 @@ import 'keyboard_screen.dart';
 import 'chunk_search_screen.dart';
 import 'conversation_screen.dart';
 import 'curriculum_screen.dart';
+import 'custom_script_screen.dart';
 import 'affix_screens.dart';
 import 'dialogue_screen.dart';
 import 'verb_map_screen.dart';
@@ -417,6 +418,10 @@ class _MenuGrid extends StatelessWidget {
           builder: (_) => const SentenceFlashcardScreen()),
         _MenuItem(label: tr('문장 말하기'), sub: tr('한글 보고 몽골어로'), badge: '🎙', color: AppColors.rojo,
           builder: (_) => const SpeakingPracticeScreen()),
+        // AI 회화 작성(맞춤 회화) — 일본어앱과 같게, 작성기가 켜지고 사용자가 정할 때까지 숨김(CURRICULUM_SPEC §11)
+        if (kCustomScriptLive)
+          _MenuItem(label: tr('맞춤 회화 만들기'), sub: 'AI', badge: '✨', color: AppColors.rojoDeep,
+            builder: (_) => const CustomScriptScreen()),
       ]),
       (tr('단어'), [
         _MenuItem(label: tr('절벽 단어'), sub: 'R1~R5', badge: 'F', color: AppColors.mongol,
