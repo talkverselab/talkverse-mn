@@ -1,0 +1,3 @@
+r1_culture_a5: 1턴 낱말 8
+r1_culture_a5: 7턴 낱말 8
+r1_friends_a3: 4턴 낱말 8
