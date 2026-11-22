@@ -12,6 +12,7 @@ import 'chunk_search_screen.dart';
 import 'conversation_screen.dart';
 import 'curriculum_screen.dart';
 import 'custom_script_screen.dart';
+import 'sense_course_screen.dart';
 import 'affix_screens.dart';
 import 'dialogue_screen.dart';
 import 'verb_map_screen.dart';
@@ -410,6 +411,10 @@ class _MenuGrid extends StatelessWidget {
           builder: (_) => const VerbListScreen()),
         _MenuItem(label: tr('문법 레슨'), sub: 'Дүрэм', badge: 'G', color: AppColors.rojoDeep,
           builder: (_) => const GrammarHubScreen()),
+        // 언어감각 익히기(정규과정, 2026-11-22 Claude 로 씀) — 형식 시험·12+ 점검을 통과하면 kSenseCourseLive = true
+        if (kSenseCourseLive)
+          _MenuItem(label: tr('언어감각 익히기'), sub: tr('외울 대화 10급'), badge: '感', color: AppColors.ai,
+            builder: (_) => const SenseCourseScreen()),
       ]),
       (tr('회화'), [
         _MenuItem(label: tr('회화'), sub: 'Яриа', badge: 'Ch', color: AppColors.rojo,

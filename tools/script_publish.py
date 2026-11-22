@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """원고를 서버에 올려 깔린 앱이 심사·새 빌드 없이 받게 한다(일본어앱 tools/script_publish.py 이식 2026-11-18). 규격 = 일본어앱 docs/CONTENT_SYNC.md §6.
 
-대상: 회화 편 `app/assets/data/dialogues/R0~R4/<주제>/*.json` + 문법 강의 `app/assets/data/grammar/lesson*.json`.
+대상: 회화 편 `app/assets/data/dialogues/R0~R4/<주제>/*.json` + 문법 강의 `app/assets/data/grammar/lesson*.json` + 언어감각 `grammar/sense_course.json`(2026-11-22).
 앱 안 기준표 `app/assets/data/script_rev.json`(rev·파일별 sha1 앞 12자리)과 지금 파일을 견주어 바뀐 것만 올린다.
 
   python3 tools/script_publish.py               # 무엇이 바뀌었는지만 본다(아무것도 안 올림)
@@ -30,7 +30,7 @@ PREFIX = 'script/mn'
 
 
 def current():
-    paths = sorted(glob.glob(str(DATA / 'dialogues/R[0-4]/*/*.json'))) + sorted(glob.glob(str(DATA / 'grammar/lesson*.json')))
+    paths = sorted(glob.glob(str(DATA / 'dialogues/R[0-4]/*/*.json'))) + sorted(glob.glob(str(DATA / 'grammar/lesson*.json'))) + sorted(glob.glob(str(DATA / 'grammar/sense_course.json')))
     out = {}
     for p in paths:
         b = Path(p).read_bytes()
