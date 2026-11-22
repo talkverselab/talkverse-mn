@@ -40,7 +40,13 @@ def main():
         text, out, atts = open(a[0], encoding='utf-8').read().strip(), a[1], a[2:]
     wait = int(opt.get('--wait', 180))  # 사용자 지시 2026-11-10: 그록 대기는 3분만
     remote = []
-    if atts:
+    if atts and os.environ.get('GROK_HOST') == 'm4':
+        # M4 크롬(uk 「mn M4 차례」, 2026-11-22) — 첨부는 브라우저가 있는 M4 경로로
+        subprocess.run(['ssh', 'macmini4', 'mkdir -p /tmp/grok_att/mn'], check=False, capture_output=True)
+        for p in atts:
+            subprocess.run(['scp', '-q', p, 'macmini4:/tmp/grok_att/mn/'], check=True)
+            remote.append('/tmp/grok_att/mn/' + os.path.basename(p))
+    elif atts:
         subprocess.run(['ssh', 'pc', 'cmd /c if not exist D:\\grok_att\\mn mkdir D:\\grok_att\\mn'], check=False, capture_output=True)
         for p in atts:
             subprocess.run(['scp', '-q', p, 'pc:' + PC_ATT], check=True)

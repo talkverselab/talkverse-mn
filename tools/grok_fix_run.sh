@@ -2,7 +2,7 @@
 # Gemini 지적 → Grok 이 지적된 줄만 고침(2026-11-22, 「Claude 는 문장 손대지 않음」 원칙). PC 크롬 9253, 빠른, 25편마다 새 방, 3분 상한.
 #   zsh tools/grok_fix_run.sh <편id>...   → data/review/grok/fix/<id>.md(줄 수가 out 과 같아야 받음) → tools/grok_fix_apply.sh 로 out 교체·import
 cd "$(dirname "$0")/.."
-export GROK_CDP_PORT=9253
+export GROK_CDP_PORT=${GROK_CDP_PORT:-9253}  # M4 로 돌릴 땐 GROK_HOST=m4 GROK_CDP_PORT=9235
 LOG=data/review/grok/fix/run.log; mkdir -p data/review/grok/fix
 PER=${PER:-25}; chat=""; n=0; retry=()
 rows() { grep -c -E '^[A-Z] \| ' "$1" 2>/dev/null || echo 0; }
