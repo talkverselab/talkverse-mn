@@ -13,6 +13,7 @@ import '../services/content_sync.dart';
 import '../services/dialogue_service.dart';
 import '../services/learner_prefs.dart';
 import '../services/tts_service.dart';
+import '../services/dialogue_audio.dart';
 import 'achievement_desk.dart';
 import 'learner_setup_dialog.dart';
 import 'lemma_chips.dart';
@@ -73,6 +74,7 @@ class _EpisodePlayPaneState extends State<EpisodePlayPane> {
     KoReadingPrefs.show.removeListener(_onReading);
     _session++;
     TtsService.instance.stop();
+    DialogueAudio.instance.stop();
     super.dispose();
   }
 
@@ -82,7 +84,7 @@ class _EpisodePlayPaneState extends State<EpisodePlayPane> {
     while (mounted && my == _session && _i < d.turns.length) {
       final t = d.turns[_i];
       _scrollTo(_i);
-      await TtsService.instance.speakAs(_ttsText(t), gender: _gender(t.speaker), rate: _rate * 0.45);
+      await _say(t);
       if (!mounted || my != _session) return;
       await Future.delayed(Duration(milliseconds: (650 / _rate).round())); // 턴 사이 숨
       if (!mounted || my != _session) return;
@@ -100,6 +102,7 @@ class _EpisodePlayPaneState extends State<EpisodePlayPane> {
   void _pause() {
     _session++;
     TtsService.instance.stop();
+    DialogueAudio.instance.stop();
     setState(() => _playing = false);
   }
 
@@ -107,6 +110,7 @@ class _EpisodePlayPaneState extends State<EpisodePlayPane> {
     n = n.clamp(0, d.turns.length - 1);
     _session++;
     TtsService.instance.stop();
+    DialogueAudio.instance.stop();
     setState(() {
       _i = n;
       _playing = false;
@@ -115,7 +119,13 @@ class _EpisodePlayPaneState extends State<EpisodePlayPane> {
     if (play) _play();
   }
 
-  void _speakOne(DialogueTurn t) => TtsService.instance.speakAs(_ttsText(t), gender: _gender(t.speaker), rate: _rate * 0.45);
+  void _speakOne(DialogueTurn t) => _say(t);
+
+  /// 서버 녹음(지금 대사와 같을 때) → 없으면 기존 음성(앱 번들 mp3 → 실시간 합성). 2026-11-22 「음성이 없는 건 TTS 로」.
+  Future<void> _say(DialogueTurn t) async {
+    if (await DialogueAudio.instance.play(d.id, t.num, script: t.tl, rate: _rate)) return;
+    await TtsService.instance.speakAs(_ttsText(t), gender: _gender(t.speaker), rate: _rate * 0.45);
+  }
 
   void _scrollTo(int i) {
     final ctx = _keys[i].currentContext;

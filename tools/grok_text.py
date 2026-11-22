@@ -57,8 +57,12 @@ def main():
             time.sleep(1)
         time.sleep(4)
         if remote:
-            doc = c.call('DOM.getDocument', depth=-1, pierce=True)
-            node = c.call('DOM.querySelector', nodeId=doc['root']['nodeId'], selector='input[type=file]')
+            for _ in range(10):  # 2026-11-22: 새 대화 화면이 늦게 뜨면 첨부 칸이 아직 없음 — 몇 번 다시 찾음
+                doc = c.call('DOM.getDocument', depth=-1, pierce=True)
+                node = c.call('DOM.querySelector', nodeId=doc['root']['nodeId'], selector='input[type=file]')
+                if node.get('nodeId'):
+                    break
+                time.sleep(3)
             if not node.get('nodeId'):
                 raise SystemExit('파일 입력 없음')
             c.call('DOM.setFileInputFiles', nodeId=node['nodeId'], files=remote)
