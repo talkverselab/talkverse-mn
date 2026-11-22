@@ -23,6 +23,7 @@ for L in mn; do
     GEMINI_CDP_PORT=9235 /usr/bin/python3 tools/gemini_batch.py $B/$L/bundles.tsv -j 1 --gap 60 >> $LOG 2>&1
     python3 tools/gemini_bundle.py split $B/$L >> $LOG
     tail -4 $LOG | grep -q BLOCKED && { echo "BLOCKED 멈춤 $L $(date +%H:%M)" >> $LOG; exit 2; }
+    tail -4 $LOG | grep -q LOGGEDOUT && { echo "LOGGEDOUT 멈춤 $L $(date +%H:%M) — 구글 로그인 필요(재시도 안 함)" >> $LOG; exit 4; }
     tail -4 $LOG | grep -q BADMODEL || { tail -1 $LOG | grep -q '나눔 0 ' || continue; }   # 한도 아니면(묶음 다 보냄) 바로 다음 회차
     echo "한도 대기 $L $(date +%H:%M)" >> $LOG; sleep 1200; reload
   done

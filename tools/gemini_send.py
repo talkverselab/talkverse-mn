@@ -2,7 +2,7 @@
 """Gemini(M4 Chrome, GEMINI_CDP_PORT 기본 9226 — ssh -L 터널)에 프롬프트 파일을 보내고 답을 저장한다.
   /usr/bin/python3 tools/gemini_send.py <프롬프트> <저장>
 건마다 전용 백그라운드 탭을 열고 끝나면 닫는다(새 창은 M4 화면을 가린다) — 그래서 여러 건을 동시에 돌릴 수 있다(tools/gemini_batch.py).
-마지막 줄: OK <저장> | TIMEOUT | NOINPUT | BLOCKED(Google 로봇 확인) | NOSEND | BADMODEL <모델> | REFUSED <답 앞부분>
+마지막 줄: OK <저장> | TIMEOUT | NOINPUT | BLOCKED(Google 로봇 확인) | NOSEND | BADMODEL <모델> | LOGGEDOUT(구글 로그아웃 — 사람이 로그인할 때까지 멈춤) | REFUSED <답 앞부분>
 모델은 Pro 여야 한다(2026-11-06: 기본 Flash-Lite 는 거절·끊긴 답이 많았다 — 화면 왼쪽 아래 선택기에서 3.1 Pro). 저장 파일 첫 줄에 모델을 남긴다.
 왜 전용 창인가(2026-11-06): 한 탭을 새 채팅으로 돌리면 옛 채팅이 남은 사이에 글을 넣었다가 화면이 바뀌며 글이 사라져, 질문 없이 5분을 기다리는 TIMEOUT 이 났다."""
 import json, os, sys, time, urllib.request
@@ -34,6 +34,8 @@ def run(c):
         if model and c.ev("!!" + BOX): break
     else:
         return 'BLOCKED' if 'google.com/sorry' in (c.ev('location.href') or '') else 'NOINPUT'
+    # 2026-11-23: 「자동 모드」가 한도가 아니라 구글 로그아웃 화면이었다(uk 확인) — 「로그인」 단추가 보이면 LOGGEDOUT(재시도하지 않음)
+    if c.ev("[...document.querySelectorAll('a,button')].filter(e=>/^(로그인|Sign in)$/.test((e.innerText||'').trim())).length>0&&!document.querySelector('[aria-label*=\"Google 계정\"],[aria-label*=\"Google Account\"]')"): return 'LOGGEDOUT'
     if 'Lite' in model or not any(x in model for x in ('Argon', 'Pro', 'Neon')): return 'BADMODEL ' + model  # 2026-11-22 Argon 이 목록에서 빠지고 「4 Neon」만 남음 — 최상위라 받음  # 2026-11-11 한도 뒤 Flash 로 떨어져 빈 답(오류 0) — Argon·Pro 만 받음
     c.ev(BOX + ".focus()")
     c.call('Input.insertText', text=open(src, encoding='utf-8').read().strip()); time.sleep(1)
