@@ -1,0 +1,1 @@
+r1_culture_a5 r1_friends_a3 r1_friends_a5 r1_friends_a6 r1_friends_b3 r1_friends_b5 r1_friends_c2 r1_friends_c5 r1_life_a5 r1_life_a6 r1_life_b6 r1_life_c1 r1_life_c2 r1_life_c5 r1_love_a8 r1_love_b1 r1_love_b7 r1_love_c2 r1_love_c4 r1_travel_a3 r1_travel_a6 r1_travel_b2 r1_travel_b6
