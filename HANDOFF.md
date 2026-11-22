@@ -4,6 +4,12 @@
 
 
 
+## 2026-11-22 — 회화 다시 쓰기 138편(사용자 「137편 다시 쓰기 — 다시 써야지」) · 서버 원고 rev 1
+- 사용자가 결정을 맡김(「니가 알아서 좀 시켜봐」) → 서버 원고 `script/mn` rev 1(152파일, `script_publish.py --init`) 올림. **빌드는 다시 쓰기·Gemini·음성 뒤**로 미룸.
+- Grok 을 안 거친 편 = 실제 **138편**(7fde345 의 Grok 반영은 12편 — 앞서 13/137 이라 한 것은 하나 틀림). 목록 `data/review/grok/todo137.txt`, 원고 `src/` 를 Gemini 반영본으로 다시 뽑음.
+- 방식: 기존 `rewrite_grok_mn.md`(모든 줄 새로, 줄 수·화자 순서·반전 턴 유지 → 턴 잠금과 맞음) · 「빠른」 · `zsh tools/grok_rewrite_run.sh $(cat data/review/grok/todo137.txt)`(25편마다 새 방, 3분 상한, 줄 수 다르면 버리고 끝에 새 방에서 다시).
+- **uk Grok 순서 요청함 — 「mn 시작」 전에는 켜지 않는다.** 끝나면 `grok_io.py import` → `check_dialogues.py --fix-rd` → 메모 칸 작업 표시 검사 → Gemini 검수(M4 크롬 9235, 3편 묶음) → 음성(새벽) → 리뷰 페이지 → `script_publish.py --publish` → Android·iOS 빌드.
+
 ## 2026-11-19 — 장면 컷 10장 게시 끝(Grok 「빠른」, 사용자 지시 「Grok 빠른 모드 진행」)
 - 10편 × cut1: r1_culture_a1·r1_friends_a1·r1_life_a1·r1_travel_a1·r2_friends_b1·r2_life_b1·r2_love_b1·r3_culture_b1·r3_work_b1·r3_love_b1. Grok 방 ac2d24cd, 시간초과 0.
 - 그림 저장소 613f0c5 → uk pull → M4 `grok_art.py scene mn` 게시. `/art/mn/scene/manifest` count 10. 앱은 가까운 컷을 쓰므로 편 전체에 나옴.
