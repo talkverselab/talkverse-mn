@@ -10,6 +10,7 @@ import 'alphabet_screen.dart';
 import 'keyboard_screen.dart';
 import 'chunk_search_screen.dart';
 import 'conversation_screen.dart';
+import 'curriculum_screen.dart';
 import 'affix_screens.dart';
 import 'dialogue_screen.dart';
 import 'verb_map_screen.dart';
@@ -231,6 +232,8 @@ class HomeScreen extends StatelessWidget {
                 ),
                 const SizedBox(height: 8),
                 const _TodayMission(),
+                const SizedBox(height: 14),
+                const CurriculumHomeCard(), // 토크버스 커리큘럼(2026-11-22 전 언어 공통, 회화 메뉴 위)
                 const SizedBox(height: 22),
                 Row(
                   children: [
