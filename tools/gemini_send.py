@@ -14,7 +14,7 @@ ANS = "[...document.querySelectorAll('model-response')].map(e=>e.innerText)"
 BOX = "document.querySelector('rich-textarea .ql-editor, div[contenteditable=true]')"
 BUSY = "!!document.querySelector('button[aria-label*=\"중지\"], button[aria-label*=\"Stop\"]')"
 SEND = "(()=>{const b=document.querySelector('button.send-button, button[aria-label*=\"보내기\"], button[aria-label*=\"Send\"]');if(b)b.click()})()"
-MODEL = "[...document.querySelectorAll('button')].map(b=>((b.getAttribute('aria-label')||'').match(/현재 (.+?) 모드 사용 중/)||[])[1]||b.innerText.trim()).filter(t=>/Flash|Pro|Argon|Neon|자동|Hydrogen|카본|Carbon/.test(t))[0]||''"  # 2026-11-22: 모델 단추가 「모드 선택 도구 열기, 현재 Neon 모드 사용 중」으로 바뀜
+MODEL = "[...document.querySelectorAll('button')].map(b=>((b.getAttribute('aria-label')||'').match(/현재 (.+?) 모드/)||[])[1]||b.innerText.trim()).filter(t=>/Flash|Pro|Argon|Neon|자동|Hydrogen|카본|Carbon|심층 분석|일상생활|코드/.test(t))[0]||''"  # 2026-11-22: 모델 단추가 「모드 선택 도구 열기, 현재 Neon 모드 사용 중」으로 바뀜
 
 
 def browser(method, **params):
@@ -36,7 +36,7 @@ def run(c):
         return 'BLOCKED' if 'google.com/sorry' in (c.ev('location.href') or '') else 'NOINPUT'
     # 2026-11-23: 「자동 모드」가 한도가 아니라 구글 로그아웃 화면이었다(uk 확인) — 「로그인」 단추가 보이면 LOGGEDOUT(재시도하지 않음)
     if c.ev("[...document.querySelectorAll('a,button')].filter(e=>/^(로그인|Sign in)$/.test((e.innerText||'').trim())).length>0&&!document.querySelector('[aria-label*=\"Google 계정\"],[aria-label*=\"Google Account\"]')"): return 'LOGGEDOUT'
-    if 'Lite' in model or not any(x in model for x in ('Argon', 'Pro', 'Neon')): return 'BADMODEL ' + model  # 2026-11-22 Argon 이 목록에서 빠지고 「4 Neon」만 남음 — 최상위라 받음  # 2026-11-11 한도 뒤 Flash 로 떨어져 빈 답(오류 0) — Argon·Pro 만 받음
+    if 'Lite' in model or not any(x in model for x in ('Argon', 'Pro', 'Neon', '심층 분석')): return 'BADMODEL ' + model  # 2026-11-22 Argon 이 목록에서 빠지고 「4 Neon」만 남음 — 최상위라 받음  # 2026-11-11 한도 뒤 Flash 로 떨어져 빈 답(오류 0) — Argon·Pro 만 받음
     c.ev(BOX + ".focus()")
     c.call('Input.insertText', text=open(src, encoding='utf-8').read().strip()); time.sleep(1)
     for _ in range(5):
