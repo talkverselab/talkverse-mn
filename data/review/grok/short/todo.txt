@@ -1,0 +1,11 @@
+r1_culture_a1	r1_culture_a1: 1 2턴
+r1_culture_a2	r1_culture_a2: 8턴
+r1_culture_a3	r1_culture_a3: 1 8턴
+r1_culture_a5	r1_culture_a5: 6턴
+r1_friends_a4	r1_friends_a4: 1 5턴
+r1_friends_a6	r1_friends_a6: 5 6 7턴
+r1_friends_b1	r1_friends_b1: 6턴
+r1_friends_b3	r1_friends_b3: 1 3 8턴
+r1_life_c2	r1_life_c2: 1 5턴
+r1_love_c7	r1_love_c7: 1 3 5턴
+r1_love_c8	r1_love_c8: 8턴

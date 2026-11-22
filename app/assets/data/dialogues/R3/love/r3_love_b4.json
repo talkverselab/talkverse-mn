@@ -198,5 +198,8 @@
    "emotion": "amused"
   }
  ],
- "review": "Gemini 4 Argon 검수 반영 2026-11-10 — 1·14번 호격 Бат ах аа, 1번 한국어 존대 통일"
+ "review": {
+  "prev": "Gemini 4 Argon 검수 반영 2026-11-10 — 1·14번 호격 Бат ах аа, 1번 한국어 존대 통일",
+  "grok_rewrite": "2026-11-22 Grok 빠른 재작성 반영(data/review/grok/out/r3_love_b4.md) — 대사는 Grok 그대로"
+ }
 }

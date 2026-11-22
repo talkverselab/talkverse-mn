@@ -71,6 +71,7 @@ def main():
             r = c.ev(REPLY) or ''
             open(out, 'w', encoding='utf-8').write(r + '\n'); print('저장', out, len(r), '자'); return
         n0 = c.ev("document.querySelectorAll('.message-bubble, [class*=message-bubble]').length") or 0
+        prev = c.ev(REPLY) or ''  # 2026-11-22: 긴 방은 말풍선을 일부만 그려 개수가 안 늘어남 → 「마지막 답이 보내기 전과 달라졌나」로 판단
         lim0 = c.ev("(document.body.innerText.match(/한도에 도달|limit reached/g)||[]).length")
         c.ev("(()=>{const e=%s;e.focus();return 1})()" % G.FIND)
         c.call('Input.insertText', text=text)
@@ -90,7 +91,7 @@ def main():
             n = c.ev("document.querySelectorAll('.message-bubble, [class*=message-bubble]').length") or 0
             cur = c.ev(REPLY) or ''
             busy = c.ev("/생각 중|Thinking|Generating|생성 중/.test(document.body.innerText.slice(-300))")
-            if n >= n0 + 2 and len(cur) > 60 and cur == last and not busy:
+            if (n >= n0 + 2 or (cur != prev and n >= 2)) and len(cur) > 60 and cur == last and not busy:
                 same += 1
                 if same >= 2:
                     done = True

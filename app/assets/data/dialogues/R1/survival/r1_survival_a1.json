@@ -126,5 +126,8 @@
    "emotion": "sad"
   }
  ],
- "review": "Gemini 4 Argon 검수 반영 2026-11-10 — 고칠 오류 없음 — Тийм 반복은 개그·표현이라 유지, U-Point·Байж байгаарай 는 취향이라 기각"
+ "review": {
+  "prev": "Gemini 4 Argon 검수 반영 2026-11-10 — 고칠 오류 없음 — Тийм 반복은 개그·표현이라 유지, U-Point·Байж байгаарай 는 취향이라 기각",
+  "grok_rewrite": "2026-11-22 Grok 빠른 재작성 반영(data/review/grok/out/r1_survival_a1.md) — 대사는 Grok 그대로"
+ }
 }

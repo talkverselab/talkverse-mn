@@ -75,7 +75,12 @@ def do_import(eid):
     for k in ('title', 'scene'):
         if head.get(k):
             e[k] = head[k]
-    e.setdefault('review', {})['grok_rewrite'] = f'{datetime.date.today()} Grok 빠른 재작성 반영(data/review/grok/out/{eid}.md)'
+    r = e.get('review')
+    if not isinstance(r, dict):  # Gemini 반영 메모(문자열)는 이전 Claude판 기록 — 새 Grok 판은 Gemini 를 다시 받는다
+        r = {'prev': r} if r else {}
+    r['grok_rewrite'] = f'{datetime.date.today()} Grok 빠른 재작성 반영(data/review/grok/out/{eid}.md) — 대사는 Grok 그대로'
+    r.pop('gemini', None)
+    e['review'] = r
     json.dump(e, open(p, 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
     open(p, 'a').write('\n')
     print('반영', eid)
