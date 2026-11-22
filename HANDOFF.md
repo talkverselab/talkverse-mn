@@ -34,7 +34,7 @@
 
 | 항목 | 상태 |
 |---|---|
-| 최신 빌드 | 커밋 `dfc3f59` · Android CI 21 · Zealot https://apps.talkverse.uk/xBHY8/408 · TestFlight 2611091136 · PC 백업 `D:\OneDrive\app project\mn_app\` |
+| 최신 빌드 | 커밋 `b51933c`(2026-11-22 Grok 판, 원고 rev 2 · 커리큘럼 · 녹음 재생) · Android CI 23 · Zealot https://apps.talkverse.uk/xBHY8/629 · TestFlight 2611222243 · PC 백업 `D:\OneDrive\app project\mn_app\mn_app-latest.apk` · CI Flutter 3.47.7 고정 |
 | ① 캐릭터 | 통과 2026-11-03 — `CHARACTERS.md`, `data/review/art/chars_mn_v1.jpg` |
 | ② UX/UI | 통과 2026-11-03 — `data/review/uxui/sian_mn_01.jpg` |
 | ③ 아이패드 빌드 | 끝. 스크린샷 `app/integration_test/dialogue_pane_test.dart` + `app/tools/pane_shots.py <UDID> <폴더>`(시뮬레이터 `mn-shots-ipad` C2345B5E-F6D2-441C-B796-2216C7C880D4), 22장 넘침 0 |
