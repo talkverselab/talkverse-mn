@@ -25,21 +25,33 @@ class GrammarLesson {
   int get exampleCount =>
       patterns.fold(0, (n, p) => n + ((p['examples'] as List?)?.length ?? 0));
 
+  /// 문법 스텝 = 서버 원고 목록에 있는 `grammar/lessonN.json` 전부(번호 순). 개수·순서·제목을 코드에 박지 않는다 —
+  /// 서버에서 스텝을 더하면 생기고 빼면 사라진다(앱 빌드 없이). 서버 목록을 못 받았으면 앱에 묶은 기준표 목록.
+  /// 내용(패턴)이 빈 스텝은 숨긴다(「준비 중」 칸 없음). 사용자 지시 2026-11-23(스텝 10 → 15 → 「늘어날 수도 줄어들 수도」).
+  static final _rel = RegExp(r'^grammar/lesson(\d+)\.json$');
+
   static Future<List<GrammarLesson>> loadAll() async {
+    final sync = ScriptSync.instance;
+    await sync.init();
+    final rels = [for (final p in sync.files) if (_rel.hasMatch(p)) p]
+      ..sort((a, b) => int.parse(_rel.firstMatch(a)!.group(1)!).compareTo(int.parse(_rel.firstMatch(b)!.group(1)!)));
     final out = <GrammarLesson>[];
-    for (var i = 1; i <= 20; i++) {
+    for (final rel in rels) {
+      final i = int.parse(_rel.firstMatch(rel)!.group(1)!);
       try {
-        final raw = await ScriptSync.instance.load('grammar/lesson$i.json'); // 서버에 고친 판이 있으면 그것(원고 덮어쓰기)
+        final raw = await sync.load(rel); // 서버에 고친 판이 있으면 그것(원고 덮어쓰기)
         final d = json.decode(raw) as Map<String, dynamic>;
+        final patterns = [for (final p in (d['patterns'] as List? ?? const [])) Map<String, dynamic>.from(p as Map)];
+        if (patterns.isEmpty) continue;
         out.add(GrammarLesson(
           (d['lesson'] as num?)?.toInt() ?? i,
           d['title'] as String? ?? trf('문법 {0}', [i]),
           d['subtitle'] as String? ?? '',
           [for (final s in (d['stages'] as List? ?? const [])) Map<String, dynamic>.from(s as Map)],
-          [for (final p in (d['patterns'] as List? ?? const [])) Map<String, dynamic>.from(p as Map)],
+          patterns,
         ));
       } catch (_) {
-        break;
+        continue; // 읽지 못한 스텝은 숨김
       }
     }
     return out;

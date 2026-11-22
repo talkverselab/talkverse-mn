@@ -58,6 +58,10 @@ class ScriptSync {
   /// 앱 안에 없는 새 파일(새 회화 편).
   Iterable<String> get added => _over.keys.where((p) => !_base.containsKey(p));
 
+  /// 지금 쓸 수 있는 원고 파일 전체 = 앱 안 기준표 + 서버에서 받은 새 파일 − 서버 판에서 빠진 것.
+  /// 서버 목록을 못 받았으면 앱 안 기준표 그대로(문법 스텝 목록을 이것으로 그린다, 2026-11-23).
+  Iterable<String> get files => {..._base.keys, ..._over.keys}.where((p) => !_removed.contains(p));
+
   /// 기기 상태만 읽는다(네트워크 없음). 여러 번 불러도 한 번만.
   Future<void> init() async {
     if (_ready) return;
