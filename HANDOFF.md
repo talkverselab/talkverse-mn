@@ -9,6 +9,8 @@
   - 도구 고침: `grok_text.py` 긴 방에서 끝을 못 잡던 문제(말풍선 수 대신 마지막 답 변화), M6→PC 터널은 `-o ServerAliveInterval=30` 으로(한 번 끊김). PC 크롬 9253 프로세스 종료함.
 - **서버 원고 `script/mn` rev 1**(152파일, `--init`) 올림. 다시 쓴 판은 Gemini·음성 뒤 `--publish`(rev 2).
 - **Gemini 검수 진행 중**: `zsh tools/gemini_loop_mn.sh`(몽골어만, 3편 묶음, 로그 `data/review/gemini/log.txt`), M4 크롬 9235(`~/chrome-grok-mn`, `open -na "Google Chrome" --args --remote-debugging-port=9235 …`) + M6 터널. 옛 Claude판 답은 `data/review/dialogues/prev_claude/`. **끝나면 크롬 9235 프로세스 종료**(크롬 규칙, 메모리 chrome-usage-rule).
+- **진행(11-22 20시쯤)**: Gemini 138편 중 75편 답(나머지 63편은 한도 — `tools/gemini_resume_mn.sh 22:46` 이 크롬 9235 를 다시 켜서 잇고 끝나면 끔). Azure 음성 138편 다시 만들어 올림(`4d91566`, 앱엔 안 묶임 — 서버·리뷰용). 지적 있는 71편 목록 `data/review/grok/fix_todo.txt` → `zsh tools/grok_fix_run.sh $(cat data/review/grok/fix_todo.txt)` → `zsh tools/grok_fix_apply.sh` → 바뀐 줄 음성 다시. **uk 가 「mn 시작」을 줬지만 PC 크롬 9253 이 18:16 PC 재부팅 뒤 디버그 포트를 안 엶**(프로세스 7개, LISTEN 없음) — 끄고 uk 에 보고, PC 크롬이 고쳐지면 다시.
+- 심사(11-23, 통합 앱 22개 언어): 회화 탭의 빈 급 「준비 중」 숨김(`96087a2`). Gemini 모델이 「4 Neon」으로 바뀜 — `gemini_send.py` 가 Neon 을 받고, 한도 화면(「자동 모드」)은 BADMODEL.
 - **내가 고른 것(사용자 결정 대신)**: Gemini 지적 반영도 「Claude 는 문장 손대지 않음」 원칙대로 → 지적이 있는 편만 Gemini 답을 붙여 Grok 에 그 줄만 다시 받는다(uk Grok 순서 다시 요청). 음성은 Azure(구름)라 3090 줄 없이 반영 뒤 바로. 장면 컷은 10장으로 끝(uk 에 알림). 빌드는 rev 2·음성 뒤 Android·iOS 함께.
 ## 2026-11-19 — 장면 컷 10장 게시 끝(Grok 「빠른」, 사용자 지시 「Grok 빠른 모드 진행」)
 - 10편 × cut1: r1_culture_a1·r1_friends_a1·r1_life_a1·r1_travel_a1·r2_friends_b1·r2_life_b1·r2_love_b1·r3_culture_b1·r3_work_b1·r3_love_b1. Grok 방 ac2d24cd, 시간초과 0.
