@@ -4,12 +4,12 @@
 
 
 
-## 2026-11-22 — 회화 다시 쓰기 138편(사용자 「137편 다시 쓰기 — 다시 써야지」) · 서버 원고 rev 1
-- 사용자가 결정을 맡김(「니가 알아서 좀 시켜봐」) → 서버 원고 `script/mn` rev 1(152파일, `script_publish.py --init`) 올림. **빌드는 다시 쓰기·Gemini·음성 뒤**로 미룸.
-- Grok 을 안 거친 편 = 실제 **138편**(7fde345 의 Grok 반영은 12편 — 앞서 13/137 이라 한 것은 하나 틀림). 목록 `data/review/grok/todo137.txt`, 원고 `src/` 를 Gemini 반영본으로 다시 뽑음.
-- 방식: 기존 `rewrite_grok_mn.md`(모든 줄 새로, 줄 수·화자 순서·반전 턴 유지 → 턴 잠금과 맞음) · 「빠른」 · `zsh tools/grok_rewrite_run.sh $(cat data/review/grok/todo137.txt)`(25편마다 새 방, 3분 상한, 줄 수 다르면 버리고 끝에 새 방에서 다시).
-- **uk Grok 순서 요청함 — 「mn 시작」 전에는 켜지 않는다.** 끝나면 `grok_io.py import` → `check_dialogues.py --fix-rd` → 메모 칸 작업 표시 검사 → Gemini 검수(M4 크롬 9235, 3편 묶음) → 음성(새벽) → 리뷰 페이지 → `script_publish.py --publish` → Android·iOS 빌드.
-
+## 2026-11-22 — 회화 Grok 다시 쓰기 끝 → Gemini 검수 중(사용자 「137편 다시 쓰기 — 다시 써야지」·「니가 알아서 좀 시켜봐」, uk 전달 「막힌거 각자 판단대로 일단 완료」)
+- **Grok 다시 쓰기 138편 끝**(`0ebe741`, 실제 138편 — 앞서 13/137 이라 한 것은 하나 틀림). 「빠른」, 대사는 Grok 답 그대로(다른 줄 0). R1 낱말 상한(7) 넘은 11편은 Grok 에 그 줄만 짧게 다시 받음(`data/review/grok/short/`, 원래 답 `*.long.md`). 검사 138편 오류 0 · 턴 잠금 경고 0 · 메모 칸 작업 표시 0. 이제 Grok 거친 편 150/150.
+  - 도구 고침: `grok_text.py` 긴 방에서 끝을 못 잡던 문제(말풍선 수 대신 마지막 답 변화), M6→PC 터널은 `-o ServerAliveInterval=30` 으로(한 번 끊김). PC 크롬 9253 프로세스 종료함.
+- **서버 원고 `script/mn` rev 1**(152파일, `--init`) 올림. 다시 쓴 판은 Gemini·음성 뒤 `--publish`(rev 2).
+- **Gemini 검수 진행 중**: `zsh tools/gemini_loop_mn.sh`(몽골어만, 3편 묶음, 로그 `data/review/gemini/log.txt`), M4 크롬 9235(`~/chrome-grok-mn`, `open -na "Google Chrome" --args --remote-debugging-port=9235 …`) + M6 터널. 옛 Claude판 답은 `data/review/dialogues/prev_claude/`. **끝나면 크롬 9235 프로세스 종료**(크롬 규칙, 메모리 chrome-usage-rule).
+- **내가 고른 것(사용자 결정 대신)**: Gemini 지적 반영도 「Claude 는 문장 손대지 않음」 원칙대로 → 지적이 있는 편만 Gemini 답을 붙여 Grok 에 그 줄만 다시 받는다(uk Grok 순서 다시 요청). 음성은 Azure(구름)라 3090 줄 없이 반영 뒤 바로. 장면 컷은 10장으로 끝(uk 에 알림). 빌드는 rev 2·음성 뒤 Android·iOS 함께.
 ## 2026-11-19 — 장면 컷 10장 게시 끝(Grok 「빠른」, 사용자 지시 「Grok 빠른 모드 진행」)
 - 10편 × cut1: r1_culture_a1·r1_friends_a1·r1_life_a1·r1_travel_a1·r2_friends_b1·r2_life_b1·r2_love_b1·r3_culture_b1·r3_work_b1·r3_love_b1. Grok 방 ac2d24cd, 시간초과 0.
 - 그림 저장소 613f0c5 → uk pull → M4 `grok_art.py scene mn` 게시. `/art/mn/scene/manifest` count 10. 앱은 가까운 컷을 쓰므로 편 전체에 나옴.
