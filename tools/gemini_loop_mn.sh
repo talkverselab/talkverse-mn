@@ -16,6 +16,7 @@ list() {  # $1 = mn|my → 편별 목록 파일 경로를 출력
   else (cd $MY/app && python3 tools/grok/gemini_prompt.py --list $MYIDS) > $MY/data/review/gemini_list.tsv; echo $MY/data/review/gemini_list.tsv; fi
 }
 for L in mn; do
+  [[ -f $B/$L/map.json ]] && python3 tools/gemini_bundle.py split $B/$L >> $LOG  # 2026-11-22: 멈췄다 다시 켤 때 받은 답을 먼저 나눔(make 가 폴더를 새로 만들어 답이 지워짐)
   while true; do
     f=$(list $L); [[ -s $f ]] || { echo "끝 $L $(date +%H:%M)" >> $LOG; break; }
     python3 tools/gemini_bundle.py make $f $B/$L >> $LOG

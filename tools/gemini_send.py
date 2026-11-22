@@ -14,7 +14,7 @@ ANS = "[...document.querySelectorAll('model-response')].map(e=>e.innerText)"
 BOX = "document.querySelector('rich-textarea .ql-editor, div[contenteditable=true]')"
 BUSY = "!!document.querySelector('button[aria-label*=\"중지\"], button[aria-label*=\"Stop\"]')"
 SEND = "(()=>{const b=document.querySelector('button.send-button, button[aria-label*=\"보내기\"], button[aria-label*=\"Send\"]');if(b)b.click()})()"
-MODEL = "[...document.querySelectorAll('button')].map(b=>b.innerText.trim()).filter(t=>/Flash|Pro|Argon/.test(t))[0]||''"
+MODEL = "[...document.querySelectorAll('button')].map(b=>((b.getAttribute('aria-label')||'').match(/현재 (.+?) 모드 사용 중/)||[])[1]||b.innerText.trim()).filter(t=>/Flash|Pro|Argon|Neon|자동|Hydrogen|카본|Carbon/.test(t))[0]||''"  # 2026-11-22: 모델 단추가 「모드 선택 도구 열기, 현재 Neon 모드 사용 중」으로 바뀜
 
 
 def browser(method, **params):
@@ -34,7 +34,7 @@ def run(c):
         if model and c.ev("!!" + BOX): break
     else:
         return 'BLOCKED' if 'google.com/sorry' in (c.ev('location.href') or '') else 'NOINPUT'
-    if 'Lite' in model or not any(x in model for x in ('Argon', 'Pro')): return 'BADMODEL ' + model  # 2026-11-11 한도 뒤 Flash 로 떨어져 빈 답(오류 0) — Argon·Pro 만 받음
+    if 'Lite' in model or not any(x in model for x in ('Argon', 'Pro', 'Neon')): return 'BADMODEL ' + model  # 2026-11-22 Argon 이 목록에서 빠지고 「4 Neon」만 남음 — 최상위라 받음  # 2026-11-11 한도 뒤 Flash 로 떨어져 빈 답(오류 0) — Argon·Pro 만 받음
     c.ev(BOX + ".focus()")
     c.call('Input.insertText', text=open(src, encoding='utf-8').read().strip()); time.sleep(1)
     for _ in range(5):
