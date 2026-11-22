@@ -151,7 +151,8 @@
 "dialogues/R3/work/r3_work_b2.json": "b8463e26cfb7",
 "dialogues/R3/work/r3_work_b3.json": "c2c62f22d739",
 "grammar/lesson1.json": "0d6184acacd1",
-"grammar/lesson2.json": "24b97d84f1a6"
+"grammar/lesson2.json": "24b97d84f1a6",
+"grammar/sense_course.json": "be0b812b583b"
 },
-"rev": 2
+"rev": 3
 }
