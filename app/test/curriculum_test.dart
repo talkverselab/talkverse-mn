@@ -1,3 +1,6 @@
+import 'dart:convert';
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mn_app/core/theme.dart';
@@ -146,9 +149,38 @@ void main() {
       expect(q.choices.toSet().length, 4);
       if (q.kind == 'blank') expect(q.prompt, contains('＿＿'));
     }
-    expect(curriculumLevels, isNot(contains('L1')));
-    expect(CurriculumService.instance.nextLevel('R3'), isNull);
+    // JSON 없으면 옛 동작(회화 레벨 R*, L1 제외)
+    CurriculumStages.instance.setForTest(null);
+    expect(curriculumLevels, ['R1', 'R2', 'R3']);
     expect(CurriculumService.instance.nextLevel('R1'), 'R2');
+    expect(CurriculumService.instance.nextLevel('R3'), isNull);
+  });
+
+  test('§12 단계: 묶음 JSON 1~3단계, 앱에 없는 편 건너뜀, 편 0개 단계 숨김, 옛 R 값 → 단계', () async {
+    await DialogueService.instance.ensureLoaded();
+    final raw = json.decode(File('assets/data/curriculum_mn.json').readAsStringSync()) as Map<String, dynamic>;
+    CurriculumStages.instance.setForTest(raw);
+    expect(curriculumLevels, ['1', '2', '3']);
+    expect(CurriculumService.instance.levelList('1').length, 90);
+    expect(CurriculumService.instance.levelTitle('2'), '2단계');
+    expect(CurriculumService.instance.nextLevel('3'), isNull);
+    // 서버 판: 4단계는 앱에 없는 편만 → 숨김, 1단계에 없는 id 섞임 → 건너뜀
+    final st = (raw['stages'] as List).cast<Map<String, dynamic>>();
+    CurriculumStages.instance.setForTest({
+      'rev': 9,
+      'stages': [
+        {...st[0], 'dialogueIds': ['nope_x', ...st[0]['dialogueIds'] as List]},
+        st[1],
+        {'n': 4, 'title': '4단계', 'dialogueIds': ['nope_y']},
+      ],
+    });
+    expect(curriculumLevels, ['1', '2']);
+    expect(CurriculumService.instance.levelList('1').length, 90);
+    expect(levelFromOld('R0'), '1');
+    expect(levelFromOld('R1'), '1');
+    expect(levelFromOld('R3'), '3');
+    expect(levelFromOld('2'), '2');
+    CurriculumStages.instance.setForTest(raw);
   });
 
   testWidgets('커리큘럼 화면: 레벨 → 추천으로 채우기, 좁은 칸에서도 넘치지 않음', (t) async {
@@ -161,7 +193,7 @@ void main() {
       await t.pump();
     }
     expect(find.text('회화 레벨을 골라요'), findsOneWidget);
-    await t.tap(find.text('초보'));
+    await t.tap(find.text('1단계'));
     for (var i = 0; i < 3; i++) {
       await t.runAsync(() => Future<void>.delayed(const Duration(milliseconds: 100)));
       await t.pump();

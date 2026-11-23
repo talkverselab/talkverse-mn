@@ -138,7 +138,7 @@ class _CurriculumScreenState extends State<CurriculumScreen> {
           if (!_loading && _st.level != null && !_levelPick)
             TextButton(
               onPressed: () => setState(() => _levelPick = true),
-              child: Text('${_st.level} ${tr(DialogueService.levelKo[_st.level] ?? '')}', style: const TextStyle(fontWeight: FontWeight.w800, color: AppColors.rojo)),
+              child: Text(tr(_svc.levelTitle(_st.level!)), style: const TextStyle(fontWeight: FontWeight.w800, color: AppColors.rojo)),
             ),
         ],
       ),
@@ -153,14 +153,14 @@ class _CurriculumScreenState extends State<CurriculumScreen> {
 
   // ── 레벨 고르기 ──
   List<Widget> _levelPicker() {
-    final lowest = curriculumLevels.firstWhere((l) => DialogueService.instance.count(l) > 0, orElse: () => 'R1');
+    final lowest = curriculumLevels.firstOrNull ?? '1';
     return [
       Text(tr('회화 레벨을 골라요'), style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w800, color: AppColors.tinta)),
       const SizedBox(height: 4),
       Text(tr('처음이면 가장 낮은 레벨부터 권해요. 문법 레벨과는 따로예요.'), style: const TextStyle(fontSize: 12.5, color: AppColors.gualdaDeep)),
       const SizedBox(height: 12),
       for (final lv in curriculumLevels)
-        if (DialogueService.instance.count(lv) > 0)
+        if (_svc.levelList(lv).isNotEmpty)
           _card(
             onTap: () => _setLevel(lv),
             selected: _st.level == lv,
@@ -169,9 +169,10 @@ class _CurriculumScreenState extends State<CurriculumScreen> {
               const SizedBox(width: 12),
               Expanded(
                 child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-                  Text(tr(DialogueService.levelKo[lv] ?? lv), style: const TextStyle(fontWeight: FontWeight.w800, color: AppColors.tinta)),
+                  Text(tr(_svc.levelTitle(lv)), style: const TextStyle(fontWeight: FontWeight.w800, color: AppColors.tinta)),
+                  if (_svc.levelDesc(lv).isNotEmpty) Text(_svc.levelDesc(lv), style: const TextStyle(fontSize: 12, color: AppColors.tintaLight)),
                   Text(
-                    trf('{0}편 · 통과 {1}', [DialogueService.instance.count(lv), _svc.levelList(lv).where((d) => _st.passedDialogues.contains(d.id)).length]),
+                    trf('{0}편 · 통과 {1}', [_svc.levelList(lv).length, _svc.levelList(lv).where((d) => _st.passedDialogues.contains(d.id)).length]),
                     style: const TextStyle(fontSize: 12, color: AppColors.gualdaDeep),
                   ),
                 ]),
@@ -321,7 +322,7 @@ class _CurriculumScreenState extends State<CurriculumScreen> {
         const SizedBox(height: 12),
         _card(
           onTap: () => _setLevel(_svc.nextLevel(lv)!),
-          child: Text(trf('{0} 편을 모두 통과했어요 → {1} 로', [lv, _svc.nextLevel(lv)!]), style: const TextStyle(fontWeight: FontWeight.w800, color: AppColors.oliva)),
+          child: Text(trf('{0} 편을 모두 통과했어요 → {1} 로', [tr(_svc.levelTitle(lv)), tr(_svc.levelTitle(_svc.nextLevel(lv)!))]), style: const TextStyle(fontWeight: FontWeight.w800, color: AppColors.oliva)),
         ),
       ],
     ];
@@ -341,13 +342,13 @@ class _CurriculumScreenState extends State<CurriculumScreen> {
         const SizedBox(height: 8),
         _card(
           onTap: () => _setLevel(next),
-          child: Text(trf('{0} 편을 모두 통과했어요 → {1} 로', [lv, next]), style: const TextStyle(fontWeight: FontWeight.w800, color: AppColors.oliva)),
+          child: Text(trf('{0} 편을 모두 통과했어요 → {1} 로', [tr(_svc.levelTitle(lv)), tr(_svc.levelTitle(next))]), style: const TextStyle(fontWeight: FontWeight.w800, color: AppColors.oliva)),
         ),
       ],
       const SizedBox(height: 10),
       // 좁은 칸(아이패드 왼쪽 300)에서 넘치지 않게 Wrap(일본어앱은 Row)
       Wrap(spacing: 0, runSpacing: 4, crossAxisAlignment: WrapCrossAlignment.center, children: [
-        for (final n in const [3, 5, 10])
+        for (final n in _svc.pickSizes(lv))
           Padding(
             padding: const EdgeInsets.only(right: 6),
             child: ChoiceChip(
