@@ -180,7 +180,34 @@ void main() {
     expect(levelFromOld('R1'), '1');
     expect(levelFromOld('R3'), '3');
     expect(levelFromOld('2'), '2');
+    // 저장은 문자열, 읽기는 숫자·문자 둘 다
+    expect(CurriculumState(level: '2').toJson()['level'], '2');
+    expect(CurriculumState.fromJson({'level': 3}).level, '3');
+    expect(CurriculumState.fromJson({'level': '3'}).level, '3');
+    // pass·daily·pick 도 JSON 에서(없으면 80 / 1·2·3 / 3·5·10)
+    CurriculumStages.instance.setForTest({
+      'rev': 10,
+      'stages': [
+        {...st[0], 'pass': 70, 'pick': [4, 6], 'daily': {'light': 2, 'normal': 4, 'focus': 6}},
+        {'n': 2, 'dialogueIds': st[1]['dialogueIds']},
+      ],
+    });
+    final svc = CurriculumService.instance;
+    expect(svc.passFor('1'), 70);
+    expect(svc.passFor('2'), 80);
+    expect(svc.pickSizes('1'), [4, 6]);
+    expect(svc.pickSizes('2'), [3, 5, 10]);
+    svc.state.level = '1';
+    svc.state.dailyGoal = 2;
+    svc.applyStage();
+    expect(svc.state.newLeft('2026-11-23'), 4);
+    svc.state.level = '2';
+    svc.applyStage();
+    expect(svc.state.newLeft('2026-11-23'), 2);
+    final st70 = CurriculumState(course: Course('c', ['a'], practiced: ['a']));
+    expect(st70.recordExam(7, 10, {}, '2026-11-23', pass: 70), isTrue);
     CurriculumStages.instance.setForTest(raw);
+    svc.state = CurriculumState(); // 다음 시험(화면)에 상태가 새지 않게
   });
 
   testWidgets('커리큘럼 화면: 레벨 → 추천으로 채우기, 좁은 칸에서도 넘치지 않음', (t) async {

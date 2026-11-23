@@ -56,6 +56,7 @@ class _CurriculumScreenState extends State<CurriculumScreen> {
 
   Future<void> _setLevel(String lv) async {
     _st.level = lv;
+    _svc.applyStage();
     await _svc.save();
     setState(() {
       _levelPick = false;
@@ -85,7 +86,8 @@ class _CurriculumScreenState extends State<CurriculumScreen> {
     final qs = [for (final d in ds) ...buildQuestions(d, limit: per, pool: ds, seed: seed)]..shuffle();
     final res = await openFull<QuizResult>(context, (_) => CurriculumQuizScreen(title: tr('코스 시험'), questions: qs.take(30).toList(), mode: QuizMode.exam));
     if (res == null || !mounted) return;
-    final passed = _st.recordExam(res.correct, res.total, res.wrongDialogues, _svc.today);
+    final pass = _svc.passFor(_st.level);
+    final passed = _st.recordExam(res.correct, res.total, res.wrongDialogues, _svc.today, pass: pass);
     await _svc.save();
     if (!mounted) return;
     setState(() {});
@@ -94,8 +96,8 @@ class _CurriculumScreenState extends State<CurriculumScreen> {
       builder: (ctx) => AlertDialog(
         title: Text(passed ? tr('코스 통과!') : tr('조금만 더')),
         content: Text(passed
-            ? trf('{0}점 — 80점을 넘었어요. 다음 코스를 골라요.', [scorePercent(res.correct, res.total)])
-            : trf('{0}점 — 80점이 넘어야 통과예요. 틀린 편만 다시 연습하고 시험을 봐요.', [scorePercent(res.correct, res.total)])),
+            ? trf('{0}점 — {1}점을 넘었어요. 다음 코스를 골라요.', [scorePercent(res.correct, res.total), pass])
+            : trf('{0}점 — {1}점이 넘어야 통과예요. 틀린 편만 다시 연습하고 시험을 봐요.', [scorePercent(res.correct, res.total), pass])),
         actions: [TextButton(onPressed: () => Navigator.pop(ctx), child: Text(tr('확인')))],
       ),
     );
@@ -315,7 +317,7 @@ class _CurriculumScreenState extends State<CurriculumScreen> {
           style: FilledButton.styleFrom(backgroundColor: AppColors.tinta, padding: const EdgeInsets.symmetric(vertical: 12)),
           onPressed: c.allPracticed && ds.isNotEmpty ? _exam : null,
           icon: const Icon(Icons.flag, size: 18),
-          label: Text(c.allPracticed ? tr('코스 시험 보기 (80% 이상 통과)') : tr('모든 편을 연습하면 시험이 열려요')),
+          label: Text(c.allPracticed ? trf('코스 시험 보기 ({0}% 이상 통과)', [_svc.passFor(lv)]) : tr('모든 편을 연습하면 시험이 열려요')),
         ),
       ),
       if (_svc.levelDone(lv) && _svc.nextLevel(lv) != null) ...[
@@ -337,7 +339,7 @@ class _CurriculumScreenState extends State<CurriculumScreen> {
     return [
       Text(tr('다이얼로그 고르기'), style: const TextStyle(fontWeight: FontWeight.w800, color: AppColors.tinta, fontSize: 15)),
       const SizedBox(height: 2),
-      Text(tr('이 편들로 연습하고, 코스 시험에서 80% 이상이면 다음 코스로 넘어가요.'), style: const TextStyle(fontSize: 12.5, color: AppColors.gualdaDeep)),
+      Text(trf('이 편들로 연습하고, 코스 시험에서 {0}% 이상이면 다음 코스로 넘어가요.', [_svc.passFor(lv)]), style: const TextStyle(fontSize: 12.5, color: AppColors.gualdaDeep)),
       if (doneLevel && next != null) ...[
         const SizedBox(height: 8),
         _card(
