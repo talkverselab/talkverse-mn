@@ -49,7 +49,10 @@ class Account {
       final r = await http.get(Uri.parse('$base/providers')).timeout(const Duration(seconds: 6));
       final j = jsonDecode(r.body) as Map<String, dynamic>;
       out.addAll((j['web'] as List).cast<String>());
-    } catch (_) {}
+    } catch (_) {
+      // 목록을 못 받으면(오프라인 등) 네 제공자 모두 시도하게 둔다 — 「준비 중」만 뜨는 버튼이 없게(심사 11-23, 사용자 「동작하게 연결」)
+      out.addAll(const ['google', 'kakao', 'naver', 'apple']);
+    }
     if (_iosNativeApple && !out.contains('apple')) out.add('apple');
     const order = ['apple', 'google', 'kakao', 'naver'];
     out.sort((a, b) => order.indexOf(a).compareTo(order.indexOf(b)));

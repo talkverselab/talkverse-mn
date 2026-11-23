@@ -8,7 +8,7 @@ import '../widgets/legal_links.dart';
 import '../data/account.dart';
 
 /// 로그인 — Talkverse 공용 계정(한자 앱 login_screen.dart 를 옮김, 2026-11-02).
-/// 구글·네이버·카카오·애플 네 버튼 고정 순서, 서버에 아직 없는 제공자는 누르면 '준비 중'. 아래에 심사·테스트용 이메일 로그인.
+/// 구글·네이버·카카오·애플 네 버튼 고정 순서 — 모두 실제 로그인(웹 OAuth auth.talkverse.uk, iOS 애플은 네이티브). 아래에 이메일 로그인(심사 데모 계정용).
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
   static Future<bool?> open(BuildContext context) =>
