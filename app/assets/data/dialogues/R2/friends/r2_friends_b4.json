@@ -151,9 +151,5 @@
    "new": [],
    "emotion": "gentle"
   }
- ],
- "review": {
-  "prev": "Gemini 4 Argon 검수 반영 2026-11-10 — 실제 오류 없음 — 「л」 말장난·규칙 나열체 유지",
-  "grok_rewrite": "2026-11-23 Grok 빠른 재작성 반영(data/review/grok/out/r2_friends_b4.md) — 대사는 Grok 그대로"
- }
+ ]
 }

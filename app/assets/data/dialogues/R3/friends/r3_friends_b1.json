@@ -184,9 +184,5 @@
    "new": [],
    "emotion": "tsukkomi"
   }
- ],
- "review": {
-  "prev": "Gemini 4 Argon 검수 반영 2026-11-10 — Gemini 검수: 11·12번 구어화 반영 (бэ/вэ 지적·хэдийгээр 교체는 목표 문법이라 거부)",
-  "grok_rewrite": "2026-11-22 Grok 빠른 재작성 반영(data/review/grok/out/r3_friends_b1.md) — 대사는 Grok 그대로"
- }
+ ]
 }

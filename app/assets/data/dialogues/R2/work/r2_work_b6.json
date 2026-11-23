@@ -165,9 +165,5 @@
    "new": [],
    "emotion": "amused"
   }
- ],
- "review": {
-  "prev": "Gemini 4 Argon 검수 반영 2026-11-10 — 팀장 말투 존대 통일, 결혼식·노래 부탁 직역투 구어화, 전언(гэнэ)과 번역 일치, 사회자 착각·생일 노래 농담 유지",
-  "grok_rewrite": "2026-11-23 Grok 빠른 재작성 반영(data/review/grok/out/r2_work_b6.md) — 대사는 Grok 그대로"
- }
+ ]
 }

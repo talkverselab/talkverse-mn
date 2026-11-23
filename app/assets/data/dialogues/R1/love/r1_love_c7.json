@@ -116,9 +116,5 @@
    "new": [],
    "emotion": "shy"
   }
- ],
- "review": {
-  "prev": "Gemini 4 Argon 검수 반영 2026-11-10 — 2 уу→юу·7 집합수사, 'Номингийн' 제안은 오류(н 어간은 Номины)라 기각, 8 표현 유지",
-  "grok_rewrite": "2026-11-22 Grok 빠른 재작성 반영(data/review/grok/out/r1_love_c7.md) — 대사는 Grok 그대로"
- }
+ ]
 }

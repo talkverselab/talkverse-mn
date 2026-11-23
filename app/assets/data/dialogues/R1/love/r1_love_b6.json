@@ -116,9 +116,5 @@
    "new": [],
    "emotion": "tsukkomi"
   }
- ],
- "review": {
-  "prev": "Gemini 4 Argon 검수 반영 2026-11-10 — 2 Сараад→Сараагийнх, 1 반말(친구 바리스타)·7 гэж үү·8 Одоо 는 자연스러워 유지",
-  "grok_rewrite": "2026-11-23 Grok 빠른 재작성 반영(data/review/grok/out/r1_love_b6.md) — 대사는 Grok 그대로"
- }
+ ]
 }

@@ -115,9 +115,5 @@
    "new": [],
    "emotion": "tsukkomi"
   }
- ],
- "review": {
-  "prev": "Gemini 4 Argon 검수 반영 2026-11-10 — 4번 удаан хэлээч→удаан яриарай, 6번 эрт→түрүүн",
-  "grok_rewrite": "2026-11-23 Grok 빠른 재작성 반영(data/review/grok/out/r1_survival_a2.md) — 대사는 Grok 그대로"
- }
+ ]
 }

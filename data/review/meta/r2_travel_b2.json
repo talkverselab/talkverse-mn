@@ -1,0 +1,6 @@
+{
+ "review": {
+  "prev": "Gemini 4 Argon 검수 반영 2026-11-10 — бүү→битгий, ширхэг 오용, 의문 어미, хайртай→дуртай, 순록 마을 이동 수단 차→말로 수정",
+  "grok_rewrite": "2026-11-22 Grok 빠른 재작성 반영(data/review/grok/out/r2_travel_b2.md) — 대사는 Grok 그대로"
+ }
+}

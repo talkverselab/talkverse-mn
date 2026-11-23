@@ -164,9 +164,5 @@
    "new": [],
    "emotion": "amused"
   }
- ],
- "review": {
-  "prev": "Gemini 4 Argon 검수 반영 2026-11-10 — ирэхдээ 재귀, нэг ч удаа уугаагүй 시상, юунд цай хийх 질문 의미 수정, 표현 Тийм үү? 복원",
-  "grok_rewrite": "2026-11-23 Grok 빠른 재작성 반영(data/review/grok/out/r2_travel_b6.md) — 대사는 Grok 그대로"
- }
+ ]
 }

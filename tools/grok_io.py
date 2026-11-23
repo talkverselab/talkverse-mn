@@ -75,12 +75,18 @@ def do_import(eid):
     for k in ('title', 'scene'):
         if head.get(k):
             e[k] = head[k]
-    r = e.get('review')
+    # 작업 기록은 앱 묶음·서버 공개 원고에 두지 않는다(심사 11-23 uk — 출처 이름 공개 금지) → data/review/meta/<편id>.json
+    meta_p = ROOT / 'data/review/meta' / f'{eid}.json'
+    meta = json.load(open(meta_p, encoding='utf-8')) if meta_p.exists() else {}
+    r = meta.get('review', e.pop('review', None))
     if not isinstance(r, dict):  # Gemini 반영 메모(문자열)는 이전 Claude판 기록 — 새 Grok 판은 Gemini 를 다시 받는다
         r = {'prev': r} if r else {}
     r['grok_rewrite'] = f'{datetime.date.today()} Grok 빠른 재작성 반영(data/review/grok/out/{eid}.md) — 대사는 Grok 그대로'
     r.pop('gemini', None)
-    e['review'] = r
+    meta['review'] = r
+    meta_p.parent.mkdir(parents=True, exist_ok=True)
+    json.dump(meta, open(meta_p, 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
+    e.pop('review', None)
     json.dump(e, open(p, 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
     open(p, 'a').write('\n')
     print('반영', eid)

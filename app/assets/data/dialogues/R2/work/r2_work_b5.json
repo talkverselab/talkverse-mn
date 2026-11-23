@@ -164,9 +164,5 @@
    "new": [],
    "emotion": "excited"
   }
- ],
- "review": {
-  "prev": "Gemini 4 Argon 검수 반영 2026-11-10 — 보고서 '끝날 것'→'끝낼게요' 자·타동사, 퇴근 여부 질문 구어화, 상사에게 따지는 어조 완화",
-  "grok_rewrite": "2026-11-23 Grok 빠른 재작성 반영(data/review/grok/out/r2_work_b5.md) — 대사는 Grok 그대로"
- }
+ ]
 }

@@ -162,9 +162,5 @@
    "new": [],
    "emotion": "amused"
   }
- ],
- "review": {
-  "prev": "Gemini 4 Argon 검수 반영 2026-11-10 — '모든 팀'→'모든 사람', 받는 사람 칸 UI 직역투 구어화, Яанаа 번역, 해고 문장 목적어 보충",
-  "grok_rewrite": "2026-11-22 Grok 빠른 재작성 반영(data/review/grok/out/r2_work_b3.md) — 대사는 Grok 그대로"
- }
+ ]
 }

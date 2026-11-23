@@ -126,9 +126,5 @@
    "new": [],
    "emotion": "excited"
   }
- ],
- "review": {
-  "prev": "Gemini 4 Argon 검수 반영 2026-11-10 — 수정 없음 — 2 'их хонь'는 의도된 오타 개그, Хм·Зүгээр·양치기 농담 제안은 취향이라 유지",
-  "grok_rewrite": "2026-11-23 Grok 빠른 재작성 반영(data/review/grok/out/r1_love_c1.md) — 대사는 Grok 그대로"
- }
+ ]
 }

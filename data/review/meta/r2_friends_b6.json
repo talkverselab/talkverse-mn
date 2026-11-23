@@ -1,0 +1,6 @@
+{
+ "review": {
+  "prev": "Gemini 4 Argon 검수 반영 2026-11-10 — B/C 화자 표기 뒤바뀜 바로잡음, мэдэх→таних·속격, 만돌린 반전 유지",
+  "grok_rewrite": "2026-11-23 Grok 빠른 재작성 반영(data/review/grok/out/r2_friends_b6.md) — 대사는 Grok 그대로"
+ }
+}

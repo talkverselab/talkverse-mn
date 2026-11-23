@@ -310,7 +310,8 @@ class CurriculumStage {
   final List<int> pick;
   final int pass;
   final Map<int, int> daily; // 1 가볍게 · 2 보통 · 3 집중 → 하루 새 편 수
-  const CurriculumStage(this.n, this.title, this.desc, this.dialogueIds, this.pick, this.pass, this.daily);
+  final bool free; // 이용권 없이 열림(PAYWALL_SPEC §2, 서버 값 — 없으면 1단계만)
+  const CurriculumStage(this.n, this.title, this.desc, this.dialogueIds, this.pick, this.pass, this.daily, {this.free = false});
   factory CurriculumStage.fromJson(Map j) => CurriculumStage(
         (j['n'] as num).toInt(),
         '${j['title'] ?? '${j['n']}단계'}',
@@ -323,6 +324,7 @@ class CurriculumStage {
           2: ((j['daily'] as Map?)?['normal'] as num?)?.toInt() ?? 2,
           3: ((j['daily'] as Map?)?['focus'] as num?)?.toInt() ?? 3,
         },
+        free: j['free'] is bool ? j['free'] as bool : (j['n'] as num).toInt() == 1,
       );
 }
 
@@ -334,6 +336,8 @@ class CurriculumStages {
 
   int rev = 0;
   List<CurriculumStage>? stages; // null = JSON 없음 → 회화 레벨(R*)로
+  /// 무료 한도(PAYWALL_SPEC §2) — 문법 스텝 앞 N개, 언어감각 앞 N급. JSON 최상위 값, 없으면 2·1.
+  int freeSteps = 2, freeSenseLevels = 1;
   Future<void>? _loading;
 
   /// 시험용 — 받은 JSON 을 바로 넣는다.
@@ -342,12 +346,18 @@ class CurriculumStages {
     _loading = Future.value();
     stages = j == null ? null : _parse(j);
     rev = (j?['rev'] as num?)?.toInt() ?? 0;
+    _limits(j);
   }
 
   static List<CurriculumStage> _parse(Map<String, dynamic> j) =>
       [for (final s in (j['stages'] as List? ?? const [])) CurriculumStage.fromJson(s as Map)]..sort((a, b) => a.n.compareTo(b.n));
 
   Future<void> load() => _loading ??= _load();
+
+  void _limits(Map<String, dynamic>? j) {
+    freeSteps = (j?['freeSteps'] as num?)?.toInt() ?? 2;
+    freeSenseLevels = (j?['freeSenseLevels'] as num?)?.toInt() ?? 1;
+  }
 
   Future<void> _load() async {
     Map<String, dynamic>? best;
@@ -366,6 +376,7 @@ class CurriculumStages {
       try {
         stages = _parse(best);
         rev = (best['rev'] as num?)?.toInt() ?? 0;
+        _limits(best);
       } catch (_) {
         stages = null;
       }
@@ -465,6 +476,13 @@ class CurriculumService {
   String levelTitle(String level) => CurriculumStages.instance.stage(level)?.title ?? (DialogueService.levelKo[level] ?? level);
   String levelDesc(String level) => CurriculumStages.instance.stage(level)?.desc ?? '';
   List<int> pickSizes(String level) => CurriculumStages.instance.stage(level)?.pick ?? const [3, 5, 10];
+  /// 이 단계가 이용권 없이 열리나(서버 free, 없으면 1단계만). 옛 회화 레벨(R*)이면 R0·R1 만.
+  bool levelFree(String level) {
+    final st = CurriculumStages.instance.stage(level);
+    if (st != null) return st.free;
+    return level == 'R0' || level == 'R1' || level == '1';
+  }
+
   int passFor(String? level) => (level == null ? null : CurriculumStages.instance.stage(level)?.pass) ?? kPassPercent;
 
   /// 지금 단계의 하루 새 편 수를 상태에 건다(단계를 바꿀 때마다).

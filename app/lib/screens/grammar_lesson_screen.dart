@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 
+import '../data/entitlement.dart';
 import '../core/theme.dart';
 import '../services/ko_reading.dart';
 import '../services/script_sync.dart';
@@ -92,13 +93,13 @@ class _GrammarHubScreenState extends State<GrammarHubScreen> {
               : ListView(
                   padding: const EdgeInsets.all(16),
                   children: [
-                    for (final l in lessons)
+                    for (final (i, l) in lessons.indexed)
                       Card(
                         color: Colors.white,
                         margin: const EdgeInsets.only(bottom: 10),
                         child: ListTile(
                           contentPadding: const EdgeInsets.fromLTRB(12, 8, 8, 8),
-                          leading: TileBadge(text: '${l.number}', size: 40),
+                          leading: Entitlement.grammarStepFree(i) || Entitlement.premium ? TileBadge(text: '${l.number}', size: 40) : const SizedBox(width: 40, child: LockBadge(size: 24)),
                           title: Text(l.title,
                               style: const TextStyle(fontWeight: FontWeight.w800)),
                           subtitle: Text(
@@ -107,15 +108,15 @@ class _GrammarHubScreenState extends State<GrammarHubScreen> {
                           trailing: IconButton(
                             tooltip: tr('테스트'),
                             icon: const Icon(Icons.quiz, color: AppColors.rojo),
-                            onPressed: () => Navigator.push(
+                            onPressed: () => Entitlement.guard(context, Entitlement.grammarStepFree(i), () => Navigator.push(
                               context,
                               MaterialPageRoute(builder: (_) => GrammarTestScreen(lesson: l)),
-                            ),
+                            )),
                           ),
-                          onTap: () => Navigator.push(
+                          onTap: () => Entitlement.guard(context, Entitlement.grammarStepFree(i), () => Navigator.push(
                             context,
                             MaterialPageRoute(builder: (_) => GrammarLessonScreen(lesson: l)),
-                          ),
+                          )),
                         ),
                       ),
                   ],

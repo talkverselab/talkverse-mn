@@ -195,9 +195,5 @@
    "new": [],
    "emotion": "amused"
   }
- ],
- "review": {
-  "prev": "Gemini 4 Argon 검수 반영 2026-11-10 — хорь 수사형, 문어체 Хэдийгээр, Юу гэнэ ээ, -лаа 칭찬형, 13줄 번역; '마지막 제안' 반전과 사장의 та 는 유지",
-  "grok_rewrite": "2026-11-22 Grok 빠른 재작성 반영(data/review/grok/out/r3_work_b2.md) — 대사는 Grok 그대로"
- }
+ ]
 }

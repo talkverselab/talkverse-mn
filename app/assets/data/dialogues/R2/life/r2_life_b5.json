@@ -164,9 +164,5 @@
    "new": [],
    "emotion": "excited"
   }
- ],
- "review": {
-  "prev": "Gemini 4 Argon 검수 반영 2026-11-10 — хоёр өрөөтэй·ням гараг бүр·형을 Тэр로 지칭 않음·수혜형",
-  "grok_rewrite": "2026-11-22 Grok 빠른 재작성 반영(data/review/grok/out/r2_life_b5.md) — 대사는 Grok 그대로"
- }
+ ]
 }

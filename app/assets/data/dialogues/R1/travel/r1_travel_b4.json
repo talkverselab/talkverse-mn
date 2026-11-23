@@ -118,9 +118,5 @@
    "new": [],
    "emotion": "flustered"
   }
- ],
- "review": {
-  "prev": "Gemini 4 Argon 검수 반영 2026-11-10 — 별 감탄형·Энд ёстой гоё байна·тод од·Байз 4줄. 할머니 별 농담은 유지, Яасан бэ 는 표현이라 유지",
-  "grok_rewrite": "2026-11-23 Grok 빠른 재작성 반영(data/review/grok/out/r1_travel_b4.md) — 대사는 Grok 그대로"
- }
+ ]
 }

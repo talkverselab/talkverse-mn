@@ -196,9 +196,5 @@
    "new": [],
    "emotion": "amused"
   }
- ],
- "review": {
-  "prev": "Gemini 4 Argon 검수 반영 2026-11-10 — хононо·шарваж 철자, 재귀소유 -доо 를 Манай нохойд 로, 번역투 2줄; 이름 없는 개 설정은 유지",
-  "grok_rewrite": "2026-11-22 Grok 빠른 재작성 반영(data/review/grok/out/r3_travel_b2.md) — 대사는 Grok 그대로"
- }
+ ]
 }

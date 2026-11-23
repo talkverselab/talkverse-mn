@@ -8,6 +8,7 @@ import '../core/pane.dart';
 import '../core/platform.dart';
 import '../core/prefs.dart';
 import '../core/theme.dart';
+import '../data/entitlement.dart';
 import '../services/ko_reading.dart';
 import '../services/tts_service.dart';
 import '../widgets/selectable_mn_text.dart';
@@ -55,6 +56,18 @@ class SenseCourse {
     await p.setStringList(_kDoneKey, s.toList());
   }
 
+  /// 회차 순번 → 그 회차의 급 순번(0부터, 잠금 판정용).
+  static int levelIndexOf(Map<String, dynamic>? d, int index, {List<(Map<String, dynamic>, Map<String, dynamic>)>? all}) {
+    final f = all ?? flat(d!);
+    final lv = f[index].$1;
+    final seen = <Map<String, dynamic>>[];
+    for (final e in f) {
+      if (!seen.contains(e.$1)) seen.add(e.$1);
+      if (identical(e.$1, lv)) break;
+    }
+    return seen.length - 1;
+  }
+
   /// 모든 회차를 순서대로 (레벨, 회차) 쌍으로.
   static List<(Map<String, dynamic>, Map<String, dynamic>)> flat(Map<String, dynamic> d) => [
         for (final lv in (d['levels'] as List).cast<Map<String, dynamic>>())
@@ -90,7 +103,8 @@ class _SenseCourseScreenState extends State<SenseCourseScreen> {
   }
 
   Future<void> _open(int index) async {
-    await openFull(context, (_) => SenseLessonScreen(index: index));
+    // 언어감각 앞 N급만 무료(PAYWALL_SPEC §2, 서버 freeSenseLevels) — 잠긴 급은 결제 화면 먼저
+    await Entitlement.guard(context, Entitlement.senseLevelFree(SenseCourse.levelIndexOf(_data!, index)), () => openFull(context, (_) => SenseLessonScreen(index: index)));
     _load();
   }
 
@@ -120,8 +134,13 @@ class _SenseCourseScreenState extends State<SenseCourseScreen> {
     for (final lv in (d['levels'] as List).cast<Map<String, dynamic>>()) {
       children.add(Padding(
         padding: const EdgeInsets.fromLTRB(2, 18, 2, 8),
-        child: Text('${lv['id']}  ${lv['title']}',
-            style: const TextStyle(fontSize: 14, fontWeight: FontWeight.w800, color: AppColors.sumi)),
+        child: Row(children: [
+          Expanded(
+            child: Text('${lv['id']}  ${lv['title']}',
+                style: const TextStyle(fontSize: 14, fontWeight: FontWeight.w800, color: AppColors.sumi)),
+          ),
+          if (!Entitlement.premium && !Entitlement.senseLevelFree((d['levels'] as List).indexOf(lv))) const LockBadge(),
+        ]),
       ));
       var n = 1;
       for (final ls in (lv['lessons'] as List).cast<Map<String, dynamic>>()) {
@@ -217,7 +236,7 @@ class _SenseLessonScreenState extends State<SenseLessonScreen> {
     while (nextIdx < all.length && all[nextIdx].$2['kind'] == 'ref') {
       nextIdx++;
     }
-    if (nextIdx < all.length) {
+    if (nextIdx < all.length && (Entitlement.premium || Entitlement.senseLevelFree(SenseCourse.levelIndexOf(null, nextIdx, all: all)))) {
       Navigator.of(context).pushReplacement(
           MaterialPageRoute(builder: (_) => SenseLessonScreen(index: nextIdx)));
     } else {

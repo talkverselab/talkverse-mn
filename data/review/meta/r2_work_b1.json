@@ -1,0 +1,6 @@
+{
+ "review": {
+  "prev": "Gemini 4 Argon 검수 반영 2026-11-10 — 한국인에게 한국어 잘하냐는 모순 질문을 출신 질문으로, 상사에게 단답 완화, 계약서 '읽어'→'번역해'",
+  "grok_rewrite": "2026-11-22 Grok 빠른 재작성 반영(data/review/grok/out/r2_work_b1.md) — 대사는 Grok 그대로"
+ }
+}

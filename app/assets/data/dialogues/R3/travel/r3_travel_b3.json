@@ -196,9 +196,5 @@
    "new": [],
    "emotion": "gentle"
   }
- ],
- "review": {
-  "prev": "Gemini 4 Argon 검수 반영 2026-11-10 — 8줄 호격, 3줄 -ж үзмээр, 2줄 날개폭 번역; 독수리 축제·옛 독수리 반전과 бүргэд барих 는 유지",
-  "grok_rewrite": "2026-11-22 Grok 빠른 재작성 반영(data/review/grok/out/r3_travel_b3.md) — 대사는 Grok 그대로"
- }
+ ]
 }

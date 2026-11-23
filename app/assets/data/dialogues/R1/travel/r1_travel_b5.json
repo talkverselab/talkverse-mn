@@ -122,9 +122,5 @@
    "new": [],
    "emotion": "teasing"
   }
- ],
- "review": {
-  "prev": "Gemini 4 Argon 검수 반영 2026-11-10 — үнэтэй юм аа·Хямдруулаад·Үгүй ээ·7줄 번역 「2만」 3줄. Ёоё 는 표현이라 유지",
-  "grok_rewrite": "2026-11-23 Grok 빠른 재작성 반영(data/review/grok/out/r1_travel_b5.md) — 대사는 Grok 그대로"
- }
+ ]
 }

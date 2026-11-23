@@ -164,9 +164,5 @@
    "new": [],
    "emotion": "shy"
   }
- ],
- "review": {
-  "prev": "Gemini 4 Argon 검수 반영 2026-11-10 — Чиний хот→Танай хот, гайхуулах 오용, -маар 희망형, 2·5줄 한국어 수정",
-  "grok_rewrite": "2026-11-22 Grok 빠른 재작성 반영(data/review/grok/out/r2_love_c4.md) — 대사는 Grok 그대로"
- }
+ ]
 }

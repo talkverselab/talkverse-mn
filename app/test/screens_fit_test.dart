@@ -88,13 +88,15 @@ void main() {
       await t.pumpWidget(const SizedBox());
       await t.pump(const Duration(seconds: 2)); // 발음 1초 지연 타이머를 흘려보낸다
     });
-    testWidgets('paywall shows final prices at $width', (t) async {
+    testWidgets('paywall: 스토어 값만(코드 원화 없음), 열리는 것 목록, 스토어 실패면 다시 시도 at $width', (t) async {
       Purchase.plans = kMnPlans;
+      Purchase.loadState.value = 'failed';
       await pumpAt(t, const Scaffold(body: PaywallScreen()));
-      expect(find.text('₩3,900'), findsWidgets);
-      expect(find.text('₩5,500'), findsWidgets); // 정가(줄 그음)
-      expect(find.text('₩329,000'), findsWidgets);
-      expect(find.text('₩469,000'), findsWidgets);
+      expect(find.text('₩3,900'), findsNothing); // PAYWALL_SPEC §3 — 가격은 스토어에서 받은 값만
+      expect(find.textContaining('할인'), findsNothing);
+      expect(find.text('토크버스 커리큘럼 2단계 이상'), findsOneWidget);
+      expect(find.text('다시 시도'), findsOneWidget);
+      expect(find.text('닫기'), findsOneWidget);
     });
     testWidgets('profile fits at $width', (t) async {
       await pumpAt(t, const ProfileScreen());

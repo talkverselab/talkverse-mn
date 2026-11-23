@@ -18,9 +18,8 @@ class _Guide extends StatelessWidget {
   const _Guide();
 
   @override
-  Widget build(BuildContext context) => DefaultTabController(
-        length: 2,
-        child: SizedBox(
+  // 심사(11-23 uk): 기기에 맞는 안내만 — iOS 에서 안드로이드·Play 스토어 문구가 보이지 않게, 안드로이드에선 아이폰 문구 없이
+  Widget build(BuildContext context) => SizedBox(
           height: MediaQuery.sizeOf(context).height * 0.8,
           child: Column(children: [
             const SizedBox(height: 10),
@@ -38,16 +37,9 @@ class _Guide extends StatelessWidget {
               child: Text(tr('시스템 키보드에 몽골어(Монгол) 입력기를 추가하면 앱 안에서 바로 키릴 문자를 칠 수 있어요. 러시아어 키보드에는 Ө·Ү 가 없으니 꼭 몽골어를 고르세요.'),
                   style: const TextStyle(fontSize: 13, color: AppColors.sumiLight, height: 1.45)),
             ),
-            const SizedBox(height: 12),
-            TabBar(
-              labelColor: AppColors.sumi,
-              unselectedLabelColor: AppColors.muted,
-              indicatorColor: AppColors.sumi,
-              labelStyle: const TextStyle(fontWeight: FontWeight.w800),
-              tabs: [Tab(text: tr('안드로이드')), Tab(text: tr('아이폰·아이패드'))],
-            ),
+            const SizedBox(height: 4),
             Expanded(
-              child: TabBarView(children: [
+              child: <Widget>[
                 ListView(padding: EdgeInsets.fromLTRB(20, 16, 20, 32 + bottomInset(context)), children: [
                   _Section(tr('방법 1 — 삼성 키보드에 몽골어 추가'), [
                     tr('설정 앱 열기'),
@@ -82,10 +74,9 @@ class _Guide extends StatelessWidget {
                   const SizedBox(height: 16),
                   const _Tips(),
                 ]),
-              ]),
+              ][isIOS ? 1 : 0],
             ),
           ]),
-        ),
       );
 }
 

@@ -1,0 +1,6 @@
+{
+ "review": {
+  "prev": "Gemini 4 Argon 검수 반영 2026-11-10 — '2시에'→'두 시간 안에' 격 오류, '어떻게 아셨어요' 시제, 회의 있음·배송 약속·자리 양보 관용 표현 수정, 의자 반전 유지",
+  "grok_rewrite": "2026-11-23 Grok 빠른 재작성 반영(data/review/grok/out/r2_work_b4.md) — 대사는 Grok 그대로"
+ }
+}

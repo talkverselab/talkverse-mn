@@ -114,9 +114,5 @@
    "new": [],
    "emotion": "shout"
   }
- ],
- "review": {
-  "prev": "Gemini 4 Argon 검수 반영 2026-11-10 — 6턴 구어 선택의문, 7턴 Эргээд хараач(부드러운 명령), 8턴 ард минь·юм бэ 반영; 호격 Номион·билет·Уншсан уу 는 취향/비표준이라 미반영",
-  "grok_rewrite": "2026-11-23 Grok 빠른 재작성 반영(data/review/grok/out/r1_friends_c2.md) — 대사는 Grok 그대로"
- }
+ ]
 }

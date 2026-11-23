@@ -12,7 +12,11 @@ for ep, x in F.items():
         if not c: continue
         if 'tl' in c and c['tl'] != t['tl']: t['rd'] = ''
         t.update({k: v for k, v in c.items() if k != 'note'})  # fix 의 note 는 고친 이유 — 턴 note(어휘 설명)를 덮지 않는다
-    d['review'] = 'Gemini 4 Argon 검수 반영 2026-11-10 — ' + x['review']
+    # 작업 기록은 앱 묶음에 두지 않음(심사 11-23) → data/review/meta/<편id>.json
+    mp = pathlib.Path(__file__).resolve().parent.parent / 'data/review/meta' / f'{ep}.json'
+    meta = json.load(open(mp)) if mp.exists() else {}
+    meta['review'] = 'Gemini 검수 반영 — ' + x['review']
+    mp.parent.mkdir(parents=True, exist_ok=True); json.dump(meta, open(mp, 'w'), ensure_ascii=False, indent=1)
     miss = [w for w in d.get('expressions', []) if not any(w.lower() in t['tl'].lower() for t in d['turns'])]
     if miss: print(ep, '표현 빠짐', miss)
     json.dump(d, open(p, 'w', encoding='utf-8'), ensure_ascii=False, indent=1); open(p, 'a').write('\n'); done.append(p)

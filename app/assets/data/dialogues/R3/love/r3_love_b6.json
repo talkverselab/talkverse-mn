@@ -206,9 +206,5 @@
    "new": [],
    "emotion": "amused"
   }
- ],
- "review": {
-  "prev": "Gemini 4 Argon 검수 반영 2026-11-10 — 13번 шуурга намдахаар, 14번 한국어 외곽, 15번 Тэр 번역투 제거, 16번 호격",
-  "grok_rewrite": "2026-11-23 Grok 빠른 재작성 반영(data/review/grok/out/r3_love_b6.md) — 대사는 Grok 그대로"
- }
+ ]
 }

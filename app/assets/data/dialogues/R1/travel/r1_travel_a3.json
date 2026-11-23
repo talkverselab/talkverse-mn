@@ -117,9 +117,5 @@
    "new": [],
    "emotion": "amused"
   }
- ],
- "review": {
-  "prev": "Gemini 4 Argon 검수 반영 2026-11-10 — 3번 Арай гэж оройд нь гарлаа; 꼭대기 '안녕' 개그 유지; 7번 표현 Яагаад? 복구",
-  "grok_rewrite": "2026-11-23 Grok 빠른 재작성 반영(data/review/grok/out/r1_travel_a3.md) — 대사는 Grok 그대로"
- }
+ ]
 }

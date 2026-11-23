@@ -116,9 +116,5 @@
    "new": [],
    "emotion": "flustered"
   }
- ],
- "review": {
-  "prev": "Gemini 4 Argon 검수 반영 2026-11-10 — 3번 시제(өвдөж эхэлсэн), 6번 직역투(өвдөхөө больчихлоо)",
-  "grok_rewrite": "2026-11-23 Grok 빠른 재작성 반영(data/review/grok/out/r1_survival_a3.md) — 대사는 Grok 그대로"
- }
+ ]
 }

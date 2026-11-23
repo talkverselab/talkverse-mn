@@ -195,9 +195,5 @@
    "new": [],
    "emotion": "amused"
   }
- ],
- "review": {
-  "prev": "Gemini 4 Argon 검수 반영 2026-11-10 — 8줄 타자 шивдэг, 14줄 추측 байх аа; 면접 격식체 질문·Яанаа 는 유지",
-  "grok_rewrite": "2026-11-22 Grok 빠른 재작성 반영(data/review/grok/out/r3_work_b1.md) — 대사는 Grok 그대로"
- }
+ ]
 }

@@ -503,6 +503,21 @@ const Map<String, String> kDictEn = {
   '영상을 보고, 대화를 통째로 외워요. 규칙은 참고에만 있어요.': 'Watch the video, then memorise the whole dialogue. Rules are only in the reference.',
   '한국어와 다른 곳만 잠깐': 'Only where it differs from Korean',
   '외울 대화 10급': 'Memorize dialogues · 10 levels',
+  // 심사 수정(2026-11-23)
+  '로그인하면 아이폰·아이패드 어디서나': 'Sign in to use it on any iPhone or iPad',
+  '로그인하면 휴대폰·태블릿 어디서나': 'Sign in to use it on any phone or tablet',
+  '결제는 App Store 에서 처리됩니다. 표시 가격은 스토어 가격을 따르며 세금이 포함될 수 있습니다. 숨은 요금은 없습니다.': 'Payment is handled by the App Store. Prices follow the store and may include tax. No hidden fees.',
+  '결제는 Google Play 에서 처리됩니다. 표시 가격은 스토어 가격을 따르며 세금이 포함될 수 있습니다. 숨은 요금은 없습니다.': 'Payment is handled by Google Play. Prices follow the store and may include tax. No hidden fees.',
+  '구독 해지: 아이폰 설정 → 내 이름(Apple ID) → 구독 → Talkverse → 구독 취소': 'Cancel: iPhone Settings → your name (Apple ID) → Subscriptions → Talkverse → Cancel',
+  '구독 해지: Google Play → 프로필 → 결제 및 정기 결제 → 정기 결제 → Talkverse → 해지': 'Cancel: Google Play → Profile → Payments & subscriptions → Subscriptions → Talkverse → Cancel',
+  '이메일로 로그인': 'Sign in with email',
+  // 이용권(2026-11-23)
+  '토크버스 커리큘럼 2단계 이상': 'Talkverse Curriculum stage 2 and up',
+  '회화 2단계 이상 편 전부': 'All conversations from level 2 up',
+  '문법 3스텝부터 · 언어감각 익히기 2급부터': 'Grammar from step 3 · Language Feel from level 2',
+  '무료: 커리큘럼·회화 1단계, 글자·발음·단어, 문법 1~2스텝, 언어감각 1급': 'Free: Curriculum & conversations stage 1, letters, pronunciation, words, grammar steps 1–2, Language Feel level 1',
+  '스토어에 연결하지 못했어요. 잠시 뒤 다시 시도해 주세요.': 'Couldn\'t reach the store. Please try again in a moment.',
+  '다시 시도': 'Try again',
 };
 
 const Map<String, String> kDictJa = {
@@ -971,6 +986,21 @@ const Map<String, String> kDictJa = {
   '영상을 보고, 대화를 통째로 외워요. 규칙은 참고에만 있어요.': '動画を見て、会話を丸ごと覚えます。規則は参考にだけあります。',
   '한국어와 다른 곳만 잠깐': '韓国語と違うところだけ',
   '외울 대화 10급': '覚える会話 10級',
+  // 심사 수정(2026-11-23)
+  '로그인하면 아이폰·아이패드 어디서나': 'ログインすればiPhone・iPadのどこでも',
+  '로그인하면 휴대폰·태블릿 어디서나': 'ログインすればスマホ・タブレットのどこでも',
+  '결제는 App Store 에서 처리됩니다. 표시 가격은 스토어 가격을 따르며 세금이 포함될 수 있습니다. 숨은 요금은 없습니다.': 'お支払いはApp Storeで行われます。表示価格はストア価格に従い、税金が含まれる場合があります。隠れた料金はありません。',
+  '결제는 Google Play 에서 처리됩니다. 표시 가격은 스토어 가격을 따르며 세금이 포함될 수 있습니다. 숨은 요금은 없습니다.': 'お支払いはGoogle Playで行われます。表示価格はストア価格に従い、税金が含まれる場合があります。隠れた料金はありません。',
+  '구독 해지: 아이폰 설정 → 내 이름(Apple ID) → 구독 → Talkverse → 구독 취소': '解約：iPhoneの設定 → 名前(Apple ID) → サブスクリプション → Talkverse → キャンセル',
+  '구독 해지: Google Play → 프로필 → 결제 및 정기 결제 → 정기 결제 → Talkverse → 해지': '解約：Google Play → プロフィール → お支払いと定期購入 → 定期購入 → Talkverse → 解約',
+  '이메일로 로그인': 'メールでログイン',
+  // 이용권(2026-11-23)
+  '토크버스 커리큘럼 2단계 이상': 'トークバースカリキュラム 2段階以上',
+  '회화 2단계 이상 편 전부': '会話 2段階以上の全エピソード',
+  '문법 3스텝부터 · 언어감각 익히기 2급부터': '文法 ステップ3から · 言語感覚 2級から',
+  '무료: 커리큘럼·회화 1단계, 글자·발음·단어, 문법 1~2스텝, 언어감각 1급': '無料：カリキュラム・会話 1段階、文字・発音・単語、文法 ステップ1〜2、言語感覚 1級',
+  '스토어에 연결하지 못했어요. 잠시 뒤 다시 시도해 주세요.': 'ストアに接続できませんでした。しばらくしてからもう一度お試しください。',
+  '다시 시도': '再試行',
 };
 
 const Map<String, String> kDictZh = {
@@ -1439,4 +1469,19 @@ const Map<String, String> kDictZh = {
   '영상을 보고, 대화를 통째로 외워요. 규칙은 참고에만 있어요.': '看视频，然后整段背下会话。规则只在参考里。',
   '한국어와 다른 곳만 잠깐': '只讲和韩语不同的地方',
   '외울 대화 10급': '背诵对话 10级',
+  // 심사 수정(2026-11-23)
+  '로그인하면 아이폰·아이패드 어디서나': '登录后可在任意 iPhone・iPad 上使用',
+  '로그인하면 휴대폰·태블릿 어디서나': '登录后可在任意手机・平板上使用',
+  '결제는 App Store 에서 처리됩니다. 표시 가격은 스토어 가격을 따르며 세금이 포함될 수 있습니다. 숨은 요금은 없습니다.': '付款由 App Store 处理。显示价格以商店为准，可能含税。没有隐藏费用。',
+  '결제는 Google Play 에서 처리됩니다. 표시 가격은 스토어 가격을 따르며 세금이 포함될 수 있습니다. 숨은 요금은 없습니다.': '付款由 Google Play 处理。显示价格以商店为准，可能含税。没有隐藏费用。',
+  '구독 해지: 아이폰 설정 → 내 이름(Apple ID) → 구독 → Talkverse → 구독 취소': '取消订阅：iPhone 设置 → 你的名字(Apple ID) → 订阅 → Talkverse → 取消',
+  '구독 해지: Google Play → 프로필 → 결제 및 정기 결제 → 정기 결제 → Talkverse → 해지': '取消订阅：Google Play → 个人资料 → 付款和订阅 → 订阅 → Talkverse → 取消',
+  '이메일로 로그인': '用邮箱登录',
+  // 이용권(2026-11-23)
+  '토크버스 커리큘럼 2단계 이상': 'Talkverse 课程 第2阶段以上',
+  '회화 2단계 이상 편 전부': '第2阶段以上的全部会话',
+  '문법 3스텝부터 · 언어감각 익히기 2급부터': '语法第3步起 · 语感练习第2级起',
+  '무료: 커리큘럼·회화 1단계, 글자·발음·단어, 문법 1~2스텝, 언어감각 1급': '免费：课程・会话第1阶段、字母、发音、单词、语法第1~2步、语感第1级',
+  '스토어에 연결하지 못했어요. 잠시 뒤 다시 시도해 주세요.': '无法连接商店，请稍后再试。',
+  '다시 시도': '重试',
 };
