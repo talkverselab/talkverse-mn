@@ -520,3 +520,245 @@ OK data/review/gemini/bundle/my/b_r3_work_b3_ans.md try=1 49s
 나눔 15 빠짐 0
 끝 my 12:58
 끝 전체 12:58
+=== 2026-11-22 138편(Grok 다시 쓴 판) 시작 17:08
+138 편 46 묶음
+  try1 b_r1_culture_a1_ans.md: NOINPUT 26s
+  try2 b_r1_culture_a1_ans.md: NOINPUT 25s
+  try3 b_r1_culture_a1_ans.md: NOINPUT 25s
+  try4 b_r1_culture_a1_ans.md: NOINPUT 26s
+FAIL data/review/gemini/bundle/mn/b_r1_culture_a1_ans.md NOINPUT
+  try1 b_r1_culture_a5_ans.md: NOINPUT 26s
+  try2 b_r1_culture_a5_ans.md: NOINPUT 26s
+  try3 b_r1_culture_a5_ans.md: NOINPUT 26s
+  try4 b_r1_culture_a5_ans.md: NOINPUT 26s
+FAIL data/review/gemini/bundle/mn/b_r1_culture_a5_ans.md NOINPUT
+  try1 b_r1_friends_a4_ans.md: NOINPUT 26s
+  try2 b_r1_friends_a4_ans.md: NOINPUT 26s
+  try3 b_r1_friends_a4_ans.md: NOINPUT 25s
+  try4 b_r1_friends_a4_ans.md: NOINPUT 26s
+FAIL data/review/gemini/bundle/mn/b_r1_friends_a4_ans.md NOINPUT
+  try1 b_r1_friends_b1_ans.md: NOINPUT 26s
+  try2 b_r1_friends_b1_ans.md: NOINPUT 26s
+  try3 b_r1_friends_b1_ans.md: NOINPUT 26s
+  try4 b_r1_friends_b1_ans.md: NOINPUT 25s
+FAIL data/review/gemini/bundle/mn/b_r1_friends_b1_ans.md NOINPUT
+  try1 b_r1_friends_b5_ans.md: NOINPUT 25s
+  try2 b_r1_friends_b5_ans.md: NOINPUT 26s
+  try3 b_r1_friends_b5_ans.md: NOINPUT 25s
+  try4 b_r1_friends_b5_ans.md: NOINPUT 26s
+FAIL data/review/gemini/bundle/mn/b_r1_friends_b5_ans.md NOINPUT
+  try1 b_r1_friends_c3_ans.md: NOINPUT 26s
+  try2 b_r1_friends_c3_ans.md: NOINPUT 25s
+  try3 b_r1_friends_c3_ans.md: NOINPUT 26s
+  try4 b_r1_friends_c3_ans.md: NOINPUT 25s
+FAIL data/review/gemini/bundle/mn/b_r1_friends_c3_ans.md NOINPUT
+  try1 b_r1_friends_c6_ans.md: NOINPUT 25s
+  try2 b_r1_friends_c6_ans.md: NOINPUT 26s
+  try3 b_r1_friends_c6_ans.md: NOINPUT 26s
+  try4 b_r1_friends_c6_ans.md: NOINPUT 26s
+FAIL data/review/gemini/bundle/mn/b_r1_friends_c6_ans.md NOINPUT
+  try1 b_r1_life_a3_ans.md: NOINPUT 26s
+  try2 b_r1_life_a3_ans.md: NOINPUT 26s
+  try3 b_r1_life_a3_ans.md: NOINPUT 26s
+  try4 b_r1_life_a3_ans.md: NOINPUT 26s
+FAIL data/review/gemini/bundle/mn/b_r1_life_a3_ans.md NOINPUT
+  try1 b_r1_life_b1_ans.md: NOINPUT 26s
+  try2 b_r1_life_b1_ans.md: NOINPUT 26s
+  try3 b_r1_life_b1_ans.md: NOINPUT 26s
+  try4 b_r1_life_b1_ans.md: NOINPUT 25s
+FAIL data/review/gemini/bundle/mn/b_r1_life_b1_ans.md NOINPUT
+  try1 b_r1_life_b4_ans.md: NOINPUT 26s
+  try2 b_r1_life_b4_ans.md: NOINPUT 26s
+  try3 b_r1_life_b4_ans.md: NOINPUT 26s
+  try4 b_r1_life_b4_ans.md: NOINPUT 26s
+FAIL data/review/gemini/bundle/mn/b_r1_life_b4_ans.md NOINPUT
+  try1 b_r1_life_c1_ans.md: NOINPUT 26s
+  try2 b_r1_life_c1_ans.md: NOINPUT 26s
+  try3 b_r1_life_c1_ans.md: NOINPUT 27s
+  try4 b_r1_life_c1_ans.md: NOINPUT 27s
+FAIL data/review/gemini/bundle/mn/b_r1_life_c1_ans.md NOINPUT
+  try1 b_r1_life_c4_ans.md: NOINPUT 26s
+  try2 b_r1_life_c4_ans.md: NOINPUT 26s
+  try3 b_r1_life_c4_ans.md: NOINPUT 26s
+  try4 b_r1_life_c4_ans.md: NOINPUT 26s
+FAIL data/review/gemini/bundle/mn/b_r1_life_c4_ans.md NOINPUT
+  try1 b_r1_love_a1_ans.md: NOINPUT 26s
+  try2 b_r1_love_a1_ans.md: NOINPUT 25s
+  try3 b_r1_love_a1_ans.md: NOINPUT 26s
+  try4 b_r1_love_a1_ans.md: NOINPUT 26s
+FAIL data/review/gemini/bundle/mn/b_r1_love_a1_ans.md NOINPUT
+  try1 b_r1_love_a4_ans.md: NOINPUT 26s
+  try2 b_r1_love_a4_ans.md: NOINPUT 26s
+  try3 b_r1_love_a4_ans.md: NOINPUT 26s
+  try4 b_r1_love_a4_ans.md: NOINPUT 26s
+FAIL data/review/gemini/bundle/mn/b_r1_love_a4_ans.md NOINPUT
+  try1 b_r1_love_a8_ans.md: NOINPUT 26s
+  try2 b_r1_love_a8_ans.md: NOINPUT 26s
+  try3 b_r1_love_a8_ans.md: NOINPUT 25s
+  try4 b_r1_love_a8_ans.md: NOINPUT 26s
+FAIL data/review/gemini/bundle/mn/b_r1_love_a8_ans.md NOINPUT
+  try1 b_r1_love_b3_ans.md: NOINPUT 26s
+  try2 b_r1_love_b3_ans.md: NOINPUT 26s
+  try3 b_r1_love_b3_ans.md: NOINPUT 26s
+  try4 b_r1_love_b3_ans.md: NOINPUT 26s
+FAIL data/review/gemini/bundle/mn/b_r1_love_b3_ans.md NOINPUT
+  try1 b_r1_love_b6_ans.md: NOINPUT 26s
+  try2 b_r1_love_b6_ans.md: NOINPUT 25s
+  try3 b_r1_love_b6_ans.md: NOINPUT 25s
+  try4 b_r1_love_b6_ans.md: NOINPUT 26s
+FAIL data/review/gemini/bundle/mn/b_r1_love_b6_ans.md NOINPUT
+  try1 b_r1_love_c2_ans.md: NOINPUT 26s
+  try2 b_r1_love_c2_ans.md: NOINPUT 26s
+=== 재시작(모델 Neon 인식) 17:39
+138 편 46 묶음
+OK data/review/gemini/bundle/mn/b_r1_culture_a1_ans.md try=1 53s
+OK data/review/gemini/bundle/mn/b_r1_culture_a5_ans.md try=1 53s
+OK data/review/gemini/bundle/mn/b_r1_friends_a4_ans.md try=1 53s
+  try1 b_r1_friends_b1_ans.md: NOINPUT 26s
+=== 재시작(한도=자동 모드를 BADMODEL 로) 17:45
+138 편 46 묶음
+  try1 b_r1_culture_a1_ans.md: BADMODEL 자동 모드 1s
+나눔 0 빠짐 0
+한도 대기 mn 17:45
+=== 재시작(시작 때 split) 17:45 — 앞서 받은 3묶음 답은 지워짐
+나눔 0 빠짐 0
+138 편 46 묶음
+OK data/review/gemini/bundle/mn/b_r1_culture_a1_ans.md try=1 58s
+OK data/review/gemini/bundle/mn/b_r1_culture_a5_ans.md try=1 53s
+OK data/review/gemini/bundle/mn/b_r1_friends_a4_ans.md try=1 53s
+OK data/review/gemini/bundle/mn/b_r1_friends_b1_ans.md try=1 53s
+OK data/review/gemini/bundle/mn/b_r1_friends_b5_ans.md try=1 63s
+OK data/review/gemini/bundle/mn/b_r1_friends_c3_ans.md try=1 64s
+OK data/review/gemini/bundle/mn/b_r1_friends_c6_ans.md try=1 58s
+OK data/review/gemini/bundle/mn/b_r1_life_a3_ans.md try=1 58s
+OK data/review/gemini/bundle/mn/b_r1_life_b1_ans.md try=1 48s
+OK data/review/gemini/bundle/mn/b_r1_life_b4_ans.md try=1 58s
+OK data/review/gemini/bundle/mn/b_r1_life_c1_ans.md try=1 53s
+OK data/review/gemini/bundle/mn/b_r1_life_c4_ans.md try=1 58s
+OK data/review/gemini/bundle/mn/b_r1_love_a1_ans.md try=1 53s
+OK data/review/gemini/bundle/mn/b_r1_love_a4_ans.md try=1 59s
+OK data/review/gemini/bundle/mn/b_r1_love_a8_ans.md try=1 53s
+OK data/review/gemini/bundle/mn/b_r1_love_b3_ans.md try=1 55s
+OK data/review/gemini/bundle/mn/b_r1_love_b6_ans.md try=1 58s
+OK data/review/gemini/bundle/mn/b_r1_love_c2_ans.md try=1 64s
+OK data/review/gemini/bundle/mn/b_r1_love_c5_ans.md try=1 53s
+OK data/review/gemini/bundle/mn/b_r1_love_c8_ans.md try=1 54s
+OK data/review/gemini/bundle/mn/b_r1_survival_a2_ans.md try=1 59s
+OK data/review/gemini/bundle/mn/b_r1_survival_a5_ans.md try=1 53s
+OK data/review/gemini/bundle/mn/b_r1_travel_a3_ans.md try=1 64s
+OK data/review/gemini/bundle/mn/b_r1_travel_b2_ans.md try=1 55s
+OK data/review/gemini/bundle/mn/b_r1_travel_b6_ans.md try=1 38s
+  try1 b_r1_travel_c4_ans.md: BADMODEL 자동 모드 2s
+나눔 75 빠짐 0
+한도 대기 mn 18:49
+63 편 21 묶음
+  try1 b_r1_travel_c4_ans.md: BADMODEL 자동 모드 1s
+나눔 0 빠짐 0
+한도 대기 mn 19:09
+=== 한도(22:45 재설정) — 크롬 9235 끔, 22:46 다시 켬 19:09
+=== 다시 켬 22:46
+나눔 0 빠짐 0
+63 편 21 묶음
+  try1 b_r1_travel_c4_ans.md: BADMODEL 자동 모드 3s
+나눔 0 빠짐 0
+한도 대기 mn 22:46
+63 편 21 묶음
+  try1 b_r1_travel_c4_ans.md: BADMODEL 자동 모드 1s
+나눔 0 빠짐 0
+한도 대기 mn 23:06
+63 편 21 묶음
+  try1 b_r1_travel_c4_ans.md: BADMODEL 자동 모드 1s
+나눔 0 빠짐 0
+한도 대기 mn 23:27
+63 편 21 묶음
+  try1 b_r1_travel_c4_ans.md: BADMODEL 자동 모드 2s
+나눔 0 빠짐 0
+한도 대기 mn 23:47
+63 편 21 묶음
+  try1 b_r1_travel_c4_ans.md: BADMODEL 자동 모드 2s
+나눔 0 빠짐 0
+한도 대기 mn 00:03
+loop rc=143 — 크롬 9235 끔 00:05
+=== 9226 시작 04:42 (uk 「mn Gemini 차례」)
+나눔 0 빠짐 0
+63 편 21 묶음
+04:42 PICKED 심층 분석 4 Neon
+OK data/review/gemini/bundle/mn/b_r1_travel_c4_ans.md try=1 53s
+OK data/review/gemini/bundle/mn/b_r2_friends_b1_ans.md try=1 59s
+OK data/review/gemini/bundle/mn/b_r2_friends_b4_ans.md try=1 48s
+OK data/review/gemini/bundle/mn/b_r2_life_b1_ans.md try=1 59s
+OK data/review/gemini/bundle/mn/b_r2_life_b4_ans.md try=1 59s
+OK data/review/gemini/bundle/mn/b_r2_love_b1_ans.md try=1 64s
+OK data/review/gemini/bundle/mn/b_r2_love_b4_ans.md try=1 79s
+OK data/review/gemini/bundle/mn/b_r2_love_b7_ans.md try=1 64s
+OK data/review/gemini/bundle/mn/b_r2_love_c2_ans.md try=1 59s
+OK data/review/gemini/bundle/mn/b_r2_travel_b1_ans.md try=1 84s
+OK data/review/gemini/bundle/mn/b_r2_travel_b4_ans.md try=1 54s
+OK data/review/gemini/bundle/mn/b_r2_work_b1_ans.md try=1 53s
+OK data/review/gemini/bundle/mn/b_r2_work_b4_ans.md try=1 64s
+OK data/review/gemini/bundle/mn/b_r3_culture_b1_ans.md try=1 80s
+OK data/review/gemini/bundle/mn/b_r3_friends_b1_ans.md try=1 74s
+OK data/review/gemini/bundle/mn/b_r3_friends_b4_ans.md try=1 53s
+OK data/review/gemini/bundle/mn/b_r3_life_b3_ans.md try=1 59s
+OK data/review/gemini/bundle/mn/b_r3_love_b2_ans.md try=1 74s
+OK data/review/gemini/bundle/mn/b_r3_love_b5_ans.md try=1 38s
+  try1 b_r3_travel_b2_ans.md: BADMODEL 자동 2s
+나눔 57 빠짐 0
+한도 대기 mn 05:21
+6 편 2 묶음
+05:41 none
+  try1 b_r3_travel_b2_ans.md: BADMODEL 자동 1s
+나눔 0 빠짐 0
+한도 대기 mn 05:42
+6 편 2 묶음
+06:02 none
+  try1 b_r3_travel_b2_ans.md: BADMODEL 자동 1s
+나눔 0 빠짐 0
+한도 대기 mn 06:02
+6 편 2 묶음
+06:22 none
+  try1 b_r3_travel_b2_ans.md: BADMODEL 자동 2s
+나눔 0 빠짐 0
+한도 대기 mn 06:22
+6 편 2 묶음
+06:43 none
+  try1 b_r3_travel_b2_ans.md: BADMODEL 자동 1s
+나눔 0 빠짐 0
+한도 대기 mn 06:43
+6 편 2 묶음
+07:03 none
+  try1 b_r3_travel_b2_ans.md: BADMODEL 자동 1s
+나눔 0 빠짐 0
+한도 대기 mn 07:03
+6 편 2 묶음
+07:23 none
+  try1 b_r3_travel_b2_ans.md: BADMODEL 자동 1s
+나눔 0 빠짐 0
+한도 대기 mn 07:24
+6 편 2 묶음
+07:44 none
+  try1 b_r3_travel_b2_ans.md: BADMODEL 자동 1s
+나눔 0 빠짐 0
+한도 대기 mn 07:44
+6 편 2 묶음
+08:04 none
+  try1 b_r3_travel_b2_ans.md: BADMODEL 자동 1s
+나눔 0 빠짐 0
+한도 대기 mn 08:04
+6 편 2 묶음
+08:25 none
+  try1 b_r3_travel_b2_ans.md: BADMODEL 자동 1s
+나눔 0 빠짐 0
+한도 대기 mn 08:25
+6 편 2 묶음
+08:45 none
+  try1 b_r3_travel_b2_ans.md: BADMODEL 자동 1s
+나눔 0 빠짐 0
+한도 대기 mn 08:45
+6 편 2 묶음
+09:05 PICKED 심층 분석 4 Neon
+OK data/review/gemini/bundle/mn/b_r3_travel_b2_ans.md try=1 53s
+OK data/review/gemini/bundle/mn/b_r3_work_b1_ans.md try=1 54s
+나눔 6 빠짐 0
+끝 mn 09:09
+끝 전체 09:09
