@@ -4,6 +4,15 @@
 
 
 
+## 2026-11-23 — 세션 종료(허브 「심사 완료 검토까지 간 세션 종료」) · 지금 상태
+- **회화 150편 끝**: Grok 판 → Gemini 4 Neon 검수 138/138(지적 71편 + 30편) → Grok 이 지적 줄만 고침(줄별 대조, 다른 줄 손상은 버림) → R1 7·R2 9 낱말 넘은 줄 Grok 줄이기 → 대사에 없는 표현 목록 정리. 검사 오류 0·턴 잠금 경고 0. Azure 음성 2984줄 = 지금 대사.
+- **서버 원고 rev 6**(작업 기록 칸 review 를 묶음·공개 원고에서 뺌 → `data/review/meta/<편id>.json`, grok_io·apply_fix 도 그쪽에 씀).
+- **앱(오늘)**: 토크버스 커리큘럼(ja 기준 + §12 1~5단계·단계/편/pick/pass/daily/free 는 `assets/data/curriculum_mn.json` rev 2 → 서버 `/api/curriculum/mn` 이 rev 높으면 받음) · 언어감각 익히기 10급(Claude, `tools/build_sense_course.py`) · 문법 스텝 = 서버 원고 목록(개수 고정 없음) · AI 회화 작성 화면(숨김 kCustomScriptLive=false) · 이용권 잠금(PAYWALL_SPEC: 무료 1단계·R0R1·문법 2스텝·언어감각 1급) · 결제 화면 스토어 가격만 · 로그인 4개 실제 연결(서버 /providers 4개) · 심사 수정(로그인 문구, iOS/안드 문구, 해지 안내 Talkverse).
+- **최신 빌드**: 커밋 `3c8ed14` · Android CI 30 · Zealot https://apps.talkverse.uk/xBHY8/684 · PC 백업. iOS 단독 TestFlight 는 uk 지시로 멈춤(M6 디스크) — 마지막 단독 iOS 2611222314. 출시 iOS = uk 통합 앱 1.0.0+15.
+- **도구**: Grok = M4 크롬 9235(`GROK_HOST=m4 GROK_CDP_PORT=9235 zsh tools/grok_fix_run.sh`, 쿠키는 `grok_cookie_sync.py 9231 9235`, 지적 묶음 경로는 FIXDIR·GDIR), Gemini = uk 공용 9226(`GEMINI_CDP_PORT=9226 zsh tools/gemini_loop_mn.sh`, 「심층 분석」 고르기, 로그아웃이면 LOGGEDOUT 으로 멈춤, 크롬은 끄지 않고 탭만).
+- **다시 시작할 때**: 폰에서 빌드 30 확인(로그인 4개 버튼 실제 누르기 — 서버 302 까지만 확인함, 잠금·결제 화면). 새 Gemini 지적이 생기면 위 도구로. 크롬·루프·터널은 모두 끔(9226 터널 하나는 다른 세션 것).
+- 지울 후보(안 지움): `data/review/grok/out/*.pre_*.md`·`*.long.md`(추적 중인 반영 전 원본).
+
 ## 2026-11-22 — 회화 Grok 다시 쓰기 끝 → Gemini 검수 중(사용자 「137편 다시 쓰기 — 다시 써야지」·「니가 알아서 좀 시켜봐」, uk 전달 「막힌거 각자 판단대로 일단 완료」)
 - **Grok 다시 쓰기 138편 끝**(`0ebe741`, 실제 138편 — 앞서 13/137 이라 한 것은 하나 틀림). 「빠른」, 대사는 Grok 답 그대로(다른 줄 0). R1 낱말 상한(7) 넘은 11편은 Grok 에 그 줄만 짧게 다시 받음(`data/review/grok/short/`, 원래 답 `*.long.md`). 검사 138편 오류 0 · 턴 잠금 경고 0 · 메모 칸 작업 표시 0. 이제 Grok 거친 편 150/150.
   - 도구 고침: `grok_text.py` 긴 방에서 끝을 못 잡던 문제(말풍선 수 대신 마지막 답 변화), M6→PC 터널은 `-o ServerAliveInterval=30` 으로(한 번 끊김). PC 크롬 9253 프로세스 종료함.
